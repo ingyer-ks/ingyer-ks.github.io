@@ -1,0 +1,6 @@
+{
+  "main.js": "render-page.js",
+  "render-page.js.map": "render-page.js.map",
+  "static/exo-v12-latin-900.woff2": "static/exo-v12-latin-900-ef8052b97d5b1904fa413c46aad25e80.woff2",
+  "static/yrsa-v7-latin-regular.woff2": "static/yrsa-v7-latin-regular-8fcfcbf91b66faf6acc02afafb612a1d.woff2"
+}
