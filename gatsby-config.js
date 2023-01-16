@@ -1,16 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Blog Starter`,
+    title: `Ingyerlog v2`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `ingyre ks`,
+      summary: `전자정보방송통신에 대해 공부하는 ingyer ks입니다.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `전기 전자 정보 방송 통신 공무원/군무원 기출문제 해설`,
+    siteUrl: `https://ingyerlog.kr/`,
     social: {
-      twitter: `kylemathews`,
-      linkedin: `kylemathews`,
-      github: `KyleAMathews`,
+      github: `ingyer-ks`,
     },
   },
   plugins: [

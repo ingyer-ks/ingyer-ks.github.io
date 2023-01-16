@@ -6,10 +6,30 @@ import Layout from "../components/Layout"
 import { Seo } from "../components/common"
 import { PageProps } from "@/definitions"
 
+import { Document, Page, pdfjs } from "react-pdf";
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
 const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
+  const [numPages, setNumPages] = React.useState(null);
+  const [pageNumber, setPageNumber] = React.useState(1);
+
+  const onDocumentLoadSuccess = ({ numPages }) => {
+    setNumPages(numPages);
+  };
+
+  const goToPrevPage = () =>
+    setPageNumber(pageNumber - 1 <= 1 ? 1 : pageNumber - 1);
+
+  const goToNextPage = () =>
+    setPageNumber(
+      pageNumber + 1 >= numPages ? numPages : pageNumber + 1,
+    );
+
+
+
   const post = data.mdx
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next } = data
   return (
     <Layout location={location} title={siteTitle}>
       <Seo
@@ -17,40 +37,41 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <article itemScope itemType="http://schema.org/Article">
-        <header className="grid grid-cols-blog">
-          <h1
-            className="col-start-2 font-exo font-black text-skin-fg text-4xl md:text-6xl"
-            itemProp="headline"
-          >
-            {post.frontmatter.title}
-          </h1>
-          <p className="col-start-2 font-yrsa text-skin-fg text-xl">
-            {post.frontmatter.date}
-          </p>
-        </header>
-        <section itemProp="articleBody" className="prose prose-xl mt-8 mx-auto">
-          <MDXRenderer>{post.body}</MDXRenderer>
+        <section itemProp="articleBody">
+          <div className="grid grid-cols-2">
+            <div className="fixed">
+              <h1
+                className="font-NotoSansKR text-skin-fg text-4xl md:text-4xl"
+                itemProp="headline">
+                {post.frontmatter.title}
+              </h1>
+              <p className="font-NotoSansKR text-skin-fg text-xl">
+                {post.frontmatter.date}
+              </p>
+              <nav>
+                <button onClick={goToPrevPage}>이전 페이지</button>&emsp;&emsp;&emsp;
+                <button onClick={goToNextPage}>다음 페이지</button>
+              </nav>
+              <Document file={"../problems/" + encodeURI(post.frontmatter.title) + ".pdf"} onLoadSuccess={onDocumentLoadSuccess}>
+                <Page pageNumber={pageNumber} renderTextLayer={false} height={1100} />
+              </Document>
+            </div>
+            <div className="col-start-2 answers prose-xl">
+              <div className="grid grid-row-2 position-relative">
+                <div className="position-relative">
+                  <div className="row-start-1"></div>
+                  <div className="row-start-2">
+                    <div className="h-100 mw-50">
+                      <MDXRenderer>{post.body}</MDXRenderer>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
-      </article>
-      <nav className="mt-8 grid grid-cols-blog">
-        <ul className="col-start-2 text-lg flex flex-wrap justify-between">
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
-    </Layout>
+      </article >
+    </Layout >
   )
 }
 
@@ -73,7 +94,8 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY-MM-DD")
+        tags
         description
       }
     }

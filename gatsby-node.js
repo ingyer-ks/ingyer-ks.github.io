@@ -3,8 +3,16 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin")
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+exports.onCreateWebpackConfig = ({ loaders, actions }) => {
   actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /canvas/,
+          use: loaders.null(),
+        },
+      ],
+    },
     resolve: {
       plugins: [new TsconfigPathsPlugin()],
     },
@@ -104,9 +112,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
     type Social {
-      twitter: String
-      linkedin: String
-      medium: String
+      github: String
     }
 
     type Mdx implements Node {

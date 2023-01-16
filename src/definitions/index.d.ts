@@ -32,8 +32,6 @@ interface ISite {
       summary: string
     }
     social: {
-      twitter: string
-      linkedin: string
       github: string
     }
   }
@@ -56,3 +54,5 @@ interface INode {
     description: string
   }
 }
+
+declare module '@pdftron/pdfjs-express-viewer'{};

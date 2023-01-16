@@ -9,10 +9,7 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-import FontUrl1 from "../../fonts/exo-v12-latin-900.woff2"
-import FontUrl2 from "../../fonts/yrsa-v7-latin-regular.woff2"
 import { ISite } from "@/definitions"
-import { getTheme } from "@/utils/fns"
 
 type MetaProps = JSX.IntrinsicElements["meta"]
 
@@ -25,7 +22,7 @@ const Seo: React.FC<SEOProps> = ({ description, lang, meta, title }) => {
             title
             description
             social {
-              twitter
+              github
             }
           }
         }
@@ -53,51 +50,17 @@ const Seo: React.FC<SEOProps> = ({ description, lang, meta, title }) => {
       property: `og:type`,
       content: `website`,
     },
-    {
-      name: `twitter:card`,
-      content: `summary`,
-    },
-    {
-      name: `twitter:creator`,
-      content: site.siteMetadata?.social?.twitter || ``,
-    },
-    {
-      name: `twitter:title`,
-      content: title,
-    },
-    {
-      name: `twitter:description`,
-      content: metaDescription,
-    },
   ]
-
-  const className = getTheme()
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
-        class: className,
-        ...(className === "dark" && { class: className }),
       }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
       meta={metaProps.concat(meta || [])}
     >
-      <link
-        rel="preload"
-        as="font"
-        href={FontUrl1}
-        type="font/woff2"
-        crossOrigin="anonymous"
-      />
-      <link
-        rel="preload"
-        as="font"
-        href={FontUrl2}
-        type="font/woff2"
-        crossOrigin="anonymous"
-      />
     </Helmet>
   )
 }

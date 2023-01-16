@@ -40,6 +40,9 @@ module.exports = {
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
+      gridColumn: {
+        'span-2': 'span 2 / span 2'
+      },
       typography: theme => ({
         DEFAULT: {
           css: {
@@ -52,24 +55,24 @@ module.exports = {
               code: { color: theme("colors.focus") },
             },
             h1: {
-              fontWeight: "700",
+              fontWeight: "500",
               letterSpacing: theme("letterSpacing.tight"),
               color: theme("colors.fg"),
-              fontFamily: "Exo",
+              fontFamily: "Noto Sans KR",
             },
             h2: {
               fontWeight: "700",
               letterSpacing: theme("letterSpacing.tight"),
               color: theme("colors.fg"),
-              fontFamily: "Exo",
+              fontFamily: "Noto Sans KR",
             },
             h3: {
               fontWeight: "700",
-              fontFamily: "Exo",
+              fontFamily: "Noto Sans KR",
               color: theme("colors.fg"),
             },
             "h4,h5,h6": {
-              fontFamily: "Exo",
+              fontFamily: "Noto Sans KR",
               fontWeight: "600",
               color: theme("colors.fg"),
             },
@@ -111,11 +114,13 @@ module.exports = {
         light: "6px 6px 13px #059bb4, -6px -6px 13px #07d1f4",
       },
       fontFamily: {
-        exo: ["Exo", ...defaultTheme.fontFamily.sans],
-        yrsa: ["Yrsa", ...defaultTheme.fontFamily.sans],
+        NotoSansKR: ["Noto Sans KR"],
       },
       gridTemplateColumns: {
         blog: "1fr min(600px, 100%) 1fr",
+      },
+      gridTemplateRows: {
+        2: '',
       },
       backgroundColor: themes,
       textColor: themes,
