@@ -26,10 +26,54 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
       pageNumber + 1 >= numPages ? numPages : pageNumber + 1,
     );
 
-
-
   const post = data.mdx
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  if (!(post.frontmatter.type==="nopdf")) {
+    return (
+      <Layout location={location} title={siteTitle}>
+        <Seo
+          title={post.frontmatter.title}
+          description={post.frontmatter.description || post.excerpt}
+        />
+        <article itemScope itemType="http://schema.org/Article">
+          <section itemProp="articleBody">
+            <div className="grid grid-cols-2">
+              <div className="fixed">
+                <h1
+                  className="font-NotoSansKR text-skin-fg text-4xl md:text-4xl"
+                  itemProp="headline">
+                  {post.frontmatter.title}
+                </h1>
+                <p className="font-NotoSansKR text-skin-fg text-xl">
+                  {post.frontmatter.date}
+                </p>
+                <nav>
+                  <button onClick={goToPrevPage}>이전 페이지</button>&emsp;&emsp;&emsp;
+                  <button onClick={goToNextPage}>다음 페이지</button>
+                </nav>
+                <Document file={"../problems/" + encodeURI(post.frontmatter.title) + ".pdf"} onLoadSuccess={onDocumentLoadSuccess}>
+                  <Page pageNumber={pageNumber} renderTextLayer={false} height={1100} />
+                </Document>
+              </div>
+              <div className="col-start-2 answers prose-xl">
+                <div className="grid grid-row-2 position-relative">
+                  <div className="position-relative">
+                    <div className="row-start-1"></div>
+                    <div className="row-start-2">
+                      <div className="h-100 mw-50">
+                        <MDXRenderer>{post.body}</MDXRenderer>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article >
+      </Layout >
+    )
+  }
+ else {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo
@@ -38,8 +82,8 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
       />
       <article itemScope itemType="http://schema.org/Article">
         <section itemProp="articleBody">
-          <div className="grid grid-cols-2">
-            <div className="fixed">
+          <div className="grid grid-cols-1">
+            <div>
               <h1
                 className="font-NotoSansKR text-skin-fg text-4xl md:text-4xl"
                 itemProp="headline">
@@ -48,15 +92,8 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
               <p className="font-NotoSansKR text-skin-fg text-xl">
                 {post.frontmatter.date}
               </p>
-              <nav>
-                <button onClick={goToPrevPage}>이전 페이지</button>&emsp;&emsp;&emsp;
-                <button onClick={goToNextPage}>다음 페이지</button>
-              </nav>
-              <Document file={"../problems/" + encodeURI(post.frontmatter.title) + ".pdf"} onLoadSuccess={onDocumentLoadSuccess}>
-                <Page pageNumber={pageNumber} renderTextLayer={false} height={1100} />
-              </Document>
             </div>
-            <div className="col-start-2 answers prose-xl">
+            <div className="answers prose-xl">
               <div className="grid grid-row-2 position-relative">
                 <div className="position-relative">
                   <div className="row-start-1"></div>
@@ -73,6 +110,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
       </article >
     </Layout >
   )
+ }
 }
 
 export default BlogPostTemplate
@@ -94,9 +132,10 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
-        date(formatString: "YYYY-MM-DD")
-        tags
+        date(formatString: "MMMM DD, YYYY")
         description
+        tags
+        type
       }
     }
     previous: mdx(id: { eq: $previousPostId }) {

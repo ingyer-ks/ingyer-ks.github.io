@@ -23,6 +23,21 @@ interface PageProps {
   location: Location
 }
 
+interface TagPageProps {
+  data: {
+    allMdx: {
+      edges: IEdge[]
+    }
+    site: ISite
+  }
+  pageContext: {
+    tag: string
+    slugs: [string]
+    titles: [string]
+  }
+  location: Location
+}
+
 interface ISite {
   siteMetadata: {
     title: string
@@ -50,9 +65,10 @@ interface INode {
   frontmatter: {
     date: string
     title: string
-    tags?: string
+    tags: string
+    type: string
     description: string
   }
 }
 
-declare module '@pdftron/pdfjs-express-viewer'{};
+declare module "@pdftron/pdfjs-express-viewer" {}

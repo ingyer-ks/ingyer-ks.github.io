@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Ingyerlog v2`,
     author: {
-      name: `ingyre ks`,
+      name: `ingyer ks`,
       summary: `전자정보방송통신에 대해 공부하는 ingyer ks입니다.`,
     },
     description: `전기 전자 정보 방송 통신 공무원/군무원 기출문제 해설`,
@@ -18,6 +18,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/posts`,
+        name: `posts`,
       },
     },
     {
@@ -59,60 +66,6 @@ module.exports = {
     //     trackingId: `ADD YOUR TRACKING ID HERE`,
     //   },
     // },
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
-                })
-              })
-            },
-            query: `
-              {
-                allMdx(
-                  limit: 1000,
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      slug
-                      frontmatter {
-                        title
-                        date
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-            output: "/rss.xml",
-            title: "Gatsby RSS feed",
-          },
-        ],
-      },
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

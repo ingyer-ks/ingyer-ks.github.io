@@ -55,12 +55,6 @@ const BlogIndex: React.FC<PageProps> = ({ data, location }) => {
                   className="text-lg font-yrsa text-skin-fg mt-3"
                 />
                 <section className="font-yrsa text-skin-fg-muted uppercase md:text-sm space-x-2 mt-3">
-                  {(node.frontmatter.tags || "")
-                    .split(",")
-                    .map((s: string) => s.trim())
-                    .map((s: string) => (
-                      <span key={s}>{`#${s}`}</span>
-                    ))}
                 </section>
               </article>
             </li>
@@ -92,6 +86,7 @@ export const pageQuery = graphql`
             title
             description
             tags
+            type
           }
         }
       }

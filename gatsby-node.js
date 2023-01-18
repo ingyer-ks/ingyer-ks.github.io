@@ -22,21 +22,24 @@ exports.onCreateWebpackConfig = ({ loaders, actions }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
-  // Define a template for blog post
-  const blogPost = path.resolve(`./src/templates/BlogPost.tsx`)
-
-  // Get all markdown blog posts sorted by date
   const result = await graphql(
     `
       {
         allMdx(
           sort: { fields: [frontmatter___date], order: ASC }
-          limit: 1000
+          limit: 2000
         ) {
           edges {
             node {
               id
               slug
+              frontmatter {
+                title
+                description
+                tags
+                date
+                type
+              }
             }
           }
         }
@@ -65,7 +68,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         index === posts.length - 1 ? null : posts[index + 1].node.id
       createPage({
         path: post.node.slug,
-        component: blogPost,
+        component: path.resolve(`./src/templates/BlogPost.tsx`),
         context: {
           id: post.node.id,
           previousPostId,
@@ -73,6 +76,33 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         },
       })
     })
+  }
+
+  const tags = {}
+  if (posts.length > 0) {
+    posts.filter(({ node }) => node.frontmatter.tags).forEach(({ node }) => {
+      const tagsList = node.frontmatter.tags
+          .split(",")
+          .map(tag => tag.trim())
+          .filter(tag => tag.length > 0)
+
+      tagsList.forEach(tag => {
+          if (!tags[tag]) {
+            tags[tag] = []
+          }
+          tags[tag].push(node.slug)
+      })
+  })
+
+  Object.keys(tags).forEach(tag => {
+      createPage({
+          path: `/tags/${tag}`,
+          component: path.resolve(`./src/templates/tag.tsx`),
+          context: {
+              tag,
+          }
+        })
+      })
   }
 }
 
@@ -125,6 +155,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       description: String
       tags: String
       date: Date @dateformat
+      type: String
     }
 
     type Fields {
