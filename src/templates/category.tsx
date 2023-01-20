@@ -13,27 +13,29 @@ const TagPageTemplate: React.FC<TagPageProps> = ({
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const nodeList: INode[] = []
   posts.map((post) => {
-    const tagsList: string[] = []
-    post.node.frontmatter.tags
+    const categoryList: string[] = []
+    post.node.frontmatter.category
       .split(",")
-      .map((tag: string) => tag.trim())
-      .filter((tag: string) => tag.length > 0)
-      .map(tag => tagsList.push(tag))
-    if (tagsList.includes(pageContext.tag)) {
+      .map((category: string) => category.trim())
+      .filter((category: string) => category.length > 0)
+      .map(category => categoryList.push(category))
+    if (categoryList.includes(pageContext.category)) {
       nodeList.push(post.node)
     }
   })
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title={`#${pageContext.tag}`} />
+      <Seo title={`${pageContext.category}`} />
       <div>
-        <h1>#{pageContext.tag}</h1>
+        <h1 style={{ fontSize: "3em", margin: "auto auto auto 20vw" }}>#{pageContext.category}</h1>
         <ul>
-          <li>
-            {nodeList.map(node => {
-                return(<Link to={`/`+node.slug}>{node.frontmatter.title}</Link>)}
-            )}
-          </li>
+          {nodeList.map(node => {
+            return (
+              <li style={{ margin: "auto auto auto 20vw" }}>
+                <Link to={`/` + node.slug}>{node.frontmatter.title}</Link>
+              </li>
+            )
+          })}
         </ul>
       </div>
     </Layout>
@@ -50,14 +52,13 @@ export const pageQuery = graphql`
         }
       }
     allMdx(
-      sort: { fields: [frontmatter___date], order: ASC }
       limit: 2000
     ) {
       edges {
         node {
           frontmatter {
             title
-            tags
+            category
           }
           slug
         }

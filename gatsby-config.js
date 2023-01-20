@@ -12,12 +12,20 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-global-context',
+      options: {
+        context: {
+          tags: true
+        }
+      }
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/content/answers`,
+        name: `answer`,
       },
     },
     {

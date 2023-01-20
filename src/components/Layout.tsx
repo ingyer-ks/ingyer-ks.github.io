@@ -16,28 +16,35 @@ const Layout: React.FC<LayoutProps> = ({ location, children }) => {
 
   if (isRootPath) {
     header = (
-      <div className="w-full md:w-1/3 relative">
-        <div className="md:h-full p-8 flex flex-col justify-center bg-skin-base">
-          <Bio />
+      <Bio />
+    )
+
+    return (
+      <div>
+        <div style={{ margin: "3vh auto auto 20vw" }}>
+          {header}
+        </div>
+        <div style={{ margin: "5vh auto auto 20vw" }}>
+          <main>
+            {children}
+          </main>
         </div>
       </div>
     )
   } else {
     header = <Header />
-  }
+    return (
+      <div
+        className={`relative antialiased flex flex-col selection:bg-yellow-200 selection:text-black`}
+      >
+        {header}
+        <main className="flex-1 px-8 lg:px-24 py-8 md:py-3 overflow-y-auto">
+          {children}
+        </main>
+      </div>
 
-  return (
-    <div
-      className={`relative antialiased flex flex-col ${
-        isRootPath ? "md:h-screen md:flex-row overflow-hidden" : ""
-      } selection:bg-yellow-200 selection:text-black`}
-    >
-      {header}
-      <main className="flex-1 px-8 lg:px-24 py-8 md:py-3 overflow-y-auto">
-        {children}
-      </main>
-    </div>
-  )
+    )
+  }
 }
 
 export default Layout

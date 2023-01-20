@@ -36,9 +36,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               frontmatter {
                 title
                 description
-                tags
+                category
                 date
-                type
               }
             }
           }
@@ -76,33 +75,33 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         },
       })
     })
-  }
 
-  const tags = {}
-  if (posts.length > 0) {
-    posts.filter(({ node }) => node.frontmatter.tags).forEach(({ node }) => {
-      const tagsList = node.frontmatter.tags
+    const categories = {}
+    posts
+      .filter(({ node }) => node.frontmatter.category)
+      .forEach(({ node }) => {
+        const categoryList = node.frontmatter.category
           .split(",")
-          .map(tag => tag.trim())
-          .filter(tag => tag.length > 0)
+          .map(category => category.trim())
+          .filter(category => category.length > 0)
 
-      tagsList.forEach(tag => {
-          if (!tags[tag]) {
-            tags[tag] = []
+          categoryList.forEach(category => {
+          if (!categories[category]) {
+            categories[category] = []
           }
-          tags[tag].push(node.slug)
-      })
-  })
-
-  Object.keys(tags).forEach(tag => {
-      createPage({
-          path: `/tags/${tag}`,
-          component: path.resolve(`./src/templates/tag.tsx`),
-          context: {
-              tag,
-          }
+          categories[category].push(node.slug)
         })
-      })
+
+        Object.keys(categories).forEach(category => {
+          createPage({
+            path: `/categories/${category}`,
+            component: path.resolve(`./src/templates/category.tsx`),
+            context: {
+              category,
+            },
+          })
+        })
+      })  
   }
 }
 
@@ -153,9 +152,8 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Frontmatter {
       title: String
       description: String
-      tags: String
+      category: String
       date: Date @dateformat
-      type: String
     }
 
     type Fields {

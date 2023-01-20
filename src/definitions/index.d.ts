@@ -10,6 +10,14 @@ export interface ButtonProps {
 
 interface EmptyProps {}
 
+interface TagHeaderProps {
+  data: {
+    allMdx: {
+      edges: IEdge[]
+    }
+  }
+}
+
 interface PageProps {
   data: {
     mdx: INode
@@ -31,7 +39,7 @@ interface TagPageProps {
     site: ISite
   }
   pageContext: {
-    tag: string
+    category: string
     slugs: [string]
     titles: [string]
   }
@@ -65,8 +73,7 @@ interface INode {
   frontmatter: {
     date: string
     title: string
-    tags: string
-    type: string
+    category: string
     description: string
   }
 }

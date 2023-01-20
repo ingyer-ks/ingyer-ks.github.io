@@ -56,7 +56,6 @@ module.exports = {
             },
             h1: {
               fontWeight: "500",
-              letterSpacing: theme("letterSpacing.tight"),
               color: theme("colors.fg"),
               fontFamily: "Noto Sans KR",
             },
