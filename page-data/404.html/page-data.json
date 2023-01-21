@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-404-tsx",
     "path": "/404.html",
-    "result": {"data":{"site":{"siteMetadata":{"title":"Ingyerlog v2"}}},"pageContext":{"tags":true}},
-    "staticQueryHashes": ["230163734","3589320610","4021037352"]}
+    "result": {"data":{"site":{"siteMetadata":{"title":"Ingyerlog v2"}}},"pageContext":{}},
+    "staticQueryHashes": ["230163734","3393702677","3589320610"]}

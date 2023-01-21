@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-category-tsx",
     "path": "/categories/7급",
-    "result": {"data":{"site":{"siteMetadata":{"title":"Ingyerlog v2"}},"allMdx":{"edges":[{"node":{"frontmatter":{"title":"2022 7급 국가직 전기자기학","category":"전기자기학, 국가직, 7급, 2022"},"slug":"2022-7-national-em/"}},{"node":{"frontmatter":{"title":"블로그 사용법","category":"일반글, 안내"},"slug":"howto/"}},{"node":{"frontmatter":{"title":"블로그 재구축 안내","category":"일반글, 안내"},"slug":"Notice/"}}]}},"pageContext":{"category":"7급","tags":true}},
-    "staticQueryHashes": ["230163734","3589320610","4021037352"]}
+    "result": {"data":{"site":{"siteMetadata":{"title":"Ingyerlog v2"}},"allMdx":{"edges":[{"node":{"slug":"2022-7-national-em/","frontmatter":{"title":"2022 7급 국가직 전기자기학"},"fields":{"category":"2022,7급,국가직,전기자기학"}}},{"node":{"slug":"Notice/","frontmatter":{"title":"블로그 재구축 안내"},"fields":{"category":"안내"}}},{"node":{"slug":"introducing_myself/","frontmatter":{"title":"ingyer ks 소개"},"fields":{"category":"안내"}}}]}},"pageContext":{"category":"7급"}},
+    "staticQueryHashes": ["230163734","3393702677","3589320610"]}
