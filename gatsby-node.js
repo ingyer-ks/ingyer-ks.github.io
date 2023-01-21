@@ -33,6 +33,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             node {
               id
               slug
+              fields{
+                category
+                haspdf
+              }
               frontmatter {
                 title
                 description
@@ -78,14 +82,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     const categories = {}
     posts
-      .filter(({ node }) => node.frontmatter.category)
+      .filter(({ node }) => node.fields.category)
       .forEach(({ node }) => {
-        const categoryList = node.frontmatter.category
+        const categoryList = node.fields.category
           .split(",")
           .map(category => category.trim())
           .filter(category => category.length > 0)
 
-          categoryList.forEach(category => {
+        categoryList.forEach(category => {
           if (!categories[category]) {
             categories[category] = []
           }
@@ -101,7 +105,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             },
           })
         })
-      })  
+      })
   }
 }
 
@@ -116,6 +120,33 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     })
+
+    if (!node.frontmatter.category) {
+      const value=node.frontmatter.title.replace(/ /gi,",")
+      createNodeField({
+        name: `category`,
+        node,
+        value,
+      })
+      createNodeField({
+        name: `haspdf`,
+        node,
+        value:"y",
+      })
+    }
+    else {
+      const value=node.frontmatter.category
+      createNodeField({
+        name: `category`,
+        node,
+        value,
+      })
+      createNodeField({
+        name: `haspdf`,
+        node,
+        value:"n",
+      })
+    }
   }
 }
 
@@ -152,12 +183,14 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Frontmatter {
       title: String
       description: String
-      category: String
       date: Date @dateformat
+      category: String
     }
 
     type Fields {
       slug: String
+      category: String
+      haspdf: String
     }
   `)
 }

@@ -33,7 +33,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
 
   const post = data.mdx
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  if (!(post.frontmatter.category.includes("일반글"))) {
+  if (post.fields.haspdf==="y") {
     pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
     return (
       <Layout location={location} title={siteTitle}>
@@ -166,6 +166,9 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         category
+      }
+      fields {
+        haspdf
       }
     }
     previous: mdx(id: { eq: $previousPostId }) {

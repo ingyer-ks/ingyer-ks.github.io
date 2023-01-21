@@ -12,14 +12,6 @@ module.exports = {
     },
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-global-context',
-      options: {
-        context: {
-          tags: true
-        }
-      }
-    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -45,6 +37,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
+        rehypePlugins:[require('rehype-katex'), { strict: 'ignore' }],
+        remarkPlugins:[require("remark-math")],
         extensions: [".mdx", ".md"],
         plugins: [`gatsby-remark-images`],
         gatsbyRemarkPlugins: [

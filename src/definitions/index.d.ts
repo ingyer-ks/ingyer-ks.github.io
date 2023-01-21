@@ -69,6 +69,8 @@ interface INode {
   body: string
   fields: {
     slug: string
+    category: string
+    haspdf: string
   }
   frontmatter: {
     date: string

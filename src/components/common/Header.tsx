@@ -5,14 +5,14 @@ import { HomeIcon, MenuIcon, XIcon } from "@heroicons/react/outline"
 import { EmptyProps } from "@/definitions"
 
 const Header: React.FC<EmptyProps> = () => {
-  const categoryList: string[] = [];
+  const categoryList: string[] = []
   const { allMdx } = useStaticQuery(
     graphql`
       query Tags {
         allMdx {
           edges {
             node {
-              frontmatter {
+              fields {
                 category
               }
             }
@@ -21,14 +21,14 @@ const Header: React.FC<EmptyProps> = () => {
       }
     `
   )
-  allMdx.edges.map((post: { node: { frontmatter: { category: string } } }) => {
-    post.node.frontmatter.category
+  allMdx.edges.map((post: { node: { fields: { category: string } } }) => {
+    post.node.fields.category
       .split(",")
       .map((category: string) => category.trim())
       .filter((category: string) => category.length > 0)
       .map(category => categoryList.push(category))
   })
-  const resources=[...new Set(categoryList)]
+  const resources = [...new Set(categoryList)]
 
   return (
     <Popover className="sticky top-0 z-10 bg-skin-header fixed backdrop-blur-md backdrop-saturate-150 bg-opacity-70">
@@ -55,7 +55,7 @@ const Header: React.FC<EmptyProps> = () => {
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-8">
             {resources.map(item => (
               <Link
-                to={"/categories/"+item}
+                to={"/categories/" + item}
                 key={item}
                 className="whitespace-nowrap text-lg font-medium text-skin-header-fg rounded-md focus:outline-none focus:ring-2 focus:ring-skin-focus"
               >
@@ -99,17 +99,15 @@ const Header: React.FC<EmptyProps> = () => {
             </div>
             <div className="py-6 px-5 space-y-6">
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                {
-                 resources.map(item=> {
-                    <Link
-                      to={"/categories/" + item}
-                      itemProp="url"
-                      className="whitespace-nowrap text-lg font-medium text-skin-header-fg rounded-md focus:outline-none focus:ring-2 focus:ring-skin-focus"
-                    >
-                      {item}
-                    </Link>
-                  })
-                }
+                {resources.map(item => {
+                  ;<Link
+                    to={"/categories/" + item}
+                    itemProp="url"
+                    className="whitespace-nowrap text-lg font-medium text-skin-header-fg rounded-md focus:outline-none focus:ring-2 focus:ring-skin-focus"
+                  >
+                    {item}
+                  </Link>
+                })}
               </div>
             </div>
           </div>

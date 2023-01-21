@@ -14,7 +14,7 @@ const TagPageTemplate: React.FC<TagPageProps> = ({
   const nodeList: INode[] = []
   posts.map((post) => {
     const categoryList: string[] = []
-    post.node.frontmatter.category
+    post.node.fields.category
       .split(",")
       .map((category: string) => category.trim())
       .filter((category: string) => category.length > 0)
@@ -56,11 +56,13 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          slug
           frontmatter {
             title
+          }
+          fields{
             category
           }
-          slug
         }
       }
     }
