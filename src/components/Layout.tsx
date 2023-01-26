@@ -35,10 +35,10 @@ const Layout: React.FC<LayoutProps> = ({ location, children }) => {
     header = <Header />
     return (
       <div
-        className={`relative antialiased flex flex-col selection:bg-yellow-200 selection:text-black`}
+        className={`relative antialiased flex flex-col selection:bg-yellow-200 selection:text-black`} style={{height:"100vh", overflow:"hidden"}}
       >
         {header}
-        <main className="flex-1 px-8 lg:px-24 py-8 md:py-3 overflow-y-auto">
+        <main className="flex-1 px-8 lg:px-24 py-8 md:py-3 overflow-hidden">
           {children}
         </main>
       </div>

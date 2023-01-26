@@ -3,14 +3,13 @@
 @tailwind utilities;
 
 @layer base {
-  html {
 
+  body, html {
+    height: 100%;
   }
-
+  
   body {
     font-family: "Noto Sans KR";
-    @apply bg-skin-base text-skin-fg;
-
   }
 
   :root {
@@ -32,6 +31,16 @@
   }
 }
 
+#top, #bottom {
+  display: table-row;
+}
+#top {
+  height: 100px;
+}
+#bottom {
+  height: calc(100% - 250px);
+}
+
 @layer utilities {
   code[class*="language-"],
   pre[class*="language-"] {
@@ -46,6 +55,13 @@
     background: transparent !important;
   }
 }
+
+#col {
+  height:calc(100vh - 250px);
+  width:31vw;
+  overflow:hidden;
+}
+
 
 @font-face {
   font-family: "Noto Sans KR";

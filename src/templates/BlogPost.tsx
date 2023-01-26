@@ -33,7 +33,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
 
   const post = data.mdx
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  if (post.fields.haspdf==="y") {
+  if (post.fields.haspdf === "y") {
     pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
     return (
       <Layout location={location} title={siteTitle}>
@@ -43,70 +43,70 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
         />
         <article itemScope itemType="http://schema.org/Article">
           <section itemProp="articleBody">
-            <div style={{ width: "64vw", overflow: "hidden", margin: "auto" }}>
-              <h1 className="font-NotoSansKR" style={{ fontSize: "2em" }}>
-                {post.frontmatter.title}
-              </h1>
-              <p className="font-NotoSansKR text-skin-fg text-xl">
-                {post.frontmatter.date}
-              </p>
-              <nav>
-                <div
-                  className="grid grid-cols-4"
-                  style={{ width: "31vw", margin: "0 50vw auto 0" }}
-                >
-                  <div>
-                    <button onClick={goToPrevPage}>이전 페이지</button>
-                  </div>
-                  <div>
-                    <button onClick={goToNextPage}>다음 페이지</button>
-                  </div>
-                  <div>
-                    <button onClick={scaleUp}>확대</button>
-                  </div>
-                  <div>
-                    <button onClick={scaleDown}>축소</button>
-                  </div>
-                </div>
-              </nav>
-            </div>
-            <div
-              className="grid grid-cols-2"
-              style={{
-                overflow: "hidden",
-                height: "85vh",
-                width: "64vw",
-                margin: "auto",
-              }}
-            >
-              <div style={{ height: "85vh", width: "31vw" }}>
-                <div
-                  style={{ overflow: "auto", width: "31vw", height: "85vh" }}
-                >
-                  <Document
-                    file={
-                      "../problems/" +
-                      encodeURI(post.frontmatter.title) +
-                      ".pdf"
-                    }
-                    onLoadSuccess={onDocumentLoadSuccess}
+            <div style={{ height: "100%", width: "70vw", margin: "auto", minWidth: "400px" }}>
+              <div id="top">
+                <h1 className="font-NotoSansKR" style={{ fontSize: "2em" }}>
+                  {post.frontmatter.title}
+                </h1>
+                <p className="font-NotoSansKR text-skin-fg text-xl">
+                  {post.frontmatter.date}
+                </p>
+                <nav>
+                  <div
+                    className="grid grid-cols-4"
+                    style={{ width: "31vw", minWidth: "200px" }}
                   >
-                    <Page
-                      pageNumber={pageNumber}
-                      renderTextLayer={false}
-                      scale={scale}
-                      renderAnnotationLayer={false}
-                    ></Page>
-                  </Document>
-                </div>
+                    <div>
+                      <button onClick={goToPrevPage}>이전</button>
+                    </div>
+                    <div>
+                      <button onClick={goToNextPage}>다음</button>
+                    </div>
+                    <div>
+                      <button onClick={scaleUp}>확대</button>
+                    </div>
+                    <div>
+                      <button onClick={scaleDown}>축소</button>
+                    </div>
+                  </div>
+                </nav>
               </div>
-              <div
-                className="col-start-2 answers"
-                style={{ overflow: "auto", margin: "px 0" }}
-              >
-                <MDXRenderer>{post.body}</MDXRenderer>
+
+
+              <div id="bottom">
+                <div className="grid grid-cols-2" id="row">
+                  <div id="col" style={{overflow:"hidden"}}>
+                    <div id="col" style={{overflow:"auto"}}>
+                      <Document
+                        file={
+                          "../problems/" +
+                          encodeURI(post.frontmatter.title) +
+                          ".pdf"
+                        }
+                        onLoadSuccess={onDocumentLoadSuccess}
+                      >
+                        <Page
+                          pageNumber={pageNumber}
+                          renderTextLayer={false}
+                          scale={scale}
+                          renderAnnotationLayer={false}
+                        ></Page>
+                      </Document>
+                    </div>
+                  </div>
+                  <div id="col" style={{overflow:"hidden", marginLeft: "50px"}}>
+                    <div id="col"
+                      style={{ overflow:"auto", wordWrap: "break-word" }}
+                    >
+                      <MDXRenderer>{post.body}</MDXRenderer>
+                    </div>
+                  </div>
+                </div>
+
+
               </div>
             </div>
+
           </section>
         </article>
       </Layout>
@@ -133,7 +133,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
               >
                 {post.frontmatter.date}
               </p>
-              <div style={{ overflow: "auto", height: "88vh" }}>
+              <div style={{ overflow: "auto", width: "32vw" }}>
                 <MDXRenderer>{post.body}</MDXRenderer>
               </div>
             </div>
