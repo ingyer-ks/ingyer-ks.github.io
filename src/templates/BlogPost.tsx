@@ -96,7 +96,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
                   </div>
                   <div id="col" style={{overflow:"hidden", marginLeft: "50px"}}>
                     <div id="col"
-                      style={{ overflow:"auto", wordWrap: "break-word" }}
+                      style={{ overflow:"scroll", wordWrap:"break-word", scrollSnapType:"y mandatory" }}
                     >
                       <MDXRenderer>{post.body}</MDXRenderer>
                     </div>
@@ -120,7 +120,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
         />
         <article itemScope itemType="http://schema.org/Article">
           <section itemProp="articleBody">
-            <div style={{ width: "50vw", margin: "auto", height: "93vh" }}>
+            <div style={{ width: "70vw", minWidth:"400px", margin: "auto", height: "93vh" }}>
               <h1
                 className="font-NotoSansKR text-skin-fg text-4xl md:text-4xl"
                 itemProp="headline"
@@ -133,7 +133,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
               >
                 {post.frontmatter.date}
               </p>
-              <div style={{ overflow: "auto", width: "32vw" }}>
+              <div style={{ overflow: "auto", width: "70vw" }}>
                 <MDXRenderer>{post.body}</MDXRenderer>
               </div>
             </div>
