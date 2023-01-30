@@ -28,15 +28,18 @@ const TagPageTemplate: React.FC<TagPageProps> = ({
       <Seo title={`${pageContext.category}`} />
       <div>
         <h1 style={{ fontSize: "3em", margin: "auto auto auto 20vw" }}>#{pageContext.category}</h1>
-        <ul>
-          {nodeList.map(node => {
-            return (
-              <li style={{ margin: "auto auto auto 20vw" }}>
-                <Link to={`/` + node.slug}>{node.frontmatter.title}</Link>
-              </li>
-            )
-          })}
-        </ul>
+        <div className="grid" style={{ gridAutoFlow: "column" }}></div>
+        <div>
+          <ul>
+            {nodeList.map(node => {
+              return (
+                <li style={{ margin: "auto auto auto 20vw" }}>
+                  <Link to={`/` + node.slug}>{node.frontmatter.title}</Link>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       </div>
     </Layout>
   )

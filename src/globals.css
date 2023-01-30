@@ -12,11 +12,6 @@
     font-family: "Noto Sans KR"!important;
   }
 
-  h2 {
-    scroll-snap-align: start;
-    margin-block-start: 2em;
-  }
-
   ol {
     list-style-type: auto;
     list-style-position: inside;
