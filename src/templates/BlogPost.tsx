@@ -96,7 +96,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
                   </div>
                   <div id="col" style={{overflow:"hidden", marginLeft: "50px"}}>
                     <div id="col"
-                      style={{ overflow:"scroll", wordWrap:"break-word", scrollSnapType:"y mandatory" }}
+                      style={{ overflow:"scroll", wordWrap:"break-word"}}
                     >
                       <MDXRenderer>{post.body}</MDXRenderer>
                     </div>
