@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Layout from "../components/Layout"
@@ -12,6 +12,9 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
   const [numPages, setNumPages] = React.useState(null)
   const [pageNumber, setPageNumber] = React.useState(1)
   const [scale, setScale] = React.useState(1)
+
+  const [problemsVisible, setProblemsVisiblity] = React.useState(1)
+  const [explanationsVisible, setExplanationsVisiblity] = React.useState(1)
 
   const onDocumentLoadSuccess = ({ numPages }) => {
     setNumPages(numPages)
@@ -29,6 +32,21 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
 
   const scaleDown = () => {
     setScale(scale - 0.15)
+  }
+
+  const showBoth = () => {
+    setProblemsVisiblity(1)
+    setExplanationsVisiblity(1)
+  }
+
+  const showOnlyProblems = () => {
+    setProblemsVisiblity(1)
+    setExplanationsVisiblity(0)
+  }
+
+  const showOnlyExplanations = () => {
+    setProblemsVisiblity(0)
+    setExplanationsVisiblity(1)
   }
 
   const post = data.mdx
@@ -51,6 +69,17 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
                 <p className="font-NotoSansKR text-skin-fg text-xl">
                   {post.frontmatter.date}
                 </p>
+                <div className="grid gird-cols-3" style={{ width: "31vw", minWidth: "200px" }}>
+                  <div className="col-start-1">
+                    <button onClick={showBoth}>문제&해설</button>
+                  </div>
+                  <div className="col-start-2">
+                    <button onClick={showOnlyProblems}>문제만</button>
+                  </div>
+                  <div className="col-start-3">
+                    <button onClick={showOnlyExplanations}>해설만</button>
+                  </div>
+                </div>
                 <nav>
                   <div
                     className="grid grid-cols-4"
@@ -73,8 +102,8 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
               </div>
 
               <div id="bottom">
-                <div className="grid grid-cols-2" id="row">
-                  <div id="col" style={{ overflow: "hidden" }}>
+                <div className={"grid grid-cols-" + (problemsVisible + explanationsVisible)} id="row" style={{ width: "70vw" }}>
+                  {problemsVisible ? (<div className="col-start-1" id="col" style={{ overflow: "hidden", width: "31vw" }}>
                     <div id="col" style={{ overflow: "auto" }}>
                       <Document
                         file={
@@ -92,14 +121,14 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
                         ></Page>
                       </Document>
                     </div>
-                  </div>
-                  <div id="col" style={{ overflow: "hidden", marginLeft: "50px" }}>
+                  </div>) : null}
+                  {explanationsVisible ? (<div className={"col-start-" + (problemsVisible + explanationsVisible)} id="col" style={{ overflow: "hidden", marginLeft: explanationsVisible ? "0" : "50px", width: problemsVisible ? "31vw" : "70vw" }}>
                     <div id="col"
-                      style={{ overflow: "auto", wordWrap: "break-word" }}
+                      style={{ overflow: "scroll", wordWrap: "break-word", width: problemsVisible ? "31vw" : "70vw" }}
                     >
                       <MDXRenderer>{post.body}</MDXRenderer>
                     </div>
-                  </div>
+                  </div>) : null}
                 </div>
               </div>
             </div>
@@ -129,7 +158,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
               >
                 {post.frontmatter.date}
               </p>
-              <div style={{ overflow: "auto", width: "70vw",wordWrap: "break-word"}}>
+              <div style={{ overflow: "auto", width: "70vw", wordWrap: "break-word" }}>
                 <MDXRenderer>{post.body}</MDXRenderer>
               </div>
             </div>
