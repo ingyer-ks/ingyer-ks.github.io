@@ -103,7 +103,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
 
               <div id="bottom">
                 <div className={"grid grid-cols-" + (problemsVisible + explanationsVisible)} id="row" style={{ width: "70vw" }}>
-                  {problemsVisible ? (<div className="col-start-1" id="col" style={{ overflow: "hidden", width: "31vw" }}>
+                  {problemsVisible ? (<div className="col-start-1" id="col" style={{ overflow: "hidden", width: explanationsVisible ? "31vw" : "70vw" }}>
                     <div id="col" style={{ overflow: "auto" }}>
                       <Document
                         file={
