@@ -37,11 +37,24 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        rehypePlugins:[require('rehype-katex'), { strict: 'ignore' }],
-        remarkPlugins:[require("remark-math")],
+        rehypePlugins: [require('rehype-katex'), { strict: 'ignore' }],
+        remarkPlugins: [require("remark-math")],
         extensions: [".mdx", ".md"],
         plugins: [`gatsby-remark-images`],
         gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-embed-video",
+            options: {
+              width: 500,
+              ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
+              related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
+              noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
+              containerClass: "embedVideo-container", //Optional: Custom CSS class for iframe container, for multiple classes separate them by space
+              iframeId: false, //Optional: if true, iframe's id will be set to what is provided after 'video:' (YouTube IFrame player API requires iframe id)
+              sandbox: 'allow-same-origin allow-scripts allow-presentation', // Optional: iframe sandbox options - Default: undefined
+            },
+          },
+          "gatsby-remark-responsive-iframe",
           {
             resolve: `gatsby-remark-images`,
             options: {
