@@ -57,11 +57,10 @@ const Seo: React.FC<SEOProps> = ({ description, lang, meta, title }) => {
       htmlAttributes={{
         lang,
       }}
-      title={title}
+      title={title + " | " + defaultTitle}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
       meta={metaProps.concat(meta || [])}
-    >
-    </Helmet>
+    ></Helmet>
   )
 }
 
@@ -73,7 +72,7 @@ interface SEOProps {
 }
 
 Seo.defaultProps = {
-  lang: `en`,
+  lang: `ko`,
   meta: [],
   description: ``,
 }

@@ -1,7 +1,6 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import { Button } from "."
 import { EmptyProps, ISite } from "@/definitions"
 
 const Bio: React.FC<EmptyProps> = () => {
@@ -41,8 +40,7 @@ const Bio: React.FC<EmptyProps> = () => {
         />
         <div>
           <h3 className="font-bold tracking-wide">{author.name}</h3>
-          <div className="pt-2 flex space-x-4">
-          </div>
+          <div className="pt-2 flex space-x-4"></div>
         </div>
       </div>
       <p className="mt-5 text-lg text-skin-fg">{author.summary}</p>
