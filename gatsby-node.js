@@ -110,7 +110,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         index === posts.length - 1 ? null : posts[index + 1].node.id
       createPage({
         path: post.node.slug,
-        component: path.resolve(`./src/templates/BlogPost.tsx`),
+        component: path.resolve(`./src/templates/BlogPost_adobe.tsx`),
         context: {
           id: post.node.id,
           previousPostId,
