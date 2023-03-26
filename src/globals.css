@@ -95,7 +95,7 @@
 }
 
 .katex {
-  font: normal 1em KaTeX_Main, "Noto Sans KR";
+  font: normal 1em KaTeX_Main, "Noto Sans KR"!important;
 }
 
 .katex .mfrac .frac-line {
