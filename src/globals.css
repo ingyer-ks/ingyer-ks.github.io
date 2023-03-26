@@ -94,3 +94,13 @@
   font-weight: 400;
 }
 
+.katex {
+  font: normal 1em KaTeX_Main, "Noto Sans KR";
+}
+
+.katex .mfrac .frac-line {
+  display: inline-block;
+  width: 100%;
+  border-bottom-width: 1px !important;
+  border-bottom-color: black!important;
+}
