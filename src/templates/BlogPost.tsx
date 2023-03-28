@@ -6,6 +6,8 @@ import Layout from "../components/Layout"
 import { Seo } from "../components/common"
 import { PageProps } from "@/definitions"
 
+import { useMediaQuery } from "react-responsive"
+
 import { Document, Page, pdfjs } from "react-pdf"
 
 const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
@@ -61,7 +63,14 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
         />
         <article itemScope itemType="http://schema.org/Article">
           <section itemProp="articleBody">
-            <div style={{ height: "100%", width: "70vw", margin: "auto", minWidth: "400px" }}>
+            <div
+              style={{
+                height: "100%",
+                width: "70vw",
+                margin: "auto",
+                minWidth: "400px",
+              }}
+            >
               <div id="top">
                 <h1 className="font-NotoSansKR" style={{ fontSize: "2em" }}>
                   {post.frontmatter.title}
@@ -69,7 +78,10 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
                 <p className="font-NotoSansKR text-skin-fg text-xl">
                   {post.frontmatter.date}
                 </p>
-                <div className="grid gird-cols-3" style={{ width: "31vw", minWidth: "200px" }}>
+                <div
+                  className="grid gird-cols-3"
+                  style={{ width: "31vw", minWidth: "200px" }}
+                >
                   <div className="col-start-1">
                     <button onClick={showBoth}>문제&해설</button>
                   </div>
@@ -102,33 +114,70 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
               </div>
 
               <div id="bottom">
-                <div className={"grid grid-cols-" + (problemsVisible + explanationsVisible)} id="row" style={{ width: "70vw" }}>
-                  {problemsVisible ? (<div className="col-start-1" id="col" style={{ overflow: "hidden", width: explanationsVisible ? "31vw" : "70vw" }}>
-                    <div id="col" style={{ overflow: "auto" }}>
-                      <Document
-                        file={
-                          "../problems/" +
-                          encodeURI(post.frontmatter.title) +
-                          ".pdf"
-                        }
-                        onLoadSuccess={onDocumentLoadSuccess}
-                      >
-                        <Page
-                          pageNumber={pageNumber}
-                          renderTextLayer={false}
-                          scale={scale}
-                          renderAnnotationLayer={false}
-                        ></Page>
-                      </Document>
-                    </div>
-                  </div>) : null}
-                  {explanationsVisible ? (<div className={"col-start-" + (problemsVisible + explanationsVisible)} id="col" style={{ overflow: "hidden", marginLeft: explanationsVisible ? "0" : "50px", width: problemsVisible ? "31vw" : "70vw" }}>
-                    <div id="col"
-                      style={{ overflow: "scroll", wordWrap: "break-word", width: problemsVisible ? "31vw" : "70vw" }}
+                <div
+                  className={
+                    "grid grid-cols-" + (problemsVisible + explanationsVisible)
+                  }
+                  id="row"
+                  style={{ width: "70vw" }}
+                >
+                  {problemsVisible ? (
+                    <div
+                      className="col-start-1"
+                      id="col"
+                      style={{
+                        overflow: "hidden",
+                        width: explanationsVisible ? "31vw" : "70vw",
+                      }}
                     >
-                      <MDXRenderer>{post.body}</MDXRenderer>
+                      <div id="col" style={{ overflow: "auto" }}>
+                        <Document
+                          file={
+                            "../problems/" +
+                            encodeURI(post.frontmatter.title) +
+                            ".pdf"
+                          }
+                          onLoadSuccess={onDocumentLoadSuccess}
+                        >
+                          <Page
+                            pageNumber={pageNumber}
+                            renderTextLayer={false}
+                            scale={scale}
+                            renderAnnotationLayer={false}
+                          ></Page>
+                        </Document>
+                      </div>
                     </div>
-                  </div>) : null}
+                  ) : null}
+                  {explanationsVisible ? (
+                    <div
+                      className={
+                        "col-start-" + (problemsVisible + explanationsVisible)
+                      }
+                      id="col"
+                      style={{
+                        overflow: "hidden",
+                        marginLeft: explanationsVisible ? "0" : "50px",
+                        width: problemsVisible ? "31vw" : "70vw",
+                      }}
+                    >
+                      <div
+                        id="col"
+                        style={{
+                          overflow: "scroll",
+                          wordWrap: "break-word",
+                          width: problemsVisible ? "31vw" : "70vw",
+                        }}
+                      >
+                        <script
+                          async
+                          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9535714360512834"
+                          crossorigin="anonymous"
+                        ></script>
+                        <MDXRenderer>{post.body}</MDXRenderer>
+                      </div>
+                    </div>
+                  ) : null}
                 </div>
               </div>
             </div>
@@ -145,7 +194,14 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
         />
         <article itemScope itemType="http://schema.org/Article">
           <section itemProp="articleBody">
-            <div style={{ width: "70vw", minWidth: "400px", margin: "auto", height: "93vh" }}>
+            <div
+              style={{
+                width: "70vw",
+                minWidth: "400px",
+                margin: "auto",
+                height: "93vh",
+              }}
+            >
               <h1
                 className="font-NotoSansKR text-skin-fg text-4xl md:text-4xl"
                 itemProp="headline"
@@ -158,7 +214,13 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
               >
                 {post.frontmatter.date}
               </p>
-              <div style={{ overflow: "auto", width: "70vw", wordWrap: "break-word" }}>
+              <div
+                style={{
+                  overflow: "auto",
+                  width: "70vw",
+                  wordWrap: "break-word",
+                }}
+              >
                 <MDXRenderer>{post.body}</MDXRenderer>
               </div>
             </div>
