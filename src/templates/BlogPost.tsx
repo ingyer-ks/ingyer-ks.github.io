@@ -6,10 +6,6 @@ import Layout from "../components/Layout"
 import { Seo } from "../components/common"
 import { PageProps } from "@/definitions"
 
-import { useMediaQuery } from "react-responsive"
-
-import ReactViewAdobe, { AdobeReactView } from "react-adobe-embed"
-
 const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
   const [problemsVisible, setProblemsVisibility] = React.useState(1)
   const [explanationsVisible, setExplanationsVisibility] = React.useState(1)
@@ -33,43 +29,21 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const title = post.frontmatter.title
 
-  function renderPDF() {
-    const [isDocumentUndefined, setisDocumentUndefined] = React.useState(true)
-    React.useEffect(() => {
-      typeof document == `undefined`
-        ? setisDocumentUndefined(true)
-        : setisDocumentUndefined(false)
-    })
-    if (isDocumentUndefined) {
-      return <div>PDF 로딩중입니다.</div>
+  React.useEffect(() => {
+    if (typeof document === `undefined`) {
+      document.getElementById("ProblemDiv").text = "문제 PDF 로딩중입니다..."
     } else {
-      return (
-        <ReactViewAdobe
-          previewConfig={{
-            showAnnotationTools: true,
-            showLeftHandPanel: true,
-            showDownloadPDF: true,
-          }}
-          config={{
-            clientId: "106805b155844ee0be6a8540f507ee25",
-            divId: "ProblemDiv",
-            url: "../problems/" + encodeURI(title) + ".pdf",
-            fileMeta: {
-              fileName: title + ".pdf",
-              title: title,
-            },
-          }}
-        />
-      )
+      const pdfembed = document.createElement("embed")
+      pdfembed.src = "../problems/" + encodeURI(title) + ".pdf"
+      pdfembed.type = "application/pdf"
+      pdfembed.width = "100%"
+      pdfembed.height = "100%"
+      document.getElementById("ProblemDiv")?.appendChild(pdfembed)
     }
-  }
+  })
 
   if (post.fields.haspdf === "y") {
     React.useEffect(() => {
-      const viewerjs = document.createElement("script")
-      viewerjs.src = "https://documentservices.adobe.com/view-sdk/viewer.js"
-      document.head.appendChild(viewerjs)
-
       const html2pdfjs = document.createElement("script")
       html2pdfjs.src =
         "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
@@ -175,7 +149,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
               </div>
 
               <div id="content">
-                <div id="ProblemDiv">{renderPDF()}</div>
+                <div id="ProblemDiv"></div>
 
                 <div
                   id="ExplanationDiv"
