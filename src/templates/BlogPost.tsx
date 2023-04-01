@@ -8,176 +8,197 @@ import { PageProps } from "@/definitions"
 
 import { useMediaQuery } from "react-responsive"
 
-import { Document, Page, pdfjs } from "react-pdf"
+import ReactViewAdobe, { AdobeReactView } from "react-adobe-embed"
 
 const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
-  const [numPages, setNumPages] = React.useState(null)
-  const [pageNumber, setPageNumber] = React.useState(1)
-  const [scale, setScale] = React.useState(1)
+  const [problemsVisible, setProblemsVisibility] = React.useState(1)
+  const [explanationsVisible, setExplanationsVisibility] = React.useState(1)
 
-  const [problemsVisible, setProblemsVisiblity] = React.useState(1)
-  const [explanationsVisible, setExplanationsVisiblity] = React.useState(1)
+  const [clientkey, setClientKey] = React.useState(null)
 
-  const onDocumentLoadSuccess = ({ numPages }) => {
-    setNumPages(numPages)
-  }
-
-  const goToPrevPage = () =>
-    setPageNumber(pageNumber - 1 <= 1 ? 1 : pageNumber - 1)
-
-  const goToNextPage = () =>
-    setPageNumber(pageNumber + 1 >= numPages ? numPages : pageNumber + 1)
-
-  const scaleUp = () => {
-    setScale(scale + 0.1)
-  }
-
-  const scaleDown = () => {
-    setScale(scale - 0.15)
-  }
+  React.useEffect(() => {
+    setClientKey(
+      window.location.hostname !== `localhost`
+        ? "f93f0c06b7de422396658c3ff48dd022"
+        : "c514163c351b4f2082ef01e530840e0b"
+    )
+  })
 
   const showBoth = () => {
-    setProblemsVisiblity(1)
-    setExplanationsVisiblity(1)
+    setProblemsVisibility(1)
+    setExplanationsVisibility(1)
   }
 
   const showOnlyProblems = () => {
-    setProblemsVisiblity(1)
-    setExplanationsVisiblity(0)
+    setProblemsVisibility(1)
+    setExplanationsVisibility(0)
   }
 
   const showOnlyExplanations = () => {
-    setProblemsVisiblity(0)
-    setExplanationsVisiblity(1)
+    setProblemsVisibility(0)
+    setExplanationsVisibility(1)
   }
 
   const post = data.mdx
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  const title = post.frontmatter.title
+
+  function renderPDF() {
+    const [isDocumentUndefined, setisDocumentUndefined] = React.useState(true)
+    React.useEffect(() => {
+      typeof document == `undefined`
+        ? setisDocumentUndefined(true)
+        : setisDocumentUndefined(false)
+    })
+    if (isDocumentUndefined) {
+      return <div>PDF 로딩중입니다.</div>
+    } else {
+      return (
+        <ReactViewAdobe
+          previewConfig={{
+            showAnnotationTools: true,
+            showLeftHandPanel: true,
+            showDownloadPDF: true,
+          }}
+          config={{
+            clientId: clientkey,
+            divId: "ProblemDiv",
+            url: "../problems/" + encodeURI(title) + ".pdf",
+            fileMeta: {
+              fileName: title + ".pdf",
+              title: title,
+            },
+          }}
+        />
+      )
+    }
+  }
+
   if (post.fields.haspdf === "y") {
-    pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
+    React.useEffect(() => {
+      const viewerjs = document.createElement("script")
+      viewerjs.src = "https://documentservices.adobe.com/view-sdk/viewer.js"
+      document.getElementById("ProblemDiv")?.appendChild(viewerjs)
+
+      const html2pdfjs = document.createElement("script")
+      html2pdfjs.src =
+        "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      document.getElementById("content")?.appendChild(html2pdfjs)
+    })
+
+    React.useEffect(() => {
+      if (document.getElementById("content")) {
+        if (problemsVisible + explanationsVisible === 2) {
+          document.getElementById("content").className = "grid grid-cols-2"
+          document.getElementById("content").style.gridTemplateColumns =
+            "50% 50%"
+        } else {
+          document.getElementById("content").className = "grid grid-cols-1"
+          document.getElementById("content").style.gridTemplateColumns = "100%"
+        }
+      }
+
+      if (
+        document.getElementById("ProblemDiv") &&
+        document.getElementById("ExplanationDiv")
+      ) {
+        document.getElementById("ProblemDiv").className =
+          problemsVisible === 1 ? "col-start-1" : ""
+        document.getElementById("ExplanationDiv").className =
+          "col-start-" + (problemsVisible + explanationsVisible)
+      }
+
+      if (problemsVisible) {
+        if (document.getElementById("ProblemDiv")) {
+          document.getElementById("ProblemDiv").style.display = "block"
+        }
+      } else {
+        document.getElementById("ProblemDiv").style.display = "none"
+      }
+
+      if (explanationsVisible) {
+        if (document.getElementById("ExplanationDiv")) {
+          document.getElementById("ExplanationDiv").style.display = "block"
+          document.getElementById("ExplanationDiv").style.marginLeft =
+            problemsVisible ? "50px" : "0"
+          document.getElementById("ExplanationDiv").className =
+            "col-start-" + (1 + problemsVisible)
+        }
+      } else {
+        if (document.getElementById("ExplanationDiv")) {
+          document.getElementById("ExplanationDiv").style.display = "none"
+        }
+      }
+    })
+
+    function downloadExplanation() {
+      html2pdf(document.getElementById("ExplanationDiv"))
+    }
+
     return (
       <Layout location={location} title={siteTitle}>
         <Seo
-          title={post.frontmatter.title}
+          title={title}
           description={post.frontmatter.description || post.excerpt}
         />
         <article itemScope itemType="http://schema.org/Article">
           <section itemProp="articleBody">
             <div
               style={{
-                height: "100%",
-                width: "70vw",
+                width: "80vw",
                 margin: "auto",
                 minWidth: "400px",
               }}
             >
-              <div id="top">
-                <h1 className="font-NotoSansKR" style={{ fontSize: "2em" }}>
-                  {post.frontmatter.title}
-                </h1>
-                <p className="font-NotoSansKR text-skin-fg text-xl">
-                  {post.frontmatter.date}
-                </p>
+              <div>
                 <div
-                  className="grid gird-cols-3"
-                  style={{ width: "31vw", minWidth: "200px" }}
+                  className="grid grid-cols-4"
+                  style={{ width: "50%", minWidth: "400px" }}
                 >
                   <div className="col-start-1">
-                    <button onClick={showBoth}>문제&해설</button>
+                    <button id="ProbAndExplanationButton" onClick={showBoth}>
+                      문제&해설
+                    </button>
                   </div>
                   <div className="col-start-2">
-                    <button onClick={showOnlyProblems}>문제만</button>
+                    <button id="ProbOnlyButton" onClick={showOnlyProblems}>
+                      문제만
+                    </button>
                   </div>
                   <div className="col-start-3">
-                    <button onClick={showOnlyExplanations}>해설만</button>
+                    <button
+                      id="ExplanationOnlyButton"
+                      onClick={showOnlyExplanations}
+                    >
+                      해설만
+                    </button>
+                  </div>
+                  <div className="col-start-4">
+                    <button
+                      id="DownloadExplanationButton"
+                      onClick={downloadExplanation}
+                    >
+                      해설PDF다운
+                    </button>
                   </div>
                 </div>
-                <nav>
-                  <div
-                    className="grid grid-cols-4"
-                    style={{ width: "31vw", minWidth: "200px" }}
-                  >
-                    <div>
-                      <button onClick={goToPrevPage}>이전</button>
-                    </div>
-                    <div>
-                      <button onClick={goToNextPage}>다음</button>
-                    </div>
-                    <div>
-                      <button onClick={scaleUp}>확대</button>
-                    </div>
-                    <div>
-                      <button onClick={scaleDown}>축소</button>
-                    </div>
-                  </div>
-                </nav>
               </div>
 
-              <div id="bottom">
+              <div id="content">
+                <div id="ProblemDiv">{renderPDF()}</div>
+
                 <div
-                  className={
-                    "grid grid-cols-" + (problemsVisible + explanationsVisible)
-                  }
-                  id="row"
-                  style={{ width: "70vw" }}
+                  id="ExplanationDiv"
+                  style={{
+                    overflow: "auto",
+                    wordWrap: "break-word",
+                    height: "inherit",
+                  }}
                 >
-                  {problemsVisible ? (
-                    <div
-                      className="col-start-1"
-                      id="col"
-                      style={{
-                        overflow: "hidden",
-                        width: explanationsVisible ? "31vw" : "70vw",
-                      }}
-                    >
-                      <div id="col" style={{ overflow: "auto" }}>
-                        <Document
-                          file={
-                            "../problems/" +
-                            encodeURI(post.frontmatter.title) +
-                            ".pdf"
-                          }
-                          onLoadSuccess={onDocumentLoadSuccess}
-                        >
-                          <Page
-                            pageNumber={pageNumber}
-                            renderTextLayer={false}
-                            scale={scale}
-                            renderAnnotationLayer={false}
-                          ></Page>
-                        </Document>
-                      </div>
-                    </div>
-                  ) : null}
-                  {explanationsVisible ? (
-                    <div
-                      className={
-                        "col-start-" + (problemsVisible + explanationsVisible)
-                      }
-                      id="col"
-                      style={{
-                        overflow: "hidden",
-                        marginLeft: explanationsVisible ? "0" : "50px",
-                        width: problemsVisible ? "31vw" : "70vw",
-                      }}
-                    >
-                      <div
-                        id="col"
-                        style={{
-                          overflow: "scroll",
-                          wordWrap: "break-word",
-                          width: problemsVisible ? "31vw" : "70vw",
-                        }}
-                      >
-                        <script
-                          async
-                          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9535714360512834"
-                          crossorigin="anonymous"
-                        ></script>
-                        <MDXRenderer>{post.body}</MDXRenderer>
-                      </div>
-                    </div>
-                  ) : null}
+                  <h1 className="font-NotoSansKR" style={{ fontSize: "2em" }}>
+                    {title}
+                  </h1>
+                  <MDXRenderer>{post.body}</MDXRenderer>
                 </div>
               </div>
             </div>
@@ -189,7 +210,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
     return (
       <Layout location={location} title={siteTitle}>
         <Seo
-          title={post.frontmatter.title}
+          title={title}
           description={post.frontmatter.description || post.excerpt}
         />
         <article itemScope itemType="http://schema.org/Article">
@@ -206,19 +227,13 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
                 className="font-NotoSansKR text-skin-fg text-4xl md:text-4xl"
                 itemProp="headline"
               >
-                {post.frontmatter.title}
+                {title}
               </h1>
-              <p
-                className="font-NotoSansKR text-skin-fg text-xl"
-                style={{ margin: "auto auto 20px auto" }}
-              >
-                {post.frontmatter.date}
-              </p>
               <div
                 style={{
                   overflow: "auto",
                   width: "70vw",
-                  wordWrap: "break-word",
+                  wordBreak: "break-word",
                 }}
               >
                 <MDXRenderer>{post.body}</MDXRenderer>

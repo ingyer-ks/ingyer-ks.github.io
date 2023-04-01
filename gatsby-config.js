@@ -11,6 +11,9 @@ module.exports = {
       github: `ingyer-ks`,
     },
   },
+  flags: {
+    DEV_SSR: true
+  },
   plugins: [
     `gatsby-plugin-image`,
     {

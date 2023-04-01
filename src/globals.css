@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 @layer base {
-
-  body, html {
+  body,
+  html {
     height: 100%;
   }
-  
+
   body {
-    font-family: "Noto Sans KR"!important;
+    font-family: "Noto Sans KR" !important;
   }
 
   ol {
@@ -18,9 +18,9 @@
   }
 
   h2 {
-    font-size:larger;
-    font-weight:500;
-    margin-top:40px;
+    font-size: larger;
+    font-weight: 500;
+    margin-top: 40px;
   }
 
   :root {
@@ -42,16 +42,6 @@
   }
 }
 
-#top, #bottom {
-  display: table-row;
-}
-#top {
-  height: 100px;
-}
-#bottom {
-  height: calc(100% - 250px);
-}
-
 @layer utilities {
   code[class*="language-"],
   pre[class*="language-"] {
@@ -67,11 +57,6 @@
   }
 }
 
-#col {
-  height:calc(100vh - 250px);
-}
-
-
 @font-face {
   font-family: "Noto Sans KR";
   font-style: normal;
@@ -86,7 +71,6 @@
   font-weight: 00;
 }
 
-
 @font-face {
   font-family: "Noto Sans KR";
   font-style: normal;
@@ -95,12 +79,22 @@
 }
 
 .katex {
-  font: normal 1em KaTeX_Main, "Noto Sans KR"!important;
+  font: normal 1em KaTeX_Main, "Noto Sans KR" !important;
 }
 
 .katex .mfrac .frac-line {
   display: inline-block;
   width: 100%;
   border-bottom-width: 1px !important;
-  border-bottom-color: black!important;
+  border-bottom-color: black !important;
+}
+
+#content {
+  height: calc(100vh - 150px);
+}
+
+img {
+  width: 40;
+  margin: auto;
+  display: block;
 }
