@@ -1,3 +1,4 @@
+/* eslint-disable no-inner-declarations */
 import * as React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
@@ -89,7 +90,10 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
     }, [])
     if (viewerjsLoading)
       return (
-        <p>문제지 PDF 파일을 로드하고 있습니다. 한참 걸릴 수도 있어요 ㅠㅠ</p>
+        <p>
+          문제지 PDF 파일을 로드하고 있습니다. 한참 걸릴 수도 있어요 ㅠㅠ 30초
+          이상 걸리면 새로고침을 한번 해보세요.
+        </p>
       )
   }
 
