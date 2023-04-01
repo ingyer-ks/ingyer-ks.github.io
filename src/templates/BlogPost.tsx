@@ -87,7 +87,13 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
       script.addEventListener("load", viewerjsLoaded)
       return () => script.removeEventListener("load", viewerjsLoaded)
     }, [])
-    if (viewerjsLoading) return <p>문제지 PDF 파일을 로드하고 있습니다...</p>
+    if (viewerjsLoading)
+      return (
+        <p>
+          문제지 PDF 파일을 로드하고 있습니다. 이 메시지가 10초 이상 나타나면
+          새로고침해주세요.
+        </p>
+      )
   }
 
   if (post.fields.haspdf === "y") {
@@ -150,6 +156,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
     })
 
     function downloadExplanation() {
+      showOnlyExplanations()
       html2pdf(document.getElementById("ExplanationDiv"))
     }
 
