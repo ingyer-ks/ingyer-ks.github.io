@@ -154,6 +154,9 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
 
     function downloadExplanation() {
       showOnlyExplanations()
+      alert(
+        "해설을 PDF로 만들고 있습니다. 잠시 기다리시면 다운로드가 시작됩니다."
+      )
       html2pdf(document.getElementById("ExplanationDiv"))
     }
 
