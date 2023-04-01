@@ -68,7 +68,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
     React.useEffect(() => {
       const viewerjs = document.createElement("script")
       viewerjs.src = "https://documentservices.adobe.com/view-sdk/viewer.js"
-      document.getElementById("ProblemDiv")?.appendChild(viewerjs)
+      document.head.appendChild(viewerjs)
 
       const html2pdfjs = document.createElement("script")
       html2pdfjs.src =
