@@ -7,6 +7,19 @@ import { Seo } from "../components/common"
 import { PageProps } from "@/definitions"
 
 const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
+  const [clientID, setClientID] = React.useState(null)
+  React.useEffect(() => {
+    if (typeof document !== `undefined`) {
+      setClientID(
+        document.location.hostname === `localhost`
+          ? "fc828db7b0e54b139ef252cef009b8d7"
+          : "106805b155844ee0be6a8540f507ee25"
+      )
+    }
+  })
+
+  const [viewerjsLoading, setViewerjsLoadingState] = React.useState(true)
+
   const [problemsVisible, setProblemsVisibility] = React.useState(1)
   const [explanationsVisible, setExplanationsVisibility] = React.useState(1)
 
@@ -29,21 +42,62 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const title = post.frontmatter.title
 
-  React.useEffect(() => {
-    if (typeof document === `undefined`) {
-      document.getElementById("ProblemDiv").text = "문제 PDF 로딩중입니다..."
-    } else {
-      const pdfembed = document.createElement("embed")
-      pdfembed.src = "../problems/" + encodeURI(title) + ".pdf"
-      pdfembed.type = "application/pdf"
-      pdfembed.width = "100%"
-      pdfembed.height = "100%"
-      document.getElementById("ProblemDiv")?.appendChild(pdfembed)
-    }
-  })
+  function PDFViewer() {
+    React.useEffect(() => {
+      let script = document.querySelector(
+        `script[src="https://documentservices.adobe.com/view-sdk/viewer.js"]`
+      )
+      if (typeof document !== `undefined` && !clientID) {
+        document.addEventListener("adobe_dc_view_sdk.ready", function () {
+          const adobeDCView = new AdobeDC.View({
+            clientId:
+              document.location.hostname === `localhost`
+                ? "fc828db7b0e54b139ef252cef009b8d7"
+                : "106805b155844ee0be6a8540f507ee25",
+            divId: "ProblemDiv",
+          })
+
+          const previewConfig = {
+            embedMode: "FULL_WINDOW",
+            showPrintPDF: true,
+            showDownloadPDF: true,
+            showZoomControl: true,
+            showAnnotationTools: true,
+          }
+
+          adobeDCView.previewFile(
+            {
+              content: {
+                location: { url: "../problems/" + encodeURI(title) + ".pdf" },
+              },
+              metaData: { fileName: title + ".pdf" },
+            },
+            previewConfig
+          )
+        })
+      }
+      if (!script) {
+        script = document.createElement("script")
+        script.src = "https://documentservices.adobe.com/view-sdk/viewer.js"
+        script.async = true
+        document.head.appendChild(script)
+      }
+
+      const viewerjsLoaded = () => setViewerjsLoadingState(false)
+      script.addEventListener("load", viewerjsLoaded)
+      return () => script.removeEventListener("load", viewerjsLoaded)
+    }, [])
+    if (viewerjsLoading) return <p>문제지 PDF 파일을 로드하고 있습니다...</p>
+  }
 
   if (post.fields.haspdf === "y") {
     React.useEffect(() => {
+      if (
+        document.querySelector(
+          `script[src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"]`
+        )
+      )
+        return
       const html2pdfjs = document.createElement("script")
       html2pdfjs.src =
         "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
@@ -149,7 +203,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
               </div>
 
               <div id="content">
-                <div id="ProblemDiv"></div>
+                <div id="ProblemDiv">{PDFViewer()}</div>
 
                 <div
                   id="ExplanationDiv"
