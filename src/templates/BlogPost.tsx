@@ -51,7 +51,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             showDownloadPDF: true,
           }}
           config={{
-            clientId: "f93f0c06b7de422396658c3ff48dd022",
+            clientId: "106805b155844ee0be6a8540f507ee25",
             divId: "ProblemDiv",
             url: "../problems/" + encodeURI(title) + ".pdf",
             fileMeta: {
@@ -73,7 +73,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
       const html2pdfjs = document.createElement("script")
       html2pdfjs.src =
         "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
-      document.getElementById("content")?.appendChild(html2pdfjs)
+      document.head.appendChild(html2pdfjs)
     })
 
     React.useEffect(() => {
