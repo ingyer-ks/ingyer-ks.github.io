@@ -14,16 +14,6 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
   const [problemsVisible, setProblemsVisibility] = React.useState(1)
   const [explanationsVisible, setExplanationsVisibility] = React.useState(1)
 
-  const [clientkey, setClientKey] = React.useState(null)
-
-  React.useEffect(() => {
-    setClientKey(
-      window.location.hostname !== `localhost`
-        ? "f93f0c06b7de422396658c3ff48dd022"
-        : "c514163c351b4f2082ef01e530840e0b"
-    )
-  })
-
   const showBoth = () => {
     setProblemsVisibility(1)
     setExplanationsVisibility(1)
@@ -61,7 +51,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             showDownloadPDF: true,
           }}
           config={{
-            clientId: clientkey,
+            clientId: "f93f0c06b7de422396658c3ff48dd022",
             divId: "ProblemDiv",
             url: "../problems/" + encodeURI(title) + ".pdf",
             fileMeta: {
