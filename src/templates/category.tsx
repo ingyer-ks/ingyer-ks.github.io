@@ -7,12 +7,12 @@ import { INode, TagPageProps } from "@/definitions"
 const TagPageTemplate: React.FC<TagPageProps> = ({
   data,
   pageContext,
-  location
+  location,
 }) => {
   const posts = data.allMdx.edges
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const nodeList: INode[] = []
-  posts.map((post) => {
+  posts.map(post => {
     const categoryList: string[] = []
     post.node.fields.category
       .split(",")
@@ -27,13 +27,21 @@ const TagPageTemplate: React.FC<TagPageProps> = ({
     <Layout location={location} title={siteTitle}>
       <Seo title={`${pageContext.category}`} />
       <div>
-        <h1 style={{ fontSize: "3em", margin: "auto auto auto 20vw" }}>#{pageContext.category}</h1>
+        <h1 style={{ fontSize: "3em", margin: "auto auto 30px 20vw" }}>
+          #{pageContext.category}
+        </h1>
         <div className="grid" style={{ gridAutoFlow: "column" }}></div>
         <div>
           <ul>
             {nodeList.map(node => {
               return (
-                <li style={{ margin: "auto auto auto 20vw" }}>
+                <li
+                  style={{
+                    margin: "auto auto auto 20vw",
+                    fontSize: "2em",
+                    listStyle: "none",
+                  }}
+                >
                   <Link to={`/` + node.slug}>{node.frontmatter.title}</Link>
                 </li>
               )
@@ -48,22 +56,20 @@ const TagPageTemplate: React.FC<TagPageProps> = ({
 export default TagPageTemplate
 
 export const pageQuery = graphql`
-  query TagPages{
+  query TagPages {
     site {
-        siteMetadata {
-          title
-        }
+      siteMetadata {
+        title
       }
-    allMdx(
-      limit: 2000
-    ) {
+    }
+    allMdx(limit: 2000) {
       edges {
         node {
           slug
           frontmatter {
             title
           }
-          fields{
+          fields {
             category
           }
         }

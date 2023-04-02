@@ -8,7 +8,7 @@ import { PageProps } from "@/definitions"
 const BlogIndex: React.FC<PageProps> = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const categoryList: string[] = []
-  data.allMdx.edges.map((post) => {
+  data.allMdx.edges.map(post => {
     post.node.fields.category
       .split(",")
       .map((category: string) => category.trim())
@@ -20,19 +20,23 @@ const BlogIndex: React.FC<PageProps> = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="All categories" />
       <article itemScope itemType="http://schema.org/Article">
-        {resources.map(item => (
-          <h2 style={{ fontSize: "2em" }}>
-            <Link
-              to={`/categories/` + item}
-              itemProp="url"
-              className="rounded-md focus:outline-none focus:ring-4 focus:ring-skin-focus"
-            >
-              <span itemProp="headline">{item}</span>
-            </Link>
-          </h2>
-        ))}
+        <div id="categoryTableDiv" className="grid">
+          {resources.map(item => (
+            <div className="categoryItem">
+              <h2 style={{ fontSize: "2em" }}>
+                <Link
+                  to={`/categories/` + item}
+                  itemProp="url"
+                  className="rounded-md focus:outline-none focus:ring-4 focus:ring-skin-focus"
+                >
+                  <span itemProp="headline">{item}</span>
+                </Link>
+              </h2>
+            </div>
+          ))}
+        </div>
       </article>
-    </Layout >
+    </Layout>
   )
 }
 
@@ -48,7 +52,7 @@ export const pageQuery = graphql`
     allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          fields{
+          fields {
             category
           }
         }

@@ -17,6 +17,11 @@
     list-style-position: inside;
   }
 
+  ul {
+    list-style-type: disclosure-closed;
+    list-style-position: inside;
+  }
+
   h2 {
     font-size: larger;
     font-weight: 500;
@@ -94,7 +99,36 @@
 }
 
 img {
-  width: 40;
+  max-height: 350px;
   margin: auto;
   display: block;
+}
+
+.categoryItem {
+  grid-column-start: auto;
+  grid-row-start: auto;
+  margin: 5px;
+}
+
+#categoryTableDiv {
+  display: grid;
+  height: calc(100vh - 150px);
+  grid-gap: 20px;
+  grid-auto-rows: 25px;
+  grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+}
+
+.categoryItem > h2 {
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+#withoutPDFdiv {
+  height: calc(100vh - 150px);
+  overflow: hidden;
+  width: 1200px;
+  margin: auto;
 }
