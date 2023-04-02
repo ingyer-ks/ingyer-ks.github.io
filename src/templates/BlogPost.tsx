@@ -155,7 +155,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
       if (explanationsVisible) {
         if (document.getElementById("ExplanationDiv")) {
           document.getElementById("ExplanationDiv").style.display = "block"
-          document.getElementById("ExplanationDiv").style.maxWidth = "40vw"
+          document.getElementById("ExplanationDiv").style.maxWidth = "1100px"
           document.getElementById("ExplanationDiv").className =
             "col-start-" + (1 + problemsVisible)
         }
@@ -186,14 +186,10 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
               style={{
                 width: "80vw",
                 margin: "auto",
-                minWidth: "400px",
               }}
             >
               <div>
-                <div
-                  className="grid grid-cols-4"
-                  style={{ width: "50%", minWidth: "400px" }}
-                >
+                <div className="grid grid-cols-4" style={{ margin: "auto" }}>
                   <div className="col-start-1">
                     <button id="ProbAndExplanationButton" onClick={showBoth}>
                       문제&해설
