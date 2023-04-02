@@ -155,9 +155,15 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
       if (explanationsVisible) {
         if (document.getElementById("ExplanationDiv")) {
           document.getElementById("ExplanationDiv").style.display = "block"
-          document.getElementById("ExplanationDiv").style.maxWidth = "1100px"
-          document.getElementById("ExplanationDiv").className =
-            "col-start-" + (1 + problemsVisible)
+          document.getElementById("ExplanationDiv").style.margin = "auto"
+          if (problemsVisible) {
+            document.getElementById("ExplanationDiv").className = "col-start-2"
+            document.getElementById("ExplanationDiv").style.maxWidth = "50%"
+          } else {
+            document.getElementById("ExplanationDiv").className = "col-start-1"
+            document.getElementById("ExplanationDiv").style.width = "1000px"
+            document.getElementById("ExplanationDiv").style.maxWidth = "80vw"
+          }
         }
       } else {
         if (document.getElementById("ExplanationDiv")) {
