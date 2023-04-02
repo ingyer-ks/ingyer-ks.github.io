@@ -64,6 +64,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             showDownloadPDF: true,
             showZoomControl: true,
             showAnnotationTools: true,
+            enableAnnotationAPIs: true,
           }
 
           adobeDCView.previewFile(
