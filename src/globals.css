@@ -124,11 +124,17 @@ img {
 
 h1 {
   margin-bottom: 30px;
+  font-size: 3em;
 }
 
 #withoutPDFdiv {
   height: calc(100vh - 150px);
   overflow: hidden;
-  width: 1200px;
+  max-width: 1200px;
   margin: auto;
+}
+
+#rootLayout {
+  margin-left: 20vw;
+  margin-top: 10vh;
 }

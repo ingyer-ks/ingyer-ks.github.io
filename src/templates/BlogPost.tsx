@@ -155,9 +155,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
       if (explanationsVisible) {
         if (document.getElementById("ExplanationDiv")) {
           document.getElementById("ExplanationDiv").style.display = "block"
-          document.getElementById("ExplanationDiv").style.margin = "auto"
-          // problemsVisible ? "50px" : "0"
-          document.getElementById("ExplanationDiv").style.maxWidth = "1200px"
+          document.getElementById("ExplanationDiv").style.maxWidth = "40vw"
           document.getElementById("ExplanationDiv").className =
             "col-start-" + (1 + problemsVisible)
         }
@@ -256,20 +254,21 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
         />
         <article itemScope itemType="http://schema.org/Article">
           <section itemProp="articleBody">
-            <div id="withoutPDFdiv">
-              <h1
-                className="font-NotoSansKR text-skin-fg text-4xl md:text-4xl"
-                itemProp="headline"
-              >
-                {title}
-              </h1>
-              <div
-                style={{
-                  overflow: "auto",
-                  wordBreak: "break-word",
-                }}
-              >
-                <MDXRenderer>{post.body}</MDXRenderer>
+            <div style={{ overflow: "hidden" }}>
+              <div id="content" style={{ overflow: "auto" }}>
+                <h1
+                  className="font-NotoSansKR text-skin-fg text-4xl md:text-4xl"
+                  itemProp="headline"
+                >
+                  {title}
+                </h1>
+                <div
+                  style={{
+                    wordBreak: "break-word",
+                  }}
+                >
+                  <MDXRenderer>{post.body}</MDXRenderer>
+                </div>
               </div>
             </div>
           </section>

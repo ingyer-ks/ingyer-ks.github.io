@@ -27,9 +27,7 @@ const TagPageTemplate: React.FC<TagPageProps> = ({
     <Layout location={location} title={siteTitle}>
       <Seo title={`${pageContext.category}`} />
       <div>
-        <h1 style={{ fontSize: "3em", margin: "auto auto 30px 20vw" }}>
-          #{pageContext.category}
-        </h1>
+        <h1>{pageContext.category}</h1>
         <div className="grid" style={{ gridAutoFlow: "column" }}></div>
         <div>
           <ul>
@@ -37,8 +35,7 @@ const TagPageTemplate: React.FC<TagPageProps> = ({
               return (
                 <li
                   style={{
-                    margin: "auto auto auto 20vw",
-                    fontSize: "2em",
+                    fontSize: "1.5em",
                     listStyle: "none",
                   }}
                 >
