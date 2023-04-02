@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-index-tsx",
     "path": "/",
-    "result": {"data":{"site":{"siteMetadata":{"title":"Ingyerlog v2"}},"allMdx":{"edges":[{"node":{"fields":{"category":"2022,7급,국가직,통신이론"}}},{"node":{"fields":{"category":"안내"}}},{"node":{"fields":{"category":"2022,7급,국가직,전기자기학"}}},{"node":{"fields":{"category":"안내"}}},{"node":{"fields":{"category":"안내"}}}]}},"pageContext":{}},
+    "result": {"data":{"site":{"siteMetadata":{"title":"Ingyerlog v2"}},"allMdx":{"edges":[{"node":{"fields":{"category":"안내"}}},{"node":{"fields":{"category":"2022,7급,국가직,통신이론"}}},{"node":{"fields":{"category":"안내"}}},{"node":{"fields":{"category":"2022,7급,국가직,전기자기학"}}},{"node":{"fields":{"category":"안내"}}},{"node":{"fields":{"category":"안내"}}}]}},"pageContext":{}},
     "staticQueryHashes": ["230163734","3393702677","3589320610"]}
