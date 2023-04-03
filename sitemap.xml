@@ -9,62 +9,92 @@
 
 <url>
   <loc>https://ingyerlog.kr/</loc>
-  <lastmod>2023-03-21T22:29:18+00:00</lastmod>
+  <lastmod>2023-04-03T11:48:31+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://ingyerlog.kr/categories/2022/</loc>
-  <lastmod>2023-03-21T22:29:18+00:00</lastmod>
+  <lastmod>2023-04-03T11:48:31+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/categories/7급/</loc>
-  <lastmod>2023-03-21T22:29:18+00:00</lastmod>
+  <loc>https://ingyerlog.kr/categories/9급/</loc>
+  <lastmod>2023-04-03T11:48:31+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://ingyerlog.kr/categories/국가직/</loc>
-  <lastmod>2023-03-21T22:29:18+00:00</lastmod>
+  <lastmod>2023-04-03T11:48:31+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/categories/통신이론/</loc>
-  <lastmod>2023-03-21T22:29:18+00:00</lastmod>
+  <loc>https://ingyerlog.kr/categories/전자공학개론/</loc>
+  <lastmod>2023-04-03T11:48:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ingyerlog.kr/categories/7급/</loc>
+  <lastmod>2023-04-03T11:48:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ingyerlog.kr/categories/전자회로/</loc>
+  <lastmod>2023-04-03T11:48:31+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://ingyerlog.kr/categories/안내/</loc>
-  <lastmod>2023-03-21T22:29:18+00:00</lastmod>
+  <lastmod>2023-04-03T11:48:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ingyerlog.kr/categories/통신이론/</loc>
+  <lastmod>2023-04-03T11:48:31+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://ingyerlog.kr/categories/전기자기학/</loc>
-  <lastmod>2023-03-21T22:29:18+00:00</lastmod>
+  <lastmod>2023-04-03T11:48:31+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2022-7-national-em/</loc>
-  <lastmod>2023-03-21T22:29:18+00:00</lastmod>
+  <loc>https://ingyerlog.kr/2022-7-national-comm/</loc>
+  <lastmod>2023-04-03T11:48:31+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2022-7-national-comm/</loc>
-  <lastmod>2023-03-21T22:29:18+00:00</lastmod>
+  <loc>https://ingyerlog.kr/2022-7-national-ec/</loc>
+  <lastmod>2023-04-03T11:48:31+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ingyerlog.kr/2022-7-national-em/</loc>
+  <lastmod>2023-04-03T11:48:31+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ingyerlog.kr/2022-9-national-ee/</loc>
+  <lastmod>2023-04-03T11:48:31+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://ingyerlog.kr/introducing_myself/</loc>
-  <lastmod>2023-03-21T22:29:18+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://ingyerlog.kr/License/</loc>
-  <lastmod>2023-03-21T22:29:18+00:00</lastmod>
+  <lastmod>2023-04-03T11:48:31+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://ingyerlog.kr/Notice/</loc>
-  <lastmod>2023-03-21T22:29:18+00:00</lastmod>
+  <lastmod>2023-04-03T11:48:31+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ingyerlog.kr/License/</loc>
+  <lastmod>2023-04-03T11:48:31+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ingyerlog.kr/pdf/</loc>
+  <lastmod>2023-04-03T11:48:31+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
