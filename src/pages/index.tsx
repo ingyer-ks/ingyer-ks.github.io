@@ -5,6 +5,8 @@ import { Seo } from "@/components/common"
 import Layout from "@/components/Layout"
 import { PageProps } from "@/definitions"
 
+import "@fontsource/noto-sans-kr"
+
 const BlogIndex: React.FC<PageProps> = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const categoryList: string[] = []

@@ -158,7 +158,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
           document.getElementById("ExplanationDiv").style.margin = "auto"
           if (problemsVisible) {
             document.getElementById("ExplanationDiv").className = "col-start-2"
-            document.getElementById("ExplanationDiv").style.maxWidth = "50%"
+            document.getElementById("ExplanationDiv").style.maxWidth = "100%"
           } else {
             document.getElementById("ExplanationDiv").className = "col-start-1"
             document.getElementById("ExplanationDiv").style.width = "1000px"

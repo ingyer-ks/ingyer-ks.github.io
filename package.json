@@ -20,6 +20,7 @@
     "blog"
   ],
   "dependencies": {
+    "@fontsource/noto-sans-kr": "^4.5.12",
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.3",
     "@mdx-js/mdx": "^1.6.22",

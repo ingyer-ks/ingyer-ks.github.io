@@ -3,6 +3,8 @@ import { Location } from "history"
 
 import { Header, Bio } from "./common"
 
+import "@fontsource/noto-sans-kr"
+
 interface LayoutProps {
   location: Location
   title: string

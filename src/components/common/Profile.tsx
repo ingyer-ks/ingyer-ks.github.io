@@ -12,9 +12,6 @@ const Bio: React.FC<EmptyProps> = () => {
             name
             summary
           }
-          social {
-            github
-          }
         }
       }
     }
@@ -22,7 +19,6 @@ const Bio: React.FC<EmptyProps> = () => {
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata?.author
-  const social = data.site.siteMetadata?.social
 
   return (
     <>
@@ -32,10 +28,10 @@ const Bio: React.FC<EmptyProps> = () => {
           layout="fixed"
           formats={["auto", "webp", "avif"]}
           src="../../images/profile-pic.png"
-          width={50}
           height={50}
+          width={50}
           quality={95}
-          imgStyle={{ borderRadius: "100%" }}
+          imgStyle={{ borderRadius: "50%" }}
           alt="Profile picture"
         />
         <div>

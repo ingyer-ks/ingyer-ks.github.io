@@ -102,7 +102,7 @@ module.exports = {
       resolve: `gatsby-plugin-clarity`,
       options: {
         clarity_project_id: "gct6axljb9",
-        enable_on_dev_env: true
+        enable_on_dev_env: false
       },
     },
     {

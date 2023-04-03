@@ -97,6 +97,12 @@
   border-bottom-color: black !important;
 }
 
+.overline-line {
+  width: 100%;
+  border-top-width: 1px !important;
+  border-top-color: black !important;
+}
+
 #content {
   height: calc(100vh - 150px);
   width: inherit;
@@ -104,6 +110,7 @@
 }
 
 img {
+  min-width: 300px;
   max-height: 350px;
   margin: auto;
   display: block;
