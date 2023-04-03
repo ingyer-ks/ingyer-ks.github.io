@@ -1,6 +1,6 @@
 import React from "react"
 import { wrapRootElement as wrap } from "./wrapRootElement"
-
+import Script from "gatsby"
 
 const HeadComponents = [
   <><link
@@ -12,7 +12,15 @@ const HeadComponents = [
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9535714360512834"
       crossOrigin="anonymous"></script><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"></link>
 
-    <script src="/clarity.js"></script>
+    <Script type="text/javascript">
+      {`
+      (function(c,l,a,r,i,t,y){
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "gct6axljb9");
+      `}
+    </Script>
   </>
 ]
 
