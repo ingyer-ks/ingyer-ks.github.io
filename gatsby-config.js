@@ -98,5 +98,12 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-gatsby-cloud`,
+    {
+      resolve: `gatsby-plugin-clarity`,
+      options: {
+        clarity_project_id: "gct6axljb9",
+        enable_on_dev_env: true
+      },
+    }
   ],
 }
