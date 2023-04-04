@@ -1,5 +1,6 @@
 import React from "react"
 import { wrapRootElement as wrap } from "./wrapRootElement"
+import "@fontsource/noto-sans-kr"
 
 const HeadComponents = [
   <><link

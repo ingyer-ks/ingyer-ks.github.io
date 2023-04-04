@@ -299,9 +299,12 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        year
         description
-        category
+        etc
+        organization
+        level
+        subject
       }
       fields {
         haspdf

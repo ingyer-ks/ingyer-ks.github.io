@@ -39,9 +39,13 @@ interface TagPageProps {
     site: ISite
   }
   pageContext: {
-    category: string
+    title: ReactNode
+    etc: string
     slugs: [string]
-    titles: [string]
+    year: string
+    organization: string
+    level: string
+    subject: string
   }
   location: Location
 }
@@ -54,9 +58,6 @@ interface ISite {
       name: string
       summary: string
     }
-    social: {
-      github: string
-    }
   }
 }
 
@@ -65,19 +66,19 @@ interface IEdge {
 }
 
 interface INode {
+  slug: string
   excerpt: string
   body: string
   fields: {
-    slug: string
-    category: string
     haspdf: string
   }
   frontmatter: {
-    date: string
+    year: string
     title: string
-    category: string
+    etc: string
     description: string
+    organization: string
+    level: string
+    subject: string
   }
 }
-
-declare module "@pdftron/pdfjs-express-viewer" {}

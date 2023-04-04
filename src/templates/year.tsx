@@ -13,21 +13,17 @@ const TagPageTemplate: React.FC<TagPageProps> = ({
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const nodeList: INode[] = []
   posts.map(post => {
-    const categoryList: string[] = []
-    post.node.fields.category
-      .split(",")
-      .map((category: string) => category.trim())
-      .filter((category: string) => category.length > 0)
-      .map(category => categoryList.push(category))
-    if (categoryList.includes(pageContext.category)) {
+    const yearList: string[] = []
+    yearList.push(post.node.frontmatter.year)
+    if (yearList.includes(pageContext.year)) {
       nodeList.push(post.node)
     }
   })
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title={`${pageContext.category}`} />
+      <Seo title={`${pageContext.year}`} />
       <div>
-        <h1>{pageContext.category}</h1>
+        <h1>{pageContext.year}</h1>
         <div className="grid" style={{ gridAutoFlow: "column" }}></div>
         <div>
           <ul>
@@ -53,7 +49,7 @@ const TagPageTemplate: React.FC<TagPageProps> = ({
 export default TagPageTemplate
 
 export const pageQuery = graphql`
-  query TagPages {
+  query YearPages {
     site {
       siteMetadata {
         title
@@ -65,9 +61,7 @@ export const pageQuery = graphql`
           slug
           frontmatter {
             title
-          }
-          fields {
-            category
+            year
           }
         }
       }

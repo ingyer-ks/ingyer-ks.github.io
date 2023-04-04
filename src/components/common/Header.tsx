@@ -5,31 +5,6 @@ import { HomeIcon, MenuIcon, XIcon } from "@heroicons/react/outline"
 import { EmptyProps } from "@/definitions"
 
 const Header: React.FC<EmptyProps> = () => {
-  const categoryList: string[] = []
-  const { allMdx } = useStaticQuery(
-    graphql`
-      query Tags {
-        allMdx {
-          edges {
-            node {
-              fields {
-                category
-              }
-            }
-          }
-        }
-      }
-    `
-  )
-  allMdx.edges.map((post: { node: { fields: { category: string } } }) => {
-    post.node.fields.category
-      .split(",")
-      .map((category: string) => category.trim())
-      .filter((category: string) => category.length > 0)
-      .map(category => categoryList.push(category))
-  })
-  const resources = [...new Set(categoryList)]
-
   return (
     <Popover className="sticky top-0 z-10 bg-skin-header fixed backdrop-blur-md backdrop-saturate-150 bg-opacity-70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -48,15 +23,41 @@ const Header: React.FC<EmptyProps> = () => {
           </div>
 
           <div className="md:flex items-center justify-end md:flex-1 lg:w-0 space-x-8">
-            {resources.map(item => (
-              <Link
-                to={"/categories/" + item}
-                key={item}
-                className="whitespace-nowrap text-lg font-medium text-skin-header-fg rounded-md focus:outline-none focus:ring-2 focus:ring-skin-focus"
-              >
-                {item}
-              </Link>
-            ))}
+            <Link
+              to={`/etc/`}
+              itemProp="url"
+              className="whitespace-nowrap text-lg font-medium text-skin-header-fg rounded-md focus:outline-none focus:ring-2 focus:ring-skin-focus"
+            >
+              기타 글
+            </Link>
+            <Link
+              to={`/year/`}
+              itemProp="url"
+              className="whitespace-nowrap text-lg font-medium text-skin-header-fg rounded-md focus:outline-none focus:ring-2 focus:ring-skin-focus"
+            >
+              연도별
+            </Link>
+            <Link
+              to={`/subject/`}
+              itemProp="url"
+              className="whitespace-nowrap text-lg font-medium text-skin-header-fg rounded-md focus:outline-none focus:ring-2 focus:ring-skin-focus"
+            >
+              과목별
+            </Link>
+            <Link
+              to={`/org/`}
+              itemProp="url"
+              className="whitespace-nowrap text-lg font-medium text-skin-header-fg rounded-md focus:outline-none focus:ring-2 focus:ring-skin-focus"
+            >
+              기관별
+            </Link>
+            <Link
+              to={`/level/`}
+              itemProp="url"
+              className="whitespace-nowrap text-lg font-medium text-skin-header-fg rounded-md focus:outline-none focus:ring-2 focus:ring-skin-focus"
+            >
+              급수별
+            </Link>
           </div>
         </div>
       </div>

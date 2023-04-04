@@ -7,9 +7,6 @@ module.exports = {
     },
     description: `전기 전자 정보 방송 통신 공무원/군무원 기출문제 해설`,
     siteUrl: `https://ingyerlog.kr/`,
-    social: {
-      github: `ingyer-ks`,
-    },
   },
   flags: {
     DEV_SSR: true
@@ -133,5 +130,5 @@ module.exports = {
         },
       },
     },
-  ],
+  ]
 }

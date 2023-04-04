@@ -21,9 +21,6 @@ const Seo: React.FC<SEOProps> = ({ description, lang, meta, title }) => {
           siteMetadata {
             title
             description
-            social {
-              github
-            }
           }
         }
       }

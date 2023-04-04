@@ -64,23 +64,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       {
-        allMdx(
-          sort: { fields: [frontmatter___date], order: ASC }
-          limit: 2000
-        ) {
+        allMdx(limit: 2000) {
           edges {
             node {
               id
               slug
               fields {
-                category
                 haspdf
               }
               frontmatter {
                 title
                 description
-                category
-                date
+                etc
+                year
+                organization
+                level
+                subject
               }
             }
           }
@@ -119,32 +118,92 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
 
-    const categories = {}
+    const etc = {}
     posts
-      .filter(({ node }) => node.fields.category)
+      .filter(({ node }) => node.frontmatter.etc)
       .forEach(({ node }) => {
-        const categoryList = node.fields.category
-          .split(",")
-          .map(category => category.trim())
-          .filter(category => category.length > 0)
+        etc[node.frontmatter.etc] ? etc[node.frontmatter.etc].push(node.slug) : etc[node.frontmatter.etc] = []
 
-        categoryList.forEach(category => {
-          if (!categories[category]) {
-            categories[category] = []
-          }
-          categories[category].push(node.slug)
-        })
-
-        Object.keys(categories).forEach(category => {
+        Object.keys(etc).forEach(etc => {
           createPage({
-            path: `/categories/${category}`,
-            component: path.resolve(`./src/templates/category.tsx`),
+            path: `/etc/${etc}`,
+            component: path.resolve(`./src/templates/etc.tsx`),
             context: {
-              category,
+              etc,
             },
           })
         })
       })
+
+
+    const years = {}
+    posts
+      .filter(({ node }) => node.frontmatter.year)
+      .forEach(({ node }) => {
+        years[node.frontmatter.year] ? years[node.frontmatter.year].push(node.slug) : years[node.frontmatter.year] = []
+
+        Object.keys(years).forEach(year => {
+          createPage({
+            path: `/year/${year}`,
+            component: path.resolve(`./src/templates/year.tsx`),
+            context: {
+              year,
+            },
+          })
+        })
+      })
+
+    const organizations = {}
+    posts
+      .filter(({ node }) => node.frontmatter.organization)
+      .forEach(({ node }) => {
+        organizations[node.frontmatter.organization] ? organizations[node.frontmatter.organization].push(node.slug) : organizations[node.frontmatter.organization] = []
+
+        Object.keys(organizations).forEach(organization => {
+          createPage({
+            path: `/org/${organization}`,
+            component: path.resolve(`./src/templates/organization.tsx`),
+            context: {
+              organization,
+            },
+          })
+        })
+      })
+
+    const levels = {}
+    posts
+      .filter(({ node }) => node.frontmatter.level)
+      .forEach(({ node }) => {
+        levels[node.frontmatter.level] ? levels[node.frontmatter.level].push(node.slug) : levels[node.frontmatter.level] = []
+
+        Object.keys(levels).forEach(level => {
+          createPage({
+            path: `/level/${level}`,
+            component: path.resolve(`./src/templates/level.tsx`),
+            context: {
+              level,
+            },
+          })
+        })
+      })
+
+    const subjects = {}
+    posts
+      .filter(({ node }) => node.frontmatter.subject)
+      .forEach(({ node }) => {
+        subjects[node.frontmatter.subject] ? subjects[node.frontmatter.subject].push(node.slug) : subjects[node.frontmatter.subject] = []
+
+        Object.keys(subjects).forEach(subject => {
+          createPage({
+            path: `/subject/${subject}`,
+            component: path.resolve(`./src/templates/subject.tsx`),
+            context: {
+              subject,
+            },
+          })
+        })
+      }
+      )
   }
 }
 
@@ -160,31 +219,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     })
 
-    if (!node.frontmatter.category) {
-      const value = node.frontmatter.title.replace(/ /gi, ",")
-      createNodeField({
-        name: `category`,
-        node,
-        value,
-      })
-      createNodeField({
-        name: `haspdf`,
-        node,
-        value: "y",
-      })
-    } else {
-      const value = node.frontmatter.category
-      createNodeField({
-        name: `category`,
-        node,
-        value,
-      })
-      createNodeField({
-        name: `haspdf`,
-        node,
-        value: "n",
-      })
-    }
+    createNodeField({
+      name: `haspdf`,
+      node,
+      value: node.frontmatter.etc ? "n" : "y",
+    })
+
   }
 }
 
@@ -201,7 +241,6 @@ exports.createSchemaCustomization = ({ actions }) => {
     type SiteSiteMetadata {
       author: Author
       siteUrl: String
-      social: Social
     }
 
     type Author {
@@ -209,25 +248,27 @@ exports.createSchemaCustomization = ({ actions }) => {
       summary: String
     }
 
-    type Social {
-      github: String
-    }
-
     type Mdx implements Node {
       frontmatter: Frontmatter
       fields: Fields
     }
 
+    type Social {
+      github: String
+    }
+
     type Frontmatter {
       title: String
       description: String
-      date: Date @dateformat
-      category: String
+      etc: String
+      year: String
+      organization: String
+      level: String
+      subject: String
     }
 
     type Fields {
       slug: String
-      category: String
       haspdf: String
     }
   `)

@@ -8,34 +8,59 @@ import { PageProps } from "@/definitions"
 import "@fontsource/noto-sans-kr"
 
 const BlogIndex: React.FC<PageProps> = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const categoryList: string[] = []
-  data.allMdx.edges.map(post => {
-    post.node.fields.category
-      .split(",")
-      .map((category: string) => category.trim())
-      .filter((category: string) => category.length > 0)
-      .map(category => categoryList.push(category))
-  })
-  const resources = [...new Set(categoryList)]
+  const siteTitle = "Ingyerog v2"
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="All categories" />
+      <Seo title="Home" />
       <article itemScope itemType="http://schema.org/Article">
-        <div id="categoryTableDiv" className="grid">
-          {resources.map(item => (
-            <div className="categoryItem">
-              <h2 style={{ fontSize: "2em" }}>
-                <Link
-                  to={`/categories/` + item}
-                  itemProp="url"
-                  className="rounded-md focus:outline-none focus:ring-4 focus:ring-skin-focus"
-                >
-                  <span itemProp="headline">{item}</span>
-                </Link>
-              </h2>
-            </div>
-          ))}
+        <div id="kindTableDiv" className="grid">
+          <div className="kindItem">
+            <h2 style={{ fontSize: "2em" }}>
+              <Link
+                to={`/etc/`}
+                itemProp="url"
+                className="rounded-md focus:outline-none focus:ring-4 focus:ring-skin-focus"
+              >
+                <span itemProp="headline">기타 글</span>
+              </Link>
+            </h2>
+            <h2 style={{ fontSize: "2em" }}>
+              <Link
+                to={`/year/`}
+                itemProp="url"
+                className="rounded-md focus:outline-none focus:ring-4 focus:ring-skin-focus"
+              >
+                <span itemProp="headline">연도별</span>
+              </Link>
+            </h2>
+            <h2 style={{ fontSize: "2em" }}>
+              <Link
+                to={`/subject/`}
+                itemProp="url"
+                className="rounded-md focus:outline-none focus:ring-4 focus:ring-skin-focus"
+              >
+                <span itemProp="headline">과목별</span>
+              </Link>
+            </h2>
+            <h2 style={{ fontSize: "2em" }}>
+              <Link
+                to={`/org/`}
+                itemProp="url"
+                className="rounded-md focus:outline-none focus:ring-4 focus:ring-skin-focus"
+              >
+                <span itemProp="headline">기관별</span>
+              </Link>
+            </h2>
+            <h2 style={{ fontSize: "2em" }}>
+              <Link
+                to={`/level/`}
+                itemProp="url"
+                className="rounded-md focus:outline-none focus:ring-4 focus:ring-skin-focus"
+              >
+                <span itemProp="headline">급수별</span>
+              </Link>
+            </h2>
+          </div>
         </div>
       </article>
     </Layout>
@@ -43,22 +68,3 @@ const BlogIndex: React.FC<PageProps> = ({ data, location }) => {
 }
 
 export default BlogIndex
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          fields {
-            category
-          }
-        }
-      }
-    }
-  }
-`
