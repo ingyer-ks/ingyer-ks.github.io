@@ -36,14 +36,13 @@ $$
 주어진 조건에서 낮은 쪽 컷오프 주파수 $f_{c,l}=\frac{1}{2\pi}$ kHz, 높은 쪽 주파수 $f_{c,h}=\frac{1}{\pi}$ kHz로 주어져 있으므로
 
 $$
-f_{c,l}=\frac{1}{2\pi}\times 10^3=\frac{1}{2\pi \times 10^3 \times \text{C}_1} \Rightarrow \text{C}_1=1
+\begin{gather}
+   f_{c,l}=\frac{1}{2\pi}\times 10^3=\frac{1}{2\pi \times 10^3 \times \text{C}_1} \\
+   \Rightarrow \text{C}_1=1 \text{ }\mu\text{F}\\
+   f_{c,h}=\frac{1}{\pi}\times 10^3=\frac{1}{2\pi \times 10^3 \times \text{C}_1} \\
+   \Rightarrow \text{C}_2=0.5\text{ }\mu\text{F}
+   \end{gather}
 $$
-
-$$
-f_{c,h}=\frac{1}{\pi}\times 10^3=\frac{1}{2\pi \times 10^3 \times \text{C}_1} \Rightarrow \text{C}_2=0.5
-$$
-
-(단위는 $\mu\text{F}$)
 
 이므로 답은 **2번** 이다.
 
@@ -52,18 +51,41 @@ $$
 주기는
 
 $$
-T=\frac{2\pi}{\omega}=\frac{2\pi}{2\pi\times 60}=\frac{1}{60}
+\begin{equation}
+   \begin{split}
+      T&=\frac{2\pi}{\omega}\\
+      &=\frac{2\pi}{2\pi\times 60}\\
+      &=\frac{1}{60} \text{ s}
+   \end{split}
+\end{equation}
 $$
 
-초이다.
+이다.
 
 직류 부하 전압 $V_{R_L}$은 한 주기 동안의 평균 전압인데, 반주기동안만 다이오드가 켜지므로 적분 구간은 반주기여야 한다. 따라서
 
 $$
-V_{R_L}=\frac{1}{\frac{1}{60}}\int _0 ^{\frac{1}{120}} 100\pi sin(2\pi\times 60t)dt=60\times 100\pi\times \frac{1}{120\pi}[-cos(2\pi\times 60t)]_0^{\frac{1}{120}}=50\times 2=100\text{ V}
+\begin{equation}
+   \begin{split}
+      V_{R_L}&=\frac{1}{\frac{1}{60}}\int _0 ^{\frac{1}{120}} 100\pi sin(2\pi\times 60t)dt\\
+      &=60\times 100\pi\times \frac{1}{120\pi}[-cos(2\pi\times 60t)]_0^{\frac{1}{120}}\\
+      &=50\times 2=100\text{ V}
+   \end{split}
+\end{equation}
 $$
 
-이다. 따라서 답은 **1번**이다. $I_{R_L}=\frac{V_{R_L}}{R_L}=5\text{ I}$임도 쉽게 알 수 있다.
+이다. 따라서 답은 **1번**이다.
+
+$$
+\begin{equation}
+   \begin{split}
+      I_{R_L}&=\frac{V_{R_L}}{R_L}\\
+      &=5\text{ I}
+   \end{split}
+\end{equation}
+$$
+
+임도 쉽게 알 수 있다.
 
 ## 5번
 
@@ -77,11 +99,17 @@ $$
 ## 6번
 
 1. A급 전력증폭기는 동작점이 교류부하선의 중앙에 위치한다.
+
    ![](./prob6-a.svg)
    동작점에서의 전력은
 
    $$
-   P_b=\frac{1}{2}V_O\times\frac{1}{2}I_L=\frac{1}{4}V_O I_L
+   \begin{equation}
+      \begin{split}
+         P_b&=\frac{1}{2}V_O\times\frac{1}{2}I_L\\
+         &=\frac{1}{4}V_O I_L
+      \end{split}
+   \end{equation}
    $$
 
    이다.
@@ -98,12 +126,20 @@ $$
    따라서 최대 전력 효율은
 
    $$
-   \eta=\frac{P_a}{P_b}=\frac{\frac{1}{2}V_O I_L}{\frac{1}{4}V_O I_L}=\frac{1}{2}
+   \begin{equation}
+      \begin{split}
+         \eta&=\frac{P_a}{P_b}\\
+         &=\frac{\frac{1}{2}V_O I_L}{\frac{1}{4}V_O I_L}\\
+         &=\frac{1}{2}
+      \end{split}
+   \end{equation}
    $$
 
    이 되므로 최대 효율은 $50$%이다.
 
 2. B급 전력증폭기는 동작점이 차단점에 있다.
+
    ![](./prob6-b.svg)
    따라서 반주기 동안에는 전압이 차단점 왼쪽 구간에서 움직이므로 전류도 주어진 빨간 부하선을 따라 나타나지만 나머지 반주기 동안에는 전압이 차단점 오른쪽에 위치하므로 전류는 나타날 수 없다. 그러므로 전류는 반주기 시간동안만 흐를 수 있다.
+
 3.

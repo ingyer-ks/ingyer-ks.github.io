@@ -15,13 +15,25 @@ description:
 상호 인덕턴스 $M$은 결합 계수 $k=0.9$에 대해
 
 $$
-M=k\sqrt{L_1L_2}=0.9\sqrt{20\times80}=36\text{ } \mu\text{H}
+\begin{equation}
+   \begin{split}
+      M&=k\sqrt{L_1L_2}\\
+      &=0.9\sqrt{20\times80}\\
+      &=36\text{ } \mu\text{H}
+   \end{split}
+\end{equation}
 $$
 
 이다. 그리고 $L_1$의 자기장이 $L_2$의 자기장을 없애는 쪽으로 작용하니 $-M$, 마찬가지로 $L_2$의 자기장이 $L_1$의 자기장을 없애는 쪽으로 작용하니 $-M$이므로 총 인덕턴스는
 
 $$
-L=L_1+L_2-M-M=20+80-36-36=28 \text{ }\mu\text{H}
+\begin{equation}
+   \begin{split}
+      L&=L_1+L_2-M-M\\
+      &=20+80-36-36\\
+      &=28 \text{ }\mu\text{H}
+   \end{split}
+\end{equation}
 $$
 
 이다. 따라서 답은 **1번** 이다.
@@ -35,10 +47,31 @@ $$
 \frac{|I|^2R}{|I|^2|Z|}=\frac{R}{|Z|}
 $$
 
-이다. $\omega=100 \text{rad/s}$이므로 커패시터의 리액턴스는 $jX=\frac{1}{j\omega C}=\frac{1}{j100\times 100\times 10^{-6}}=-j100 \text{ }\Omega$이다. 따라서
+이다. $\omega=100 \text{ rad/s}$이므로 커패시터의 리액턴스는
 
 $$
-Z=R+jX=100-j100 \text{ }\Omega \Rightarrow |Z|=100\sqrt{2} \text{ }\Omega
+\begin{equation}
+   \begin{split}
+      jX&=\frac{1}{j\omega C}\\
+      &=\frac{1}{j100\times 100\times 10^{-6}}\\
+      &=-j100 \text{ }\Omega
+   \end{split}
+\end{equation}
+$$
+
+이다. 따라서
+
+$$
+\begin{gather}
+   \begin{equation}
+      \begin{split}
+         Z&=R+jX\\
+         &=100-j100 \text{ }\Omega
+      \end{split}
+   \end{equation}
+   \\
+   \Rightarrow |Z|=100\sqrt{2} \text{ }\Omega
+\end{gather}
 $$
 
 이다. 이로부터 역률은
@@ -84,13 +117,26 @@ $$
 전류 $I_i$는
 
 $$
-I_i=\frac{V_s-V_i}{R_s}=\frac{0.5}{100}=5 \text{ }\mu\text{A}
+\begin{equation}
+   \begin{split}
+      I_i&=\frac{V_s-V_i}{R_s}\\
+      &=\frac{0.5}{100}\\
+      &=5 \text{ }\mu\text{A}
+   \end{split}
+\end{equation}
 $$
 
 이다. 이 전류가 $Z_i$에 흘러들어가므로
 
 $$
-Z_i=\frac{V_i}{I_i}=\frac{1}{5}=0.2 \text{ k}\Omega=200 \text{ }\Omega
+\begin{equation}
+   \begin{split}
+      Z_i&=\frac{V_i}{I_i}\\
+      &=\frac{1}{5}\\
+      &=0.2 \text{ k}\Omega\\
+      &=200 \text{ }\Omega
+   \end{split}
+\end{equation}
 $$
 
 이다. 따라서 답은 **2번** 이다.
@@ -103,23 +149,51 @@ $$
 S_y(f)=S_x(f)|H(f)|^2
 $$
 
-이다. 주어진 그래프에서 입력신호가 있는 범위에서 $H(f)=1$이므로 $(-60,60)$ 범위에서 $|H(f)|^2=1\Rightarrow S_y(f)=S_x(f)$이다.
+이다. 주어진 그래프에서 입력신호가 있는 범위에서 $H(f)=1$이므로 $(-60,60)$ 범위에서
+
+$$
+\begin{gather}
+   |H(f)|^2=1\\
+   \Rightarrow S_y(f)=S_x(f)
+\end{gather}
+$$
+
+이다.
+
 따라서 수신 신호 전력은
 
 $$
-P_S=\int_{-\infty}^{\infty}S_y(f)df=\int_{-60}^{60}S_x(f)df=60\times10=600 \text{ W}
+\begin{equation}
+   \begin{split}
+      P_S&=\int_{-\infty}^{\infty}S_y(f)df\\
+      &=\int_{-60}^{60}S_x(f)df\\
+      &=60\times10\\
+      &=600 \text{ W}
+   \end{split}
+\end{equation}
 $$
 
 이다. 다음으로 잡음 전력을 구하면
 
 $$
-P_N=\int_{-60}^{60} 4 df=480 \text{ W}
+\begin{equation}
+   \begin{split}
+      P_N&=\int_{-60}^{60} 4 df\\
+      &=480 \text{ W}
+   \end{split}
+\end{equation}
 $$
 
 이다. 따라서 SNR은
 
 $$
-SNR=\frac{P_S}{P_N}=\frac{600}{480}=1.25
+\begin{equation}
+   \begin{split}
+      SNR&=\frac{P_S}{P_N}\\
+      &=\frac{600}{480}\\
+      &=1.25
+   \end{split}
+\end{equation}
 $$
 
 이므로 답은 **1번** 이다.
@@ -136,7 +210,13 @@ $$
 이다. 따라서 시정수는
 
 $$
-\tau=RC=\frac{20}{3}\times 0.3=2000 \text{ s}
+\begin{equation}
+   \begin{split}
+      \tau&=RC\\
+      &=\frac{20}{3}\times 0.3\\
+      &=2000 \text{ s}
+   \end{split}
+\end{equation}
 $$
 
 이므로 답은 **2번** 이다.
@@ -146,13 +226,25 @@ $$
 공진 주파수는
 
 $$
-\omega=\frac{1}{\sqrt{LC}}=\frac{1}{\sqrt{20\times 10^{-3}\times 2\times 10^{-6}}}\frac{10^4}{2}=5000 \text{ rad/s}
+\begin{equation}
+   \begin{split}
+         \omega&=\frac{1}{\sqrt{LC}}\\
+         &=\frac{1}{\sqrt{20\times 10^{-3}\times 2\times 10^{-6}}}\times\frac{10^4}{2}\\
+         &=5000 \text{ rad/s}
+   \end{split}
+\end{equation}
 $$
 
 이다. 따라서 전압 확대율 $Q$는
 
 $$
-Q=\frac{\omega L}{R}=\frac{1}{R\omega C}=\frac{5000\times 20\times 10^{-3}}{4}=25
+\begin{equation}
+   \begin{split}
+      Q&=\frac{\omega L}{R}=\frac{1}{R\omega C}\\
+      &=\frac{5000\times 20\times 10^{-3}}{4}\\
+      &=25
+   \end{split}
+\end{equation}
 $$
 
 이므로 답은 **2번** 이다.
@@ -163,15 +255,65 @@ $I_o=0.4 \text { mA}$라면 $Q_1$의 베이스로 들어가는 전류는 $\frac{
 또한 이 $I_o$와 같은 양의 전류가 $Q_2$의 컬렉터 전류이므로
 
 $$
-I_{ref}=I_o+2\times\frac{0.4}{140}=0.4+\frac{1}{175} \text{ mA}
+\begin{equation}
+   \begin{split}
+      I_{ref}&=I_o+2\times\frac{0.4}{140}\\
+      &=0.4+\frac{1}{175} \text{ mA}
+   \end{split}
+\end{equation}
 $$
 
 이다. 따라서
 
 $$
-V_{CC}-R_1I{ref}-V_{BE}=0\Rightarrow V_{CC}=50\times\left(0.4+\frac{1}{175}\right)+0.7\approx 20+0.3+0.7 \approx 20.7 \text{ V}
+\begin{gather}
+   V_{CC}-R_1I{ref}-V_{BE}=0\\
+   \begin{equation}
+      \begin{split}
+         \Rightarrow V_{CC}&=50\times\left(0.4+\frac{1}{175}\right)+0.7\\
+         &\approx 20+0.3+0.7\\
+         &\approx 20.7 \text{ V}
+      \end{split}
+   \end{equation}
+\end{gather}
 $$
 
 이므로 답은 **3번** 이다.
 
 ## 10번
+
+루스 판별법을 이용하자.
+
+$$
+\def\arraystretch{1.5}
+\begin{array}{c:c:c}
+   s^3 & 1 & K+1 \\ \hline
+   s^2 & 3K & 6 \\ \hline
+   s & A & 0
+\end{array}
+$$
+
+여기서 $1>0$이므로
+
+$$
+K>0
+$$
+
+및
+
+$$
+\begin{gather}
+   A=\frac{-(1\times 6-3K(K+1))}{3K} >0\\
+   \Rightarrow K(K+1)>2\\
+   \Rightarrow (K-1)(K+2)>0\\
+   \Rightarrow K\lt -2 \text{ 또는 } K>1
+\end{gather}
+$$
+
+를 만족해야 한다. 따라서
+
+$$
+K>1
+$$
+
+이므로 답은 **4번** 이다.

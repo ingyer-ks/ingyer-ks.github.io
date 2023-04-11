@@ -195,7 +195,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
               }}
             >
               <div>
-                <div className="grid grid-cols-4" style={{ margin: "auto" }}>
+                <div className="grid grid-cols-4">
                   <div className="col-start-1">
                     <button id="ProbAndExplanationButton" onClick={showBoth}>
                       문제&해설

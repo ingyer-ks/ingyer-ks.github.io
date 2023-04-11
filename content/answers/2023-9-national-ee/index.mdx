@@ -14,9 +14,9 @@ description:
 
 ## 1번
 
-$000,001,010,011,100,101,110,111$ 등 총 $8$가지의 수를 표현해야 한다.
-규칙을 살펴보면 $1$의 자리는 주기가 $1$, $2$의 자리는 주기가 $2$, $2^2$의 자리는 주기가 $4=2^2$, $2^3$의 자리는 주기가 $8=2^3$이다.
-즉 주파수가 절반씩 내려감을 볼 수 있다. 이를 위해서는 하나의 JK 플립플롭의 출력이 다음 JK 플립플롭의 클럭으로 입력되게 하고, $J=K=1$로 하면 된다.
+$000,001,010,011,100,101,110,111$ 등 총 $8$가지의 수를 표현해야 한다. 규칙을 살펴보면 $1$의 자리는 주기가 $1$, $2$의 자리는 주기가 $2$, $2^2$의 자리는 주기가 $4=2^2$, $2^3$의 자리는 주기가 $8=2^3$이다. 즉 주파수가 절반씩 내려감을 볼 수 있다.
+
+이를 위해서는 하나의 JK 플립플롭의 출력이 다음 JK 플립플롭의 클럭으로 입력되게 하고, $J=K=1$로 하면 된다.
 따라서 JK 플립플롭 $3$개를 이용해서 하나가 한 자리를 나타내게 하면 된다. 그러므로 답은 **2번** 이다.
 
 ## 2번
@@ -29,19 +29,15 @@ $000,001,010,011,100,101,110,111$ 등 총 $8$가지의 수를 표현해야 한�
 $F=1$인 경우들을 이용해서 $F$를 표현하면 다음과 같다.
 
 $$
-F=\overline{A}B\overline{C}+A\overline{B}\cdot\overline{C}+AB
-$$
-
-$$
-=\overline{A}B\overline{C}+A\overline{B}\cdot\overline{C}+AB(C+\overline{C})
-$$
-
-$$
-=\overline{A}B\overline{C}+AB\overline{C}+A\overline{B}\cdot\overline{C}+AB\overline{C}+ABC+AB\overline{C}
-$$
-
-$$
-=B\overline{C}+A\overline{C}+AB=AB+B\overline{C}+A\overline{C}
+\begin{equation}
+   \begin{split}
+      F&=\overline{A}B\overline{C}+A\overline{B}\cdot\overline{C}+AB\\
+      &=\overline{A}B\overline{C}+A\overline{B}\cdot\overline{C}+AB\left(C+\overline{C}\right)\\
+      &=\overline{A}B\overline{C}+AB\overline{C}+A\overline{B}\cdot\overline{C}+AB\overline{C}+ABC+AB\overline{C}\\
+      &=B\overline{C}+A\overline{C}+AB\\
+      &=AB+B\overline{C}+A\overline{C}
+   \end{split}
+\end{equation}
 $$
 
 따라서 답은 **1번** 이다.
@@ -62,11 +58,19 @@ $$
 ![](./prob5-1.svg)
 여기서 $v_{gs}$는 $v_i$와 비례할 것이므로 $v_{gs}=kv_i$로 놓았다.
 
-이제 식을 세워서 풀어보자. 먼저 접지에서 $20$ 저항을 통과해서 온 전류는 종속전류원과 $10$ 저항을 흐를 것이다. 그리고 $1$ 저항에 걸리는 전압은 $v_i-v_{gs}=v_i-kv_i=(1-k)v_i$이므로
+이제 식을 세워서 풀어보자. 먼저 접지에서 $20$ 저항을 통과해서 온 전류는 종속전류원과 $10$ 저항을 흐를 것이다. 그리고 $1$ 저항에 걸리는 전압은
+
+$$
+v_i-v_{gs}=v_i-kv_i=(1-k)v_i
+$$
+
+이므로
 
 $$
 -\frac{v_o}{20}=kv_i+\frac{1}{10}{v_o-(1-k)v_i}
 $$
+
+이다.
 
 다음으로, 이 전류는 $1$ 저항을 통과할 것이다.
 
@@ -77,15 +81,25 @@ $$
 이 연립방정식을 풀자.
 
 $$
-(1-k)v_i=kv_i+\frac{1}{10}[v_o-(1-k)v_i]\Rightarrow (10-10k)v_i=10kv_i+v_o-(1-k)v_i
+\begin{gather}
+   (1-k)v_i=kv_i+\frac{1}{10}[v_o-(1-k)v_i]\\
+   \Rightarrow (10-10k)v_i=10kv_i+v_o-(1-k)v_i\\
+\end{gather}
 $$
 
-$$
-\Rightarrow (11-21k)v_i \approx (10-20k)v_i=v_o
-$$
+그런데
 
 $$
-\Rightarrow \frac{v_o}{v_i}=10-20k
+(11-21k)v_i \approx (10-20k)v_i
+$$
+
+이므로 위 식은 다음과 같이 근사된다.
+
+$$
+\begin{gather}
+   (10-20k)v_i=v_o\\
+   \Rightarrow \frac{v_o}{v_i}=10-20k
+\end{gather}
 $$
 
 한편 연립방정식의 두 번째 식에서
@@ -97,17 +111,23 @@ $$
 이다. 따라서
 
 $$
-10-20k=-20+20k \Rightarrow 40k=30
-$$
-
-$$
-\therefore k=\frac{3}{4}
+\begin{gather}
+   10-20k=-20+20k\\
+   \Rightarrow 40k=30\\
+   \therefore k=\frac{3}{4}
+\end{gather}
 $$
 
 이다. 이를 대입하면
 
 $$
-\frac{v_o}{v_i}=10-20k=10-15=-5
+\begin{equation}
+   \begin{split}
+      \frac{v_o}{v_i}&=10-20k\\
+      &=10-15\\
+      &=-5
+   \end{split}
+\end{equation}
 $$
 
 이므로 답은 **2번** 이다.
@@ -118,18 +138,22 @@ $V_Z=4 \text{ V}$이고 OPAMP에 네거티브 피드백이 있으므로 OPAMP의
 이로부터
 
 $$
-V_o\cdot \frac{R3}{R_2+R_3}=V_o\cdot \frac{10}{15+10}=4
-$$
-
-$$
-\therefore V_o=10 \text{ V}
+\begin{gather}
+   V_o\cdot \frac{R3}{R_2+R_3}=V_o\cdot \frac{10}{15+10}=4\\
+   \therefore V_o=10 \text{ V}
+\end{gather}
 $$
 
 이다. 한편 $R_2+R_3\gg R_L$이므로 $Q_1$을 통과한 전류는 거의 다 $R_L$을 흐르는 전류 $I_L$이다.
 따라서 $Q_1$에서 소모되는 전력은
 
 $$
-(V_i-V_o)\times I_L=(15-10)\times 200 \times 10^{-3}=1.0 \text{ mW}
+\begin{equation}
+   \begin{split}
+      (V_i-V_o)\times I_L&=(15-10)\times 200 \times 10^{-3}\\
+      &=1.0 \text{ mW}
+   \end{split}
+\end{equation}
 $$
 
 이므로 답은 **3번** 이다.
@@ -144,21 +168,27 @@ $2$로 크기가 같은 두 저항이 직렬로 연결되어 있으므로 위쪽
 한편 이 저항들을 흐르는 전류는 $0.2+\frac{V_1}{4}$이므로
 
 $$
-2V_1=4\times\left(0.2+\frac{V_1}{4}\right)
-$$
-
-$$
-=0.8+V_1
-$$
-
-$$
-\therefore V_1=0.8 \text{ V}
+\begin{gather}
+   \begin{equation}
+      \begin{split}
+         2V_1&=4\times\left(0.2+\frac{V_1}{4}\right)\\
+         &=0.8+V_1
+      \end{split}
+   \end{equation}
+   \\
+   \therefore V_1=0.8 \text{ V}
+\end{gather}
 $$
 
 이다. 따라서 $0.2 \text{ A}$ 전류원이 공급하는 전력은
 
 $$
-0.2\times 2V_1=0.2\times 2 \times 0.8=0.32 \text{ W}
+\begin{equation}
+   \begin{split}
+      0.2\times 2V_1&=0.2\times 2 \times 0.8\\
+      &=0.32 \text{ W}
+   \end{split}
+\end{equation}
 $$
 
 이므로 답은 **2번** 이다.
@@ -198,7 +228,13 @@ $$
 ## 11번
 
 $$
-1 \times \left(-\frac{10}{1}\right)+2\times\left(-\frac{10}{2}\right)+4\times\left(-\frac{10}{2}\right)=-10-10-20=-40 \text{ V}
+\begin{equation}
+   \begin{split}
+      V_o&=1 \times \left(-\frac{10}{1}\right)+2\times\left(-\frac{10}{2}\right)+4\times\left(-\frac{10}{2}\right)\\
+      &=-10-10-20\\
+      &=-40 \text{ V}
+   \end{split}
+\end{equation}
 $$
 
 이므로 답은 **4번** 이다.
@@ -240,18 +276,17 @@ $$
 따라서 주기는 원래 신호의 주기인
 
 $$
-10 \mu \text{s}
+10 \text{ }\mu \text{s}
 $$
 
 이다. 또한 기울기가 일정한 구간이 하나의 반주기를 이루므로 한 반주기 내에서 출력 전압은 일정하고, 이는 구형파에 해당한다.
 구체적인 출력 전압을 구해보면
 
 $$
-i=C\frac{dv}{dt}=\pm 0.001 \times \frac{5-(-5)}{5}=\pm0.002 \text{ mA}
-$$
-
-$$
-\Rightarrow V_o=\mp 2 \times 10^3 \times 0.002=\mp 4 { V}
+\begin{gather}
+i=C\frac{dv}{dt}=\pm 0.001 \times \frac{5-(-5)}{5}=\pm0.002 \text{ mA}\\
+\Rightarrow V_o=\mp 2 \times 10^3 \times 0.002=\mp 4 \text{ V}
+\end{gather}
 $$
 
 이므로

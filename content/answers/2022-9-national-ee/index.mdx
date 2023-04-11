@@ -48,22 +48,22 @@ $$
 
 ## 5번
 
-먼저 $V_{in}=20 \text{V}$일 경우 다이오드의 음극 쪽이 더 높은 전압을 가질 것이다. 낮은 값을 가지면 다이오드를 통과한 전류는 $2 \text{V}$에서 $V_{in}=20 \text{V}$로 거슬러 흐르는 이상한 상황이 나타날 테니까.
+먼저 $V_{in}=20 \text{ V}$일 경우 다이오드의 음극 쪽이 더 높은 전압을 가질 것이다. 낮은 값을 가지면 다이오드를 통과한 전류는 $2 \text{V}$에서 $V_{in}=20 \text{V}$로 거슬러 흐르는 이상한 상황이 나타날 테니까.
 그러므로 이 때엔 다이오드가 꺼지고, $R$을 통과하는 전류가 갈 곳이 없으니($V_{out}$은 개방된 것이다) 전류도 흐르지 않고, 결국 $R$에 의한 전압 강하는 없다. 그러므로
 
 $$
-V_{out, V_{in}=20}=V_{in}-0=V_{in}=20 \text{V}
+V_{out, V_{in}=20}=V_{in}-0=V_{in}=20 \text{ V}
 $$
 
 이다.
 
-다음으로 $V_{in}=-20 \text{V}$일 때를 살펴보자. 이는 $2 \text{V}$보다 훨씬 낮은 값이므로 다이오드의 음극이 더 낮은 전압을 가질 것이라고 추측할 수 있다. 이때 다이오드는 켜지므로 $2 \text{V}$가 그대로 출력으로 나타나니까
+다음으로 $V_{in}=-20 \text{V}$일 때를 살펴보자. 이는 $2 \text{ V}$보다 훨씬 낮은 값이므로 다이오드의 음극이 더 낮은 전압을 가질 것이라고 추측할 수 있다. 이때 다이오드는 켜지므로 $2 \text{V}$가 그대로 출력으로 나타나니까
 
 $$
 V_{out,V_{in=-20}}=2 \text{V}
 $$
 
-이다. 이 때 전류는 $2 \text{V}$에서 $V_{in}=-20 \text{V}$로 흐르므로 추측이 맞음을 검증할 수 있다. 따라서 답은 **3번** 이다.
+이다. 이 때 전류는 $2 \text{V}$에서 $V_{in}=-20 \text{ V}$로 흐르므로 추측이 맞음을 검증할 수 있다. 따라서 답은 **3번** 이다.
 
 ## 6번
 
@@ -87,7 +87,7 @@ $$
 
 ## 8번
 
-1. $V_{B}=5.7-0.7=5 \text{V}$이다.
+1. $V_{B}=5.7-0.7=5 \text{ V}$이다.
 2. 베이스 전류는 $I_B=\frac{5}{500}=0.01 \text{ mA}$이므로 컬렉터 전류는
    $$
    I_C=\beta_{DC} I_B=100\times 0.01=1 \text{ mA}
@@ -107,15 +107,15 @@ $$
 그냥 직접 계산을 해 보자.
 
 $$
-H(\omega)=R||j\omega L||\frac{1}{j\omega C}=\frac{1}{\frac{1}{R}+\frac{1}{j\omega L}+j\omega C}
-$$
-
-$$
-=\frac{R}{1+\frac{R}{j\omega L}+jR\omega C}=\frac{R}{1+jR\left(\omega C - \frac{1}{\omega L} \right)}
-$$
-
-$$
-=\frac{R}{1+jR\sqrt{\frac{C}{L}}\left(\omega \sqrt{LC}-\frac{1}{\omega \sqrt{LC}}\right)}
+\begin{equation}
+   \begin{split}
+      H(\omega)&=R||j\omega L||\frac{1}{j\omega C}\\
+      &=\frac{1}{\frac{1}{R}+\frac{1}{j\omega L}+j\omega C}\\
+      &=\frac{R}{1+\frac{R}{j\omega L}+jR\omega C}\\
+      &=\frac{R}{1+jR\left(\omega C - \frac{1}{\omega L} \right)}\\
+      &=\frac{R}{1+jR\sqrt{\frac{C}{L}}\left(\omega \sqrt{LC}-\frac{1}{\omega \sqrt{LC}}\right)}
+   \end{split}
+\end{equation}
 $$
 
 이므로 답은 **3번** 이다.
@@ -153,13 +153,25 @@ $$
 이로부터 입력 전압 대비 출력 전압(=증폭률)을 구하면
 
 $$
-\frac{V_{out}}{V_S}=-\frac{R_f}{R_S+R+1}=-\frac{30}{2+4}=-5
+\begin{equation}
+   \begin{split}
+      \frac{V_{out}}{V_S}&=-\frac{R_f}{R_S+R+1}\\
+      &=-\frac{30}{2+4}\\
+      &=-5
+   \end{split}
+\end{equation}
 $$
 
 이고, $V_S=R_S I_S$임에 따라
 
 $$
-\frac{V_{out}}{I_S}=\frac{V_{out}}{V_S}\times R_S=-5 \times 2\times 10^3=-10000
+\begin{equation}
+   \begin{split}
+      \frac{V_{out}}{I_S}&=\frac{V_{out}}{V_S}\times R_S\\
+      &=-5 \times 2\times 10^3\\
+      &=-10000
+   \end{split}
+\end{equation}
 $$
 
 이므로 답은 **4번** 이다.
@@ -169,12 +181,23 @@ $$
 1. 주파수가 높아지면 커패시터의 임피던스는 $\frac{1}{j\omega C}$임에 따라 작아진다. 따라서 커패시터에 걸리는 출력 전압은 낮아지므로 고역이 약해지는 저역통과 필터로 사용될 수 있다.
 2. 전압이득은
    $$
-   H(\omega)=\frac{\frac{1}{j\omega C}}{R+\frac{1}{j\omega C}}=\frac{1}{j\omega CR+1}
+   \begin{equation}
+      \begin{split}
+         H(\omega)&=\frac{\frac{1}{j\omega C}}{R+\frac{1}{j\omega C}}\\
+         &=\frac{1}{j\omega CR+1}
+      \end{split}
+   \end{equation}
    $$
    이므로 옳지 않다. 보기의 식은 주파수가 낮을 때 $0$에 가까워지므로 저역통과 필터에 대한 식이 될 수 없다.
 3. 교류 입력전압과 출력전압의 위상차는 위에서 구한 $H(\omega)$의 위상을 보면 된다. 즉
    $$
-   \angle H(\omega)=\angle\left(\frac{1}{j\omega CR+1}\right)=-\angle(j\omega CR+1)=-tan^{-1}(\omega CR)
+   \begin{equation}
+      \begin{split}
+         \angle H(\omega)&=\angle\left(\frac{1}{j\omega CR+1}\right)\\
+         &=-\angle(j\omega CR+1)\\
+         &=-tan^{-1}(\omega CR)
+      \end{split}
+   \end{equation}
    $$
    이므로 옳지 않다.
 4. 입력에 직류 전압 신호만 인가하면 커패시터는 개방되고 저항을 흐르는 전류는 없게 된다. 따라서 전압강하 없이 그대로 입력전압이 나타나므로 전압이득은 $1$이 된다.
@@ -186,11 +209,10 @@ $$
 반가산기에서 합과 캐리는 다음과 같다.
 
 $$
-S=X\oplus Y
-$$
-
-$$
-C=X\cdot Y
+\begin{gather}
+   S=X\oplus Y\\
+   C=X\cdot Y
+\end{gather}
 $$
 
 따라서 답은 **2번** 이다.
@@ -216,19 +238,12 @@ $$
 JK 플립플롭의 규칙은 다음과 같다.
 
 $$
-J=0, K=0 \Rightarrow Q_+=Q
-$$
-
-$$
-J=1, K=0 \Rightarrow Q_+=1
-$$
-
-$$
-J=0, K=1 \Rightarrow Q_+=0
-$$
-
-$$
-J=1, K=1 \Rightarrow Q_+=\overline{Q}
+\begin{gather}
+   J=0, K=0 \Rightarrow Q_+=Q\\
+   J=1, K=0 \Rightarrow Q_+=1\\
+   J=0, K=1 \Rightarrow Q_+=0\\
+   J=1, K=1 \Rightarrow Q_+=\overline{Q}
+\end{gather}
 $$
 
 SR 플립플롭의 문자를 J,K로 각각 바꾸고, 다만 SR 플립플롭에선 정의되지 않던 $J=K=1$일 때 반전시키는 것만 기억하면 된다.
@@ -268,19 +283,29 @@ $$
 이다. 에너지 보존 법칙에 의해 1차측에 흐르는 전류 $I_0$는 다음 식을 만족한다.
 
 $$
-V_0 I_0=nV_0 \frac{nV_0}{R_L} \Rightarrow I_0=n^2\frac{V_0}{R_L}
+\begin{equation}
+   \begin{split}
+      &V_0 I_0=nV_0 \frac{nV_0}{R_L}\\
+      & \Rightarrow I_0=n^2\frac{V_0}{R_L}
+   \end{split}
+\end{equation}
 $$
 
 즉, 그냥 1차측에 $R_L$을 달았을 때에 비해 전류가 $n^2$배로 흐르는 것이다. 따라서 1차측에서 바라봤을 때 $R_L$의 등가저항은
 
 $$
-R_e=\frac{V_0}{I_0}=\frac{1}{n^2}R_L \Rightarrow R_L=n^2\times R_e=0.04 R_e
+\begin{equation}
+   \begin{split}
+      &R_e=\frac{V_0}{I_0}=\frac{1}{n^2}R_L\\
+      &\Rightarrow R_L=n^2\times R_e=0.04 R_e
+   \end{split}
+\end{equation}
 $$
 
 이다. 한편 최대 전력 전달을 위해서는 증폭기 내부 저항 $R_S$와 등가 부하 $R_e$가 같아야 하므로
 
 $$
-R_L=0.04\times R_S=8 \Omega
+R_L=0.04\times R_S=8 \text{ }\Omega
 $$
 
 가 되니 답은 **1번** 이다.
@@ -290,7 +315,12 @@ $$
 전달 컨덕턴스는
 
 $$
-g_m=\frac{\partial I_D}{\partial V_{GS}}=k_n(V_{GS}-V_{tn})
+\begin{equation}
+   \begin{split}
+      g_m&=\frac{\partial I_D}{\partial V_{GS}}\\
+      &=k_n(V_{GS}-V_{tn})
+   \end{split}
+\end{equation}
 $$
 
 이므로 답은 **3번** 이다. 전달컨덕턴스는 $V_{GS}$가 작게 변할 때 $I_D$가 얼마나 변하냐는 비율을 나타내고, 따라서 여기에 드레인 쪽 저항 $R_D$가 곱해지면 $V_{GS}$가 변할 때 출력 전압은 $g_mR_DV_{GS}$만큼 변함을 알 수 있다. 그래서 전압이득이 $g_mR_D$ 형태로 나타난다.
@@ -307,13 +337,21 @@ $$
 ## 20번
 
 먼저 왼쪽의 $20 \text{ V}$ 전압원과 $20 \Omega$ 저항을 소스 변환해보자.
+
 ![](./prob20-1.svg)
+
 다음으로 병렬로 연결되어 있는 것들은 자리를 바꿀 수 있으니(왜일까?) 아래와 같이 자리를 바꾸자.
+
 ![](./prob20-2.svg)
+
 전류원들은 하나로 묶일 때 더해지고(왜일까?) 병렬 저항들도 하나로 만들 수 있으므로 다음과 같이 정리하자.
+
 ![](./prob20-3.svg)
+
 마지막으로 소스 변환을 한번 더 하자.
+
 ![](./prob20-4.svg)
+
 위 그림에서 최대 전력 전달 조건에서는 $R_L=15 \Omega$여야 함을 알 수 있다. 이때 전압는 두 $15 \Omega$로 동일하게 나눠져 가해지니 하나의 저항에는 $9 \text{ V}$가 걸린다.
 따라서 $R_L$에 전달되는 최대 전력은
 

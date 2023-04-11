@@ -22,7 +22,10 @@ $$
 이며 맥스웰 방정식에서
 
 $$
-\nabla \times \vec{H}=\vec{J} \Rightarrow \oint_C \vec{H} \cdot d\vec{l}=\iint_C \vec{J} \cdot d\vec{s}
+\begin{gather}
+   \nabla \times \vec{H}=\vec{J} \\
+   \Rightarrow \oint_C \vec{H} \cdot d\vec{l}=\iint_C \vec{J} \cdot d\vec{s}
+\end{gather}
 $$
 
 이다.
@@ -32,16 +35,25 @@ $$
 ![](./helix.svg)
 
 $$
-Hl=nlI \Rightarrow H=nI=800 \cdot 10=8000
+\begin{gather}
+   Hl=nlI \\
+   \Rightarrow H=nI=800 \cdot 10=8000
+\end{gather}
 $$
 
 이므로
 
 $$
-B= \mu_0 \mu_r H = 4\pi \times 10^{-7} \cdot 2000 \cdot 8000=64\pi\times 10^{a}
+\begin{equation}
+   \begin{split}
+      B&= \mu_0 \mu_r H \\
+      &= 4\pi \times 10^{-7} \cdot 2000 \cdot 8000\\
+      &=64\pi\times 10^{a} \text{ 단, }a\text{는 어떤 정수}
+   \end{split}
+\end{equation}
 $$
 
-(단, $a$는 어떤 정수. 계산하기 귀찮다.)이므로 답은 **4번**이다.
+이므로 답은 **4번**이다.
 
 ## 2번
 
@@ -60,10 +72,16 @@ $$
 그러므로 1번 점전하는 $-1.5$, 2번 점전하는 $2$, 3번 점전하는 $-2$의 전계를 만들어내므로
 
 $$
-\vec{E}=\vec{D}/ \varepsilon _0 =(-1.5+2-2)\vec{a_x}\cdot 10^{a}/\varepsilon _0=-\vec{a_x}54\pi
+\begin{equation}
+   \begin{split}
+      \vec{E}&=\frac{\vec{D}}{\varepsilon _0} \\
+      &=(-1.5+2-2)\vec{a_x}\cdot \frac{10^{k}}{\varepsilon _0}\\
+      &=-\vec{a_x}54\pi \times 10^k \text{ (단, }k\text{는 어떤 정수)}
+   \end{split}
+\end{equation}
 $$
 
-(단, $a$는 어떤 정수)이므로 답은 **1번**이다.
+이므로 답은 **1번**이다.
 
 ## 3번
 
@@ -76,7 +94,12 @@ $$
 이다. 그러므로 반원의 경우에는 이의 절반만 자계를 만들어낼 것이므로
 
 $$
-H=\frac{I}{4r}=\frac{10}{4} \cdot 10^{a}=\frac{1}{4}
+\begin{equation}
+   \begin{split}
+      H&=\frac{I}{4r}=\frac{10}{4} \cdot 10^{a}\\
+      &=\frac{1}{4}
+   \end{split}
+\end{equation}
 $$
 
 (단, $a$는 어떤 정수)이므로 답은 **2번**이다.
@@ -112,11 +135,15 @@ $$
 ## 5번
 
 $$
-\Phi=\iint_S \vec{B}\cdot d\vec{S}=\iint_{0\le y \le 1, 1\le z\le 4}\vec{B}(x=3)\cdot d\vec{a_x}
-$$
-
-$$
-=\iint_{0\le y \le 1, 1\le z\le 4}y^2 dy=3\cdot \left[ \frac{y^3}{3}\right] ^1 _0 = 1
+\begin{equation}
+   \begin{split}
+      \Phi&=\iint_S \vec{B}\cdot d\vec{S}\\
+      &=\iint_{0\le y \le 1, 1\le z\le 4}\vec{B}(x=3)\cdot d\vec{a_x}\\
+      &=\iint_{0\le y \le 1, 1\le z\le 4}y^2 dy\\
+      &=3\cdot \left[ \frac{y^3}{3}\right] ^1 _0\\
+      & = 1
+   \end{split}
+\end{equation}
 $$
 
 이므로 답은 **1번**이다.
@@ -137,18 +164,20 @@ $$
    $$
    이다. 따라서 굴절률 $n$은 다음과 같이 정리된다.
    $$
-   n=\frac{c}{v}=\frac{\frac{1}{\sqrt{\mu _0\varepsilon _0}}}{\frac{1}{\sqrt{\mu _0\mu _r\varepsilon _0\varepsilon _r}}}
-   $$
-   $$
-   =\sqrt{\mu _r \varepsilon _r}
+   \begin{equation}
+      \begin{split}
+         n&=\frac{c}{v}\\
+         &=\frac{\frac{1}{\sqrt{\mu _0\varepsilon _0}}}{\frac{1}{\sqrt{\mu _0\mu _r\varepsilon _0\varepsilon _r}}}\\
+         &=\sqrt{\mu _r \varepsilon _r}
+      \end{split}
+   \end{equation}
    $$
    이를 스넬의 법칙 식에 대입하면
    $$
-   \sqrt{\mu_r\varepsilon_1}sin \theta_i=\sqrt{\mu_r\varepsilon_2}sin \theta_t
-   $$
-   $$
-   \Rightarrow
-   \frac{sin\theta_t}{sin\theta_i}=\sqrt{\frac{\varepsilon_1}{\varepsilon_2}}
+   \begin{gather}
+      \sqrt{\mu_r\varepsilon_1}sin \theta_i=\sqrt{\mu_r\varepsilon_2}sin \theta_t\\
+      \Rightarrow \frac{sin\theta_t}{sin\theta_i}=\sqrt{\frac{\varepsilon_1}{\varepsilon_2}}
+   \end{gather}
    $$
    이다.
 2. 입사각과 굴절각은 경계면에 수직인 법선을 기준으로 한다.
@@ -180,17 +209,24 @@ $$
 이제 병렬로 연결된 $100\text{ }\Omega$에서 바라본 특성 임피던스 $Z_0$와 종단 저항$Z_L$이 이루는 임피던스 $Z_{in,2}$는 다음과 같다.
 
 $$
-Z_{in,2}=50\cdot \frac{100+j50tan \left( \frac{2\pi}{\lambda_g}\cdot\frac{\lambda_g}{2}\right) }{50+j100tan\left( \frac{2\pi}{\lambda_g}\cdot\frac{\lambda_g}{2}\right) }
-$$
-
-$$
-=100
+\begin{equation}
+   \begin{split}
+      Z_{in,2}&=50\cdot \frac{100+j50tan \left( \frac{2\pi}{\lambda_g}\cdot\frac{\lambda_g}{2}\right) }{50+j100tan\left( \frac{2\pi}{\lambda_g}\cdot\frac{\lambda_g}{2}\right) }\\
+      &=100
+   \end{split}
+\end{equation}
 $$
 
 문제에서 묻는 임피던스 $Z_{in}$은 위의 임피던스와 병렬로 연결되어 있는 $100\text{ }\Omega$와 병렬로 합성된 임피던스이므로
 
 $$
-Z_{in}=Z_{in,2}\vert\vert100=100\vert\vert100=50
+\begin{equation}
+   \begin{split}
+      Z_{in}&=Z_{in,2}\vert\vert100\\
+      &=100\vert\vert100\\
+      &=50
+   \end{split}
+\end{equation}
 $$
 
 이다. 따라서 답은 **2번**이다.
@@ -245,7 +281,10 @@ $$
 임을 유념하자. 또한 맥스웰 방정식에서
 
 $$
-\nabla \times \vec{H}=\vec{J} \Rightarrow \iint_C \nabla \times \vec{H} \cdot d\vec{s}=\oint_C \vec{H}\cdot d\vec{l}=\iint_C \vec{J}\cdot d\vec{s}=I
+\begin{gather}
+   \nabla \times \vec{H}=\vec{J} \\
+   \Rightarrow \iint_C \nabla \times \vec{H} \cdot d\vec{s}=\oint_C \vec{H}\cdot d\vec{l}=\iint_C \vec{J}\cdot d\vec{s}=I
+\end{gather}
 $$
 
 이다. 여기서의 $I$는 위에서의 $I=qv$와는 무관한, 맥스웰 방정식을 이루는 일반적인 전류를 의미한다. 혼란스러울테니 이제 실제 문제를 풀어보자.
@@ -254,7 +293,12 @@ $$
 주어진 문제에서는 도선을 축으로 원형의 대칭성이 있다. 따라서 도선 $1$을 축으로 하는 원을 폐곡선으로 하여 위 맥스웰 방정식의 적분형에 대입하면
 
 $$
-\oint_C \vec{H_1}\cdot d\vec{l}=2\pi r H_1=I_1
+\begin{equation}
+   \begin{split}
+      \oint_C \vec{H_1}\cdot d\vec{l}&=2\pi r H_1\\
+      &=I_1
+   \end{split}
+\end{equation}
 $$
 
 이므로
@@ -266,7 +310,14 @@ $$
 이다. 이를 이용하면 도선 $1$에서 도선 $2$까지의 거리 $r=0.2$ m에서의 $B_1$는
 
 $$
-B_1=\mu H_1=\mu_0 H_1=4\pi\times 10^{-7}\times \frac{10}{2\pi\cdot 0.2}=10^{-5}
+\begin{equation}
+   \begin{split}
+      B_1&=\mu H_1\\
+      &=\mu_0 H_1\\
+      &=4\pi\times 10^{-7}\times \frac{10}{2\pi\cdot 0.2}\\
+      &=10^{-5} \text{ Wb/m}^2
+   \end{split}
+\end{equation}
 $$
 
 이다.
@@ -274,7 +325,14 @@ $$
 따라서 도선 $2$가 받는 단위 길이당 로렌츠 힘(=단위 길이당 자기력) $F_{l,2}$는
 
 $$
-F_{l,2}=qvB_1=I_2B_1=10\times 10^{-5}=10^{-4}
+\begin{equation}
+   \begin{split}
+      F_{l,2}&=qvB_1\\
+      &=I_2B_1\\
+      &=10\times 10^{-5}\\
+      &=10^{-4}\text{ F}
+         \end{split}
+\end{equation}
 $$
 
 이고, 방향은 $-\vec{a_x}$이니 답은 **3번**이다.
@@ -333,13 +391,23 @@ $$
 다음으로 두 번째 양전하가 무한히 먼 곳에서 남은 두 자리 중 하나에 배치되었다고 하자. 이 때 처음 양전하로 인한 전계에 의한 전위는
 
 $$
-V_1(r)=\frac{1}{4\pi\varepsilon_0}\frac{1\times 10^{-9}}{r}=\frac{9}{r}
+\begin{equation}
+   \begin{split}
+      V_1(r)&=\frac{1}{4\pi\varepsilon_0}\frac{1\times 10^{-9}}{r}\\
+      &=\frac{9}{r}
+   \end{split}
+\end{equation}
 $$
 
 이므로 이 전위에 의한 정전에너지는
 
 $$
-E_{12}\left(\sqrt{3}\right)=\frac{9}{\sqrt{3}}\times 10^{-9}=3\sqrt{3} \text{ nJ}
+\begin{equation}
+   \begin{split}
+      E_{12}\left(\sqrt{3}\right)&=\frac{9}{\sqrt{3}}\times 10^{-9}\\
+      &=3\sqrt{3} \text{ nJ}
+   \end{split}
+\end{equation}
 $$
 
 이다.
@@ -350,24 +418,48 @@ $$
 그리고 위 그림에서 $r$을 알 수 있으므로 이를 이용해서 전체 전기력의 크기 $\Sigma F$를 구하면 다음과 같다.
 
 $$
-\Sigma F=2\cdot 9 \cdot \frac{1}{\left(\frac{\frac{\sqrt{3}}{2}}{sin\theta}  \right)^2}\cdot cos\theta \times 10^{-9}=24 cos\theta sin^2 \theta \times 10^{-9}
+\begin{equation}
+   \begin{split}
+      \Sigma F&=2\cdot 9 \cdot \frac{1}{\left(\frac{\frac{\sqrt{3}}{2}}{sin\theta}  \right)^2}\cdot cos\theta \times 10^{-9}\\
+      &=24 cos\theta sin^2 \theta \times 10^{-9}
+   \end{split}
+\end{equation}
 $$
 
 다음으로 미소 이동거리 $dl$을 구해보자. 그림에서 삼각함수외 $\theta$를 이용해서 표현되어있는데, 이를 이용해서 $d\theta$를 구하면 다음과 같다.
 
 $$
-dl=d\left(\frac{1}{tan\theta}\cdot \frac{\sqrt{3}}{2} \right)=\frac{\sqrt{3}}{2} \frac{-sec^2\theta}{tan^2\theta}d\theta=-\frac{\sqrt{3}}{2} \frac{1}{sin^2\theta} d\theta
+\begin{equation}
+   \begin{split}
+      dl&=d\left(\frac{1}{tan\theta}\cdot \frac{\sqrt{3}}{2} \right)\\
+      &=\frac{\sqrt{3}}{2} \frac{-sec^2\theta}{tan^2\theta}d\theta\\
+      &=-\frac{\sqrt{3}}{2} \frac{1}{sin^2\theta} d\theta
+   \end{split}
+\end{equation}
 $$
 
-그리고 $l=\infty \Leftrightarrow \theta=0$, $l=\frac{3}{2} \Leftrightarrow \theta=\frac{\pi}{6}$이다.
+그리고
+
+$$
+\begin{gather}
+   l=\infty \Leftrightarrow \theta=0\\
+   l=\frac{3}{2} \Leftrightarrow \theta=\frac{\pi}{6}
+\end{gather}
+$$
+
+이다.
 따라서 세 번째 양전하를 배치하기 위해 필요한 일 $W_3$(=정전에너지 $E_3$)는
 
 $$
-W_3=E_3=\int \Sigma F dl =\int _\frac{\pi}{6} ^0  24 cos\theta sin^2 \theta \times 10^{-9} \cdot \left(-\frac{\sqrt{3}}{2} \frac{1}{sin^2\theta}\right) d\theta
-$$
-
-$$
-=-12\sqrt{3}\int _\frac{\pi}{6} ^0 cos\theta d\theta \times 10^{-9} = -12\sqrt{3}\left.\left[sin\theta\right]\right|_{\frac{\pi}{6}}^{0}=12\sqrt{3}\cdot\frac{1}{2} \times 10^{-9} = 6\sqrt{3} \times 10^{-9}
+\begin{equation}
+   \begin{split}
+         W_3=E_3=\int \Sigma F dl &=\int _\frac{\pi}{6} ^0  24 cos\theta sin^2 \theta \times 10^{-9} \cdot \left(-\frac{\sqrt{3}}{2} \frac{1}{sin^2\theta}\right) d\theta\\
+         &=-12\sqrt{3}\int _\frac{\pi}{6} ^0 cos\theta d\theta \times 10^{-9} \\
+         &= -12\sqrt{3}\left[sin\theta\right]_{\frac{\pi}{6}}^{0}\\
+         &=12\sqrt{3}\cdot\frac{1}{2} \times 10^{-9} \\
+         &= 6\sqrt{3} \times 10^{-9}
+   \end{split}
+\end{equation}
 $$
 
 따라서 총 정전에너지는
@@ -383,7 +475,13 @@ $$
 손실 탄젠트 $\tan \delta$는 커패시터 성분을 흐르는 변위전류 대비 저항 성분을 흐르는 전류의 비율이다. 이를 계산하면 다음과 같다.
 
 $$
-\tan \delta = \frac{\sigma}{\omega \varepsilon_0 \varepsilon_r}=\frac{2\times 10^{-3}}{2\pi\times 15 \times 10^{6}\times \frac{1}{36\pi}\times 10^{-9}\times 2}=\frac{12}{10}=1.2
+\begin{equation}
+   \begin{split}
+      \tan \delta &= \frac{\sigma}{\omega \varepsilon_0 \varepsilon_r}\\
+      &=\frac{2\times 10^{-3}}{2\pi\times 15 \times 10^{6}\times \frac{1}{36\pi}\times 10^{-9}\times 2}\\
+      &=\frac{12}{10}=1.2
+   \end{split}
+\end{equation}
 $$
 
 이므로 답은 **3번**이다.
@@ -393,7 +491,13 @@ $$
 도선이 받는 힘 $F$는
 
 $$
-F=BIlsin\theta=0.8\times10\times0.2\times sin {30}^\circ = 8\times 0.2 \times \frac{1}{2}=0.8
+\begin{equation}
+   \begin{split}
+      F&=BIlsin\theta\\
+      &=0.8\times10\times0.2\times sin {30}^\circ\\
+      & = 8\times 0.2 \times \frac{1}{2}=0.8
+   \end{split}
+\end{equation}
 $$
 
 이므로 답은 **1번**이다.
@@ -403,7 +507,10 @@ $$
 어떤 파동의 한 위상값 $p=\omega t-\beta z$가 이동할 때 속력을 구해보자. 양변을 $t$로 미분하면 정해진 위상 $p$는 상수이므로
 
 $$
-\frac{dp}{dt}=0=\omega - \beta \frac {dz}{dt} \Rightarrow v=\frac{dz}{dt}=\frac{\omega}{\beta}
+\begin{gather}
+   \frac{dp}{dt}=0=\omega - \beta \frac {dz}{dt} \\
+   \Rightarrow v=\frac{dz}{dt}=\frac{\omega}{\beta}
+\end{gather}
 $$
 
 이다.
@@ -424,11 +531,10 @@ $$
 따라서 주어진 조건들을 이용해서 $\beta$를 계산하면
 
 $$
-v=3\times\frac{1}{9}\times 10^8=10^8 \text{ m/s}
-$$
-
-$$
-10^8=\frac{\omega}{\beta}=\frac{10^9}{\beta} \Rightarrow \beta=\frac{10^9}{10^8}=10 \text{ rad/s}
+\begin{gather}
+   v=\frac{\omega}{\beta}=3\times\frac{1}{9}\times 10^8=10^8\\
+   \Rightarrow \beta=\frac{10^9}{10^8}=10 \text{ rad/s}
+\end{gather}
 $$
 
 이므로 답은 **3번**이다.
@@ -439,13 +545,20 @@ $$
 따라서 수직 방향으로 다음의 결론을 내릴 수 있다.
 
 $$
-\vec{D}_{\perp 1}=\vec{D}_{\perp 2} \Rightarrow \hat{a_z}4E_{1z}=\hat{a_z}20 \Rightarrow E_{1z}=5
+\begin{gather}
+   \vec{D}_{\perp 1}=\vec{D}_{\perp 2} \\
+   \Rightarrow \hat{a_z}4E_{1z}=\hat{a_z}20 \\
+   \Rightarrow E_{1z}=5
+\end{gather}
 $$
 
 다음으로, $\vec{E_2}$에는 시간 변수가 없으므로 정전자계임을 알 수 있고, 따라서 전기장의 회전은 없다. 이 말인 즉슨 경계면에 평행한 방향의 전기장 성분이 양쪽에서 똑같다는 것이다. 똑같지 않다면 그 차이를 일으키는 회전햐는 전기장이 있단 소리일 테니까. 따라서 영역 $1$에서 경계면에 평행한 전기장 성분은 허무하게도
 
 $$
-E_{1\parallel}=E_{2\parallel} \Rightarrow \hat{a_x}E_{1x}+\hat{a_y}E_{1y}=\hat{a_x}3-\hat{a_y}4
+\begin{gather}
+   E_{1\parallel}=E_{2\parallel} \\
+   \Rightarrow \hat{a_x}E_{1x}+\hat{a_y}E_{1y}=\hat{a_x}3-\hat{a_y}4
+\end{gather}
 $$
 
 따라서 $E_1$은
@@ -458,6 +571,8 @@ $$
 
 ## 15번
 
+1. 그렇다.
+2. 그렇다.
 3. 자기 에너지는 $\int \vec{B}\cdot\vec{H}dV$인데, 만약 상자성체라서 자기이력이 없다면(=$B=\mu H$) $B$-$H$그래프인 자기이력곡선은 하나의 곡선으로만 보일 것이다. 따라서 면적은 없고 외부에서 상자성체에 해줘야 하는 일(=손실)은 없다.
    하지만 강자성체의 경우 자기이력곡선은 $0$이 아닌 면적을 갖게 되고, 위 자기 에너지에서 $B$와 $H$의 곱은 단위부피당 에너지가 됨을 알 수 있다. 따라서 강자성체는 외부에서 단위부피당 에너지를 가해주어야 하고, 이는 곧 에너지 손실을 뜻한다.
 4. 강자성체가 퀴리 온도보다 높은 상태로 가열되게 되면 자기 모먼트가 한 방향이 되게 잘 정렬되어 있던 입자들이 제멋대로 움직여서 정렬이 흐트러지게 되고, 이는 더이상 강자성을 잃고 상자성체가 됨을 뜻한다.
@@ -469,11 +584,14 @@ $$
 유도기전력 $emf$를 계산해보면
 
 $$
-emf=-\frac{\partial \Phi}{\partial t}=-\frac{a B_0 \omega \left(sin(\omega t - \beta\frac{b}{2})-sin(\omega t + \beta\frac{b}{2}) \right)}{\beta}
-$$
-
-$$
-=-B_0 a \omega \frac{-2cos(\omega t)sin\left(\frac{\beta b}{2}\right)}{\beta} = \frac{2B_0 a \omega}{\beta} sin\left(\frac{\beta b}{2}\right)
+\begin{equation}
+   \begin{split}
+      emf&=-\frac{\partial \Phi}{\partial t}\\
+      &=-\frac{a B_0 \omega \left(sin(\omega t - \frac{\beta b}{2})-sin(\omega t + \frac{\beta b}{2}) \right)}{\beta}\\
+      &=-B_0 a \omega \frac{-2cos(\omega t)sin\left(\frac{\beta b}{2}\right)}{\beta}\\
+      & = \frac{2B_0 a \omega}{\beta} sin\left(\frac{\beta b}{2}\right)
+   \end{split}
+\end{equation}
 $$
 
 이므로 답은 **3번**이다.
@@ -493,7 +611,12 @@ $$
 따라서 정재파비 $VSWR$를 계산하면
 
 $$
-VSWR=\frac{1+|\Gamma|}{1-|\Gamma|}=\frac{1.4}{0.6}=\frac{7}{3}
+\begin{equation}
+   \begin{split}
+      VSWR&=\frac{1+|\Gamma|}{1-|\Gamma|}\\
+      &=\frac{1.4}{0.6}=\frac{7}{3}
+   \end{split}
+\end{equation}
 $$
 
 이므로 답은 **1번**이다.
@@ -507,7 +630,11 @@ $$
 주어진 조건들을 이용하여 왼쪽 커패시터의 정전용량을 계산하면
 
 $$
-\varepsilon_1\frac{S_1}{d}+\varepsilon_2\frac{S_2}{d}=\varepsilon_1\frac{\frac{S}{2}}{d}+2\varepsilon_1\frac{\frac{S}{2}}{d}=\frac{3}{2}\varepsilon_1\frac{S}{d}
+\begin{equation}
+   \begin{split}
+      \varepsilon_1\frac{S_1}{d}+\varepsilon_2\frac{S_2}{d}=\varepsilon_1\frac{\frac{S}{2}}{d}+2\varepsilon_1\frac{\frac{S}{2}}{d}=\frac{3}{2}\varepsilon_1\frac{S}{d}
+   \end{split}
+\end{equation}
 $$
 
 이다.
@@ -515,7 +642,13 @@ $$
 오른쪽 커패시터의 정전용량은
 
 $$
-\left.\left.\varepsilon_1\frac{S}{d_1}\right|\right|\varepsilon_2\frac{S}{d_2} = \left.\left.\varepsilon_1\frac{S}{d_1}\right|\right|2\varepsilon_1\frac{S}{d_2}=\frac{1}{\frac{d_1}{\varepsilon_1S}+\frac{d_2}{2\varepsilon_1S}}=\frac{2\varepsilon_1S}{2d_1+d_2}
+\begin{equation}
+   \begin{split}
+      \left.\left.\varepsilon_1\frac{S}{d_1}\right|\right|\varepsilon_2\frac{S}{d_2} &= \left.\left.\varepsilon_1\frac{S}{d_1}\right|\right|2\varepsilon_1\frac{S}{d_2}\\
+      &=\frac{1}{\frac{d_1}{\varepsilon_1S}+\frac{d_2}{2\varepsilon_1S}}\\
+      &=\frac{2\varepsilon_1S}{2d_1+d_2}
+   \end{split}
+\end{equation}
 $$
 
 이다.
@@ -523,7 +656,10 @@ $$
 두 커패시터의 정전용량이 같으므로
 
 $$
-\frac{3}{2}\varepsilon_1\frac{S}{d}=\frac{2\varepsilon_1S}{2d_1+d_2} \Rightarrow 4d=6d_1+3d_2
+\begin{gather}
+   \frac{3}{2}\varepsilon_1\frac{S}{d}=\frac{2\varepsilon_1S}{2d_1+d_2} \\
+   \Rightarrow 4d=6d_1+3d_2
+\end{gather}
 $$
 
 이므로 답은 **2번**이다.
@@ -531,13 +667,27 @@ $$
 ## 19번
 
 1. $|V_{ab}|=|E|(b-a)$인데 $d$는 일정하므로 $V$는 $E$와 선형적인 관계를 갖는다. 그리고 전기장 $E$는 전하들이 자기력을 받아서 양쪽으로 이동하여 생기고, 이 때 이로 인한 전기력과 자기력은 평형을 이룰 것이다.
-   즉 전기장의 크기는 단위전하당 자기력의 크기와 같은데, 자기력의 크기는 $F=BIlsin(\theta=\frac{\pi}{2})=BIl$이다. 따라서 자기력의 크기는 전류의 크기 $I$에 비례하고, 이는 전기장의 크기도 $I$에 비례한다는 것이고, 결국 $|V_{ab}|$또한 $I$에 비례한다.
-2. $\frac{b}{a}$가 증가한다는 것은 $b$가 증가하거나 $a$가 감소한다는 뜻이다. 위의 $|V_{ab}|=|E|(b-a)$에서 이 두 경우 모두 $|V_{ab}|$를 크게 만들 것임을 알 수 있다.
-3. 금속봉의 움직임에 인해 안에 있는 전하들이 받을 로런츠 힘을 생각해보자. $\vec{F}=q\vec{u}\times\vec{B}$인데, 주어진 상황에서 $\vec{B}$는 지면으로 들어가는 방향이고, $\vec{u}$는 $\hat{a_z}$방향이다. 따라서 $\vec{F}$의 방향은 양전하의 경우 왼쪽이다.
-   따라서 왼쪽에는 양전하가 모여서 전위가 높고 오른쪽에는 음전하가 모여 전위가 낮을 것이므로 $r=b$지점을 기준으로 한 $r=a$점의 전위인 $V_{ab}$의 부호는 양수이다.
-4. $\nabla \times \vec{H}=\vec{J}$에서 대칭성을 고려하여 도선을 중심으로 하는 원 형태의 폐곡선을 그려서 선적분하자. 그러면
+   즉 전기장의 크기는 단위전하당 자기력의 크기와 같은데, 자기력의 크기는
    $$
-   \oint \nabla \times \vec{H} d\vec{l}=2\pi r H=\int \vec{J} \cdot d\vec{S}=I \Rightarrow H=\frac{I}{2\pi r}
+   F=BIlsin\left(\theta=\frac{\pi}{2}\right)=BIl
+   $$
+   이다. 따라서 자기력의 크기는 전류의 크기 $I$에 비례하고, 이는 전기장의 크기도 $I$에 비례한다는 것이고, 결국 $|V_{ab}|$또한 $I$에 비례한다.
+2. $\frac{b}{a}$가 증가한다는 것은 $b$가 증가하거나 $a$가 감소한다는 뜻이다. 위의 $|V_{ab}|=|E|(b-a)$에서 이 두 경우 모두 $|V_{ab}|$를 크게 만들 것임을 알 수 있다.
+3. 금속봉의 움직임에 인해 안에 있는 전하들이 받을 로런츠 힘을 생각해보자.
+   $$
+   \vec{F}=q\vec{u}\times\vec{B}
+   $$
+   인데, 주어진 상황에서 $\vec{B}$는 지면으로 들어가는 방향이고, $\vec{u}$는 $\hat{a_z}$방향이다. 따라서 $\vec{F}$의 방향은 양전하의 경우 왼쪽이다.
+   따라서 왼쪽에는 양전하가 모여서 전위가 높고 오른쪽에는 음전하가 모여 전위가 낮을 것이므로 $r=b$지점을 기준으로 한 $r=a$점의 전위인 $V_{ab}$의 부호는 양수이다.
+4. $$
+   \nabla \times \vec{H}=\vec{J}
+   $$
+   에서 대칭성을 고려하여 도선을 중심으로 하는 원 형태의 폐곡선을 그려서 선적분하자. 그러면
+   $$
+   \begin{gather}
+      \oint \nabla \times \vec{H} d\vec{l}=2\pi r H=\int \vec{J} \cdot d\vec{S}=I \\
+      \Rightarrow H=\frac{I}{2\pi r}
+   \end{gather}
    $$
    이고, $B=\mu H$이므로 $B$는 $r$에 반비례한다.
 
@@ -545,18 +695,46 @@ $$
 
 ## 20번
 
-귀찮으니 $K=\frac{Q}{4\pi\varepsilon_0}$으로 놓겠다.
+귀찮으니
+
+$$
+K=\frac{Q}{4\pi\varepsilon_0}
+$$
+
+으로 놓겠다.
 
 점 $C$와 점 $D$ 사이의 전위차 $V_{CD}$는 다음과 같다.
 
 $$
-V_{CD}=-\int _d ^c E(r) dr=-\left(\int _d ^a E(r)dr+\int _a ^b E(r)dr +\int _b ^c E(r)dr \right)
+\begin{equation}
+   \begin{split}
+      V_{CD}&=-\int _d ^c E(r) dr\\
+      &=-\left(\int _d ^a E(r)dr+\int _a ^b E(r)dr +\int _b ^c E(r)dr \right)
+   \end{split}
+\end{equation}
 $$
 
-한편, 다른 구간에서는 다 $E(r)=k\frac{1}{r^2}$인데, $a\l r \le b$ 구간은 도체 구간이므로 $E(r)=0$이다. 따라서 $V_{CD}$를 계산하면
+한편, 다른 구간에서는 다
 
 $$
-V_{CD}=-K\left(\int _d ^a \frac{1}{r^2}dr + 0 + \int _b ^c \frac{1}{r^2}dr \right)=K\left(\frac{1}{d}-\frac{1}{a}+\frac{1}{b}-\frac{1}{c}\right)
+E(r)=k\frac{1}{r^2}
+$$
+
+인데, $a\le r \le b$ 구간은 도체 구간이므로
+
+$$
+E(r)|_{a\le r \le b}=0
+$$
+
+이다. 따라서 $V_{CD}$를 계산하면
+
+$$
+\begin{equation}
+   \begin{split}
+      V_{CD}$=-K\left(\int _d ^a \frac{1}{r^2}dr + 0 + \int _b ^c \frac{1}{r^2}dr \right)\\
+      &=K\left(\frac{1}{d}-\frac{1}{a}+\frac{1}{b}-\frac{1}{c}\right)
+   \end{split}
+\end{equation}
 $$
 
 이므로 답은 **3번**이다.
@@ -591,30 +769,119 @@ $$
 
 이다.
 
-우선 $\Re_a=\frac{l=d}{\mu_0 S}=\frac{0.2 \times 10^{-3}}{4\pi\times 10^{-7}\times 1\times 10^{-4}}=\frac{1}{2\pi}\times 10^7$이다.
+우선
 
-다음으로 $\Re_I=\frac{20\times 10^{-2}}{2000\times 4\pi\times 10^{-7}\times 1\times 10^{-4}}=\frac{1}{4\pi}\times 10^{-7}$이다.
+$$
+\begin{equation}
+   \begin{split}
+      \Re_a&=\frac{l|_{l=d}}{\mu_0 S}\\
+      &=\frac{0.2 \times 10^{-3}}{4\pi\times 10^{-7}\times 1\times 10^{-4}}\\
+      &=\frac{1}{2\pi}\times 10^7
+   \end{split}
+\end{equation}
+$$
 
-따라서 전체 자기저항은 $\Re_t=\left(\frac{1}{2\pi}+\frac{1}{4\pi}\right)\times 10^7=\frac{3}{4\pi}\times 10^7$이다.
+이다.
 
-자기력선은 $\Phi=\frac{NI}{\Re_t}=\frac{100 \times I}{\frac{3}{4\pi}\times 10^7}=0.4\pi\times 10^{-4}$이다. 그리고 직렬회로에서 전류는 어디서든 똑같듯이 자기력선도 어디서든 똑같다. 따라서 자속밀도는 $B=\frac{\Phi}{S}=\frac{0.4\pi\times 10^{-4}}{1\times 10^{-4}}=0.4\pi$이다.
+다음으로
 
-공극에 걸리는 기자력은 $\Phi\times \Re_a=0.4\pi\times 10^{-4} \times \frac{1}{2\pi}\times 10^7 = 200$이다.
+$$
+\begin{equation}
+   \begin{split}
+      \Re_I&=\frac{20\times 10^{-2}}{2000\times 4\pi\times 10^{-7}\times 1\times 10^{-4}}\\
+      &=\frac{1}{4\pi}\times 10^{-7}
+   \end{split}
+\end{equation}
+$$
+
+이다.
+
+따라서 전체 자기저항은
+
+$$
+\begin{equation}
+   \begin{split}
+      \Re_t&=\left(\frac{1}{2\pi}+\frac{1}{4\pi}\right)\times 10^7\\
+      &=\frac{3}{4\pi}\times 10^7
+   \end{split}
+\end{equation}
+$$
+
+이다.
+
+자기력선은
+
+$$
+\begin{equation}
+   \begin{split}
+      \Phi&=\frac{NI}{\Re_t}\\
+      &=\frac{100 \times I}{\frac{3}{4\pi}\times 10^7}\\
+      &=0.4\pi\times 10^{-4} \text{ Wb}
+   \end{split}
+\end{equation}
+$$
+
+이다. 그리고 직렬 전기회로에서 전류는 어디서든 똑같듯이 자기력선도 어디서든 똑같다. 따라서 자속밀도는
+
+$$
+\begin{equation}
+   \begin{split}
+      B&=\frac{\Phi}{S}\\
+      &=\frac{0.4\pi\times 10^{-4}}{1\times 10^{-4}}\\
+      &=0.4\pi\text{ Wb/m}^2
+   \end{split}
+\end{equation}
+$$
+
+이다.
+
+그리고 공극에 걸리는 기자력은
+
+$$
+\begin{equation}
+   \begin{split}
+      \Phi\times \Re_a&=0.4\pi\times 10^{-4} \times \frac{1}{2\pi}\times 10^7 \\
+      &= 200
+   \end{split}
+\end{equation}
+$$
+
+이다.
 
 따라서 답은 **1번**이다.
 
 ## 22번
 
-우선 도선이 있는 영역 전체에서 $z=0$이므로 $\vec{B}=-\hat{a_x}3x+\hat{a_y}5y$로 보다 단순해진다.
-
-그리고 미소 자기력은 $d\vec{F}=Id\vec{l}\times \vec{B}=33d\vec{l}\times \vec{B}$이므로 전체 힘 $\vec{F}$는 도체 루프를 따라 적분하면 된다. 계산하면
+우선 도선이 있는 영역 전체에서 $z=0$이므로
 
 $$
-\vec{F}=\int d\vec{F}=3\left(\int _1 ^3 dx\hat{a_x}\times \vec{B}(y=2)+\int _2 ^5 dy\hat{a_y}\times \vec{B}(x=3) + \int _3 ^1 dx\hat{a_x}\times \vec{B}(y=5) + \int _5 ^2 dy\hat{a_y}\times\vec{B}(x=1) \right)
+   \vec{B}=-\hat{a_x}3x+\hat{a_y}5y
 $$
 
+로 보다 단순해진다.
+
+그리고 미소 자기력은
+
 $$
-=3\hat{a_z}(2\cdot 10 + 3\cdot 9 + (-2)\cdot25 + (-3)\cdot 3)=-\hat{a_z}36
+\begin{equation}
+   \begin{split}
+      d\vec{F}&=Id\vec{l}\times \vec{B}\\
+      &=33d\vec{l}\times \vec{B}
+   \end{split}
+\end{equation}
+$$
+
+이므로 전체 힘 $\vec{F}$는 도체 루프를 따라 적분하면 된다. 계산하면
+
+$$
+\begin{equation}
+   \begin{split}
+      \vec{F}&=\int d\vec{F}\\
+      &=3\left(\int \_1 ^3 dx\hat{a_x}\times \vec{B}(y=2)+\int \_2 ^5 dy\hat{a_y}\times \vec{B}(x=3) + \int \_3 ^1 dx\hat{a_x}\times \vec{B}(y=5) + \int \_5 ^2 dy\hat{a_y}\times\vec{B}(x=1) \right)\\
+      &=3\hat{a_z}(2\cdot 10 + 3\cdot 9 + (-2)\cdot25 + (-3)\cdot 3)\\
+      &=-\hat{a_z}36 \text{ F}
+   \end{split}
+\end{equation}
 $$
 
 이므로 답은 **4번**이다.
@@ -624,7 +891,12 @@ $$
 자유공간에서의 고유 임피던스 $Z_0$은
 
 $$
-Z_0=\sqrt{\frac{\mu_0}{\varepsilon_0}}=50 \text{ }\Omega
+\begin{equation}
+   \begin{split}
+      Z_0&=\sqrt{\frac{\mu_0}{\varepsilon_0}}\\
+      &=50 \text{ }\Omega
+   \end{split}
+\end{equation}
 $$
 
 이다.
@@ -637,18 +909,36 @@ $$
 
 이다.
 
-주어진 조건에서 매질 $2$에서 $\mu_r=1$, $\varepsilon_r=4$이므로 고유 임피던스는 $Z_2=\frac{Z_0}{2}$이다.
+따라서 주어진 조건에서 매질 $2$에서 $\mu_r=1$, $\varepsilon_r=4$이므로 고유 임피던스는
+
+$$
+Z_2=\frac{Z_0}{2}
+$$
+
+이다.
 
 매질 $1$과 매질 $2$의 경계면에서의 반사계수를 구하기 위해 위 조건과 $l=\frac{\lambda}{4}$ 및 $\beta=\frac{2\pi}{\lambda}$임을 이용해서 먼저 경계면에서의 입력 임피던스 $Z_e$를 구해보자.
 
 $$
-Z_e=\left(\frac{Z_0}{2}\right)\frac{Z_0+j\frac{Z_0}{2}tan\left(\beta l=\frac{\pi}{2}\right)}{\frac{Z_0}{2}+jZ_0tan\left(\beta l=\frac{\pi}{2}\right)}=\frac{Z_0}{2}\frac{\frac{Z_0}{2}}{Z_0}=\frac{1}{4}Z_0
+\begin{equation}
+   \begin{split}
+      Z_e&=\left(\frac{Z_0}{2}\right)\frac{Z_0+j\frac{Z_0}{2}tan\left(\beta l=\frac{\pi}{2}\right)}{\frac{Z_0}{2}+jZ_0tan\left(\beta l=\frac{\pi}{2}\right)}\\
+      &=\frac{Z_0}{2}\frac{\frac{Z_0}{2}}{Z_0}\\
+      &=\frac{1}{4}Z_0
+   \end{split}
+\end{equation}
 $$
 
 따라서 반사계수 $\Gamma$는
 
 $$
-\Gamma=\frac{Z_e-Z_0}{Z_e+Z_0}=\frac{\frac{1}{4}-1}{\frac{1}{4}+1}=-\frac{3}{5}
+\begin{equation}
+   \begin{split}
+      \Gamma&=\frac{Z_e-Z_0}{Z_e+Z_0}\\
+      &=\frac{\frac{1}{4}-1}{\frac{1}{4}+1}\\
+      &=-\frac{3}{5}
+   \end{split}
+\end{equation}
 $$
 
 이므로 답은 **2번**이다.
@@ -660,7 +950,11 @@ $$
 오른쪽 양전하는 왼쪽 양전하의 $4$배의 전하를 갖고 있고, 전기력은 거리의 제곱에 반비례함을 생각하면 전하 $q$는 왼쪽 양전하와의 거리가 오른쪽 양전하와의 거리의 절반이 되어야 양쪽에 미치는 전기력의 크기가 같을 수 있다. 따라서
 
 $$
-d-x=\frac{x}{2} \Rightarrow x=\frac{2}{3}d, d-x=\frac{1}{3}d
+\begin{gather}
+   d-x=\frac{x}{2} \\
+   \Rightarrow x=\frac{2}{3}d\\
+   \Rightarrow d-x=\frac{1}{3}d
+\end{gather}
 $$
 
 또한 $q$의 부호가 $+$라면 서로 다 밀어낼 테니까 $q$의 부호는 $-$여야 한다. 따라서 $q$를 구하지 않아도 보기에서 **4번**이 답임을 알 수 있다.
@@ -668,7 +962,10 @@ $$
 그래도 계산을 해보자. 오른쪽 $4Q$가 $Q$에 의해서 밀리는 힘과 $q$에 의해서 당기는 힘의 크기가 같으므로
 
 $$
-\frac{4Q\cdot Q}{d^2}=\frac{4Q\cdot |q|}{\left(\frac{2}{3}d\right)^2} \Rightarrow Q \cdot \frac{4}{9}=|q|
+\begin{gather}
+   \frac{4Q\cdot Q}{d^2}=\frac{4Q\cdot |q|}{\left(\frac{2}{3}d\right)^2} \\
+   \Rightarrow Q \cdot \frac{4}{9}=|q|
+\end{gather}
 $$
 
 따라서 주어진 보기들의 크기가 맞음을 확인할 수 있다.
@@ -676,7 +973,19 @@ $$
 ## 25번
 
 먼저 $C_1$과 $C_2$를 보자. 두 커패시터의 위아래 간격이 작아져서 거의 $0$이라고 하자. 커패시터 기호가 길게 늘어난 것처럼 될 것이다. 그래서 커패시터는 병렬 연결하면 그냥 각 커패시턴스의 합이다.
-이제 이 병렬 커패시턴스를 $C_{12}=C_1+C_2=1+3=4 \text{ }\mu\text{F}$라고 하자. 마찬가지로 오른쪽 $C_3=2\text{ }\mu\text{F}$과의 거리가 가까워져서 거의 $0$이라고 하자. 그럼 $| | |$처럼 될 것인데, 중간의 도체판도 거의 $0$의 두께를 가진다고 하면 치워버릴 수 있다. 결국 직렬 커패시터는 평행판 사이의 거리가 늘어난 것처럼 보인다.
+이제 이 병렬 커패시턴스를
+
+$$
+\begin{equation}
+   \begin{split}
+      C_{12}&=C_1+C_2\\
+      &=1+3\\
+      &=4 \text{ }\mu\text{F}
+   \end{split}
+\end{equation}
+$$
+
+라고 하자. 마찬가지로 오른쪽 $C_3=2\text{ }\mu\text{F}$과의 거리가 가까워져서 거의 $0$이라고 하자. 그럼 $| | |$과 같이 평행판 도체가 배열될 것인데, 중간의 도체판도 거의 $0$의 두께를 가진다고 하면 치워버릴 수 있다. 결국 직렬 커패시터는 평행판 사이의 거리가 늘어난 것처럼 보인다.
 따라서 커패시턴스가 작아지는 것이고, 저항들이 병렬 연결될 때 작아지는 것과 동일한 형태의 수식을 갖는다.
 
 이제 문제를 풀어보자. 주어진 합성 커패시터에 전압 $V$가 걸렸을 때, $C_{12}$에 충전되는 전하량과 $C_3$에 충전되는 전하량은 같을 것이다. 왜냐면 그 중간에 있는 ㅏ 형태의 도선 부분에서 한쪽으로 $+q$만큼 이동했다고 하면 다른 쪽으로는 $-q$만큼 이동할 것이기 때문이다.
@@ -691,7 +1000,11 @@ $$
 이므로 $C_{12}$에 걸리는 전압을 $V_L$, $C_3$에 걸리는 전압을 $V_R$이라고 하면
 
 $$
-C_{12}V_L=C_3V_R \Rightarrow 4V_L=2V_R \Rightarrow 2V_L=V_R
+\begin{gather}
+   C_{12}V_L=C_3V_R \\
+   \Rightarrow 4V_L=2V_R\\
+   \Rightarrow 2V_L=V_R
+\end{gather}
 $$
 
 그리고 커패시터에 저장되는 정전에너지는
@@ -703,13 +1016,34 @@ $$
 이다. 이를 이용하여 각 커패시터의 정전에너지들 $E_1, E_2, E_3$을 구하면
 
 $$
-E_1=\frac{1}{2}C_1V_L^2=\frac{1}{2}\cdot 1\cdot V_L^2, E_2=\frac{1}{2}C_2V_L^2=\frac{1}{2}\cdot 3\cdot V_L^2, E_3=\frac{1}{2}C_3V_R^2=\frac{1}{2}\cdot 2 \cdot 4V_L^2
+\begin{gather}
+   \begin{equation}
+      \begin{split}
+         E_1&=\frac{1}{2}C_1V_L^2\\
+         &=\frac{1}{2}\cdot 1\cdot V_L^2
+      \end{split}
+   \end{equation}
+   \\
+   \begin{equation}
+      \begin{split}
+         E_2&=\frac{1}{2}C_2V_L^2\\
+         &=\frac{1}{2}\cdot 3\cdot V_L^2
+      \end{split}
+   \end{equation}
+   \\
+   \begin{equation}
+      \begin{split}
+         E_3&=\frac{1}{2}C_3V_R^2\\
+         &=\frac{1}{2}\cdot 2 \cdot 4V_L^2
+      \end{split}
+   \end{equation}
+\end{gather}
 $$
 
 이므로
 
 $$
-E_3=4V_L^2, E_2=\frac{3}{2}V_L^2, E_1=\frac{1}{2}V_L^2
+E_3=\frac{8}{2}V_L^2 > E_2=\frac{3}{2}V_L^2 > E_1=\frac{1}{2}V_L^2
 $$
 
 순으로 에너지가 큼을 알 수 있다. 따라서 답은 **2번**이다.
