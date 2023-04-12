@@ -26,10 +26,8 @@ const Bio: React.FC<EmptyProps> = () => {
         <StaticImage
           className="rounded-full overflow-hidden"
           layout="fixed"
-          formats={["auto", "webp", "avif"]}
+          formats={["auto"]}
           src="../../images/profile-pic.png"
-          height={50}
-          width={50}
           quality={95}
           imgStyle={{ borderRadius: "50%" }}
           alt="Profile picture"
