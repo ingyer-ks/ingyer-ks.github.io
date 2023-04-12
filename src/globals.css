@@ -163,3 +163,7 @@ h1 {
 .grid-cols-4 {
   margin-top: 20px;
 }
+
+.katex .vlist-t2 {
+  margin-right: 0px !important;
+}
