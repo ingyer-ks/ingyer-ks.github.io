@@ -29,6 +29,8 @@ const Bio: React.FC<EmptyProps> = () => {
           formats={["auto"]}
           src="../../images/profile-pic.png"
           quality={95}
+          width={50}
+          height={50}
           imgStyle={{ borderRadius: "50%" }}
           alt="Profile picture"
         />
