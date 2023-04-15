@@ -167,3 +167,15 @@ h1 {
 .katex .vlist-t2 {
   margin-right: 0px !important;
 }
+
+img[alt="Profile picture"] {
+  min-height: auto;
+  min-width: auto;
+}
+
+img[src*="creativecommons"] {
+  min-height: auto;
+  min-width: auto;
+  margin-left: 0;
+  display: block;
+}
