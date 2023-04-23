@@ -142,4 +142,53 @@ $$
    ![](./prob6-b.svg)
    따라서 반주기 동안에는 전압이 차단점 왼쪽 구간에서 움직이므로 전류도 주어진 빨간 부하선을 따라 나타나지만 나머지 반주기 동안에는 전압이 차단점 오른쪽에 위치하므로 전류는 나타날 수 없다. 그러므로 전류는 반주기 시간동안만 흐를 수 있다.
 
+   효율은 어떨까? 출력이 있는 반 주기동안의 최대 직류 전류를 구해보자.
+
+   $$
+   \begin{equation}
+      \begin{split}
+         I_b&=\frac{1}{2\pi}\int _0 ^ {\pi} I_L sin \theta d\theta\\
+         &=\frac{I_L}{\pi}
+      \end{split}
+   \end{equation}
+   $$
+
+   이다. 이 때 전체적인 전압은 전압은 $V_O$로 유지된다. 따라서 최대 직류 전력은
+
+   $$
+   \begin{equation}
+      \begin{split}
+         P_b&=V_bI_b\\
+         &=\frac{V_OI_L}{\pi}
+      \end{split}
+   \end{equation}
+   $$
+
+   이다. 다음으로 최대 교류 전력의 실효값 $P_a$를 구하면
+
+   $$
+   \begin{equation}
+      \begin{split}
+         P_a&=\frac{1}{2\pi}\int_0 ^{\pi}V_OI_L sin^2 \theta d\theta\\
+         &=\frac{1}{2\pi}\times V_OI_L\times \int_0 ^{\pi} \left(\frac{1}{2}-2cos2\theta\right)d\theta\\
+         &=\frac{V_OI_L}{4}
+      \end{split}
+   \end{equation}
+   $$
+
+   따라서 최대 전력 효율은
+
+   $$
+   \begin{equation}
+      \begin{split}
+         \eta&=\frac{P_a}{P_b}\\
+         &=\frac{\frac{V_oI_L}{4}}{\frac{V_oI_L}{\pi}}\\
+         &=\frac{\pi}{4}\\
+         &\approx 0.785
+      \end{split}
+   \end{equation}
+   $$
+
+   즉 $78.5$%이다.
+
 3.
