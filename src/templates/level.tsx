@@ -23,6 +23,11 @@ const TagPageTemplate: React.FC<TagPageProps> = ({
     <Layout location={location} title={siteTitle}>
       <Seo title={`${pageContext.year}`} />
       <div>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9535714360512834"
+          crossOrigin="anonymous"
+        ></script>
         <h1>{pageContext.level}</h1>
         <div className="grid" style={{ gridAutoFlow: "column" }}></div>
         <div>

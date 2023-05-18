@@ -16,6 +16,11 @@ const BlogIndex: React.FC<PageProps> = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="기관별" />
       <article itemScope itemType="http://schema.org/Article">
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9535714360512834"
+          crossOrigin="anonymous"
+        ></script>
         <div id="TableDiv" className="grid">
           {resources.map(item => (
             <div className="Item">

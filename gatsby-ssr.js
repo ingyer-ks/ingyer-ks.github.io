@@ -9,8 +9,6 @@ const HeadComponents = [
     integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
     crossOrigin="anonymous"
   ></link>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9535714360512834"
-      crossOrigin="anonymous"></script>
   </>
 ]
 
