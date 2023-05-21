@@ -306,12 +306,124 @@ $$
 
 ## 18번
 
-임계주파수가 될 수 있는 보기를 차원 분석을 통해서 골라보자. $\tau=RC$라는 식에서 알 수 있듯이 저항과 커패시턴스의 곱은 시간의 차원을 갖는다.
+이 회로는 Sallen-Key Low Pass Filter라고 한다.
+
+뭔가 복잡해 보이므로 잘 찍기 위해서 임계주파수가 될 수 있는 보기를 차원 분석을 통해서 골라보자. $\tau=RC$라는 식에서 알 수 있듯이 저항과 커패시턴스의 곱은 시간의 차원을 갖는다.
 따라서 보기 3,4번은 시간 제곱의 역수이므로 답이 될 수 없다. 보기 1,2번만이 시간의 역수, 즉 주파수 차원을 갖는다.
+
+이 정도로는 답을 고를 수 없으므로 제대로 이 회로의 전달함수를 구해보자. 먼저 OPAMP의 $+$단에 걸리는 전압은
+
+$$
+V_+=V_{out}\times\frac{R_3}{R_3+R_4}
+$$
+
+이다. 따라서 커패시터를 흐르는 전류는
+
+$$
+I_{C_2}=sC_2V_{out}\times\frac{R_3}{R_3+R_4}
+$$
+
+이다. 이 전류가 $R_2$에서 오므로 $R_1$과 $R_2$ 사이의 노드의 전압은
+
+$$
+V_{out}\times\frac{R_3}{R_3+R_4}+R_2sC_2V_{out}\times\frac{R_3}{R_3+R_4}=V_{out}\times\frac{R_3}{R_3+R_4}(1+R_2sC_2)
+$$
+
+이다. 이로부터 $C_1$을 흐르는 전류는
+
+$$
+\begin{equation}
+   \begin{split}
+      I_{C_1}&=sC_1\left(V_{out}\times\frac{R_3}{R_3+R_4}(1+R_2sC_2)-V_{out}\right)\\
+      &=sC_1V_{out}\left(-\frac{R_4}{R_3+R_4}+R_2sC_2\frac{R_3}{R_3+R_4}\right)
+   \end{split}
+\end{equation}
+$$
+
+이다.
+
+$I_{C_1}+I_C{2}$가 $R_1을 흐르므로
+
+$$
+\begin{equation}
+   \begin{split}
+      V_{in}&=V_{out}\times\frac{R_3}{R_3+R_4}(1+R_2sC_2)+R_1(I_{C_1}+I_{C_2})\\
+      &=V_{out}\left(\frac{R_3}{R_3+R_4}+\frac{R_2R_3}{R_3+R_4}sC_2-R_1\times\frac{R_4}{R_3+R_4}\times sC_1+R_1s^2C_1C_2R_2\times\frac{R_3}{R_3+R_4}+R_1sC_2\times\frac{R_3}{R_3+R_4} \right)
+   \end{split}
+\end{equation}
+$$
+
+가 된다. 따라서 전달함수를 구해보면
+
+$$
+\begin{equation}
+   \begin{split}
+      H(s)&=\frac{V_{out}(s)}{V_{in}(s)}\\
+      &=\frac{R_3+R_4}{R_3+sC_2R_2R_3-sC_1R_1R_4+s^2C_1C_2R_1R_2R_3+sC_2R_1R_3}\\
+      &=\frac{R_3+R_4}{s^2C_1C_2R_1R_2R_3+s(C_2R_2R_3-C_1R_1R_4+C_2R_1R_3)+R_3}
+   \end{split}
+\end{equation}
+$$
+
+이다. 버터워스 필터 근사를 위해 $H(s)H(-s)$를 구하면
+
+$$
+\begin{equation}
+   \begin{split}
+      H(s)H(-s)&=\frac{R_3+R_4}{s^2C_1C_2R_1R_2R_3+s(C_2R_2R_3-C_1R_1R_4+C_2R_1R_3)+R_3}\times\frac{R_3+R_4}{s^2C_1C_2R_1R_2R_3-s(C_2R_2R_3-C_1R_1R_4+C_2R_1R_3)+R_3}\\
+      &=\frac{(R_3+R_4)^2}{(s^2C_1C_2R_1R_2R_3+R_3)^2-s^2(C_2R_2R_3-C_1R_1R_4+C_2R_1R_3)^2}\\
+      &=\frac{(R_3+R_4)^2}{s^4(C_1C_2R_1R_2R_3)^2+R_3^2+2s^2C_1C_2R_1R_2R_3^2-s^2(C_2R_2R_3-C_1R_1R_4+C_2R_1R_3)^2}
+   \end{split}
+\end{equation}
+$$
+
+그리고 전달함수가 $H_B(s)$인 2차 버터워스 필터에 대해서는
+
+$$
+H_B(s)H_B(-s)=\frac{G_0^2}{1+\left(\frac{-s^2}{\omega_c^2}\right)^2}
+$$
+
+이므로 $H(s)H(-s)$와 $H_B(s)H_B(-s)$를 비교하면 임계각주파수 $\omega_c$는 주어진 조건인 $R_1=R_2, C_1=C_2$를 이용하면
+
+$$
+\omega_c=\frac{1}{\sqrt{C_1C_2R_1R_2}}=\frac{1}{\sqrt{R_1R_2C_1C_2}}=\frac{1}{R_1C_1}
+$$
+
+임을 알 수 있다. 따라서 임계주파수는
+
+$$
+\begin{equation}
+   \begin{split}
+      f_c&=\frac{\omega_c}{2\pi}\\
+      &=\frac{1}{2\pi\sqrt{R_1R_2C_1C_2}}
+   \end{split}
+\end{equation}
+$$
+
+이다. 또한 임계각주파수에서 출력의 크기는 $\frac{1}{\sqrt{2}}$배가 되어야 하는데, $s=j\omega_c$를 대입하면 $s^2C_1C_2R_1R_2R_3+R_3=-R_3+R_3=0$임과 주어진 조건인 $R_3=1$를 대입하면
+
+$$
+\begin{gather}
+   |H(j\omega_c)|=\left|\frac{1+R_4}{j(2-R_4)}\right|\\
+   \Rightarrow \frac{1+R_4}{2-R_4}=\frac{1+R_4}{\sqrt{2}}\\
+   \begin{equation}
+      \begin{split}
+         \Rightarrow R_4&=2-\sqrt{2}\\
+         &\approx 0.586
+      \end{split}
+   \end{equation}
+\end{gather}
+$$
+
+이다.
+
+두 결과에 해당하는 보기는 **1번** 이다.
+
+이 문제는 제대로 풀라고 낸 문제가 아닐 것이다. 결과를 잘 외워두자.
 
 ## 19번
 
-$V_{in}\gt6.7$이면 다이오드가 켜지므로 $V_{out}=6.7$ V이다. 다이오드 회로가 대칭이므로 음의 주기에서 출력 전압의 최솟값은 $-$를 붙인 $-6.7$ V이므로 답은 **3번** 이다.
+$V_{in}\gt6.7$ V이면 다이오드가 켜지므로 $V_{out}=6.7$ V이다. 다이오드 회로가 대칭이므로 음의 주기에서 출력 전압의 최솟값은 $-$를 붙인 $-6.7$ V이므로 답은 **3번** 이다.
 
 ## 20번
 
