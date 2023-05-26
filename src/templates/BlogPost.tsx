@@ -7,6 +7,8 @@ import Layout from "../components/Layout"
 import { Seo } from "../components/common"
 import { PageProps } from "@/definitions"
 
+import { useMediaQuery } from "react-responsive"
+
 const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
   const [clientID, setClientID] = React.useState(null)
   React.useEffect(() => {
@@ -19,9 +21,15 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
     }
   })
 
+  const isSmallScreen = useMediaQuery({
+    query: "(max-width: 768px)",
+  })
+
   const [viewerjsLoading, setViewerjsLoadingState] = React.useState(true)
 
-  const [problemsVisible, setProblemsVisibility] = React.useState(1)
+  const [problemsVisible, setProblemsVisibility] = React.useState(
+    isSmallScreen ? 0 : 1
+  )
   const [explanationsVisible, setExplanationsVisibility] = React.useState(1)
 
   const showBoth = () => {
@@ -172,14 +180,6 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
       }
     })
 
-    function downloadExplanation() {
-      showOnlyExplanations()
-      alert(
-        "해설을 PDF로 만들고 있습니다. 잠시 기다리시면 다운로드가 시작됩니다."
-      )
-      html2pdf(document.getElementById("ExplanationDiv"))
-    }
-
     return (
       <Layout location={location} title={siteTitle}>
         <Seo
@@ -217,14 +217,6 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
                       onClick={showOnlyExplanations}
                     >
                       해설만
-                    </button>
-                  </div>
-                  <div className="col-start-4">
-                    <button
-                      id="DownloadExplanationButton"
-                      onClick={downloadExplanation}
-                    >
-                      해설PDF다운
                     </button>
                   </div>
                 </div>
