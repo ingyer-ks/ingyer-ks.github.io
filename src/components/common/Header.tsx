@@ -58,6 +58,13 @@ const Header: React.FC<EmptyProps> = () => {
             >
               급수별
             </Link>
+            <a
+              href="https://toss.me/ingyerks"
+              className="whitespace-nowrap text-lg font-medium text-skin-header-fg rounded-md focus:outline-none focus:ring-2 focus:ring-skin-focus"
+              itemProp="url"
+            >
+              후원하기
+            </a>
           </div>
         </div>
       </div>
