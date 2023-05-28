@@ -35,7 +35,7 @@ const Layout: React.FC<LayoutProps> = ({ location, children }) => {
         style={{ height: "100vh", overflow: "hidden" }}
       >
         {header}
-        <main className="flex-1 px-1 lg:px-24 py-8 md:py-3 overflow-hidden">
+        <main className="flex-1 px-1 lg:px-24 py-1 md:py-3 overflow-hidden">
           {children}
         </main>
       </div>
