@@ -9,6 +9,7 @@ const HeadComponents = [
     integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
     crossOrigin="anonymous"
   ></link>
+    <link rel="favicon" href="./favicon.ico"></link>
   </>
 ]
 
