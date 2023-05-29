@@ -16,23 +16,18 @@ const BlogIndex: React.FC<PageProps> = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="기타 글" />
       <article itemScope itemType="http://schema.org/Article">
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9535714360512834"
-          crossOrigin="anonymous"
-        ></script>
-        <div id="TableDiv" className="grid">
+        <div id="TableDiv" className="grid" style={{ marginTop: "5vh" }}>
           {resources.map(item => (
             <div className="Item">
-              <h2 style={{ fontSize: "2em" }}>
-                <Link
-                  to={`/etc/` + item}
-                  itemProp="url"
-                  className="rounded-md focus:outline-none focus:ring-4 focus:ring-skin-focus"
-                >
-                  <span itemProp="headline">{item}</span>
-                </Link>
-              </h2>
+              <Link
+                to={`/etc/` + item}
+                itemProp="url"
+                className="rounded-md focus:outline-none focus:ring-4 focus:ring-skin-focus"
+              >
+                <span itemProp="headline" style={{ fontSize: "2em" }}>
+                  {item}
+                </span>
+              </Link>
             </div>
           ))}
         </div>

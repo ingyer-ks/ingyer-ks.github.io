@@ -188,38 +188,35 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
         />
         <article itemScope itemType="http://schema.org/Article">
           <section itemProp="articleBody">
-            <script
-              async
-              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9535714360512834"
-              crossOrigin="anonymous"
-            ></script>
             <div
               style={{
                 width: "80vw",
                 margin: "auto",
               }}
             >
-              <div>
-                <div className="grid grid-cols-4">
-                  <div className="col-start-1">
-                    <button id="ProbAndExplanationButton" onClick={showBoth}>
-                      문제&해설
-                    </button>
-                  </div>
-                  <div className="col-start-2">
-                    <button id="ProbOnlyButton" onClick={showOnlyProblems}>
-                      문제만
-                    </button>
-                  </div>
-                  <div className="col-start-3">
-                    <button
-                      id="ExplanationOnlyButton"
-                      onClick={showOnlyExplanations}
-                    >
-                      해설만
-                    </button>
-                  </div>
-                </div>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <button
+                  className="both"
+                  id="ProbAndExplanationButton"
+                  onClick={showBoth}
+                >
+                  문제&해설
+                </button>
+
+                <button
+                  className="problemonly"
+                  id="ProbOnlyButton"
+                  onClick={showOnlyProblems}
+                >
+                  문제
+                </button>
+
+                <button
+                  id="ExplanationOnlyButton"
+                  onClick={showOnlyExplanations}
+                >
+                  해설
+                </button>
               </div>
 
               <div id="content">
