@@ -10,6 +10,8 @@ const HeadComponents = [
     crossOrigin="anonymous"
   ></link>
     <link rel="favicon" href="./favicon.ico"></link>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9535714360512834"
+      crossorigin="anonymous"></script>
   </>
 ]
 
