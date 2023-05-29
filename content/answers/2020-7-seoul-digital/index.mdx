@@ -1,0 +1,291 @@
+---
+title: 2020 7급 서울시 디지털공학
+year: 2020년
+organization: 서울시
+level: 7급
+subject: 디지털공학
+etc:
+description:
+---
+
+#
+
+## 1번
+
+$B$와 $C$ 중 하나라도 $1$이면 그 위 단의 값이 $0$이 되므로 아래쪽은 NOR으로 $\overline{B+C}$이다.
+또한 이 값과 $A$ 모두 $1$이어야 $Y=0$이므로 전체적으로 NAND가 되어 $\overline{A\overline{B+C}}$이다. 따라서 답은 **4번**이다.
+
+## 2번
+
+(가),(나) 클럭이 $0$이면 입력이 비활성화되어 출력은 이전 값을 그대로 유지한다. 따라서 $\overline{Q}=\overline{1}=0$이다.
+
+(다) 클럭이 $1$이므로 입력이 활성화되고, $Q^+=D$이므로 $Q=0, \overline{Q}=1$이다.
+
+(라) $Q^+=D$이므로 $Q=1, \overline{Q}=0$이다.
+
+따라서 답은 **2번**이다.
+
+## 3번
+
+논리 0: 최고 출력 전압이 $0.3$ V이고 최고 가능 입력 전압이 $1.3$ V이므로 $1.3-0.3=1$ V의 노이즈까지는 문제가 없다.
+
+논리 1: 최저 출력 전압이 $3.8$ V이고 최저 가능 입력 전압이 $3.1$ V이므로 $3.8-3.1=0.7$ V의 노이즈까지는 문제가 없다.
+
+따라서 답은 **1번**이다.
+
+## 4번
+
+하나하나 해보는 게 제일 나은 거 같다. 가장 위의 $0101$부터 시작해보자. LSB인 가장 오른쪽 비트를 첫 번째 비트로 세겠다.
+
+1. 첫 번째와 세 번째가 $1$이므로 $1 \oplus 1=0$에 따라 $MSB=0$이 되어야 하는데 다음 상태는 $MSB=1$이다. 따라서 구현 불가하다.
+2. 네 번째 상태 천이 시 $XNOR(1,0)=0$이어야 하는데 상태 천이도 상에는 $MSB=1$이므로 맞지 않다.
+3. 일곱 번째 상태 천이 시 $0 \oplus 1=1$인데 상태 천이도 상에는 $MSB=0$이므로 맞지 않다.
+   따라서 남는 것은 **3번**이다.
+
+## 5번
+
+1. 옳다. 노이즈에 강인하고, 오류 정정도 가능하므로 정확한 연산이 가능하다. 또한 암호화 및 보안을 위한 코딩도 가능하다.
+2. 일정 수준의 노이즈가 생겨도 재생시킬 수 있고, 오류 오류 검출 및 정정을 위한 코딩도 가능하다.
+3. 아날로그에 비해 시스템이 간단하고, 노이즈에 강인하니 신뢰도도 있고, 쉽게 변경이 가능하다.
+4. 잡음과 일그러짐이 발생해도 어느 수준까지는 쉽게 재생시킬 수 있다.
+
+따라서 **4번**이 옳지 않다.
+
+## 6번
+
+2진수의 경우: $10$비트를 사용하면 $1024$까지 표현 가능하므로 $10$개이다.
+
+BCD코드의 경우: 각 자리마다 $4$비트가 필요하므로 총 $12$비트가 필요하다.
+
+따라서 답은 **3번**이다.
+
+## 7번
+
+$$
+2^p\geqq m+p+1
+$$
+
+이다. $p=8$을 먼저 대입해보면 $2^8=256$이고, 데이터 비트 $m=128$이므로
+
+$$
+m+p+1=128+8+1=137
+$$
+
+이므로 조건을 만족한다.
+따라서 답은 **1번**이다.
+
+## 8번
+
+식을 변형하면
+
+$$
+Y=ABC+AB\overline{C}+A\overline{B}C+\overline{A}\cdot\overline{B}C
+$$
+
+이다.
+이를 합으로 표현하면
+
+$$
+Y=\varSigma (7,6,5,1)=\varSigma(1,5,6,7)
+$$
+
+이고, 곱으로 표현하면
+
+$$
+Y=\varPi (0,2,3,4)
+$$
+
+이다.
+따라서 답은 **4번**이다.
+
+## 9번
+
+버블을 뒤로 넘기고 연산을 바꾸는 방법을 적용하면 **3번**이 답이다.
+
+## 10번
+
+set-up 시간은 트리거링 에지의 이전에 입력이 인가되어야 하는 시간을 말한다. 따라서 **1번**이 옳지 않다.
+
+## 11번
+
+$$
+56=54+2=2\times 27+2=2\times 3^3+2\times 3^0=2002_3
+$$
+
+이므로 답은 **4번**이다.
+
+## 12번
+
+오버플로우는 양수와 양수를 더해서 음수가 나오거나, 음수와 음수를 더해서 양수가 나오는 것을 말한다.
+
+1,4. 음수와 양수의 합이므로 오버플로우가 발생하지 않는다.
+
+2. $0111_2+0001_2=1000_2$로 양수와 양수를 더했는데 음수가 나왔다.
+
+따라서 **2번**이 오버플로우가 발생하는 경우이다.
+
+## 13번
+
+버블을 뒤로 넘기고 연산을 바꾸자(드 모르간의 법칙). 그러면 위쪽은 $\overline{A}\cdot \overline{B}$이고, 가운데는 $AB$이고, 아래는 $AC$가 된다.
+이들의 OR이므로 답은
+
+$$
+F=\overline{A}\cdot\overline{B}+AB+AC
+$$
+
+이므로 우선 1번은 옳다.
+식을 변형하면
+
+$$
+\begin{equation}
+\begin{split}
+F&=\overline{A}\cdot\overline{B}+AB+A(B+\overline{B})C\\
+&=\overline{A}\cdot\overline{B}+AB+ABC+A\overline{B}C\\
+&=\overline{A}\cdot\overline{B}+AB+A\overline{B}C
+\end{split}
+\end{equation}
+$$
+
+이므로 3번도 옳다.
+또한 4번을 전개하면
+
+$$
+\begin{equation}
+\begin{split}
+AB+AC+\overline{A}\cdot \overline{B}+\overline{B}C&=\overline{A}\cdot\overline{B}+AB+AC+(A+\overline{A})\overline{B}C\\
+&=\overline{A}\cdot\overline{B}+AB+AC+A\overline{B}C+\overline{A}\cdot\overline{B}C\\
+&=\overline{A}\cdot\overline{B}+AB+AC
+\end{split}
+\end{equation}
+$$
+
+이므로 옳다.
+따라서 남는 것은 **2번**이다.
+
+## 14번
+
+가장 오른쪽의 $1$이 가장 왼쪽으로 오면 되므로 답은 $1110_2$인 **1번**이다.
+
+## 15번
+
+Mealy 머신은 출력이 현재의 상태와 입력에 의존한다. 따라서 현재의 입력이 바뀌면 출력 값도 바뀔 수 있기 때문에 클럭 펄스 사이에도 출력 신호 발생이 가능하다.
+하지만 그만큼 타이밍이 꼬일 수 있기 때문에 클럭이 들어올 때마다 상태 천이가 발생하여 출력이 발생하는 Moore 머신이 더 타이밍적으로 안정적이다.
+쉽게 말해, 신호등이 있으면 교통이 더 안전할 것이다. 따라서 답은 **1번**이다.
+
+## 16번
+
+$24$ 비트 길이의 주소로 접근할 수 있고 한 주소당 $4$ 비트가 있으므로 액세스 가능한 최대 메모리 용량은
+
+$$
+2^24\times 4=2^26=2^6=64 \text{ MiB}
+$$
+
+이고 답은 **1번**이다.
+
+## 17번
+
+주어진 식을 변형하면
+
+$$
+\begin{equation}
+\begin{split}
+F&=\overline{b}c+bc+a\overline{b}\overline{c}+a\overline{c}d+\overline{b}\cdot\overline{d}\\
+&=c+a\overline{b}\cdot\overline{c}+a\overline{c}d+\overline{b}\cdot\overline{d}
+\end{split}
+\end{equation}
+$$
+
+이다.
+여기서 $c=0$인 경우를 생각하면
+
+$$
+\begin{equation}
+\begin{split}
+a\overline{b}+ad+\overline{b}\cdot\overline{d}&=a\overline{b}(d+\overline{d})+a(b+\overline{b})d+(a+\overline{a})\overline{b}\cdot\overline{d}\\
+&=a\overline{b}d+a\overline{b}\cdot\overline{d}+abd+a\overline{b}d+a\overline{b}\cdot\overline{d}+\overline{a}\cdot\overline{b}\cdot\overline{d}\\
+&=ad+\overline{b}\cdot\overline{d}
+\end{split}
+\end{equation}
+$$
+
+이다. 종합하면
+
+$$
+F=c+ad+\overline{b}\cdot\overline{d}
+$$
+
+이므로 답은 **2번**이다.
+
+## 18번
+
+먼저 $F_0$에 대해서 구해보자. NOR에 입력되는 값은 각각 $\overline{A_0}B_0$과 $A_0\overline{B_0}$이므로 이 둘의 NOR은
+
+$$
+\begin{equation}
+\begin{split}
+F_0&=\overline{\overline{A_0}B_0+A_0\overline{B_0}}\\
+&=\overline{\overline{A_0}B_0}\cdot \overline{A_0\overline{B_0}}\\
+&=(A_0+\overline{B_0})(\overline{A_0}+B_0)\\
+&=A_0B_0+\overline{A_0}\cdot\overline{B_0}
+\end{split}
+\end{equation}
+$$
+
+이다.
+
+다음으로 $F_1$에 대해서 구해보자. 가장 왼쪽의 게이트의 출력은
+
+$$
+\overline{A_1+B_1}=\overline{A_1}\cdot\overline{B_1}
+$$
+
+이다. 한편 $F_1$ 출력 쪽의 버블을 뒤로 넘기고 연산을 AND로 바꾸자. 그러면 가운데 게이트 2개의 출력은 각각
+
+$$
+A_1+\overline{A_1}\cdot\overline{B_1}
+$$
+
+과
+
+$$
+B_1+\overline{A_1}\cdot\overline{B_1}
+$$
+
+이다. 이 둘의 AND를 구하면
+
+$$
+\begin{equation}
+\begin{split}
+F_1&=(A_1+\overline{A_1}\cdot\overline{B_1})\cdot (B_1+\overline{A_1}\cdot\overline{B_1})\\
+&=A_1B_1+\overline{A_1}\cdot\overline{B_1}
+\end{split}
+\end{equation}
+$$
+
+이다. 이제 보기들을 검토하자.
+
+1. $B_1=0$이면 $F_1=\overline{A_1}$이 맞다.
+2. $F_2=1$이라면 $F_0=F_1=1$이어야 한다. 따라서 $A_0=B_0$이면서 $A_1=B_1$이어야 하므로 $A=B$이다.
+3. $A_0=1$이라면 $F_0=B_0$이 맞다.
+4. $F_2=0$이면 $A_0\neq B_0$이거나 $A_1\neq B_1$이므로 $A\neq B$가 맞다.
+
+따라서 **2번**이 옳지 않다.
+
+## 19번
+
+$I_0$: $b=c=0$일 때 $F=I_0=a$이다.
+
+$I_1$: $b=0,c=1$일 때 $F=I_1=0$이다.
+
+$I_1$: $b=0,c=1$일 때 $F=I_1=0$이다.
+
+$I_2$: $b=1,c=0$일 때 $F=I_2=a$이다.
+
+$I_3$: $b=c=1$일 때 $F=I_3=\overline{a}$이다.
+
+따라서 답은 **3번**이다.
+
+## 20번
+
+SM 차트의 구성 요소는 상태를 알려주는 상태 박스, 입력에 따라 분기를 결정하는 결정 박스, 시스템의 상태와 입력에 따른 출력을 내는 조건 출력 박스로 구성된다.
+입력은 그냥 입력될 뿐으로 입력 박스는 없다. 따라서 답은 **3번**이다.
