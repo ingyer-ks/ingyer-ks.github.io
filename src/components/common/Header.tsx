@@ -24,13 +24,6 @@ const Header: React.FC<EmptyProps> = () => {
 
           <div className="md:flex items-center justify-end md:flex-1 lg:w-0 space-x-8">
             <Link
-              to={`/etc/`}
-              itemProp="url"
-              className="whitespace-nowrap text-lg font-medium text-skin-header-fg rounded-md focus:outline-none focus:ring-2 focus:ring-skin-focus"
-            >
-              기타 글
-            </Link>
-            <Link
               to={`/year/`}
               itemProp="url"
               className="whitespace-nowrap text-lg font-medium text-skin-header-fg rounded-md focus:outline-none focus:ring-2 focus:ring-skin-focus"
@@ -57,6 +50,13 @@ const Header: React.FC<EmptyProps> = () => {
               className="whitespace-nowrap text-lg font-medium text-skin-header-fg rounded-md focus:outline-none focus:ring-2 focus:ring-skin-focus"
             >
               급수별
+            </Link>
+            <Link
+              to={`/etc/`}
+              itemProp="url"
+              className="whitespace-nowrap text-lg font-medium text-skin-header-fg rounded-md focus:outline-none focus:ring-2 focus:ring-skin-focus"
+            >
+              기타 글
             </Link>
             <a
               href="https://toss.me/ingyerks"

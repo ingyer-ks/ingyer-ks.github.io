@@ -16,7 +16,8 @@ const BlogIndex: React.FC<PageProps> = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="기관별" />
       <article itemScope itemType="http://schema.org/Article">
-        <div id="TableDiv" className="grid" style={{ marginTop: "5vh" }}>
+        총 {resources.length - 1}개의 항목이 있습니다. 아래로 스크롤해보세요.
+        <div id="TableDiv" className="grid" style={{ marginTop: "3vh" }}>
           {resources.map(item => (
             <div className="Item">
               <Link
@@ -45,7 +46,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx {
+    allMdx(sort: { fields: frontmatter___title, order: DESC }) {
       edges {
         node {
           frontmatter {

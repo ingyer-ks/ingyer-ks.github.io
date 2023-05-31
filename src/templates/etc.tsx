@@ -65,7 +65,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(limit: 2000) {
+    allMdx(sort: { fields: frontmatter___title, order: DESC }) {
       edges {
         node {
           slug

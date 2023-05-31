@@ -17,15 +17,6 @@ const BlogIndex: React.FC<PageProps> = ({ data, location }) => {
           <div className="kindItem">
             <h2 style={{ fontSize: "2em" }}>
               <Link
-                to={`/etc/`}
-                itemProp="url"
-                className="rounded-md focus:outline-none focus:ring-4 focus:ring-skin-focus"
-              >
-                <span itemProp="headline">기타 글</span>
-              </Link>
-            </h2>
-            <h2 style={{ fontSize: "2em" }}>
-              <Link
                 to={`/year/`}
                 itemProp="url"
                 className="rounded-md focus:outline-none focus:ring-4 focus:ring-skin-focus"
@@ -58,6 +49,15 @@ const BlogIndex: React.FC<PageProps> = ({ data, location }) => {
                 className="rounded-md focus:outline-none focus:ring-4 focus:ring-skin-focus"
               >
                 <span itemProp="headline">급수별</span>
+              </Link>
+            </h2>
+            <h2 style={{ fontSize: "2em" }}>
+              <Link
+                to={`/etc/`}
+                itemProp="url"
+                className="rounded-md focus:outline-none focus:ring-4 focus:ring-skin-focus"
+              >
+                <span itemProp="headline">기타 글</span>
               </Link>
             </h2>
           </div>
