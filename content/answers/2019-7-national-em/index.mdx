@@ -1,0 +1,607 @@
+---
+title: 2019 7급 국가직 전기자기학
+year: 2019년
+organization: 국가직
+level: 7급
+subject: 전기자기학
+etc:
+description:
+---
+
+#
+
+## 1번
+
+A로부터 $r$만큼 떨어진 곳이 C라고 하자.
+
+A에 의한 힘(상수 생략): $\frac{Q\cdot Q}{d^2}$
+
+C에 의한 힘(상수 생략): $\frac{Q\cdot 2Q}{(r-d)^2}$
+
+둘의 크기가 같으므로
+
+$$
+\begin{gather}
+\frac{Q\cdot Q}{d^2}=\frac{Q\cdot 2Q}{(r-d)^2}\\
+\Rightarrow (r-d)^2=2d^2 \\
+\Rightarrow r-d=\sqrt{2}d
+\end{gather}
+$$
+
+이다.
+따라서 B로부터 $\sqrt{2}d$인 위치에 있고 답은 **3번**이다.
+
+## 2번
+
+선전하가 만드는 전계는 대칭성에 의해 $z$축 중심으로 방사형으로 균일하게 형성되어 있으므로
+
+$$
+\vec{E_1}=E_1(\rho)\vec{a_\rho}
+$$
+
+이다.
+선전하 주위로 원통형의 영역을 잡으면
+
+$$
+\begin{equation}
+\begin{split}
+2\pi \rho L \epsilon_0E_1(\rho)&=2L \Rightarrow E_1(\rho)\\
+&=\frac{1}{\phi\epsilon_0\rho}
+\end{split}
+\end{equation}
+$$
+
+이다.
+따라서 $(0,1,0)$에서의 선전하에 의한 전계는
+
+$$
+\vec{E_1}=\frac{1}{\phi\epsilon_0}\vec{a_y}
+$$
+
+이다.
+
+다음으로 점에 의한 전계는
+
+$$
+\vec{E_2}=\frac{2}{4\pi\epsilon_0r^2}\vec{a_r}
+$$
+
+이므로 $(0,1,0)$까지의 거리는 $1$이다.
+따라서 그 점에서의 점전하에 의한 전계는
+
+$$
+\vec{E_2}=\frac{1}{2\pi\epsilon_0}(-\vec{a_y})
+$$
+
+이다.
+둘을 더하면
+
+$$
+\vec{E_1}+\vec{E_2}=\frac{1}{2\pi\epsilon_0}\vec{a_y}
+$$
+
+이므로 답은 **2번**이다.
+
+## 3번
+
+1. 전기력은
+   $$
+   \vec{F_e}=q\vec{E}
+   $$
+   이므로 속도와 무관하다.
+2. 자기력은
+   $$
+   \vec{F_m}=q\vec{v}\times\vec{B}
+   $$
+   이므로 $\vec{v}=\vec{0}$이면 자기력은 없다.
+3. **2번**의 식에서 자기력은 자계의 방향에 수직이다.
+4. 자기력은 수직으로 작용하므로 운동에너지를 변화시킬 수 없다.
+
+## 4번
+
+두 방향의 전류를 더하면 유효 전류는 $\frac{I}{2}$이다. 따라서
+
+$$
+\begin{equation}
+\begin{split}
+H&=\frac{\frac{I}{2}}{2\pi\rho}\\
+&=\frac{I}{4\pi\rho}
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **1번**이다.
+
+## 5번
+
+$Q$가 만드는 전위는
+
+$$
+V(r)=\frac{Q}{4\pi\epsilon_0r}
+$$
+
+이다.
+도체 내에서 전위차는 없으므로 A에서의 전위는 $r=r_o$의 전위와 같은
+
+$$
+V_A=\frac{Q}{4\pi\epsilon_0r_o}
+$$
+
+이다.
+B에서의 전위는
+
+$$
+V_B=\frac{Q}{4\pi\epsilon_0b}
+$$
+
+이다. 따라서 전위차는
+
+$$
+V_A-V_B=\frac{Q}{4\pi\epsilon_0}\left(\frac{1}{r_o}-\frac{1}{b}\right)
+$$
+
+이므로 답은 **3번**이다.
+
+## 6번
+
+무손실 유전체이므로 시평균 전력밀도는
+
+$$
+\frac{1}{2}EH=\frac{1}{80\pi}
+$$
+
+이고
+
+$$
+H=\frac{E}{\eta}
+$$
+
+이다.
+$E=1$이므로
+
+$$
+\begin{gather}
+\frac{1}{2}\cdot 1\cdot \frac{1}{\eta}=\frac{1}{80\pi}\\
+\Rightarrow 2\eta=80\pi \\
+\Rightarrow \eta=40\pi
+\end{gather}
+$$
+
+이다.
+비자성이므로
+
+$$
+\begin{equation}
+\begin{split}
+\eta&=\sqrt{\frac{\mu}{\epsilon}}\\
+&=\sqrt{\frac{\mu_0}{\epsilon_0\epsilon_r}}\\
+&=\eta_0\cdot \sqrt{\frac{1}{\epsilon_r}}\\
+&=120\pi\sqrt{\frac{1}{\epsilon_r}}=40\pi
+\end{split}
+\end{equation}
+$$
+
+$$
+\begin{gather}
+\Rightarrow \sqrt{\frac{1}{\epsilon_r}}=3 \\
+\Rightarrow \epsilon_r=9
+\end{gather}
+$$
+
+이므로 답은 **2번**이다.
+
+## 7번
+
+$z$방향의 $\vec{D}$성분은 같고, $x,y$방향의 $\vec{E}$성분은 같아야 한다.
+따라서
+
+$$
+\begin{equation}
+\begin{split}
+\vec{E_2}&=-3\vec{a_x}+\frac{2\cdot 8}{4}\vec{a_z}\\
+&=-3\vec{a_x}+4\vec{a_z}
+\end{split}
+\end{equation}
+$$
+
+이므로
+
+$$
+\begin{equation}
+\begin{split}
+\left|\vec{E_2}\right|&=\sqrt{3^2+4^2}\\
+&=\sqrt{25}\\
+&=5
+\end{split}
+\end{equation}
+$$
+
+이고 답은 **4번**이다.
+
+## 8번
+
+도선 CD에 의한 자기장은 없다. 도선 AB에 의한 자기장은 도선이 반무한이므로 무한도선 자기장일 때의 절반이다. 따라서
+
+$$
+\begin{equation}
+\begin{split}
+B_{AB}&=\frac{1}{2}\cdot\frac{I}{2\pi a}\\
+&=\frac{I}{4\pi a}
+\end{split}
+\end{equation}
+$$
+
+이다.
+$\frac{1}{4}$원조각 도선 BC에 의한 자기장은 원 전체 도선이 만드는 자기장의 $\frac{1}{4}$이므로
+
+$$
+\begin{equation}
+\begin{split}
+B_{BC}&=\frac{1}{4}\cdot \frac{\frac{I}{2}}{2a}\\
+&=\frac{I}{8a}
+\end{split}
+\end{equation}
+$$
+
+이다.
+두 자기장의 방향이 같으므로 더하면
+
+$$
+\begin{equation}
+\begin{split}
+B&=\frac{I}{4\pi a}+\frac{I}{8a}\\
+&=\left(\frac{\pi+2}{8\pi a}\right)I
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **1번**이다.
+
+## 9번
+
+자기 쌍극자 모멘트는
+
+$$
+\begin{equation}
+\begin{split}
+\vec{m}&=NIA\vec{a_s}\\
+&=20\cdot 10\cdot 30\times 10^{-2}\cdot 10\times 10^{-2}\vec{a_\phi}\\
+&=6\vec{a_\phi}
+\end{split}
+\end{equation}
+$$
+
+이다.
+
+토크는
+
+$$
+\begin{equation}
+\begin{split}
+\vec{T}&=\vec{m}\times\vec{B}\\
+&=6\vec{a_\phi}\times (\vec{a_x}+\sqrt{3}\vec{a_y})\\
+&=-6\left(sin\left(\frac{2}{\pi}+\phi\right)+\sqrt{3}sin\left(\phi\right)\right)\vec{a_z}\\
+&=-6\left(cos\phi +\sqrt{3}sin\phi \right)
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **3번**이다.
+
+## 10번
+
+$$
+C_1=\epsilon_0\frac{S}{d}
+$$
+
+이다. 그리고
+
+$$
+\begin{equation}
+\begin{split}
+C_2&=\left.\epsilon_0\frac{S}{\frac{2d}{3}}\right|\left|2\epsilon_0\frac{S}{\frac{d}{3}}\right.\\
+&=\frac{\epsilon_0\frac{S}{\frac{2d}{3}}\cdot 2\epsilon_0\frac{S}{\frac{d}{3}}}{\epsilon_0\frac{S}{\frac{2d}{3}} + 2\epsilon_0\frac{S}{\frac{d}{3}}}\\
+&=\frac{\frac{1.5\epsilon_0S}{d}\cdot \frac{6\epsilon_0S}{d}}{\frac{1.5\epsilon_0S}{d}+ \frac{6\epsilon_0S}{d}}\\
+&=\frac{9\epsilon_0S}{7.5}\\
+&=\frac{6}{5}C_1
+\end{split}
+\end{equation}
+$$
+
+이다.
+
+정전에너지는
+
+$$
+W=\frac{1}{2}\cdot \frac{Q^2}{C}
+$$
+
+이므로
+
+$$
+\begin{equation}
+\begin{split}
+W_1:W_2&=\frac{1}{C_1}:\frac{1}{C_2}\\
+&=C_2:C_1\\
+&=\frac{6}{5}:1\\
+&=6:5
+\end{split}
+\end{equation}
+$$
+
+이고 답은 **4번**이다.
+
+## 11번
+
+조건에서
+
+$$
+\begin{equation}
+\begin{split}
+\vec{F}&=q(\vec{v}\times\vec{B}+\vec{E})\\
+&=\vec{0}
+\end{split}
+\end{equation}
+$$
+
+이어야 한다. 따라서
+
+$$
+\vec{v}\times 2\vec{a_y}=-\vec{a_x}
+$$
+
+이므로 속도는
+
+$$
+\vec{v}=\frac{1}{2}\vec{a_z}
+$$
+
+이고 답은 **2번**이다.
+
+## 12번
+
+강자성체는 외부자계를 제거하면 잔류자속이 남으므로 **4번**이 옳지 않다.
+
+## 13번
+
+ㄱ: 어떤 지점에서 전하들이 나간다면 그 지점 내부의 전하는 줄어든다. 따라서 우변의 부호는 $-$여야 한다.
+
+ㄴ: ㄱ을 상쇄하기 위해서 $+$부호의 항이 더해져야 한다.
+
+ㄷ: 변위전류밀도이다.
+
+따라서 답은 **1번**이다.
+
+## 14번
+
+유도 기전력은
+
+$$
+emf=-\frac{d \Phi}{dt}
+$$
+
+이다.
+한편
+
+$$
+\begin{equation}
+\begin{split}
+d \Phi&=dS\cdot B+S\cdot dB\\
+&=(0.4-0.2)(-dx)(-10sin\omega t)+(0.4-0.2)(1-x)(-10\omega cos\omega t)dt
+\end{split}
+\end{equation}
+$$
+
+이므로
+
+$$
+\begin{equation}
+\begin{split}
+emf&=-2\left(-\frac{dx}{dt}\right)(sin\omega t-2(1-x)\omega cos\omega t)\\
+&=-(2(-0.5\omega cos\omega t)sin\omega t-2(1-x)\omega cos\omega t)\\
+&=-(-\omega cos\omega t sin\omega t-2(1-0.5+0.5sin\omega t)\omega cos\omega t)\\
+&=-(-\omega cos\omega t sin\omega t-(1+sin\omega t)\omega cos\omega t)\\
+&=2\omega cos\omega t sin\omega t+\omega cos\omega t
+\end{split}
+\end{equation}
+$$
+
+이다.
+
+저항 $R=0.5 \Omega$로 나눠주면 전류는
+
+$$
+i=2\omega cos \omega t(1+2sin\omega t)
+$$
+
+이므로 답은 **3번**이다.
+
+## 15번
+
+1. 정석적인 풀이
+
+   자유공간이므로 전류가 없으니
+
+   $$
+   \begin{equation}
+   \begin{split}
+   \nabla \times \vec{H}&=\vec{J}+\frac{\partial \vec{D}}{\partial t}\\
+   &=\frac{\partial \vec{D}}{\partial t}
+   \end{split}
+   \end{equation}
+   $$
+
+   이다.
+   자계의 회전을 계산하면
+
+   $$
+   \begin{equation}
+   \begin{split}
+   \begin{vmatrix}
+   \vec{a_x} & \vec{a_y} & \vec{a_z} \\
+   \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+   H_x & H_y & H_z
+   \end{vmatrix}
+   &=
+   \begin{vmatrix}
+   \vec{a_x} & \vec{a_y} & \vec{a_z} \\
+   \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+   0 & 0 & 0.1sin(10^3t+10^2y)
+   \end{vmatrix}\\
+   &=\vec{a_x}\frac{\partial}{\partial y}0.1sin(10^3t+10^2y)\\
+   &=\vec{a_x}10cos(10^3t+10^2y)
+   \end{split}
+   \end{equation}
+   $$
+
+   이다.
+   따라서 원점에서 $t=0$일 때의 변위전류밀도는
+
+   $$
+   \frac{\partial \vec{D}}{\partial t}=10\vec{a_x}
+   $$
+
+   이다.
+
+2. 빠른 풀이
+
+   $\vec{H}$는 $-y$ 방향으로 진행하며 진동 방향은 $+\vec{a_z}$ 방향이다.
+   따라서 $\vec{E}$는 $+\vec{a_x}$ 성분을 가져야 하고 $\vec{D}$와 $\frac{\partial \vec{D}}{\partial t}$도 마찬가지이다.
+   따라서 답은 **1번**이 될 수밖에 없다.
+
+## 16번
+
+입력 임피던스는
+
+$$
+Z_{in}=Z_0\frac{Z_L+jZ_0tan(\beta l)}{Z_0+jZ_Ltan(\beta l)}
+$$
+
+이고
+
+$$
+\beta=\frac{2\pi}{\lambda_g}
+$$
+
+이다.
+주어진 값들을 대입해서 정리하면
+
+$$
+\begin{equation}
+\begin{split}
+Z_{in}&=50\times\frac{150+j50tan(\beta l)}{50+j150tan(\beta l)}\\
+&=50\times\frac{3+jtan(\beta l)}{1+j3tan(\beta l)}\\
+&=50\times\frac{3-j9tan(\beta l)+jtan(\beta l)+3tan^2(\beta l)}{1+9tan^2(\beta l)}\\
+&=50\times \frac{3+3tan^2(\beta l)-j8tan(\beta l)}{1+9tan^2(\beta l)}
+\end{split}
+\end{equation}
+$$
+
+이다. 따라서
+
+$$
+\begin{gather}
+R=50\times\frac{3(1+tan^2(\beta l))}{1+9tan^2(\beta l)}\\
+X=50\times\frac{-8tan(\beta l)}{1+9tan^2(\beta l)}
+\end{gather}
+$$
+
+이다.
+
+1. $0 \lt l \lt 0.25\lambda_g$이면 $0\lt tan(\beta l)$이므로 $X$는 음수이다.
+2. $0 < l < 0.25\lambda_g$이면 $\frac{50}{3} \lt R \lt 150 \Rightarrow 0 \lt R \lt 150$이다.
+3. $0.25 \lambda_g \lt l \lt 0.5 \lambda_g$이면 $\frac{50}{3}\lt R \lt 150$이다.
+4. $l=0.25\lambda_g$이면 $R=\frac{50}{3}$이다.
+
+따라서 **2번**이 옳다.
+
+## 17번
+
+자기저항은
+
+$$
+\Re=\frac{l}{\mu S}
+$$
+
+이다.
+공극이 없었을 때의 자기저항은
+
+$$
+\Re_1=\frac{2}{1000\mu_0 S}
+$$
+
+이다. 그리고 공극이 생겼을 때의 자기저항은
+
+$$
+\begin{equation}
+\begin{split}
+\Re_2&\thickapprox \Re_1+\frac{4\times 10^{-3}}{\mu_0 S}\\
+&=\frac{6}{1000\mu_0 S}\\
+&=3\Re_1
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **2번**이다.
+
+## 18번
+
+1. 동작 주파수는
+   $$
+   \begin{equation}
+   \begin{split}
+   \frac{6\pi\times 10^8}{2\pi}&=3\times 10^8\\
+   &=300 \text{ MHz}
+   \end{split}
+   \end{equation}
+   $$
+   이다.
+2. 전자기파의 속도는
+   $$
+   \begin{equation}
+   \begin{split}
+   v&=\frac{\omega}{\beta}\\
+   &=\frac{6\pi\times 10^8}{4\pi}\\
+   &=1.5\times 10^8\text{ m/s}
+   \end{split}
+   \end{equation}
+   $$
+   이다.
+3. 평균전력밀도는 무손실 매질이므로
+
+   $$
+   \begin{equation}
+   \begin{split}
+   \frac{1}{2}S&=\frac{1}{2}EH\\
+   &=\frac{120\pi}{2}\\
+   &=60\pi \text{ W/m}^2
+   \end{split}
+   \end{equation}
+   $$
+
+   이다.
+
+4. $\eta=\eta_0$이므로 $\mu_r=\epsilon_r$이다. 다음으로 속도가 빛의 속도의 절반인 것에서 $\mu_r\epsilon_r=4$이므로 $\mu_r=2$이다.
+
+따라서 **4번**이 옳지 않다.
+
+## 19번
+
+자속밀도가 균일하므로 각 미소전류성분에 가해지는 힘의 크기는 모두 같다.
+다음으로 힘의 방향은
+
+$$
+\vec{a_*_\phi}\times \vec{a_z}=\vec{a_\rho}
+$$
+
+이므로 모든 방향으로 균일하게 힘이 가해진다. 따라서 합력은 $0$이 되므로 답은 **1번**이다.
+
+## 20번
+
+1. 옳다.
+2. $d$가 반지름에 비해 매우 크다. 따라서 반지름이 커지면 그 제곱에 해당하는 비율로 면적이 넓어지니 그에 비례하여 더 많은 자속이 들어올 것이다.
+   또한 서로 작용하므로 상호 인덕턴스는 각 반지름의 제곱의 곱에 비례해야 할 것이다.
+3. 각자의 전류에 비례해서 상대방의 영역을 통과하는 자기장이 생기고 힘은 자기장에 비례하므로 옳다.
+4. 코일1과 코일2에 같은 방향으로 전류가 흐르면 자석 2개를 같은 방향으로 붙여놓은 것과 같다. 따라서 서로를 당기는 방향으로 힘이 작용하므로 코일1은 코일2를 $-z$ 방향으로 당긴다.
+
+따라서 **4번**이 옳지 않다.
