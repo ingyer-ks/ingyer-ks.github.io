@@ -29,7 +29,7 @@ const TagPageTemplate: React.FC<TagPageProps> = ({
           className="grid"
           style={{
             gridAutoFlow: "column",
-            overflow: "scroll",
+            overflow: "auto",
             height: "calc(100vh - 200px)",
             marginTop: "3vh",
           }}
