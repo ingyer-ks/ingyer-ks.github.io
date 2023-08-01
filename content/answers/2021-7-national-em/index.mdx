@@ -83,9 +83,9 @@ $$
 $$
 \begin{equation}
 \begin{split}
-\int *{\frac{\pi}{3}} ^{\frac{\pi}{2}} \int _{0} ^{2\pi} \frac{2}{4\pi r^2} r^2 sin\theta d\phi d\theta&=\int _{\frac{\pi}{3}} ^{\frac{\pi}{2}}\frac{1}{2\pi}\cdot 2\pi sin\theta d\theta\\
+\int _{\frac{\pi}{3}} ^{\frac{\pi}{2}} \int _{0} ^{2\pi} \frac{2}{4\pi r^2} r^2 sin\theta d\phi d\theta&=\int _{\frac{\pi}{3}} ^{\frac{\pi}{2}}\frac{1}{2\pi}\cdot 2\pi sin\theta d\theta\\
 &=\int _{\frac{\pi}{3}} ^{\frac{\pi}{2}}sin\theta d\theta\\
-&=-cos\theta\left|\_{\frac{\pi}{3}}^{\frac{\pi}{2}}\right.\\
+&=\left[-cos\theta\right]_{\frac{\pi}{3}}^{\frac{\pi}{2}}\\
 &=cos\frac{\pi}{3}\\
 &=\frac{1}{2}
 \end{split}
@@ -221,10 +221,10 @@ $$
 그러면
 
 $$
-d\vec{H}=\frac{I}{4\pi}\frac{d\vec{l}\times \vec{a_\Re}}{\Re^2}
+\vec{dH}=\frac{I}{4\pi}\frac{d\vec{l}\times \vec{a_\Re}}{\Re^2}
 $$
 
-이고 $d\vec{l}=dz\vec{a_z}$이다.
+이고 $\vec{dl}=dz\vec{a_z}$이다.
 그리고 $\Re=\sqrt{z^2+\rho^2}$이므로
 
 $$
@@ -237,8 +237,8 @@ $$
 $$
 \begin{equation}
 \begin{split}
-d\vec{H}&=\frac{I}{4\pi}\frac{1}{\Re^2}dz\vec{a*z} \times \frac{1}{\sqrt{z^2+\rho^2}}(\rho\vec{a*\rho}+z\vec{a*z})\\
-&=\frac{I}{4\pi}\frac{\rho}{(z^2+\rho^2)^{\frac{3}{2}}}dz\vec{a*\phi}\\
+\vec{dH}&=\frac{I}{4\pi}\frac{1}{\Re^2}dz\vec{a_z} \times \frac{1}{\sqrt{z^2+\rho^2}}(\rho\vec{a_\rho}+z\vec{a_z})\\
+&=\frac{I}{4\pi}\frac{\rho}{(z^2+\rho^2)^{\frac{3}{2}}}dz\vec{a_\phi}\\
 &=\frac{I}{4\pi} cos(\gamma)\frac{1}{z^2+\rho^2}dz
 \end{split}
 \end{equation}
@@ -255,9 +255,9 @@ $$
 $$
 \begin{equation}
 \begin{split}
-d\vec{H}&=\frac{I}{4\pi} cos(\gamma)\frac{1}{\rho^2(1+tan^2(\gamma))}\rho sec^2(\gamma)d\gamma\vec{a*\phi}\\
-&=\frac{I}{4\pi} cos(\gamma)\frac{1}{\rho^2sec^2(\theta)}\rho sec^2(\gamma)d\gamma\vec{a*\phi}\\
-&=\frac{I}{4\pi} cos(\gamma)\frac{1}{\rho}d\gamma\vec{a\_\phi}
+\vec{dH}&=\frac{I}{4\pi} cos(\gamma)\frac{1}{\rho^2(1+tan^2(\gamma))}\rho sec^2(\gamma)d\gamma\vec{a_\phi}\\
+&=\frac{I}{4\pi} cos(\gamma)\frac{1}{\rho^2sec^2(\theta)}\rho sec^2(\gamma)d\gamma\vec{a_\phi}\\
+&=\frac{I}{4\pi} cos(\gamma)\frac{1}{\rho}d\gamma\vec{a_\phi}
 \end{split}
 \end{equation}
 $$

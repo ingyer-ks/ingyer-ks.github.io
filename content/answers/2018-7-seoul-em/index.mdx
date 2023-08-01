@@ -133,7 +133,7 @@ $$
 \Phi&=\int \vec{B}\cdot d\vec{S}\\
 &=\int_0^1 \int_0^1 3xy^2\vec{a_z}\cdot \vec{a_z}dxdy\\
 &=\int_0^1 x dx \int_0^1 3y^2dy\\
-&=\left(\left.\frac{1}{2}x\right|_0^1 \right)\left( y^3|_0^1\right)\\
+&=\left(\left[\frac{1}{2}x\right]_0^1 \right)\left( \left[y^3\right]_0^1\right)\\
 &=0.5
 \end{split}
 \end{equation}
@@ -185,7 +185,7 @@ $$
 $$
 \begin{equation}
 \begin{split}
-\Rightarrow \rho_l&=1.8\times 10^4\frac{10\times 10^{-9}}{18}\cdot 3\\
+\Rightarrow \rho_l&=1.8\times 10^4 \times \frac{10\times 10^{-9}}{18}\cdot 3\\
 &=3 \mu
 \end{split}
 \end{equation}
@@ -278,7 +278,7 @@ $$
    \begin{equation}
    \begin{split}
    \vec{E}&=\frac{\lambda h}{2\pi\epsilon_0}\int_0^L \frac{1}{(x^2+h^2)^{\frac{3}{2}}}dx\\
-   &=\left.\frac{\lambda h}{2\pi\epsilon_0}\frac{x}{h^2\sqrt{x^2+h^2}}\right|\_0^L\\
+   &=\left[\frac{\lambda h}{2\pi\epsilon_0}\frac{x}{h^2\sqrt{x^2+h^2}}\right]_0 ^L\\
    &=\frac{\lambda}{2\pi\epsilon_0}\frac{L}{h\sqrt{L^2+h^2}}
    \end{split}
    \end{equation}
@@ -503,7 +503,7 @@ $$
 $$
 \begin{equation}
 \begin{split}
-H&=frac{\sqrt{2}}{4\pi \frac{d}{2}}\left(2\cdot \frac{\sqrt{2}}{2}\cot 4\right)\\
+H&=\frac{\sqrt{2}}{4\pi \frac{d}{2}}\left(2\cdot \frac{\sqrt{2}}{2}\cdot 4\right)\\
 &=\frac{4}{\pi d}
 \end{split}
 \end{equation}
@@ -568,7 +568,7 @@ $$
 
 ## 18번
 
-1. 정재파비의 범위는 $[1,\infty]$이다. 특히 전송선로 끝이 개방되면 정재파만 존재하게 되므로 최소 진폭은 $0$이니 정재파비는 무한대가 된다.
+1. 정재파비의 범위는 $[1,\infty)$이다. 특히 전송선로 끝이 개방되면 정재파만 존재하게 되므로 최소 진폭은 $0$이니 정재파비는 무한대가 된다.
 2. 정합되면 정재파가 없으므로 최소 진폭과 최대 진폭이 같다. 따라서 정재파비는 $1$이다.
 3. 정합되면 반사가 일어나지 않는다.
 4. 반사 계수는
@@ -593,7 +593,7 @@ $$
 $\frac{r}{2}$ 떨어진 곳에서는 전류가
 
 $$
-I\frac{\pi \left(\frac{r}{2}\right)^2}{\pi r^2}=\frac{I}{4}
+I\times\frac{\pi \left(\frac{r}{2}\right)^2}{\pi r^2}=\frac{I}{4}
 $$
 
 이므로
@@ -626,4 +626,4 @@ $$
 \vec{T}=\vec{m}\times\vec{H}
 $$
 
-이므로 회전력은 $MH$이고 답은 **1번**이다.
+이므로 회전력의 크기는 $MH$이고 답은 **1번**이다.
