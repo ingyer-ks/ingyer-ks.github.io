@@ -98,80 +98,77 @@ $$
 
 ## 6번
 
-1. A급 전력증폭기는 동작점이 교류부하선의 중앙에 위치한다.
-
-   ![](./prob6-a.svg)
-   동작점에서의 전력은
+1. 동작점이 교류부하선의 중앙에 위치하는 A급 전력증폭기가 소모하는 직류 전력은 최대 출력 전류를 $I_C$, 최대 출력 전압을 $V_C$라 하면
 
    $$
    \begin{equation}
       \begin{split}
-         P_b&=\frac{1}{2}V_O\times\frac{1}{2}I_L\\
-         &=\frac{1}{4}V_O I_L
+         P_{dc}&=\frac{1}{2}I_C\times\frac{1}{2}V_C\\
+         &=\frac{1}{4}I_C V_C
       \end{split}
    \end{equation}
    $$
 
    이다.
 
-   한편 최대로 전력증폭시 $V_O$가 $0\rightarrow V_O$로 움직일 때 $I_L$은 $I_L\rightarrow 0$으로 움직인다.
-   그러므로 이렇게 최대로 전력증폭될 때 증폭되는 전력은 주어진 그래프의 넓이이므로
-
-   $$
-   P_a=\frac{1}{2}V_O I_L
-   $$
-
-   이 된다.
-
-   따라서 최대 전력 효율은
+   한편 최대로 전력증폭시 전류의 진폭은 $\frac{1}{2}I_C$, 전압의 진폭은 $\frac{1}{2}V_C$이므로 교류 전력을 구해보면
 
    $$
    \begin{equation}
       \begin{split}
-         \eta&=\frac{P_a}{P_b}\\
-         &=\frac{\frac{1}{2}V_O I_L}{\frac{1}{4}V_O I_L}\\
+         P_{ac}&=\frac{1}{\sqrt{2}}\frac{1}{2}I_C\cdot \frac{1}{\sqrt{2}}\frac{1}{2}V_C\\
+         &=\frac{1}{8}I_C V_C
+      \end{split}
+   \end{equation}
+   $$
+
+   이다.
+   따라서
+
+   $$
+   \begin{equation}
+      \begin{split}
+         \eta&=\frac{P*{ac}}{P*{dc}}=\frac{\frac{1}{8}I_C V_C}{\frac{1}{4}I_C V_C}\\
          &=\frac{1}{2}
       \end{split}
    \end{equation}
    $$
 
-   이 되므로 최대 효율은 $50$%이다.
+   이므로 최대 효율은 50%이다.
 
 2. B급 전력증폭기는 동작점이 차단점에 있다.
+   따라서 반주기 동안에는 전압이 차단점 왼쪽 구간에서 움직이므로 전류도 주어진 빨간 부하선을 따라 나타나지만 나머지 반주기 동안에는 전압이 차단점 오른쪽에 위치하므로 전류는 나타날 수 없다.
+   그러므로 전류는 최대 반주기 시간동안만 흐를 수 있다.
 
-   ![](./prob6-b.svg)
-   따라서 반주기 동안에는 전압이 차단점 왼쪽 구간에서 움직이므로 전류도 주어진 빨간 부하선을 따라 나타나지만 나머지 반주기 동안에는 전압이 차단점 오른쪽에 위치하므로 전류는 나타날 수 없다. 그러므로 전류는 최대 반주기 시간동안만 흐를 수 있다.
+   또한, BJT가 켜지기 위해서는 0.7 V의 전압이 필요하므로 $\pm 0.7$ V 구간에서는 왜곡이 나타나게 된다.
 
-   효율은 어떨까? 출력이 있는 반 주기동안의 최대 직류 전류를 구해보자.
+   효율은 어떨까? 출력이 있는 반 주기동안의 직류 전류를 구해보자.
 
    $$
    \begin{equation}
       \begin{split}
-         I_b&=\frac{1}{2\pi}\int _0 ^ {\pi} I_L sin \theta d\theta\\
-         &=\frac{I_L}{\pi}
+         I_{dc}&=\frac{1}{2\pi}\int _0 ^{\pi} I_C sin \theta d\theta\\
+         &=\frac{I_C}{\pi}
       \end{split}
    \end{equation}
    $$
 
-   이다. 이 때 전체적인 전압은 전압은 $V_O$로 유지된다. 따라서 최대 직류 전력은
+   이다. 한편 B급 증폭기는 푸시풀 구조이므로 양단의 전압이 $+V_C, -V_C$이다. 따라서 인가되는 직류 전압은 $V_{dc}=V_C-(-V_C)=2V_C$이다.
+   그러므로 직류 전력은
+
+   $$
+   P_{dc}=I_{dc}V_{dc}=\frac{2}{\pi}I_C V_C
+   $$
+
+   이다.
+
+   한편 최대 교류 전력 출력시 교류 전압의 진폭을 생각해보면 $V_C$이고 교류 전류의 진폭은 $I_C$이므로 최대 교류 전력은
 
    $$
    \begin{equation}
       \begin{split}
-         P_b&=V_bI_b\\
-         &=\frac{V_OI_L}{\pi}
-      \end{split}
-   \end{equation}
-   $$
-
-   이다. 다음으로 최대 교류 전력의 실효값 $P_a$를 구하면
-
-   $$
-   \begin{equation}
-      \begin{split}
-         P_a&=\frac{1}{2\pi}\int_0 ^{\pi}V_OI_L sin^2 \theta d\theta\\
-         &=\frac{1}{2\pi}\times V_OI_L\times \int_0 ^{\pi} \left(\frac{1}{2}-2cos2\theta\right)d\theta\\
-         &=\frac{V_OI_L}{4}
+         P_{ac}&=\frac{1}{\sqrt{2}}I_C\frac{1}{\sqrt{2}}V_C\\
+         &=\frac{1}{2}I_C V_C
       \end{split}
    \end{equation}
    $$
@@ -181,8 +178,8 @@ $$
    $$
    \begin{equation}
       \begin{split}
-         \eta&=\frac{P_a}{P_b}\\
-         &=\frac{\frac{V_oI_L}{4}}{\frac{V_oI_L}{\pi}}\\
+         \eta&=\frac{P_{ac}}{P_{dc}}\\
+         &=\frac{\frac{1}{2}I_C V_C}{\frac{2}{\pi}I_C V_C}\\
          &=\frac{\pi}{4}\\
          &\approx 0.785
       \end{split}
@@ -192,8 +189,6 @@ $$
    즉 약 $78.5$%이다.
 
 3. C급 전력증폭기는 동작점이 위 그래프의 제 4사분면에 존재한다. 즉 차단점 이하에 동작점이 있어서 전체 주기 중 짧은 일부 시간 동안만 전류가 흐른다. 아래 그림에서 가로 점선 높이까지가 흐르는 전류 크기의 범위이다.
-
-   ![](./prob6-c.svg)
 
    따라서 낮은 전류로 인해 소비전력도 적으므로 효율이 $100$%에 근접한다.
 

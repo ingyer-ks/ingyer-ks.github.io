@@ -116,15 +116,33 @@ $$
 작동을 위해 사용하는 직류 전력은 $10\times 0.5=5$ W이다. 효율이 70%이므로 교류 출력 전력을 구하기 위해 방정식을 세우면
 
 $$
+\cancel{
 \begin{gather}
     \eta=0.7=\frac{P_{ac}}{P_{dc}+P_{ac}}=\frac{P_{ac}}{5+P_{ac}}\\
     \Rightarrow 3.5+0.7P_{ac}=P_{ac}\\
     \Rightarrow 0.3P_{ac}=3.5\\
     \Rightarrow P_{ac}\approx 1.2\text{ W}
 \end{gather}
+}
 $$
 
-이다. 답을 보아하니 그냥 직류 전력에다가 효율을 곱한 것 같은데, 과연 그게 옳을까?
+<del>
+  이다. 답을 보아하니 그냥 직류 전력에다가 효율을 곱한 것 같은데, 과연 그게
+  옳을까?
+</del>
+
+옳더라. 내가 완전히 잘못 알고 있었다. 사용하는 직류 전력 대비 출력되는 교류 전력이 효율의 정의더라.
+따라서 이를 제대로 풀면
+
+$$
+\begin{gather}
+    \eta=0.7=\frac{P_{ac}}{P_{dc}}\\
+    \Rightarrow P_{ac}=0.7P_{dc}\\
+    \Rightarrow P_{ac}=3.5\text{ W}
+\end{gather}
+$$
+
+이므로 답은 **3번** 이다.
 
 ## 7번
 
