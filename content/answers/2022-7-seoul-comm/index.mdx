@@ -189,4 +189,139 @@ $$
 
 ## 15번
 
+오류율은 다음과 같다.
+
+$$
+\begin{equation}
+\begin{split}
+P(e)&=P(S=1)P(\hat{S}=-1|S=1)+P(S=-1)P(\hat{S}=1|S=-1)\\
+&=\alpha \int_{-\infty}^2\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(t-1-\mu)^2}{2\sigma^2}}dt +(1-\alpha)\int_2 ^\infty \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(t+1-\mu)^2}{2\sigma^2}}dt
+\end{split}
+\end{equation}
+$$
+
+여기서 $\frac{t-1-\mu}{\sigma}=\tilde{t}, \frac{t+1-\mu}{\sigma}=\overline{t}$로 놓자. 그러면
+
+$$
+\begin{equation}
+\begin{split}
+P(e)&=\alpha\int _{-\infty} ^\frac{1-\mu}{\sigma} \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{\tilde{t}^2}{2}}d\tilde{t}+(1-\alpha)\int _\frac{3-\mu}{\sigma} ^\infty \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{\overline{t}^2}{2}}d\overline{t}\\
+&=\alpha\int ^{\infty} _\frac{-1+\mu}{\sigma} \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{\tilde{t}^2}{2}}d\tilde{t}+(1-\alpha)\int _\frac{3-\mu}{\sigma} ^\infty \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{\overline{t}^2}{2}}d\overline{t}
+\end{split}
+\end{equation}
+$$
+
+이 식이 <보기>와 같아야 하므로
+
+$$
+\mu=1,\sigma=2
+$$
+
+이어야 하고 따라서 답은 **4번** 이다.
+
 ## 16번
+
+감염된 사건을 $i$, 감염되지 않은 사건을 $ni$, 감염되지 않았다고 판단하는 사건을 $n$이라 하자. 구하라는 확률은
+
+$$
+\begin{equation}
+\begin{split}
+P(i|n)&=\frac{P(i \text{ and }n)}{P(n)}\\
+&=\frac{P(n|i)P(i)}{P(i)P(n|i)+P(ni)P(n|ni)}\\
+&=\frac{0.02\times 0.01}{0.01\times 0.02+ 0.99 \times 0.95}
+\end{split}
+\end{equation}
+$$
+
+이때 $0.01\times0.01\ll 0.99\times 0.95, 0.95\approx 1, 0.99\approx 1$의 근사를 적용하자. 그러면
+
+$$
+\begin{equation}
+\begin{split}
+P(i|n)&\approx \frac{0.01\times 0.02}{1}\\
+&=0.02\text{\%}
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **2번** 이다.
+
+## 17번
+
+OOK의 비트 오율은 다음과 같다.
+
+$$
+BER=Q\left(\frac{d/2}{\sigma} \right)
+$$
+
+한편 OOK는 1비트를 사용하므로 비트의 평균에너지는
+
+$$
+E_b=\frac{A^2T}{2}
+$$
+
+이다.
+
+한편 원점에서 $s_1$심볼까지의 거리는 $\sqrt{A^2T}$이므로 $\frac{d}{2}=\frac{1}{2}\sqrt{2E_b}$이다.
+다음으로 주어진 조건에서 $\sigma=\sqrt{\frac{N_0}{2}}$이다.
+이제 이들을 대입하면
+
+$$
+\begin{equation}
+\begin{split}
+BER&=Q\left( \frac{\frac{1}{2}\sqrt{2E_b}}{\sqrt{\frac{N_0}{2}}} \right)\\
+&=Q\left(\sqrt{  \frac{E_b}{N_0}}  \right)
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **2번** 이다.
+
+## 18번
+
+1. 부호어를 보면 길이가 1 또는 2이니 당연히 가변이다.
+2. 평균 길이는 다음과 같다.
+   $$
+   \frac{1}{2}\times 1+ \frac{1}{3}\times 2 +\frac{1}{12}\times 2+\frac{1}{12}\times 2=\frac{3}{2}
+   $$
+3. 111이 와도, 110이 와도, 어떠한 부호어열이 와도 모호함은 없는 거 같으나, 잘 모르겠으니 일단 넘겨보자.
+4. 허프만 코드보다 평균 부호어가 짧을 수는 없다.
+
+따라서 답은 **4번** 이다.
+
+## 19번
+
+$$
+\int_{-\infty}^\infty sin(\tau)\delta(t+\alpha-\tau)d\tau=sin(t+\alpha)
+$$
+
+인데 이 적분 결과가 $cos(t)$라고 한다. 따라서
+
+$$
+sin(t+\alpha)\delta(t)=cos(t)\delta(t)
+$$
+
+인데, 델타 함수의 인자는 $t=0$일 때 0이 아닌 값을 갖고, 나머지에선 다 $0$이다. 따라서 $t=0$을 $cos(t)$ 부분에 대입해도 같다.
+그러므로
+
+$$
+sin(t+\alpha)\delta(t)=\delta(t)
+$$
+
+이고 답은 **4번** 이다.
+
+## 20번
+
+$$
+\begin{equation}
+\begin{split}
+R(n.m)&=E[a(n)a(n+m)]\\
+&=E[(b_n+b_{n-1})(b_{n+m}+b_{n+m-1})]
+\end{split}
+\end{equation}
+$$
+
+이다.
+
+자세히 관찰해보면 $m=0$일 때엔 $E[b_n^2+b_{n-1}^2]=1+1=2$가 되겠고, $m=1$일 때엔 겹치는 게 $b_n^2$ 하나이니 결과가 1이 될 것 같고, $m\ge 2$이면 겹치는 게 없으니 자기상관이 0이 될 것 같다.
+따라서 답은 **4번** 이다.
