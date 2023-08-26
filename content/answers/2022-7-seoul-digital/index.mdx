@@ -44,19 +44,21 @@ $$
 $$
 \begin{equation}
 \begin{split}
-Y&=\overline{A}+AB\overline{D}+B\overline{C}\cdot\overline{D}\\
-&=\overline{A}+AB(C+\overline{C})\overline{D}+(A+\overline{A})B\overline{C}\cdot\overline{D}\\
-&=\overline{A}+ABC\overline{D}+AB\overline{C}\cdot\overline{D}+AB\overline{C}\cdot\overline{D}+\overline{A}B\overline{C}\cdot\overline{D}\\
-&=\overline{A}+AB\overline{D}+B\overline{C}\cdot\overline{D}
+Y&=(AB+\overline{C})(B\overline{D})+\overline{A}\\
+&=AB\overline{D}+B\overline{C}\cdot\overline{D}+\overline{A}\\
+&=AB(C+\overline{C})\overline{D}+(A+\overline{A})B\overline{C}\cdot\overline{D}+\overline{A}\\
+&=ABC\overline{D}+AB\overline{C}\cdot\overline{D}+ABC\overline{D}+\overline{A}B\overline{C}\cdot\overline{D}+\overline{A}\\
+&=AB\overline{D}+\overline{A}
 \end{split}
 \end{equation}
 $$
 
-따라서 답은 **4번** 이다. 공부를 했다면 제발 카르노 맵으로 풀지 말자.
+그런데, $A=1$이면 $Y=B\overline{D}$이고 $A=0$이면 $B\overline{D}$에 관계없이 $Y=1$이다. 따라서 **2번** 과 같이 더 간략화가 가능하다.
 
 ## 5번
 
-1이 나오는 경우는 $ABC=001,010,100,111$과 같이 1이 홀수개 있을 경우이다. 각각의 경우에 해당하는 것은 $D_1,D_2,D_4,D_7$이므로 답은 **3번** 이다.
+1이 나오는 경우는 $ABC=001,010,100,111$과 같이 1이 홀수개 있을 경우이다. 한편 출력이 OR이 아니라 NOR이므로 드 모르간의 법칙을 이용해서 버블(NOT)을 입력 쪽으로 보내고 연산을 AND로 바꾸자.
+그러면 $ABC$의 인덱스에 해당하는 $D_1,D_2,D_4,D_7$을 제외한 나머지 것들이 연결되어야 하므로 답은 **2번**이다.
 
 ## 6번
 
@@ -76,7 +78,7 @@ $$
 D=A\oplus B
 $$
 
-이다. 따라서 답은 **1번** 이다.
+이다. 따라서 답은 **3번** 이다.
 
 ## 8번
 
@@ -163,9 +165,7 @@ $$
 
 ## 18번
 
-역시 뾰족한 수는 관찰 뿐이다. $X=1$일 떄를 가정해서 보면 $Q_A=0$일 때엔 $Q_B$는 SET되어 1이 되고, $Q_A=1$ 일 때는 반전됨을 알 수 있다. 따라서 (나)에 해당하는 게이트는 AND가 되어야 할 것이다.
-다음으로 $Q_A$에 대해서 보자. $X=1$일 때, 우선 $J_A=0$이다. $Q_AQ_B=11$인 경우 $X=1$이면 다음 상태에서 $Q_A=0$이 된다. 한편 $Q_AQ_B=01$이고 $X=0$일 때 $Q_A$는 SET되어 1이 됨을 알 수 있다.
-이러한 관찰들을 통해서 답이 **3번** 이라고 결론낼 수 있다.
+관찰해서 푸는 방법밖에 없을 것이다. 답은 **1번** 이다.
 
 ## 19번
 
