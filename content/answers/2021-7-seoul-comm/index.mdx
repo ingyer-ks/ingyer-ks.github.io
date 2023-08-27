@@ -1,0 +1,392 @@
+---
+title: 2021 7급 서울시 통신이론
+year: 2021년
+organization: 서울시
+level: 7급
+subject: 통신이론
+etc:
+description:
+---
+
+#
+
+## 1번
+
+QAM은 진폭과 위상을 변경하지 주파수를 변경하지 않는다. 따라서 답은 **4번**이다.
+
+## 2번
+
+1. X에 대한 부분누적분포함수(marginal cdf)는 Y에 의한 영향을 제거한 것으로 모든 Y에 대해 적분하면 된다. 즉 $F_X(x)=F_{XY}(x,\infty)$이다.
+2. 일반적인 경우 두 확률변수가 독립이라고 할 수 없으므로 $f_{XY}(x,y)\neq f_X(x)f_Y(y)$이다.
+3. 그렇다. Y와 상관이 없기 때문이다.
+4. 그렇다.
+   $$
+   \begin{equation}
+   \begin{split}
+   F_{XY}(x,y)&=\int_0^\infty \int_0^\infty f_{XY}(x,y)dxdy\\
+   &=\int_0^\infty \int_0^\infty f_{X}(x)f_{Y}(y)dxdy\\
+   &=\int_0^\infty f_{X}(x) dx \int_0^\infty f_{Y}(y) dy\\
+   &=F_X(x)F_Y(y)
+   \end{split}
+   \end{equation}
+   $$
+   이다.
+
+따라서 답은 **2번** 이다.
+
+## 3번
+
+$$
+\begin{equation}
+\begin{split}
+\mathcal{F}\{sinc(3t)\}&=\frac{1}{3}\sqcap\left(\frac{f}{3}\right)\\
+&=\begin{cases}
+\frac{1}{3}&f\leq\frac{3}{2}\\
+0&f\gt \frac{3}{2}
+\end{cases}
+\end{split}
+\end{equation}
+$$
+
+이다. 따라서
+
+$$
+\begin{equation}
+\begin{split}
+\mathcal{F}\{sinc^2(3t)\}&=\left(\frac{1}{3}\sqcap\left(\frac{f}{3}\right)\right)*\left(\frac{1}{3}\sqcap\left(\frac{f}{3}\right)\right)\\
+&=\begin{cases}
+\frac{t+3}{3^2}&t\leq 0\\
+-\frac{t-3}{3^2}&t\gt 0
+\end{cases}
+\end{split}
+\end{equation}
+$$
+
+이다. 에너지는 이를 제곱해서 전 실수에 대해 적분한 값인데, $f$의 범위와 좌우 대칭을 고려하면 왼쪽에 대해서만 제곱해서 적분하고 2를 곱하면 된다. 왼쪽을 오른쪽으로 3만큼 옮겨서 계산하면
+
+$$
+\begin{equation}
+\begin{split}
+E&=2\times\int_0^3 \frac{f^2}{3^4}df\\
+&=2\times\frac{3^3}{3^5}\\
+&=\frac{2}{9}
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **3번** 이다.
+
+## 4번
+
+1. $P(A=0)=\frac{1}{16}+\frac{3}{32}+\frac{3}{16}+\frac{5}{32}=\frac{1}{2}$
+2. $P(B\leq 1)=\frac{1}{16}+\frac{3}{32}+\frac{3}{32}+\frac{1}{4}=\frac{1}{2}$
+3. $P(B=1|A=1)=\frac{\frac{1}{4}}{\frac{3}{32}+\frac{1}{4}+\frac{1}{8}+\frac{1}{32}}=\frac{1}{2}$
+4. $P(B=2|A=0)=\frac{\frac{3}{16}}{\frac{1}{16}+\frac{3}{32}+\frac{3}{16}+\frac{5}{32}}=\frac{3}{8}$
+
+이므로 답은 **4번** 이다.
+
+## 5번
+
+출력 랜덤프로세스 $y(t)$에 대해
+
+$$
+S_Y(f)=|H(f)|^2S_X(f)
+$$
+
+이다. 한편
+
+$$
+H(f)=\frac{1}{1+j2\pi f}
+$$
+
+이므로
+
+$$
+|H(f)|^2=\frac{1}{1+4\pi^2f^2}
+$$
+
+이다. 따라서 출력 랜덤프로세스의 전력은
+
+$$
+\begin{equation}
+\begin{split}
+P_Y&=\int _{-\infty} ^\infty \frac{1}{1+4\pi^2f^2} \times \frac{N_0}{2} df\\
+&=\frac{N_0}{2} \times \int _{-\frac{\pi}{2}}^{\frac{\pi}{2}}\frac{1}{sec^2\theta}\cdot\frac{sec^2\theta}{2\pi} d\theta\\
+&=\frac{N_0}{2} \times\pi\times\frac{1}{2\pi}\\
+&=\frac{N_0}{4}
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **1번** 이다.
+
+## 6번
+
+메시지 신호는 $t=\frac{1}{2}$가 되는 지점에서 처음 0이 나타나므로 주파수 영역에서 나타나는 사각함수의 폭은 이의 역수인 2 Hz이다. 그런데 대역폭은 양수인 부분의 폭이므로 기저대역에서는 대칭성에 의해 이의 절반인 1 Hz이 대역폭이다.
+한편 메시지 신호의 대역폭에 비해 충분히 큰 100 Hz로 변조하면 음수 부분의 폭도 100 Hz 근방으로 옮겨져서 나타날 때 양수 범위 안에 들어가기 때문에 2배인 2 Hz가 대역폭이 된다. 따라서 답은 **2번**이다.
+
+## 7번
+
+동기식 복조의 경우에 성상도 상의 심볼 간 거리를 $d$라고 하면 비트오율은 다음과 같다.
+
+$$
+P_b=Q\left(\frac{d/2}{\sigma}\right)
+$$
+
+한편 조건에서 $\sigma=\frac{N_0}{2}$이다.
+
+1. BPSK의 경우 $d/2=\sqrt{E_b}$이다. 따라서
+   $$
+   P_b=Q\left( \sqrt{\frac{2E_b}{N_0}} \right)
+   $$
+   이다.
+2. ASK와 FSK는 신호가 특정 주파수에서 있냐 없냐만 보면 되기 때문에 비동기 검파가 가능하다. 둘 다 이진이고 주파수가 직교한다고 가정했을 때, 이 떄의 BER은 다음과 같이 구할 수 있다. 먼저 두 개의 심볼 $s_1(t)$와 $s_2(t)$가 다음과 같다고 하자.
+
+   $$
+   \begin{equation}
+   \begin{split}
+   s_1(t)&=\sqrt{\frac{2E_b}{T}}cos(2\pi f_1 t+\theta_1)\\
+   s_2(t)&=\sqrt{\frac{2E_b}{T}}cos(2\pi f_2 t+\theta_2)
+   \end{split}
+   \end{equation}
+   $$
+
+   다음으로 $i=1,2$에 대해 기저 함수를 다음과 같이 정하자.
+
+   $$
+   \begin{equation}
+   \begin{split}
+   \phi_i=\sqrt{\frac{2}{T}}cos(2\pi f_i t)\\
+   \hat{\phi}_i=\sqrt{\frac{2}{T}}sin(2\pi f_i t)
+   \end{split}
+   \end{equation}
+   $$
+
+   수신된 신호를 $x(t)=s_1(t)+n(t)$라고 하자. 그러면 이 신호의 각 주파수별 I채널과 Q채널은 다음과 같다.
+
+   $$
+   \begin{equation}
+   \begin{split}
+   x_{I,1}&=\int_0 ^T x(t) \sqrt{\frac{2}{T}}cos(2\pi f_1 t)\\&
+   =\int_0 ^T (s_1(t)+n(t)) \sqrt{\frac{2}{T}}cos(2\pi f_1 t) \\
+   &= \int_0 ^T \sqrt{\frac{2E_b}{T}}cos(2\pi f_1 t+\theta_1) \sqrt{\frac{2}{T}}cos(2\pi f_1 t) dt +  \int_0 ^T  n(t)\sqrt{\frac{2}{T}}cos(2\pi f_1 t) dt\\
+   &=\sqrt{E_b}cos(\theta_1)+ \int_0 ^T  n(t)\sqrt{\frac{2}{T}}cos(2\pi f_1 t) dt\\
+   &=\sqrt{E_b}cos(\theta_1)+n_{I,1}\\
+   x_{Q,1}&=\int_0 ^T x(t) \sqrt{\frac{2}{T}}sin(2\pi f_1 t)\\
+   &=\int_0 ^T (s_1(t)+n(t)) \sqrt{\frac{2}{T}}sin(2\pi f_1 t)\\
+   & = \int_0 ^T \sqrt{\frac{2E_b}{T}}sin(2\pi f_1 t+\theta_1) \sqrt{\frac{2}{T}}sin(2\pi f_1 t) dt +  \int_0 ^T  n(t)\sqrt{\frac{2}{T}}sin(2\pi f_1 t) dt\\
+   &=\sqrt{E_b}sin(\theta_1)+ \int_0 ^T  n(t)\sqrt{\frac{2}{T}}sin(2\pi f_1 t) dt\\
+   &=\sqrt{E_b}sin(\theta_1)+n_{Q,1}\\
+   x_{I,2}&=\int_0 ^T x(t) \sqrt{\frac{2}{T}}cos(2\pi f_2 t)\\
+   &=\int_0 ^T (s_1(t)+n(t)) \sqrt{\frac{2}{T}}cos(2\pi f_2 t) \\
+   &= \int_0 ^T \sqrt{\frac{2E_b}{T}}cos(2\pi f_1 t+\theta_2) \sqrt{\frac{2}{T}}cos(2\pi f_2 t) dt +  \int_0 ^T  n(t)\sqrt{\frac{2}{T}}cos(2\pi f_2 t) dt\\
+   &= \int_0 ^T  n(t)\sqrt{\frac{2}{T}}cos(2\pi f_2 t) dt\\
+   &=n_{I,2}\\
+   x_{Q,1}&=\int_0 ^T x(t) \sqrt{\frac{2}{T}}sin(2\pi f_2 t)\\
+   &=\int_0 ^T (s_1(t)+n(t)) \sqrt{\frac{2}{T}}sin(2\pi f_2 t) \\
+   &= \int_0 ^T \sqrt{\frac{2E_b}{T}}sin(2\pi f_1 t+\theta_2) \sqrt{\frac{2}{T}}sin(2\pi f_2 t) dt +  \int_0 ^T  n(t)\sqrt{\frac{2}{T}}sin(2\pi f_2 t) dt\\
+   &= \int_0 ^T  n(t)\sqrt{\frac{2}{T}}sin(2\pi f_2 t) dt\\
+   &=n_{Q,2}
+   \end{split}
+   \end{equation}
+   $$
+
+   $\theta_1$의 영향을 제거하기 위해서는 제곱해서 더해야 한다. 다음과 같이 놓자.
+
+   $$
+   \begin{gather}
+   r_1^2=x_{I,1}^2+x_{Q,1}^2\\
+   r_2^2=x_{I,2}^2+x_{Q,2}^2
+   \end{gather}
+   $$
+
+   한편, 위의 $x$들은 다 독립이다. 그리고 2에 대한 $x$들은 평균이 0이고 분산이 $\frac{N_0}{2}$인 정규분포를 따르므로 $r_2$는 레일리 분포를 따른다. 그리고 1에 대한 $x$들은 각각 평균이 $\sqrt{E_b}cos\theta_1,\sqrt{E_b}sin\theta_1$이고 분산이 $\frac{N_0}{2}$인 정규분포를 따른다.
+   그러므로 비트오율은
+
+   $$
+   \begin{equation}
+   \begin{split}
+   P(r_1^2\lt r_2^2 | s_1)&=\int_{-\infty}^\infty\int_{-\infty}^\infty \frac{1}{2\pi\times\frac{N_0}{2}}e^{-\frac{(x_{I,1}-\sqrt{E_b}cos\theta_1)^2}{2\times\frac{N_0}{2}}}e^{-\frac{(x_{Q,1}-\sqrt{E_b}sin\theta_1)^2}{2\times\frac{N_0}{2}}}\int_{\sqrt{x_{I,1}^2+x_{Q,1}^2}}^\infty\frac{r_2e^{-\frac{r_2^2}{2\frac{N_0}{2}}}}{\frac{N_0}{2}}dr_2dx_{I,1}dx_{Q,1}\\
+   &=\int_{-\infty}^\infty\int_{-\infty}^\infty \frac{1}{\pi N_0} e^{-\frac{(x_{I,1}-\sqrt{E_b}cos\theta_1)^2}{N_0}}e^{-\frac{(x_{Q,1}-\sqrt{E_b}sin\theta_1)^2}{N_0}} \int _{\sqrt{x_{I,1}^2+x_{Q,1}^2}}^\infty \frac{2r_2e^{-\frac{r_2^2}{N_0}}}{N_0}dr_2dx_{I,1}dx_{Q,1}\\
+   &=\int_{-\infty}^\infty\int_{-\infty}^\infty \frac{1}{\pi N_0} e^{-\frac{(x_{I,1}-\sqrt{E_b}cos\theta_1)^2}{N_0}}e^{-\frac{(x_{Q,1}-\sqrt{E_b}sin\theta_1)^2}{N_0}} e^{-\frac{x_{I,1}^2+x_{Q,1}^2}{N_0}}dx_{I,1}dx_{Q,1}\\
+   &=\int_{-\infty}^\infty\int_{-\infty}^\infty \frac{1}{\pi N_0} e^{-\frac{2x_{I,1}^2-2x_{I,1}\sqrt{E_b}cos\theta_1+E_b cos\theta_1^2}{N_0}}e^{-\frac{2x_{Q,1}^2-2x_{Q,1}\sqrt{E_b}sin\theta_1+E_b sin\theta_1^2}{N_0}}dx_{I,1}dx_{Q,1}\\
+   &=\int_{-\infty}^\infty\int_{-\infty}^\infty \frac{1}{\pi N_0} e^{-\frac{\left(x_{I,1}-\frac{\sqrt{E_b}cos\theta_1}{2}\right)^2+\frac{E_Bcos\theta_1^2}{4}}{N_0/2}} e^{-\frac{\left(x_{Q,1}-\frac{\sqrt{E_b}sin\theta_1}{2}\right)^2+\frac{E_B sin\theta_1^2}{4}}{N_0/2}}dx_{I,1}dx_{Q,1}\\
+   &=\frac{1}{\pi N_0}e^{-\frac{-E_B}{2N_0}}\int_{-\infty}^\infty\int_{-\infty}^\infty  e^{-\frac{\left(x_{I,1}-\frac{\sqrt{E_b}cos\theta_1}{2}\right)^2}{N_0/2}} e^{-\frac{\left(x_{Q,1}-\frac{\sqrt{E_b}sin\theta_1}{2}\right)^2}{N_0/2}}dx_{I,1}dx_{Q,1}\\
+   &=\frac{1}{\pi N_0}e^{-\frac{-E_B}{2N_0}} \times \frac{1}{2\pi\times\frac{N_0}{4}}\times 2\pi\times\frac{N_0}{4}\int_{-\infty}^\infty\int_{-\infty}^\infty  e^{-\frac{\left(x_{I,1}-\frac{\sqrt{E_b}cos\theta_1}{2}\right)^2}{N_0/2}} e^{-\frac{\left(x_{Q,1}-\frac{\sqrt{E_b}sin\theta_1}{2}\right)^2}{N_0/2}}dx_{I,1}dx_{Q,1}\\
+   &=\frac{1}{\pi N_0}e^{-\frac{-E_B}{2N_0}}\times 2\pi\times\frac{N_0}{4}\\
+   &=\frac{1}{2}e^{-\frac{E_b}{2N_0}}
+   \end{split}
+   \end{equation}
+   $$
+
+   이다. 물론 이와 같이 풀려면 주파수가 직교해야한다는 가정이 있으니 찜찜하긴 하지만 일단 다음 보기로 넘어가자.
+
+   3. 동기식 ASK의 경우, 심볼 간의 거리는 $d=\sqrt{2E_b}$이므로 $\frac{d}{2}=\frac{E_b}{\sqrt{2}}$이다. 동기식 FSK의 경우에는 심볼 간의 거리는 $d=\sqrt{2}{E_b}=\sqrt{2E_b}$로 ASK의 경우와 같다. 그러므로 비트오율은
+      $$
+      \begin{equation}
+      \begin{split}
+      P_b&=Q\left(\frac{\frac{E_b}{\sqrt{2}}}{\sqrt{\frac{N_0}{2}}} \right)\\
+      &=Q\left(\sqrt{\frac{E_b}{N_0}}  \right)
+      \end{split}
+      \end{equation}
+      $$
+      이다. 그러나 동기식 BPSK의 경우가 Q함수의 인자가 $\sqrt{2}(\gt 1)$배이므로 BPSK의 성능이 더 좋다.
+   4. PSK신호는 위상(시간)에 정보가 실려있으므로 시간 정보를 취하지 않는 비동기 검파가 불가하나, DPSK라면 차이에 정보가 실리므로 반송파 복구 없이 복조가 가능하다.
+
+따라서 답은 **3번** 이다.
+
+## 8번
+
+OFDM에서는 부반송파 간의 직교성이 있지만 심볼간간섭은 시간 영역에서 심볼들이 겹치는 것을 의미하므로 부반송파 간의 직교성과 무관하게 생기는 문제이다. 따라서 답은 **4번** 이다.
+
+## 9번
+
+주어진 영역의 넓이는
+
+$$
+\begin{equation}
+\begin{split}
+S&=\int_0^2\frac{1}{\sqrt{2\pi}}e^{-\frac{(x-2)^2}{2}}dx\\
+&=\int_{-2}^{-1}\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx\\
+&=\int_1^2\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx\\
+&=Q(1)-Q(2)
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **4번** 이다.
+
+## 10번
+
+전체 확률이 1이므로
+
+$$
+\begin{equation}
+\begin{split}
+1&=\int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)dxdy\\
+&=A\int_0^\infty e^{-2x}dx\int_0^\infty e^{-2y}dy\\
+&=A\times\frac{1}{2}\times\frac{1}{2}\\
+&=\frac{A}{4}\\
+\Rightarrow A&=4
+\end{split}
+\end{equation}
+$$
+
+이다. 따라서 답은 **4번** 이다.
+
+## 11번
+
+$y(t)=x(t)*h(t)$를 구하기 위해 $x(t)$를 뒤집은 후 움직여보자.
+
+1. $t$가 $(1,2)$ 구간에 있을 때 $\delta(t-1)$만 사각형 내에 있으므로 $y(t)=1$이다.
+2. 다음으로 $t$가 $(2,3)$ 구간에 있을 때 $\delta(t-1),\delta(t-2)$가 사각형 내에 있으므로 $y(t)=2$이다.
+3. $t$가 $(3,4)$에 있을 때 $\delta(t-2),-\delta(t-3)$ 두 개가 사각형이 있는 구간 내에 있으므로 $y(t)=0$이다.
+4. 마지막으로 $t$가 $(4,5)$에 있을 때 $-\delta(t-3)$만 사각형이 있는 구간 내에 있으므로 $y(t)=-1$이다.
+
+따라서 전체 넓이는 $1+2+0-1=2$이므로 구간 길이 4로 나누면 $y(t)$의 평균값은 $\frac{2}{4}=0.5$이다. 따라서 답은 **2번** 이다.
+
+## 12번
+
+주기함수이므로 한 주기 $T$에 대해서 적분하고 평균을 구해서 자기상관을 구한다.
+
+$$
+\begin{equation}
+\begin{split}
+R_f(\tau)&=\frac{1}{T}\int_0^T sin\omega_0t\times sin\omega_0(t+\tau)dt\\
+&=\frac{1}{T}\times\frac{1}{2}\int_0^T (cos(-\omega_0\tau))-cos(2\omega_0t+\omega_0\tau)dt\\
+&=\frac{1}{2}cos\omega_0\tau
+\end{split}
+\end{equation}
+$$
+
+따라서 답은 **1번** 이다.
+
+## 13번
+
+$$
+f(t)=Wsinc\left( \frac{W}{\pi}t\right)
+$$
+
+이다. 따라서 이의 푸리에 변환은
+
+$$
+\begin{equation}
+\begin{split}
+\mathcal{F}\{f(t)\}&=W\times\frac{\pi}{W}rect\left(\frac{\pi}{W}\cdot\frac{\omega}{2\pi}\right)\\
+&=\pi rect\left(\frac{\omega}{2W}\right)
+\end{split}
+\end{equation}
+$$
+
+따라서 $cos\omega_0 t$를 곱한 것의 푸리에 변환은
+
+$$
+\pi rect\left(\frac{\omega}{2W}\right)*\left(\frac{1}{2}(\delta(\omega-\omega_0)+\delta(\omega+\omega_0))  \right)=\frac{\pi}{2}rect\left(\frac{\omega-\omega_0}{2W} \right)+\frac{\pi}{2}rect\left(\frac{\omega+\omega_0}{2W} \right)
+$$
+
+이므로 답은 **3번** 이다.
+
+## 14번
+
+LPF의 컷오프 주파수는 각주파수로 표현하면 $600\pi$이다. 따라서 $\sqrt{2}cos(800\pi t)$는 출력되지 않는다. 그러므로 출력의 평균 전력은
+
+$$
+\begin{equation}
+\begin{split}
+P_y&=\frac{1}{2}((2\sqrt{2})^2+(\sqrt{2})^2)\\
+&=\frac{1}{2}(8+2)\\
+&=5
+\end{split}
+\end{equation}
+$$
+
+따라서 답은 **3번** 이다.
+
+## 15번
+
+Reed-Solomon 부호는 채널 코딩이다. 따라서 답은 **2번** 이다.
+
+## 16번
+
+나이퀴스트 비트율은 잡음이 없는 환경에서, 섀넌 용량은 잡음이 있는 환경에서 전송률의 상한값을 알려준다. 신호 준위 개수를 알려주진 않는다. 따라서 답은 **4번**이다.
+
+## 17번
+
+4B/5B 부호기는 4비트의 데이터를 5비트로 부호화하는 것이다. 따라서 우선 100 Mbps를 만들기 위해서는 $100\times\frac{5}{4}=125$ Mbps가 필요하다. 다음으로 MLT-3의 대역폭 효율이 3 정도이므로 $125/3\approx 42$ Mbps이다. 그러므로 답은 **1번** 이다.
+
+## 18번
+
+$$
+\begin{equation}
+\begin{split}
+P(sent=1|rcvd=1)&=\frac{P(sent=1\text{ }and\text{ }rcvd=1)}{P(rcvd=1|sent=1)P(sent=1)+P(rcvd=1|sent=0)P(sent=0)}\\
+&=\frac{P(sent=1)P(rcvd=1|sent=1)}{P(rcvd=1|sent=1)P(sent=1)+P(rcvd=1|sent=0)P(sent=0)}\\
+&=\frac{\frac{2}{5}\times\frac{4}{5}}{\frac{4}{5}\times\frac{2}{5}+\frac{1}{10}\frac{3}{5}}\\
+&=\frac{16}{16+3}\\
+&=\frac{16}{19}
+\end{split}
+\end{equation}
+$$
+
+따라서 답은 **1번** 이다.
+
+## 19번
+
+$$
+\begin{equation}
+\begin{split}
+Pr[X\neq \hat{X}]&=\frac{2}{3}\int_{-\infty}^{-1}\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(t-2)^2}{2\sigma^2}}dt+\frac{1}{3}\int_{-1}^\infty\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(t+2)^2}{2\sigma^2}}dt\\
+&=\frac{2}{3}\int_{-\infty}^{-\frac{3}{\sigma}}\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}2}dt+\frac{1}{3}\int_{\frac{1}{\sigma}}^{\infty}\frac{1}{\sqrt{2\sigma}}e^{-\frac{t^2}{2}}dt\\
+&=\frac{2}{3}Q\left(\frac{3}{\sigma} \right)+\frac{1}{3}Q\left(\frac{1}{\sigma} \right)
+\end{split}
+\end{equation}
+$$
+
+## 20번
+
+1. 심볼 오율은 전체 확률에서 오류가 발생하지 않을 확률을 뺀 것이므로 $1-(1-p)^2=2p-p^2$이다.
+2. 심볼당 2비트가 실리므로 초당 200개 비트 전송을 위해서는 초당 100개의 심볼을 전송하면 된다.
+3. 블록 오율은 전체 확률에서 블록의 모든 비트에서 오류가 발생하지 않을 확률을 뺀 것이므로 $1-(1-p)^{100}$이다.
+4. 그렇다. I채널과 Q채널이 무관하기 때문에 각 비트의 오율은 BPSK나 QPSK에서나 같다.
+
+따라서 답은 **1번** 이다.
