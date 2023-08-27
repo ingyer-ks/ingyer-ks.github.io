@@ -9,7 +9,9 @@ module.exports = {
     siteUrl: `https://ingyerlog.kr/`,
   },
   flags: {
-    DEV_SSR: true
+    DEV_SSR: true,
+    FAST_DEV: true,
+    PARALLEL_SOURCING: true,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -37,7 +39,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        rehypePlugins: [require('rehype-katex'), { strict: 'ignore' }],
+        rehypePlugins: [require("rehype-katex"), { strict: false }],
         remarkPlugins: [require("remark-math")],
         extensions: [".mdx", ".md"],
         plugins: [`gatsby-remark-images`],
@@ -51,7 +53,7 @@ module.exports = {
               noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
               containerClass: "embedVideo-container", //Optional: Custom CSS class for iframe container, for multiple classes separate them by space
               iframeId: false, //Optional: if true, iframe's id will be set to what is provided after 'video:' (YouTube IFrame player API requires iframe id)
-              sandbox: 'allow-same-origin allow-scripts allow-presentation', // Optional: iframe sandbox options - Default: undefined
+              sandbox: "allow-same-origin allow-scripts allow-presentation", // Optional: iframe sandbox options - Default: undefined
             },
           },
           "gatsby-remark-responsive-iframe",
@@ -99,16 +101,14 @@ module.exports = {
       resolve: `gatsby-plugin-clarity`,
       options: {
         clarity_project_id: "gct6axljb9",
-        enable_on_dev_env: false
+        enable_on_dev_env: false,
       },
     },
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          "G-MJQQSCBQDN",
-        ],
+        trackingIds: ["G-MJQQSCBQDN"],
         // This object gets passed directly to the gtag config command
         // This config will be shared across all trackingIds
         // gtagConfig: {
@@ -130,5 +130,5 @@ module.exports = {
         },
       },
     },
-  ]
+  ],
 }
