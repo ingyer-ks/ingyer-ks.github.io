@@ -1,0 +1,130 @@
+---
+title: 2021 7급 서울시 디지털공학
+year: 2021년
+organization: 서울시
+level: 7급
+subject: 디지털공학
+etc:
+description:
+---
+
+#
+
+## 1번
+
+1. 그렇다.
+2. 그렇다. 디지털에선 일정 수준 이하의 잡음은 완전히 제거될 수 있으며, 중간중간 신호를 재생성할 수 있으므로 잡음이 누적되지 않게 할 수 있으므로 강인하다.
+3. 조합논리회로는 현재의 입력에만 의존한다.
+4. 그렇다.
+
+따라서 답은 **3번** 이다.
+
+## 2번
+
+모두 10진법으로 표현하면 다음과 같다.
+
+1. (가): 249
+2. (나): 256
+3. (다): 255
+4. (라): 248
+   따라서 큰 숫자부터 나열하면 (나)-(다)-(가)-(라) 이므로 답은 **2번** 이다.
+
+## 3번
+
+드 모르간의 법칙을 이용해서 $y2$ 쪽의 버블을 입력 쪽으로 옮기고 연산을 OR$\rightarrow$AND로 바꾸면
+
+$$
+y2=A\overline{B}+\overline{A}B
+$$
+
+이다. 따라서 답은 **3번** 이다.
+
+## 4번
+
+나는 PMOS 쪽을 보는 편이 편하니 그리 하겠다. $A=B=0$이거나 $C=0$일 때 $F=1$이 되므로
+
+$$
+F=\overline{A}\cdot\overline{B}+\overline{C}
+$$
+
+이다. 따라서 답은 **4번** 이다.
+
+## 5번
+
+먼저 왼쪽 위 4개를 보면 $A=B=0$일 때 $F=\overline{C}+D$이다. 다음으로 왼쪽 아래 4개를 보면 $A=0,B=1$일 때 $F=D$이다. 따라서 이 두 경우를 조합하면 $\overline{A}(\overline{B}\cdot\overline{C}+D)$이다.
+다음으로 오른쪽 위 4개를 보면 $A=1,B=0$일 때 $F=C$이다. 마지막으로 오른쪽 아래 4개를 보면 $A=B=1$일 때 $F=D$이다. 따라서 이 두 경우를 조합하면 $A(\overline{B}C+BD)$이다.
+그러므로 카르노 맵을 그리면
+
+$$
+\begin{array}{c|c:c|c|c}
+CD \diagdown AB & 00 & 01 & 11 & 10 &\\ \hline
+00 & 1 & 0 & 0 & 0 \\ \hline
+01 & 1 & 1 & 1 & 0 \\ \hline
+11 & 1 & 1 & 1 & 1 \\ \hline
+10 & 0 & 0 & 0 & 1
+\end{array}
+$$
+
+처음에는 1을 가지고 어떻게 묶어보려 했으나 실패했다. 그런데 보기를 살펴보니 항이 3개면 맞을 것 같아서, 0을 묶기로, 다시 말해 $\overline{F}$를 묶어보았다.
+그러면
+
+$$
+\overline{F}=B\overline{D}+A\overline{B}\cdot\overline{C}+\overline{A}C\overline{D}
+$$
+
+이다.
+따라서 $F$를 찾으면
+
+$$
+\begin{equation}
+\begin{split}
+F&=\overline{B\overline{D}+A\overline{B}\cdot\overline{C}+\overline{A}C\overline{D}}\\
+&=(\overline{B}+D)(\overline{A}+B+C)(A+\overline{C}+D)\\
+&=\overline{\overline{(\overline{B}+D)(\overline{A}+B+C)(A+\overline{C}+D)}}\\
+&=\overline{\overline{\overline{B}+D}+\overline{\overline{A}+B+C}+\overline{A+\overline{C}+D}}
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **1번** 이다.
+
+## 6번
+
+$J=\overline{K}$이므로 클럭이 가해질 때마다 출력은 $\cdots\rightarrow 1 \rightarrow 0 \rightarrow 1 \cdots$을 반복한다. 따라서 주파수는 절반인 500 kHz가 된다. 그러므로 주기는 이의 역수인 2 $\mu$s가 되므로 답은 **2번** 이다.
+
+## 7번
+
+1번을 보면
+
+$$
+\begin{equation}
+\begin{split}
+Y_1&=(A+B)\overline{AB}\\
+&=(A+B)(\overline{A}+\overline{B})\\
+&=A\overline{B}+\overline{A}B
+\end{split}
+\end{equation}
+$$
+
+이다. 한편 2번의 경우, 입력 쪽의 버블을 출력으로 옮기고 OR$\rightarrow$AND로 연산을 바꾸면 1번과 똑같으므로 1,2번은 답에서 제외된다. 그리고 3번은 위와 같은 결과를 내므로 답은 **4번** 이다.
+
+## 8번
+
+$$
+\begin{equation}
+\begin{split}
+36.2_8&=6+3\times 8 + 2\times 8^{-1}\\
+&=30+4^{-1}\\
+&=4^2+3\times 4+2+4^{-1}\\
+&=132.1_4
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **2번** 이다.
+
+## 9번
+
+먼저 아래쪽 두 줄을 묶으면 $A$이다.
+다음으로 첫 줄과 마지막 줄의 왼쪽 2개 항을 묶으면 $\overline{B}\cdot\overline{C}$이다. 마지막으로 꼭지점의 4개 항을 묶으면 $\overline{B}\cdot\overline{D}$이다.
+따라서 $A+\overline{B}\cdot\overline{C}+\overline{B}\cdot\overline{D}$이므로 답은 **2번** 이다.
