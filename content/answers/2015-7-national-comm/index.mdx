@@ -84,7 +84,7 @@ description:
 
 ## 9번
 
-$sin(2\pi f_0 t)=\frac{1}{2j}(e^{j2\pi f_0t}-e^{-j2\pi f_0 t})$이다. 한편 $e^{j2\pi f_0 t}$를 푸리에 변환하면
+$sin(2\pi f_0 t)=\frac{1}{2j}\left(e^{j2\pi f_0t}-e^{-j2\pi f_0 t}\right)$이다. 한편 $e^{j2\pi f_0 t}$를 푸리에 변환하면
 
 $$
 \begin{equation}
@@ -98,21 +98,21 @@ $$
 이다. 따라서
 
 $$
-\mathcal{F}\{sin(2\pi f_0 t)}=\frac{\delta(f-f_0)-\delta(f+f_0)}{2j}
+\mathcal{F}\{sin(2\pi f_0 t)\}=\frac{\delta(f-f_0)-\delta(f+f_0)}{2j}
 $$
 
 이다. 그리고 틀린 것은 **4번** 이다.
 
 ## 10번
 
-필터를 통과한 신호 전력은 $\frac{1}{2}10^2=50$ W이다. 그리고 필터를 통과한 백색잡음의 전력은 필터 대역폭이 20 Hz이므로 $0.25\times 20\times 2=10$ W이다. 음수 주파수 부분도 있으므로 2를 곱한 것이다.
+필터를 통과한 신호 전력은 $\frac{1}{2}10^2=50$ W이다. 그리고 필터를 통과한 백색잡음의 전력은 필터 대역폭이 20 Hz이므로 $0.25\times 20=5$ W이다.
 따라서 SNR은
 
 $$
-SNR=\frac{50}{10}=5
+SNR=\frac{50}{5}=10
 $$
 
-이므로 답은 **2번** 이다.
+이므로 답은 **3번** 이다. 음수 측 주파수도 고려해야 하는지 좀 애매하다고 생각되긴 한다.
 
 ## 11번
 
@@ -136,3 +136,136 @@ $$
 이다. 따라서 **2번** 이 옳지 않다.
 
 ## 14번
+
+나이키스트율은 주파수대역의 2배인 8 kHz인데 이의 1.25배로 표본화되므로 표본화 주파수는 10 kHz이다. 또한 256개 레벨로부터 샘플당 8비트임을 알 수 있다. 따라서 비트 전송률은 $10\times8=80$ kbps이다.
+따라서 채널 용량이 최소한 이 값이 되어야 한다. 채널 용량은
+
+$$
+C=Wlog_2(1+SNR)
+$$
+
+이므로
+
+$$
+\begin{equation}
+\begin{split}
+80&\leq 10log_2(1+SNR)\\
+\Rightarrow 2^8&\leq 1+SNR\\
+\Rightarrow SNR\geq 255
+\end{split}
+\end{equation}
+$$
+
+이다. 따라서 답은 **4번** 이다.
+
+## 15번
+
+순방향 링크는 기지국에서 단말기로 가는 링크이다. 접속 채널은 단말기가 기지국으로 신호를 보내는 것이므로 순방향 링크에 포함되지 않는다. 따라서 답은 **1번** 이다.
+
+## 16번
+
+1. 그렇다.
+2. 그렇지 않다. 오류 정정 부호를 사용하면 가능하다.
+3. 그렇다. 그래야 잘 받았는지, 아니면 오류가 있어서 재전송이 필요한지 알려줄 것이다.
+4. 그렇다.
+
+따라서 답은 **2번** 이다.
+
+## 17번
+
+변조지수는 다음과 같다.
+
+$$
+\beta=\frac{6}{12}=0.5
+$$
+
+상측파대 주파수는 반송파 주파수 $10^6$ Hz를 중심으로 오른쪽에 메시지 주파수 $10^4$ Hz가 있는 것이므로
+
+$$
+10^6+10^4=1010000=1,010 \text{ kHz}
+$$
+
+이다. 따라서 답은 **2번** 이다.
+
+## 18번
+
+1. 그렇다. 상관계수를 구해보면
+   $$
+   \begin{equation}
+   \begin{split}
+   Cov(X,Y)&=E[(X-m_X)(Y-m_Y)]\\
+   &=E[XY-m_XY-m_YX+m_Xm_Y]\\
+   &=E[XY]-m_XE[Y]-m_YE[X]+m_Xm_Y\\
+   &=E[X]E[Y]-m_Xm_Y-m_Ym_X+m_Xm_Y\\
+   &=m_Xm_Y-m_Xm_Y-m_Ym_X+m_Xm_Y\\
+   &=0
+   \end{split}
+   \end{equation}
+   $$
+   이다.
+2. 그렇다. 독립이기 때문에 두 변수가 연속확률변수라고 가정하면
+   $$
+   \begin{equation}
+   \begin{split}
+   E[XY]&=\int{-\infty}^\infty \int{-\infty}^\infty  xy f_{XY}(x,y)dxdy\\
+   &=\int{-\infty}^\infty \int{-\infty}^\infty  xyf_X(x)f_Y(y)dxdy\\
+   &=\int{-\infty}^\infty xf_X(x)dx\int{-\infty}^\infty yf_Y(y)dy\\
+   &=E[X]E[Y]
+   \end{split}
+   \end{equation}
+   $$
+   이다. 이산확률변수라고 해도 마찬가지이다.
+3. 그렇다. 적분이나 $\sum$이 선형 연산이기 때문에 이들을 이용하는 기댓값도 마찬가지이다.
+4. 그렇지 않다.
+   $$
+   \begin{equation}
+   \begin{split}
+   \sigma_Z^2&=E[(Z-m_Z)^2]\\
+   &=E[Z^2-2Zm_Z+m_Z^2]\\
+   &=E[X^2+2XY+Y^2-2(X+Y)(m_X+m_Y)+(m_X+m_Y)^2]\\
+   &=E[X^2]+2E[X]E[Y]+E[Y^2]-2E[X](m_X+m_Y)-2E[Y](m_X+m_Y)+(m_X+m_Y)^2\\
+   &=E[X^2]+2E[X]E[Y]+E[Y^2]-2m_X^2-2m_Xm_Y-2m_Ym_X-2m_Y^2+m_X^2+2m_Xm_Y+m_Y^2\\
+   &=(E[X^2]-m_X^2)+(E[Y^2]-m_Y^2)+m_Xm_Y(2-2-2+2)+m_X^2(-1+1)+m_Y^2(-1+1)\\
+   &=\sigma_X^2+\sigma_Y^2
+   \end{split}
+   \end{equation}
+   $$
+   이다.
+
+따라서 답은 **4번** 이다.
+
+## 19번
+
+신드롬은
+
+$$
+\begin{equation}
+\begin{split}
+S&=[R][H]^T\\
+&=\begin{bmatrix}
+0& 0& 1& 1& 1& 1& 1
+\end{bmatrix}
+\begin{bmatrix}
+1& 1& 1\\
+1& 1& 0\\
+1& 0& 1\\
+0& 1& 1\\
+1& 0& 0\\
+0& 1& 0\\
+0& 0& 1
+\end{bmatrix}\\
+&=\begin{bmatrix}
+0& 0& 1
+\end{bmatrix}\\
+\end{split}
+\end{equation}
+$$
+
+이므로 오류 패턴으로부터 가장 오른쪽 비트, 즉 $r_0$에서 오류가 발생하였음을 알 수 있다. 따라서 답은 **1번** 이다.
+
+## 20번
+
+공간적인 방식이므로 답은 **1번** 이다.
+
+$$
+$$
