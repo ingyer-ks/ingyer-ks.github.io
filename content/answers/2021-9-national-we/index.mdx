@@ -14,7 +14,7 @@ description:
 
 ## 2번
 
-잡음지수는 잡음이 얼마나 많아지느냐를 나타내는 것이므로 작을수록 좋다. 구체적으로는 출력 SNR대비 입력 SNR로서 SNR이 얼마나 나빠졌는지를 나타낸다.
+잡음지수는 잡음이 얼마나 많아지느냐를 나타내는 것이므로 작을수록 좋다. 따라서 답은 **1번** 이다. 구체적으로는 출력 SNR대비 입력 SNR로서 SNR이 얼마나 나빠졌는지를 나타낸다.
 
 ## 3번
 
@@ -167,6 +167,106 @@ $$
 
 ## 15번
 
-자유공간 손실은 거리의 제곱에 비례하므로 출력이 2배로 늘어나면 거리는 $\sqrt{2}$배 늘어난다. 따라서 답은 **2번** 이다.
+출력이 2배면 전계는 $\sqrt{2}$배이다. 한편 전계는 거리의 제곱에 반비례하므로 거리는 전계의 제곱근에 비례한다. 그러므로 변한 탐지거리는
+
+$$
+2\times\sqrt{\sqrt{2}}=2\times\sqrt[4]{2}
+$$
+
+이고 답은 **3번** 이다.
 
 ## 16번
+
+수신전력은 다음과 같다.
+
+$$
+\begin{equation}
+\begin{split}
+P_r&=P_t+G_t-L+G_r\\
+&=18+51.6-214.7+35.1\\
+&=-110\text{ dBW}\\
+&=10^{-11} \text{ W}
+\end{split}
+\end{equation}
+$$
+
+한편 비트전송률 $R=2\times 10^6$ bps이므로 비트 에너지는
+
+$$
+\begin{equation}
+\begin{split}
+E_b&=\frac{P_r}{R}\\
+&=\frac{10^{-11}}{2\times 10^6}\\
+&=5\times 10^{-18}\text{ W}\\
+&=10 (log_{10}5-18)\\
+&=10(1-0.3-18)\\
+&=-173 \text{ dBJ?}
+\end{split}
+\end{equation}
+$$
+
+이다. 따라서 $(E_b/N_0)_r$는
+
+$$
+\begin{equation}
+\begin{split}
+E_b/N_0&=-173-(-192.5)\\
+&= 19.5\text{ dB}
+\end{split}
+\end{equation}
+$$
+
+이다. 그러므로 링크 마진은
+
+$$
+(E_b/N_0)_r-(E_b/N_0)q=19.5-10.0=9.5\text{ dB}
+$$
+
+이므로 답은 **1번** 이다.
+
+## 17번
+
+$\phi_n(t)$의 높이가 $\sqrt{\frac{3}{T}}$이고 값이 존재하는 영역들은 서로 겹치지 않고 다 맞닿아 있다. 주어진 $s(t)$는 $[0,\frac{2T}{3}]$에만 존재하고 높이가 $1$이므로
+
+$$
+s(t)=\sqrt{\frac{T}{3}}\phi_1(t)+\sqrt{\frac{T}{3}}\phi_2(t)
+$$
+
+이니 답은 **3번** 이다.
+
+## 18번
+
+DSB-SC에서는 반송파 신호가 있으면 안되므로 $As(t)cos\left(\omega_c t\right)$ 형태여야 한다. 따라서 답은 **2번**이다.
+
+## 19번
+
+$$
+\begin{equation}
+\begin{split}
+\lambda_1&=\frac{c}{f_1}\\
+&=\frac{3\times 10^8}{30\times 10^3}\\
+&=10^4\text{ m}\\
+\lambda_2&=\frac{c}{f_2}\\
+&=\frac{3\times 1^8}{1\times 10^9}\\
+&=0.3 \text{ m}
+\end{split}
+\end{equation}
+$$
+
+이므로 반파장 안테나의 길이는 각각 5,000 m, 0.15 m이다. 그러므로 답은 **2번** 이다.
+
+## 20번
+
+$$
+\begin{equation}
+\begin{split}
+L&=10 log_{10}\left( \frac{4\pi d}{\lambda} \right)\\
+&=20 log_{10}\frac{4\times 3.0 \times 2.5\times 10^3}{\frac{3\times 10^8}{1\times 10^9}}\\
+&=20 log_{10}\frac{3\times 10^4}{3\times 10^{-1}}\\
+&=20 log_{10}\left(10^5 \right)\\
+&=100\text{ dB}
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **4번** 이다.
