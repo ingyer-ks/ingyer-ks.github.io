@@ -9,14 +9,16 @@ import { PageProps } from "@/definitions"
 
 import { useMediaQuery } from "react-responsive"
 
+import * as key from "./key"
+
 const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
   const [clientID, setClientID] = React.useState(null)
   React.useEffect(() => {
     if (typeof document !== `undefined`) {
       setClientID(
         document.location.hostname === `localhost`
-          ? "fc828db7b0e54b139ef252cef009b8d7"
-          : "106805b155844ee0be6a8540f507ee25"
+          ? key.localhost_key
+          : key.ingyerlog_key
       )
     }
   })
