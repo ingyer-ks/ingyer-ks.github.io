@@ -1,0 +1,89 @@
+---
+title: 2021 9급 국가직 무선공학개론
+year: 2021년
+organization: 국가직
+level: 9급
+subject: 무선공학개론
+etc:
+description:
+---
+
+## 1번
+
+전리층은 65~2,000 km의 고도에 위치하므로 답은 **3번** 이다.
+
+## 2번
+
+잡음지수는 잡음이 얼마나 많아지느냐를 나타내는 것이므로 작을수록 좋다. 구체적으로는 출력 SNR대비 입력 SNR로서 SNR이 얼마나 나빠졌는지를 나타낸다.
+
+## 3번
+
+802.11a는 5 GHz대역을 사용하므로 답은 **1번** 이다.
+
+## 4번
+
+ASK는 진폭에 정보가 실리므로 스파크가 발생하면 진폭이 손상되어 정보를 읽을 수 없다. 주파수의 변화를 찾는 수신기는 FSK 수신기이다. 또한 위상(=시간)에 정보가 실리지 않기 때문에 비동기 복조도 가능하다.
+따라서 답은 **2번** 이다.
+
+## 5번
+
+블루투스는 다중접속 방식으로 TDMA와 FDMA를 사용하므로 답은 **4번** 이다.
+
+## 6번
+
+11.76 dB를 비율로 변환하면 다음과 같다.
+
+$$
+\begin{equation}
+\begin{split}
+11.76&=10log_{10}\frac{S}{N}\\
+\Rightarrow \frac{S}{N}&=10^{1.176}\\
+&\approx 15.0
+\end{split}
+\end{equation}
+$$
+
+따라서 채널 용량은 다음과 같다.
+
+$$
+\begin{equation}
+\begin{split}
+C&=Wlog_2(1+SNR)\\
+&=200log_2(1+15)\\
+&=800\text{ kbps}
+\end{split}
+\end{equation}
+$$
+
+따라서 답은 **2번** 이다.
+
+## 7번
+
+대역폭은 다음과 같다.
+
+$$
+\begin{equation}
+\begin{split}
+B&=2(1+\beta)m_f\\
+&2\times 3.5\times 2\\
+&=14\text{ kHz}
+\end{split}
+\end{equation}
+$$
+
+최대 주파수 편이는 다음과 같다.
+
+$$
+\begin{equation}
+\begin{split}
+\Delta f&=B\times \beta\\
+&=2\times 2.5=5
+\end{split}
+\end{equation}
+$$
+
+따라서 답은 **3번** 이다.
+
+## 8번
+
+변조지수는
