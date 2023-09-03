@@ -132,8 +132,8 @@ n(t)&=a(t)cos(\omega_c t)cos\phi(t)-a(t)sin(\omega_c t)sin\phi(t)\\
 &=n_I(t)cos\omega_c t-n_Q(t)sin\omega_c t\\
 \Rightarrow n_I(t)&=a(t)cos\phi(t)\\
 n_Q(t)&=a(t)sin\phi(t)\\
-\Rightarrow E[n_I^2(t)]=E[a^2(t)cos^2\phi(t)]=\frac{1}{2}E[a^2(t)]\\
-E[n_Q^2(t)]=E[a^2(t)sin^2\phi(t)]=\frac{1}{2}E[a^2(t)]\\
+\Rightarrow E[n_I^2(t)]&=E[a^2(t)cos^2\phi(t)]=\frac{1}{2}E[a^2(t)]\\
+E[n_Q^2(t)]&=E[a^2(t)sin^2\phi(t)]=\frac{1}{2}E[a^2(t)]\\
 \Rightarrow E[n^2(t)]&=E[n_I^2(t)]\\
 &=E[n_Q^2(t)]
 \end{split}
@@ -345,7 +345,7 @@ $$
    &=Wlog_2\left(1+\frac{S}{N_0W} \right)\\
    &=\frac{log_2\left(1+\frac{S}{N_0W} \right)}{\frac{1}{W}}\\
    \Rightarrow \lim_{W\rightarrow \infty}\frac{log_2\left(1+\frac{S}{N_0W} \right)}{\frac{1}{W}}&=\lim_{T\rightarrow 0}\frac{log_2\left(1+\frac{ST}{N_0}\right)}{T}\\
-   &=\frac{1}{log 2}\times\frac{\frac{S}{N_0}}{1+\frac{ST}{N_0}}\\
+   &=\frac{1}{ln 2}\times\frac{\frac{S}{N_0}}{1+\frac{ST}{N_0}}\\
    &\approx 1.44\frac{S}{N_0}
    \end{split}
    \end{equation}
@@ -371,8 +371,8 @@ $$
    \begin{equation}
    \begin{split}
    \lim_{W\rightarrow \infty}1&\gt \lim_{W\rightarrow \infty} \frac{log_2\left(1+\frac{E_bR}{N_0W}   \right)}{\frac{R}{W}}\\
-   \Rightarrow 1&\gt \lim_{W\rightarrow \infty}\frac{1}{log 2}\times \frac{\frac{E_b}{N_0}}{1+\frac{E_bR}{N_0W}}\\
-   \Rightarrow \frac{E_b}{N_0} &\lt log 2
+   \Rightarrow 1&\gt \lim_{W\rightarrow \infty}\frac{1}{ln 2}\times \frac{\frac{E_b}{N_0}}{1+\frac{E_bR}{N_0W}}\\
+   \Rightarrow \frac{E_b}{N_0} &\lt ln 2
    \end{split}
    \end{equation}
    $$
