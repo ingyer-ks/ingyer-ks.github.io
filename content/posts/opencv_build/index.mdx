@@ -1,0 +1,37 @@
+---
+title: OpenCV 빌드 및 파이썬에 설치
+etc: 정보
+description: OpenCV 빌드 및 파이썬에 설치
+year:
+organization:
+level:
+subject:
+---
+
+CUDA를 OpenCV에서 사용하기 위해서는 별도로 빌드해야 한다.
+다음은 그 방법이다.
+
+1. 적당한 디렉토리 생성(e.g. opencv_build)
+2. git clone https://github.com/opencv/opencv.git
+3. git clone https://github.com/opencv/opencv_contrib.git
+4. CUDA 설치
+5. CUDNN 다운로드하여 C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\(CUDA 버전)\\ 디렉토리에 저장
+6. CMake 및 Visual Studio 설치
+7. opencv_contrib 안의 modules를 opencv 안으로 복사
+8. 아래 명령어 실행
+   ```
+   "C:\Program Files\CMake\bin\cmake.exe" -B(opencv_build 경로)/opencv/build -H(opencv_build 경로)/opencv -GNinja -DCMAKE_BUILD_TYPE=Release  ^
+   -DINSTALL_TESTS=ON -DINSTALL_C_EXAMPLES=ON -DBUILD_EXAMPLES=ON ^
+   -DBUILD_opencv_world=ON ^
+   -DWITH_CUDA=ON -DCUDA_TOOLKIT_ROOT_DIR="C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/(CUDA 버전)" -DCUDA_FAST_MATH=ON -DWITH_CUBLAS=ON -DCUDA_ARCH_BIN=8.6(각자 확인 필요) -DWITH_NVCUVID=ON ^
+   -DWITH_OPENGL=ON ^
+   -DWITH_MFX=ON ^
+   -DBUILD_opencv_python3=ON ^
+   -DCMAKE_EXE_LINKER_FLAGS=/NODEFAULTLIB:libcmt.lib
+   ```
+9. python (opencv_build 경로)/opencv/build/python_loader/setup.py build
+10. python (opencv_build 경로)/opencv/build/python_loader/setup.py install
+11. python에서 import cv2 하기 전에 os.add_dll_directory("C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\(CUDA 버전)\\bin") 실행
+12. 그게 싫다면 C:\Users\USER\AppData\Local\Programs\Python\Python311\Lib\site-packages\opencv-4.8.0-py3.11.egg\cv2\_\_init\_\_.py 내에 위 명령 추가
+
+위를 거치지 않으면 모듈을 찾지 못하겠다는 dll 오류가 발생한다.
