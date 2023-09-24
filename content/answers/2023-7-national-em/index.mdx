@@ -1,0 +1,584 @@
+---
+title: 2023 7급 국가직 전기자기학
+year: 2023년
+organization: 국가직
+level: 7급
+subject: 전기자기학
+etc:
+description:
+---
+
+#
+
+## 1번
+
+1. 그렇지 않다. $\vec{D}_{\bot}$가 연속이다.
+2. 그렇지 않다. $\vec{E}_{\parallel}$가 연속이다.
+3. 그렇다. 완전 도체에는 전계가 없기 때문에, 연속적인 값을 갖는 전계의 접선 성분은 0이다.
+4. 그렇지 않다. 전속밀도의 법선 성분이 도체상의 표면전하밀도와 같다.
+
+따라서 답은 **3번** 이다.
+
+## 2번
+
+일단 B나 D는 아닐 것이다. 로렌츠 힘은 $F=q\vec{v}\times\vec{B}$이고, $q\vec{v}$는 전류 방향과 같다. 사각형의 왼쪽 도선에서 전류는 위쪽으로 흐르므로, 로렌츠 힘을 구해보면 C 방향으로 힘을 받음을 외적 관계에서 알 수 있다.
+오른쪽 도선에서는 A 방향으로 힘을 받겠지만 더 거리가 멀기 때문에 왼쪽 도선의 C 방향으로 밀리는 힘이 더 강하다. 따라서 답은 **3번** 이다.
+
+## 3번
+
+1. 특성 임피던스는 유전율과 투자율로부터 정해지는 상수이다.
+2. 감쇄 상수는 0이지만 특성 임피던스는 0이 아닐 것이다.
+3. 위상 속도는 $v_p=\frac{\omega}{\beta}=\frac{\omega}{\omega\sqrt{\mu\varepsilon}}=\frac{1}{\sqrt{\mu\varepsilon}}$이다.
+4. 위상 상수는 $\beta=\omega\sqrt{\mu\varepsilon}=2\pi f\sqrt{\mu\varepsilon}$이다.
+
+따라서 답은 **4번** 이다.
+
+## 4번
+
+A는 오른쪽 도선들에 지면을 뚫고 들어가는 방향으로 자기력을 가한다. B는 A에게 지면을 뚫고 나오는 방향으로, C에게 지면을 뚫고 들어가는 방향으로 자기력을 가한다. C는 왼쪽 도선들에게 지면을 뚫고 들어가는 방향으로 자기력을 가한다.
+따라서 B는 양쪽에서 지면을 뚫고 들어가는 방향으로 자기력을 받고, A는 서로 다른 방향으로 두 자기력을 받고, C는 지면을 뚫고 들어가는 방향으로 합쳐지는 자기력을 받는데 A와 C 사이의 거리가 A와 B 사이의 거리보다 멀기 때문에 B보다는 약한 자기력을 받게 된다.
+따라서 답은 **2번** 이다.
+
+## 5번
+
+$$
+emf=-\frac{d\Phi(t)}{dt}
+$$
+
+이다. 이 때 emf가 +인 경우는 전류 방향이 그림과 반대 방향인 경우이다. 따라서 emf가 -인 구간, 즉 A와 D에서 전류가 +가 된다. 그러므로 답은 **4번** 이다.
+
+## 6번
+
+$$
+Z_{in}=Z_0\frac{Z_L+jZ_0tan(\beta l)}{Z_0+jZ_Ltan(\beta l)}
+$$
+
+이다. $Z_0$과 $Z_L$이 헷갈릴텐데, $l=0$이면 $Z_{in}=Z_L$임이 당연함을 기억하면 보다 쉽게 식을 기억할 수 있을 것이다.
+
+1. 이 때 탄젠트는 무한대로 발산하므로 $Z_{in}=\frac{Z_0^2}{Z_L}$이다.
+2. $Z_L=0$인 경우이므로 $Z_{in}=jZ_0tan(\beta l)$이다.
+3. $Z_L=\infty$인 경우이므로 $Z_{in}=Z_0\times\frac{1}{jtan(\beta l)}=-jZ_0cot(\beta l)$이다.
+4. $Z_L=Z_0$인 경우이므로 $Z_{in}=Z_0$이다.
+
+따라서 답은 **1번** 이다.
+
+## 7번
+
+$$
+\begin{equation}
+\begin{split}
+\nabla\times\vec{B}&=\mu_0(\vec{J}+\vec{J_b})\\
+\Rightarrow \vec{a_z}10&=\mu_0(\vec{J}+\vec{J_b})
+\end{split}
+\end{equation}
+$$
+
+이다. 그리고
+
+$$
+\nabla\times\vec{H}=\vec{J}
+$$
+
+이며
+
+$$
+\begin{equation}
+\begin{split}
+\vec{H}&=\frac{1}{\mu}\vec{B}\\
+&=\frac{1}{5\mu_0}\vec{a_y}10x\\
+&=\vec{a_y}\frac{2x}{\mu_0}
+\end{split}
+\end{equation}
+$$
+
+이다. 따라서
+
+$$
+\begin{equation}
+\begin{split}
+\vec{J}&=\nabla\times\vec{a_y}\frac{2x}{\mu_0}\\
+&=\vec{a_z}\frac{2}{\mu_0}
+\end{split}
+\end{equation}
+$$
+
+이다. 이를 대입하면
+
+$$
+\begin{equation}
+\begin{split}
+\vec{a_z}10&=\vec{a_z}2+\mu_0\vec{J_b}\\
+\Rightarrow \vec{J_b}&=\vec{a_z}\frac{8}{\mu_0}
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **3번** 이다. 사실 계산 안하고도 $\vec{B}$가 $\vec{a_y}$방향이며 $x$가 증가할수록 커지니 회전 방향축은 $\vec{a_x}\times\vec{a_y}=\vec{a_z}$방향임을 추론할 수 있다.
+
+## 8번
+
+$$
+k=\sqrt{4^2+k_Z^2}
+$$
+
+이고
+
+$$
+k=\omega\sqrt{\mu\varepsilon}
+$$
+
+이다. 한편
+
+$$
+\begin{equation}
+\begin{split}
+\frac{1}{\sqrt{\mu\varepsilon}}&=\frac{1}{\sqrt{\mu_0\times 9\times \varepsilon_0}}\\
+&=\frac{1}{3}\times 3\times 10^8\\
+&=10^8\\
+\Rightarrow \sqrt{\mu\varepsilon}&=10^{-8}
+\end{split}
+\end{equation}
+$$
+
+이다. 그리고 $\omega=5\times10^8$이므로
+
+$$
+\begin{equation}
+\begin{split}
+k&=5\times10^8\times10^{-8}\\
+&=5\\
+\Rightarrow \sqrt{4^2+k_z^2}&=5\\
+\Rightarrow k_z&=3
+\end{split}
+\end{equation}
+$$
+
+이고 답은 **1번** 이다.
+
+## 9번
+
+면전하밀도에 의한 전계는 $x$의 양쪽으로 절반씩 뻗어나가는 것이므로 원점에서는
+
+$$
+-\vec{a_x}\frac{3\times10^{-9}}{2\varepsilon_0}
+$$
+
+이다. 다음으로 선전하밀도에 의한 전계는 일반적으로
+
+$$
+\frac{\rho_l}{2\pi\varepsilon \mathcal{R} }\vec{a_\mathcal{R}}
+$$
+
+인데 주어진 조건에서
+
+$$
+\vec{a_x}\frac{6\times 10^{-9}}{2\pi \varepsilon_0\times2}=\vec{a_x}\frac{3\times 10^{-9}}{2\pi\varepsilon_0}
+$$
+
+이다. 따라서 둘을 더하면
+
+$$
+-\vec{a_x}\frac{3\times10^{-9}}{2\varepsilon_0}+\vec{a_x}\frac{3\times 10^{-9}}{2\pi\varepsilon_0}=-\vec{a_x}\frac{3\times10^{-9}}{2\varepsilon_0}\left(1-\frac{1}{\pi}  \right)
+$$
+
+이므로 답은 **4번** 이다.
+
+## 10번
+
+$$
+\vec{\tau}=\vec{m}\times\vec{B}
+$$
+
+이다. 그리고
+
+$$
+\vec{m}=\pi a^2 I\vec{a_z}
+$$
+
+이므로
+
+$$
+\begin{equation}
+\begin{split}
+\tau&=\pi a^2 I \cdot B \cdot sin 30^\circ\\
+&=\frac{\pi a^2 I B}{2}
+\end{split}
+\end{equation}
+$$
+
+이다. 따라서 답은 **1번** 이다.
+
+## 11번
+
+$$
+\begin{equation}
+\begin{split}
+\rho_v(1,1,1)&=\nabla\cdot\vec{D}|_{(1,1,1)}\\
+&=(2z)|_{(1,1,1)}\\
+&=2
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **1번** 이다.
+
+## 12번
+
+1. 전계와 자계의 위상차는 $\angle (1+j)=45^\circ$이다.
+2. 고유 임피던스의 실수부와 허수부가 똑같이 1이므로 액체는 양도체, 즉 전기 전도도가 0보다 크다.
+3. 전계와 자계는 항상 수직을 이룬다. 위상이 수직이 아닌 것이다.
+4. 표피 효과에 의해 $\frac{1}{\sqrt{\pi f \mu \sigma}}$의 지수부를 갖는 지수함수적으로 감소한다.
+
+따라서 답은 **3번** 이다.
+
+## 13번
+
+껍질 정리에 의해서 $z$축상에서 $\vec{a_z}$ 방향으로 $5\times 2\pi\times 1=10\pi$ A의 전류가 흐르는 것과 마찬가지 상황이다. 따라서 점 $P$에서의 자속밀도는
+
+$$
+\vec{B}=\frac{\mu_0 \times 10\pi}{2\pi \times 5}\vec{a}\vec{a_\phi}
+$$
+
+이므로 답은 **2번** 이다.
+
+## 14번
+
+$$
+\vec{S}=\vec{E}\times\vec{H}
+$$
+
+이다. 주어진 그림에서 위 외적의 방향은 $-x$방향임을 알 수 있다. 따라서 답은 **2번** 이다.
+
+## 15번
+
+왼쪽 도선에서의 거리가 1이고 전류는 2이다. 이를 상쇄하기 위해서는 거리가 4배인 오른쪽 도선의 전류 또한 4배여야 하고, 방향은 같아야 한다. 따라서 답은 **2번** 이다.
+
+## 16번
+
+길이 $l=2$이다. 그리고
+
+$$
+\begin{equation}
+\begin{split}
+Z_0&=\sqrt{\frac{L/l}{C/l}}\\
+&=\sqrt{\frac{4\times 10^{-6}}{100\times10^{-12}}}\\
+&=\sqrt{4\times10^4}\\
+&=200\text{ }\Omega
+\end{split}
+\end{equation}
+$$
+
+이고
+
+$$
+\begin{equation}
+\begin{split}
+\beta&=\omega\sqrt{LC/l^2}\\
+&=10^7\times2\pi\times\sqrt{4\times10^{-6}\times100\times10^{-12}/4}\\
+&=10^7\times 2\pi \times 10\times 10^{-9}\\
+&=0.2\pi\text{ rad/m}
+\end{split}
+\end{equation}
+$$
+
+이다. 따라서 답은 **3번** 이다. 단위길이당 인덕턴스와 커패시턴스를 이용해야 함에 주의하자.
+
+## 17번
+
+시간평균 전력밀도는
+
+$$
+\lt S \gt =\frac{1}{2}EH
+$$
+
+이다. 그리고
+
+$$
+\begin{equation}
+\begin{split}
+v_p&=\frac{\omega}{\beta}\\
+&=\frac{10^8}{1/2}\\
+&=2\times10^8\\
+&=\frac{1}{\sqrt{\mu_0\varepsilon_0\varepsilon_r}}\\
+\Rightarrow \varepsilon_r&=\frac{9\times10^{16}}{4\times10^{16}}\\
+&=\frac{9}{4}\\
+\Rightarrow \eta&=\sqrt{\frac{\mu_0}{\varepsilon}}\\
+&=120\pi\times\frac{1}{\sqrt{\varepsilon}}\\
+&=120\pi\times\frac{2}{3}\\
+&=80\pi
+\end{split}
+\end{equation}
+$$
+
+이므로
+
+$$
+\begin{equation}
+\begin{split}
+H&=\frac{E}{\eta}\\
+&=\frac{4}{80\pi}\\
+&=\frac{1}{20\pi}\\
+\Rightarrow \lt S \gt &=\frac{1}{2}\times4\times\frac{1}{20\pi}\\
+&=\frac{1}{10\pi}\text{ W/m}^2
+\end{split}
+\end{equation}
+$$
+
+이다. 따라서 답은 **2번** 이다.
+
+## 18번
+
+$$
+\begin{equation}
+\begin{split}
+\nabla\times\vec{E}&=\begin{vmatrix}
+\vec{a_x}&\vec{a_y}&\vec{a_z}\\
+\frac{\partial}{\partial x}&\frac{\partial}{\partial y}&\frac{\partial}{\partial z}\\
+y&x&0
+\end{vmatrix}\\
+&=\vec{0}
+\end{split}
+\end{equation}
+$$
+
+이므로 이 전기장은 보존장이다. 따라서 주어진 경로와 상관없이 먼저 $x$방향으로 움직인 다음 $y$방향으로 움직이는 등으로 계산해도 된다.
+$x$방향으로 3만큼 움직일 때의 전위차는
+
+$$
+-2\times3=-6 \text{ V}
+$$
+
+이다. 다음으로 $y$방향으로 6만큼 움직일 때의 전위차는
+
+$$
+-2\times 6=-12 \text{ V}
+$$
+
+이다. 따라서 총 전위차는 $-18 \text{ V}$이므로 전하량 $-3 \text { C}$를 곱하면
+
+$$
+(-18)\times(-3)=54\text{ J}
+$$
+
+이므로 답은 **4번** 이다.
+
+## 19번
+
+전체 커패시터는 위치 $z$, 미소간격 $dz$, 유전율 $\varepsilon_0\left(2+\frac{z}{d}\right)$인 미소 커패시터가 직렬 연결된 것으로 생각할 수 있다.
+미소 커패시턴스는
+
+$$
+dC=e_0\left(2+\frac{z}{d}\right)\frac{S}{dz}
+$$
+
+이다. 커패시터들이 직렬 연결되면 전체 커패시턴스는 각 커패시턴스의 역수의 합의 역수이므로
+
+$$
+\begin{equation}
+\begin{split}
+C&=\frac{1}{\int dC}\\
+&=\frac{1}{\int_{-d}^{d}\frac{dz}{\varepsilon_0\left(2+\frac{z}{d}\right)S}}\\
+&=\frac{1}{\int_1 ^3 \frac{d d\tilde{z}}{\varepsilon_0S\tilde{z}}}\\
+&=\frac{\varepsilon_0S}{d}\cdot\frac{1}{\int_1 ^3 \frac{d\tilde{z}}{\tilde{z}}}\\
+&=\frac{\varepsilon_0S}{dln3}
+\end{split}
+\end{equation}
+$$
+
+이고 답은 **3번** 이다.
+
+## 20번
+
+상호 인덕턴스는 한 쪽의 전류로 인한 다른 쪽의 쇄교 자속의 비율을 나타내는 값이다.
+무한 직선 도선에 전류 $I_1$이 흐를 때 사각형에 쇄교되는 자속은
+
+$$
+\begin{equation}
+\begin{split}
+\Phi&=1\times\int_1 ^3 \frac{\mu_0I_1\times100}{2\pi \rho}d\rho=\frac{100\mu_oI_1 ln3}{2\pi}\\
+&=\frac{50\mu_0I_1}{\pi}ln3
+\end{split}
+\end{equation}
+$$
+
+이므로 상호 인덕턴스는 이를 $I1$으로 나눈
+
+$$
+M=\frac{50\mu_0}{\pi}ln3
+$$
+
+이다. 따라서 답은 **3번** 이다.
+
+## 21번
+
+$$
+\tau=RC=\rho\varepsilon
+$$
+
+이다. 따라서 저항을 구하면
+
+$$
+\begin{equation}
+\begin{split}
+R&=\frac{\rho\varepsilon}{C}\\
+&=\frac{10^11\times 20\times 10^{-12}}{20\times 10^{-6}}\\
+&=10^5 \text{ }\Omega
+\end{split}
+\end{equation}
+$$
+
+이므로 누설 전류는
+
+$$
+\begin{equation}
+\begin{split}
+I&=\frac{500\times 10^3}{10^5}\\
+&=5\text{ A}
+\end{split}
+\end{equation}
+$$
+
+이고 답은 **4번** 이다.
+
+## 22번
+
+$$
+\begin{equation}
+\begin{split}
+emf&=-\frac{d\Phi}{dt}\\
+&=-1\times 1\times 4\pi\times10^{-7}\times (-100)sin(10t)\\
+&=400\pi\times 10^{-7}sin(10t)
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **4번** 이다.
+
+## 23번
+
+$$
+B=\nabla\times\vec{A}
+$$
+
+이므로
+
+$$
+\begin{equation}
+\begin{split}
+\vec{B}&=\begin{vmatrix}
+\vec{a_x}&\vec{a_y}&\vec{a_z}\\
+\frac{\partial}{\partial x}&\frac{\partial}{\partial y}&\frac{\partial}{\partial z}\\
+yz&xy&-xz
+\end{vmatrix}\\
+&=\vec{a_y}(y+z)+\vec{a_z}(y-z)
+\end{split}
+\end{equation}
+$$
+
+이다. 따라서 구하려는 자속은
+
+$$
+\begin{equation}
+\begin{split}
+\Phi&=\int_0 ^2 \int_0 ^2 \vec{B} \cdot dxdz \vec{a_y}\\
+&=\int_0 ^2 \int_0 ^2 zdxdz\\
+&=\left[2\times\frac{z^2}{2}\right]_0^2\\
+&=4
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **3번** 이다.
+
+## 24번
+
+주어진 직선에 수직인 방향벡터는
+
+$$
+\vec{a_\bot}=\frac{1}{3}(\vec{a_x}-2\vec{a_y}+2\vec{a_z})
+$$
+
+이다. 따라서 $\vec{H_1}$의 수직 성분은
+
+$$
+\begin{equation}
+\begin{split}
+H_{1\bot}&=\vec{H_1}\cdot\vec{a_\bot}\\
+&=\frac{1}{3}\\
+\Rightarrow \vec{H_{1\bot}}&=\frac{1}{3}\times\frac{1}{3}(\vec{a_x}-2\vec{a_y}+2\vec{a_z})\\
+&=\frac{1}{9}\vec{a_x}-\frac{2}{9}\vec{a_y}+\frac{2}{9}\vec{a_z}
+\end{split}
+\end{equation}
+$$
+
+그러므로 $\vec{H_1}$의 평행 선분은
+
+$$
+\begin{equation}
+\begin{split}
+\vec{H_{1\parallel}}&=\vec{H_1}-\vec{H_{1\bot}}\\
+&=\vec{a_x}-\frac{1}{3}\times\frac{1}{3}(\vec{a_x}-2\vec{a_y}+2\vec{a_z})\\
+&=\frac{8}{9}\vec{a_x}+\frac{2}{9}\vec{a_y}-\frac{2}{9}\vec{a_z}
+\end{split}
+\end{equation}
+$$
+
+이다.
+경계조건에 의해서
+
+$$
+\begin{equation}
+\begin{split}
+\vec{B_{1\bot}}&=\vec{B_{2\bot}}\\
+\Rightarrow 2\vec{H_{2\bot}}&=1\vec{H_{1\bot}}\\
+\Rightarrow 2\vec{H_{2\bot}}&=\frac{1}{9}\vec{a_x}-\frac{2}{9}\vec{a_y}+\frac{2}{9}\vec{a_z}\\
+\Rightarrow \vec{H_{2\bot}}&=\frac{1}{18}\vec{a_x}-\frac{2}{18}\vec{a_y}+\frac{2}{18}\vec{a_z}
+\end{split}
+\end{equation}
+$$
+
+그리고
+
+$$
+\begin{equation}
+\begin{split}
+\vec{H_{1\parallel}}&=\vec{H_{2\parallel}}\\
+\Rightarrow \vec{H_{2\parallel}}&=\frac{8}{9}\vec{a_x}+\frac{2}{9}\vec{a_y}-\frac{2}{9}\vec{a_z}
+\end{split}
+\end{equation}
+$$
+
+이다. 따라서
+
+$$
+\begin{equation}
+\begin{split}
+\vec{H_2}&=\vec{H_{2\bot}}+\vec{H_{2\parallel}}\\
+&=\frac{1}{18}(\vec{a_x}17+\vec{a_y}2-\vec{a_z}2)
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **4번** 이다.
+
+## 25번
+
+$\varepsilon_r=4$이므로 임피던스는 고유 임피던스의 절반인 $60\pi\text{ }\Omega$이다. 한편 광속도 자유공간에서 광속의 절반인 $\frac{3}{2}\times10^8$ m/s이므로
+
+$$
+\begin{equation}
+\begin{split}
+\beta&=\frac{\omega}{v}\\
+\Rightarrow \omega&=10\pi\times \frac{3}{2}\times10^8\\
+&=15\pi\times10^8
+\end{split}
+\end{equation}
+$$
+
+이다. 진행방향은 $+\vec{a_z}$이므로
+
+$$
+\vec{H}=\vec{a_y}\frac{1}{60\pi}cos(15\pi\times10^8t-10\pi z)
+$$
+
+이고 답은 **1번** 이다.
