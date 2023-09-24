@@ -1,0 +1,348 @@
+---
+title: 2023 7급 국가직 통신이론
+year: 2023년
+organization: 국가직
+level: 7급
+subject: 통신이론
+etc:
+description:
+---
+
+#
+
+## 1번
+
+1. 인과성이란 출력이 미래 값에 의존하지 않는다, 즉 현재와 과거 값으로부터만 구성된다는 성질이다. 입력 신호를 $x(t)$, LTI 시스템의 임펄스 응답을 $h(t)$, 출력을 $y(t)$라고 하면
+
+   $$
+   \begin{equation}
+   \begin{split}
+   y(t)&=h(t)*x(t)\\
+   &=\int_{-\infty}^{\infty}h(\tau)x(t-\tau)d\tau
+   \end{split}
+   \end{equation}
+   $$
+
+   이다. 현재 시점이 $t$이므로 $t-\tau\gt t \Leftrightarrow \tau\lt 0$이면 이는 미래 시점이다. $y(t)$가 이러한 미래 시점의 입력에 의존하지 않음은 $h(\tau\lt0)=0$이면 보장된다.
+
+2. 그렇다. 입력과 임펄스 응답과 입력의 콘볼루션이 출력이다. 이는 입력을 임펄스들로 나타내고, 각각의 임펄스들에 대한 응답을 다 더하는 것으로 생각할 수 있다.
+3. 그렇지 않다. 출력도 $y(t-t_0)$으로 지연된다.
+4. 그렇다. 선형성 때문이다.
+
+따라서 답은 **3번** 이다.
+
+## 2번
+
+고등학교에서 배워서 알고 있듯이
+
+$$
+\begin{equation}
+\begin{split}
+Var(X)&=E[(X-m_X)^2]\\
+&=E[X^2-2Xm_X+m_X^2]\\
+&=E[X^2]-2E[X]m_X+m_X^2\\
+&=E[X^2]-2m_X^2+m_X^2\\
+&=E[X^2]-m_X^2\\
+&=E[X^2-m_X^2]
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **3번** 이다.
+
+## 3번
+
+확률분포함수란 표현은 처음 본다. 보통은 누적분포함수(cumulative distribution function;cdf)라고 한다. 아무튼
+
+$$
+F_X(x)=\int_{-\infty}^{x}f_X(\tilde{x})d\tilde{x}
+$$
+
+이므로
+
+$$
+F_X(x)=
+\begin{cases}
+0 &\text{if } x\lt -1\\
+\int_{-1}^{x}(a(x+1))dx=\int_0^{x+1} axdx=\frac{a}{2}(x+1)^2 &\text{if } -1\le x \le 2\\
+1 &\text{if }x\gt 2
+\end{cases}
+$$
+
+이다. 식 형태만 봐도 답은 **1번** 임은 알 수 있긴 하지만 $a$를 결정해보자.
+$F_X(2)=1$이어야 하므로
+
+$$
+\begin{equation}
+\begin{split}
+\frac{a}{2}(3^2)&=1\\
+\Rightarrow a&=\frac{2}{9}
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 1번이 확실하다.
+
+## 4번
+
+대역폭은 양수 주파수 범위만을 따진다. 충분히 큰 반송파 주파수로 DSB-SC 변조하게 되면 기저대역에서 음의 주파수 부분도 양수 부분으로 끌려나오게 되므로 양수 범위에서 주파수 스펙트럼은 $[-W+f_c,W+f_c]$에 존재한다. 따라서 대역폭은 $2W$이므로 답은 **3번** 이다.
+
+## 5번
+
+위상을 미분하면 순시 각주파수가 나오고 이를 $2\pi$로 나누면 순시 주파수가 나온다.
+따라서
+
+$$
+\begin{equation}
+\begin{split}
+\phi(t)&=2\pi f_c t+20\pi sin(5t)\\
+\omega&=\frac{d\phi(t)}{dt}\\
+&=2\pi f_c+100\pi cos(5t)\\
+f&=\frac{\omega}{2\pi}\\
+&=f_c+50cos(5t)
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **4번** 이다.
+
+## 6번
+
+채널 용량은 입력을 $X$, 출력을 $Y$라 했을 때 둘 사이의 상호 정보량의 최댓값이다. 즉 다음과 같다.
+
+$$
+\begin{equation}
+\begin{split}
+C&=max_{P[X]} I(X;Y)\\
+&=max(H(Y)-H(Y|X))
+\end{split}
+\end{equation}
+$$
+
+이진 대칭 채널에서
+
+$$
+\begin{equation}
+\begin{split}
+H(Y|X)&=-\sum_x \sum_y P(X=x,Y=y)log_2 P(Y=y|X=x)\\
+&=-\left(\frac{p}{2}log_2 p+\frac{p}{2}log_2 p+\frac{1-p}{2}log_2(1-p)+\frac{1-p}{2}log_2(1-p)\right)\\
+&=-(plog_2 p+(1-p)log_2(1-p))
+\end{split}
+\end{equation}
+$$
+
+이다. 위 값은 $P[X]$와는 상관없음과 $H(Y)$는 $P[Y=y]=\frac{1}{2}$로 균일할 때 1 bit로 최댓값을 가짐을 고려하면 이진 대칭 채널의 채널 용량은
+
+$$
+\begin{equation}
+\begin{split}
+C&=max_{P[X]}\left(H(Y)+(plog_2 p+(1-p)log_2(1-p))\right)\\
+&=max_{P[X]}H(Y)+(plog_2 p+(1-p)log_2(1-p))\\
+&=1+(plog_2 p+(1-p)log_2(1-p))
+\end{split}
+\end{equation}
+$$
+
+이다.
+
+1. $C(1)=1+1\cdot 0+(1-p)\cdot log_2(1-p)|_{p\rightarrow 1}=1+0+0=1$이다. $1-p$가 0으로 가는 속도가 $log_2(1-p)$가 $-\infty$로 가는 속도보다 빨라서 그렇다. 로피탈의 정리로 확인해보라.
+2. $C(0.5)=1+0.5 log_2 0.5+0.5 log_2 0.5=1+log_2 0.5=1-1=0$이다.
+3. $C(0)=1+p\cdot log_2p|_{p\rightarrow 0}+1\cdot 0=1$이다. 채널 용량은 확률의 분포 형태에만 관계있기 때문에, 분포 형태가 1번과 같으므로 계산하지 않고도 결과가 1임은 계산하지 않고도 알 수 있다.
+4. 위에서 구한 식과 형태가 다르다.
+
+따라서 답은 **1번** 이다.
+
+## 7번
+
+$$
+\begin{equation}
+\begin{split}
+I(X=x_1x_3x_4)&=-log_2\frac{1}{2}\frac{1}{8}\frac{1}{8}\\
+&=-log_2 \frac{1}{128}\\
+&=7
+\end{split}
+\end{equation}
+$$
+
+이다. 따라서 답은 **4번** 이다.
+
+## 8번
+
+1. 동기 복조는 당연히 가능하다.
+2. DSB 변조하면 기저대역의 메시지의 주파수 스펙트럼 중 음의 주파수 영역도 양의 주파수 영역으로 끌려나오기 때문에 대역폭이 2배가 된다.
+3. 변조하게 되면 $[-W+f_c,W+f_c]$ 및 $[-W-f_c,W-f_c]$ 영역에 주파수 스펙트럼이 위치하게 되므로 양측파대가 겹치지 않음은 $-W+f_c\gt W-f_c \Leftrightarrow f_c\gt W$임과 동치이다.
+4. 그렇다. 포락선은 양의 부분이기 때문이다.
+
+따라서 답은 **2번** 이다.
+
+## 9번
+
+1. 그렇다. 선형 변조는 AM이다. 이는 각 변조는 삼각함수 안의 값에 메시지가 들어가는데, 삼각함수가 비선형 함수이기 때문이다.
+2. 그렇다. 반송파의 진폭에만 의존한다.
+3. 그렇다.
+4. 그렇지 않다. PM의 경우에는 순시 위상이 $2\pi f_c t\pm A$이므로 주파수는 $f_c$로 일정하나 위상차이가 있을 것이고, FM의 경우에는 주파수가 $f_c\pm B$ 형태로 다를 것이다.
+
+따라서 답은 **4번** 이다.
+
+## 10번
+
+최소 전송 속도는
+
+$$
+\begin{equation}
+\begin{split}
+B&=30\times 2\times 10^6 \times log_2 {16}\\
+&=60\times 4 \times 10^6\\
+&=240\text{ Mbps}
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **2번** 이다.
+
+## 11번
+
+SSB가 가장 대역폭이 좁다. VSB는 한 측파대는 그대로, 다른 측파대의 일부 잔류이므로 중간이다. 따라서 답은 **1번** 이다.
+
+## 12번
+
+1. $E[Y]=E[0.2X-0.1]=0.2E[X]-0.1$이다.
+2. $E[X+Y]=E[1.2X-0.1]=1.2E[X]-0.1$이다.
+3. $Z=aW+b$이고 $W$의 평균을 0, 분산을 $\sigma_W$라고 하자. 분산은 분포의 위치와는 상관없고 분포 형태에만 관련된다. 따라서 $b=0$으로 놓아도 된다. 그러면
+   $$
+   \begin{equation}
+   \begin{split}
+   Var[Z]&=E[Z^2]-(E[Z])^2\\
+   &=E[Z^2]\\
+   &=E[a^2W^2]\\
+   &=a^2E[W^2]
+   \end{split}
+   \end{equation}
+   $$
+   이다. 즉 어떤 확률변수에 $a$를 곱한 확률변수는 상수가 얼마가 여기에 더해지건 원래 확률변수의 분산과 $a$의 제곱을 분산으로 갖는다. 따라서 $Var[Y]=0.04Var[X]$이다.
+4. $Var[X+Y]=Var[1.2X-0.1]=1.44Var[X]$이다.
+
+따라서 답은 **2번** 이다.
+
+## 13번
+
+전력 스펙트럼 밀도는 자기상관함수의 푸리에 변환이다. 그리고 출력 전력 스펙트럼 밀도는 입력 전력 스펙트럼 밀도에 $|H(f)|^2$을 곱한 것인데, 주어진 $|H(f)|$를 보면 $|H(f)|^2=|H(f)|$이다.
+따라서 출력의 자기상관함수는 입력의 자기상관함수와 $|H(f)|$의 역 푸리에변환인 $2f_1 sinc(2f_1 \tau)$의 콘볼루션이다.
+한편 입력의 전력 스펙트럼 밀도가 $\frac{N_0}{2}$이므로 입력의 자기상관함수는 $\frac{N_0}{2}\delta(\tau)$이다.
+그러므로 출력의 자기상관함수는
+
+$$
+\begin{equation}
+\begin{split}
+R(\tau)&=2f_1 sinc(2f_1 \tau)*\frac{N_0}{2}\delta(\tau)\\
+&=N_0 f_1sinc(2f_1 \tau)
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **1번** 이다.
+
+## 14번
+
+1. 그렇다. 여러 신호를 다중화해서 보내는 방법임과 동시에 변조하는 방법이다.
+2. 그렇다.
+3. 그렇다. 부반송파들의 위상이 같은 순간에 진폭이 커지게 된다.
+4. 송신 시 IDFT를 한 다음 CP를 붙인다.
+   따라서 답은 **4번** 이다.
+
+## 15번
+
+$\sum_{n=-\infty}^{\infty}\delta(t-nT_s)$를 푸리에 변환해보자. 이 신호는 주기 $T_s$를 가지므로 우선 푸리에 급수로 표현할 수 있다.
+푸리에 급수의 계수를 구하면
+
+$$
+\begin{equation}
+\begin{split}
+S[k]&=\frac{1}{T_s}\int_{-\frac{T_s}{2}}^{\frac{T_s}{2}}\sum_{n=-\infty}^{\infty}\delta(t-nT_s)e^{j\frac{2\pi}{T_s}kt}dt\\
+&=\frac{1}{T_s}\int_{-\frac{T_s}{2}}^{\frac{T_S}{2}}\delta(t)e^{j\frac{2\pi}{T_s}kt}dt\\
+&=\frac{1}{T_s}\int_{-\frac{T_s}{2}}^{\frac{T_S}{2}}\delta(t)e^{j\frac{2\pi}{T_s}k\cdot 0}dt\\
+&=\frac{1}{T_s}\int_{-\frac{T_s}{2}}^{\frac{T_S}{2}}\delta(t)dt\\
+&=\frac{1}{T_s}\\
+&=f_s
+\end{split}
+\end{equation}
+$$
+
+따라서
+
+$$
+\begin{equation}
+\begin{split}
+\sum_{n=-\infty}^{\infty}\delta(t-nT_s)&=\sum_{k=-\infty}^{\infty}f_s e^{j\frac{2\pi}{T_s}kt}\\
+=\sum_{n=-\infty}^{\infty}f_s e^{j2\pi f_snt}
+\end{split}
+\end{equation}
+$$
+
+이다. (마지막에 $k$를 $n$으로 바꿨다.)
+이를 푸리에 변환하면
+
+$$
+\begin{equation}
+\begin{split}
+\mathcal{F} \left\{ \sum_{n=-\infty}^{\infty}f_s e^{j2\pi f_snt} \right\} &= \int_{-\infty}^{\infty}\sum_{n=-\infty}^{\infty}f_s e^{j2\pi f_snt} e^{-j2\pi ft}dt\\
+&=f_s\sum_{n=-\infty}^{\infty} \int_{-\infty}^{\infty}e^{j2\pi (nf_s-f)t}dt\\
+&=f_s\sum_{n=-\infty}^{\infty} \delta(f-nf_s)
+\end{split}
+\end{equation}
+$$
+
+이다. 여기서
+
+$$
+\int_{-\infty}^{\infty}e^{j2\pi ft}dt=\delta(f)
+$$
+
+를 이용하였다.
+이제 $g_{\delta}(t)$의 푸리에 변환을 구하면
+
+$$
+\begin{equation}
+\begin{split}
+\mathcal{F}\{g_\delta(t)\}&=G(f)*f_s\sum_{n=-\infty}^{\infty} \delta(f-nf_s)\\
+&=f_s\sum_{n=-\infty}^{\infty}G(f-nf_s)
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **3번** 이다.
+
+## 16번
+
+1. 그렇다. 급수는 주기 신호, 즉 주파수가 주기의 역수인 기본 주파수와 그 배수들로 이루어진 신호에 대한 분석이다.
+2. 그렇다.
+3. 그렇다.
+4. 디리클레 조건은
+   $$
+   \int_{-\infty}^{\infty}|f(t)|dt\lt\infty
+   $$
+   이다.
+   바로 위에서 구한 샘플링 신호는 이러한 조건을 만족시키지 않는데도 푸리에 급수를 구할 수 있었다.
+
+따라서 답은 **4번** 이다.
+
+## 17번
+
+1. 스펙트럼 효율은 대역폭 대비 얼마나 많은 신호를 보낼 수 있는가 하는 것, 즉 한 심볼당 얼마나 많은 비트가 실리는가 하는 것이다. $M$이 커지면 심볼당 실리는 비트 수가 늘어나므로 스펙트럼 효율은 좋아진다.
+2. 주파수가 아닌 위상 정보이다.
+3. 최소 거리 간격이 멀어진다면 신호 전력이 더 커진다. 따라서 SNR이 높아진다.
+4. 같다.
+
+따라서 답은 **3번** 이다.
+
+## 18번
+
+$m^2(t)$의 주파수 스펙트럼은 $M(f)*M(f)$이다. 따라서 이 스펙트럼의 범위를 생각해 보면, 하나의 $M(f)$의 양 끝에 $M(f)$가 다시 위치하는 형태가 되기 때문에 주파수 스펙트럼의 범위는 2배가 된다.
+또는
+
+$$
+\mathcal{F}\{cos^2(2\pi ft)\}=\mathcal{F} \left\{\frac{1}{2}(cos(4\pi ft)+1)  \right\}
+$$
+
+이므로 주파수가 2배가 되는 것을 볼 수 있다.
+아무튼 $m^2{t}$의 주파수 스펙트럼은 $[-2000,2000]$범위에 있기 때문에, 최고 주파수는 2000 Hz이다. 따라서 이의 2배인 4000 Hz로 샘플링해야 하고, 이의 역수는 0.25 msec이니 답은 **2번** 이다.
