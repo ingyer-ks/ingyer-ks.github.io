@@ -1,0 +1,70 @@
+---
+title: 2023 7급 서울시 전기자기학
+year: 2023년
+organization: 서울시
+level: 7급
+subject: 전기자기학
+etc:
+description:
+---
+
+#
+
+## 1번
+
+$$
+\begin{equation}
+\begin{split}
+\left\vert\oint_R \vec{v}\cdot \vec{dl}\right\vert&=\left\vert\int_0 ^{2\pi}(-Rsin\theta\vec{a_x}+Rcos\theta{a_y}+3\vec{a_z})\cdot Rd\theta\vec{a_\phi}\right\vert\\
+&=\left\vert R^2\int_0^{2\pi}(-sin^2\theta -cos^2\theta)d\theta\right\vert\\
+&=R^2\int_0^{2\pi } d\theta\\
+&=2\pi R^2
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **4번** 이다.
+
+## 2번
+
+$$
+\vec{A}\times(\vec{B}\times\vec{C})=\vec{B}(\vec{A}\cdot\vec{C})-\vec{C}(\vec{A}\cdot\vec{B})
+$$
+
+를 이용하자.
+
+$$
+\begin{equation}
+\begin{split}
+(\vec{A}\times\vec{B})\times\vec{C}-\vec{A}\times(\vec{B}\times\vec{C})&=-\vec{C}\times(\vec{A}\times\vec{B})-\vec{A}\times(\vec{B}\times\vec{C})\\
+&=-\vec{A}(\vec{C}\cdot\vec{B})+\vec{B}(\vec{C}\cdot\vec{A})-\vec{B}(\vec{A}\cdot\vec{C})+\vec{C}(\vec{A}\cdot\vec{B})\\
+&=-\vec{A}(\vec{C}\cdot\vec{B})+\vec{C}(\vec{A}\cdot\vec{B})\\
+&=-(2\vec{a_x}+\vec{a_y})\cdot 2+(\vec{a_y}+\vec{a_z})\cdot 2\\
+&=-4\vec{a_x}+2\vec{a_z}
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **1번** 이다.
+
+## 3번
+
+원형 고리의 한 점에서 점 $P$ 까지의 거리는 다음과 같다.
+
+$$
+\mathcal{R}=\sqrt{R^2+x^2}
+$$
+
+한편 대칭성에 의해서 전기장은 x방향 성분만 존재하게 될 것이며, 원형 고리의 미소 조각에 의한 전기장의 x 성분은 다음과 같다.
+
+$$
+d\vec{E_x}=\frac{x}{\sqrt{R^2+x^2}}\frac{1}{4\pi \epsilon_0}\frac{\frac{Q}{2\pi R}}{R^2+x^2}\vec{a_x}
+$$
+
+따라서 전체 $2\pi R$에 대해서 전기장을 구하면
+
+$$
+\frac{1}{4\pi \epsilon_0}\frac{Qx}{(x^2+R^2)^\frac{3}{2}}
+$$
+
+이므로 답은 **4번** 이다.
