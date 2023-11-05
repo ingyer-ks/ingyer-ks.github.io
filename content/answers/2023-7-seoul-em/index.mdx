@@ -321,3 +321,183 @@ $$
 가 된다. 따라서 답은 **1번** 이다.
 
 ## 11번
+
+중심으로부터 $\rho$만큼 떨어진 곳에서 $\vec{a_\phi}$방향으로 흐르는 미소선분 $d\vec{l}$은 다음과 같다.
+
+$$
+d\vec{l}=\rho d\phi\vec{a_\phi}
+$$
+
+이 미소선분을 따라 흐르는 전류 $I$로 인해 흐르는 미소 자계는 다음과 같다.
+
+$$
+\begin{equation}
+\begin{split}
+d\vec{H}&=\frac{Id\vec{l}\times\vec{a_R}}{4\pi\rho^2}\\
+&=\frac{I \rho d\phi \vec{a_\phi}\times(-\vec{a_\rho})}{4\pi \rho^2}\\
+&=\frac{I d\phi}{4\pi \rho} \vec{a_z}
+\end{split}
+\end{equation}
+$$
+
+$\rho=a=3$ cm 도선을 따라 흐르는 전류로 인해 생기는 자계는 다음과 같다.
+
+$$
+\begin{equation}
+\begin{split}
+\vec{H_a}&=\int_{0} ^{\frac{\pi}{4}} \frac{2.4}{4\pi\cdot 3\times 10^{-2}}d\phi\vec{a_z}\\
+&=\frac{20}{\pi}\cdot\frac{\pi}{4}\vec{a_z}\\
+&=5\vec{a_z}
+\end{split}
+\end{equation}
+$$
+
+다음으로 $\rho=b=6$ cm 도선을 따라 흐르는 전류로 인해 생기는 자계는 다음과 같다.
+
+$$
+\begin{equation}
+\begin{split}
+\vec{H_b}&=\int_{\frac{\pi}{4}}^0\frac{2.4}{4\pi\cdot 6\times 10^{-2}}d\phi\vec{a_z}\\
+&=-2.5\vec{a_z}
+\end{split}
+\end{equation}
+$$
+
+따라서 총 자기장은
+
+$$
+\begin{equation}
+\begin{split}
+\vec{H}&=\vec{H_a}+\vec{H_b}\\
+&=(5-2.5)\vec{a_z}\\
+&=2.5\vec{a_z}
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **2번** 이다.
+
+## 12번
+
+자기 모멘트와 자기장에 의한 토크는
+
+$$
+\vec{\tau}=\vec{m}\times\vec{B}
+$$
+
+이다. 그리고 자기모멘트는
+
+$$
+\begin{equation}
+\begin{split}
+\vec{m}&=Id\vec{S}\\
+&=3\cdot \pi\cdot (10^2)^2(-\vec{a_z})\\
+&=-3\pi\times 10^4\vec{a_z}
+\end{split}
+\end{equation}
+$$
+
+이다. 따라서 토크를 계산하면
+
+$$
+\begin{equation}
+\begin{split}
+\vec{\tau}&=-3\pi \times 10^4\times4\pi\times 10^{-7}\times\frac{50}{\pi^2}(\vec{a_z}\times\vec{a_x})\\
+&=-0.6\vec{a_y}
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **3번** 이다.
+
+## 13번
+
+자기장이 전류에 가하는 단위길이당 힘인 로렌츠 힘은
+
+$$
+\begin{equation}
+\begin{split}
+\vec{F_l}&=q(\vec{v}\times\vec{B})\\
+&=I\vec{a_l}\times\vec{B}\\
+&=20\times\frac{10\times 4\pi\times 10^{-7}}{2\pi\cdot 10\sqrt{5}}\vec{a_z}\times\vec{a_\phi}
+\end{split}
+\end{equation}
+$$
+
+한편
+
+$$
+\vec{a_\phi}=sin\theta\vec{a_x}-cos\theta\vec{a_y}
+$$
+
+인데, $\theta=-\angle AOC$에서 $sin\theta=-\frac{1}{\sqrt{5}},cos\theta=\frac{2}{\sqrt{5}}$이다. $\theta=\angle BOC$에 대해서는 사인은 반대 부호이고 코사인은 같은 값을 가질 것이다.
+
+따라서 두 도선에 의한 힘을 더하는 과정에서 반대 부호인 사인은 사라지고 코사인만 2배가 되어 남을 것이다. 정리하면
+
+$$
+\begin{equation}
+\begin{split}
+\vec{F_{l,total}}&=20\times\frac{10\times 4\pi\times 10^{-7}}{2\pi\cdot 10\sqrt{5}}\vec{a_z}\times(-2\cdot \frac{2}{\sqrt{5}}\vec{a_y})\\
+&=320\times 10^{-8}\vec{a_x}
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **4번** 이다.
+
+## 14번
+
+자기 저항은 투자율에 반비례, 길이에 비례, 단면적에 반비례하므로
+
+$$
+\begin{equation}
+\begin{split}
+\mathcal{R}&=\frac{20\times 10^{-2}\times 2\pi}{5000\times 4\pi \times 10^{-7}\times 2\times 10^{-4}}\\
+&=10^{6}
+\end{split}
+\end{equation}
+$$
+
+이다. 따라서 1차측 전류로 인해 생기는 자속은
+
+$$
+\begin{equation}
+\begin{split}
+\Phi&=\frac{N_1i_1}{\mathcal{R}}\\
+&=\frac{300\times 4sin(3t^2-20t)}{10^6}\\
+\end{split}
+\end{equation}
+$$
+
+이다. 이로부터 2차 측에 $t=0$일 때 생기는 유도 기전력은
+
+$$
+\begin{equation}
+\begin{split}
+emf&=-N_2\frac{d\Phi}{dt}\\
+&=-100\times 300 \times 10^{-6}\times 4\times (6t-20)\times cos(3t^2-20t)|_{t=0}\\
+&=24\times 10^{-1}\\
+&=2.4\text{ V}
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **2번** 이다.
+
+## 15번
+
+자기 에너지는
+
+$$
+\begin{equation}
+\begin{split}
+W_m&=\oiiint\frac{1}{2}\frac{B^2}{\mu}dv\\
+&=\frac{1}{2}\frac{10^2\times 10\times 10^{-6}}{1000\times 4\pi\times 10^{-7}}\\
+&=\frac{5}{4\pi}
+\end{split}
+\end{equation}
+$$
+
+이므로 답은 **3번** 이다.
+
+## 16번
