@@ -31,6 +31,10 @@
     margin-top: 40px;
   }
 
+  p a {
+    color: blue;
+    text-decoration: underline;
+  }
   :root {
     --color-background: #fff;
     --color-background-muted: #4b5563;

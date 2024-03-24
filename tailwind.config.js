@@ -41,7 +41,7 @@ module.exports = {
   theme: {
     extend: {
       gridColumn: {
-        'span-2': 'span 2 / span 2'
+        "span-2": "span 2 / span 2",
       },
       typography: theme => ({
         DEFAULT: {
@@ -119,7 +119,7 @@ module.exports = {
         blog: "1fr min(600px, 100%) 1fr",
       },
       gridTemplateRows: {
-        2: '',
+        2: "",
       },
       backgroundColor: themes,
       textColor: themes,
