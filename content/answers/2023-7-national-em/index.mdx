@@ -328,27 +328,29 @@ $$
 
 ## 18번
 
-$$
-\begin{equation}
-\begin{split}
-\nabla\times\vec{E}&=\begin{vmatrix}
-\vec{a_x}&\vec{a_y}&\vec{a_z}\\
-\frac{\partial}{\partial x}&\frac{\partial}{\partial y}&\frac{\partial}{\partial z}\\
-y&x&0
-\end{vmatrix}\\
-&=\vec{0}
-\end{split}
-\end{equation}
-$$
+1. 주어진 전기장의 특징을 이용한 풀이
+   $$
+   \begin{equation}
+   \begin{split}
+   \nabla\times\vec{E}&=\begin{vmatrix}
+   \vec{a_x}&\vec{a_y}&\vec{a_z}\\
+   \frac{\partial}{\partial x}&\frac{\partial}{\partial y}&\frac{\partial}{\partial z}\\
+   y&x&0
+   \end{vmatrix}\\
+   &=\vec{0}
+   \end{split}
+   \end{equation}
+   $$
 
 이므로 이 전기장은 보존장이다. 따라서 주어진 경로와 상관없이 먼저 $x$방향으로 움직인 다음 $y$방향으로 움직이는 등으로 계산해도 된다.
-$x$방향으로 3만큼 움직일 때의 전위차는
+$x$방향으로 -1에서 2까지 3만큼 움직일 때 $y=2$로 고정이므로 전기장은 $\vec{E}=\hat{a_x}2+\hat{a_y}x$이고, x방향으로만 움직이므로 y방향 성분은 무시된다.
+따라서 이 때의 전위차는
 
 $$
 -2\times3=-6 \text{ V}
 $$
 
-이다. 다음으로 $y$방향으로 6만큼 움직일 때의 전위차는
+이다. 다음으로 $y$방향으로 2에서 8까지 6만큼 움직일 때 $x=2$이므로 전기장은 $\vec{E}=\hat{a_x}y+\hat{_y}2$이므로 이 때의 전위차를 구하면
 
 $$
 -2\times 6=-12 \text{ V}
@@ -358,6 +360,75 @@ $$
 
 $$
 (-18)\times(-3)=54\text{ J}
+$$
+
+이다.
+
+2. 직접 선적분을 하는 풀이
+
+매개변수 $t$를 이용하여 $x,y$를 다음과 같이 표현하자.
+
+$$
+\begin{equation}
+\begin{split}
+x&=t\\
+y&=2t^2
+\end{split}
+\end{equation}
+$$
+
+주어진 경로는 $t_1=-1$에서 $t_2=2$까지 이동하는 경로이다.
+
+$t$를 이용하여 전기장을 표현하면
+
+$$
+\vec{E}=\hat{a_x}2t^2+\hat{a_y}t
+$$
+
+이다. 그리고
+
+$$
+\begin{equation}
+\begin{split}
+dx&=dt\\
+dy&=4tdt
+\end{split}
+\end{equation}
+$$
+
+이므로, 미소길이벡터는
+
+$$
+\begin{equation}
+\begin{split}
+d\vec{l}&=dx\hat{a_x}+dy\hat{a_y}+dz\hat{a_z}\\
+&=dt\hat{a_x}+4tdt\hat{a_y}
+\end{split}
+\end{equation}
+$$
+
+이다.
+
+이들로부터 전위차를 구하면
+
+$$
+\begin{equation}
+\begin{split}
+V&=-\int_{t_1}^{t_2} \vec{E}\cdot d\vec{l}\\
+&=-\int _{-1}^{2} \left(\hat{a_x}2t^2+\hat{a_y}t\right)\cdot\left(dt\hat{a_x}+4tdt\hat{a_y}\right)\\
+&=-\int _{-1}^{2}\left(2t^2+4t^2\right)dt\\
+&=-\int_{-1}^{2}6t^2dt\\
+&=-\left[2t^3\right]_{-1}^{2}\\
+&=-(16+2)\\
+&=-18\text{ V}
+\end{split}
+\end{equation}
+$$
+
+이다. 여기에 전하량 -3을 곱하면 필요한 일은
+
+$$
+W=(-18)\times(-3)=54\text{ J}
 $$
 
 이므로 답은 **4번** 이다.
