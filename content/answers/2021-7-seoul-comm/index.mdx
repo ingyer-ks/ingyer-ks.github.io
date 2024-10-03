@@ -302,12 +302,14 @@ $$
 따라서 답은 **1번** 이다.
 
 ## 13번
-
+sinc함수의 푸리에 변환을 이용하기 위해 $f(t)$를 다시 쓰면
 $$
 f(t)=Wsinc\left( \frac{W}{\pi}t\right)
 $$
 
-이다. 따라서 이의 푸리에 변환은
+이다.
+
+따라서 이의 푸리에 변환은
 
 $$
 \begin{equation}
@@ -318,10 +320,19 @@ $$
 \end{equation}
 $$
 
-따라서 $cos\omega_0 t$를 곱한 것의 푸리에 변환은
+그리고 $cos\omega_0 t$의 푸리에 변환은
+$$
+\mathcal{F}\{cos\omega_0 t\}=\pi\left(\delta(\omega-\omega_0)+\delta(\omega+\omega_0)\right)
+$$
+이므로 $f(t)$에 $cos\omega_0 t$를 곱한 것의 푸리에 변환은
 
 $$
-\pi rect\left(\frac{\omega}{2W}\right)*\left(\frac{1}{2}(\delta(\omega-\omega_0)+\delta(\omega+\omega_0))  \right)=\frac{\pi}{2}rect\left(\frac{\omega-\omega_0}{2W} \right)+\frac{\pi}{2}rect\left(\frac{\omega+\omega_0}{2W} \right)
+\begin{equation}
+\begin{split}
+\mathcal{F}\{f(t)cos\omega_0 t\}&=\frac{1}{2\pi}\left(\pi rect\left(\frac{\omega}{2W}\right)*\left(\pi(\delta(\omega-\omega_0)+\delta(\omega+\omega_0)) \right)\right)\\
+&=\frac{\pi}{2}rect\left(\frac{\omega-\omega_0}{2W} \right)+\frac{\pi}{2}rect\left(\frac{\omega+\omega_0}{2W} \right)
+\end{split}
+\end{equation}
 $$
 
 이므로 답은 **3번** 이다.
@@ -333,7 +344,7 @@ LPF의 컷오프 주파수는 각주파수로 표현하면 $600\pi$이다. 따�
 $$
 \begin{equation}
 \begin{split}
-P_y&=\frac{1}{2}((2\sqrt{2})^2+(\sqrt{2})^2)\\
+P_y&=\frac{1}{2}\left(\left(2\sqrt{2}\right)^2+\left(\sqrt{2}\right)^2\right)\\
 &=\frac{1}{2}(8+2)\\
 &=5
 \end{split}
@@ -381,6 +392,8 @@ Pr[X\neq \hat{X}]&=\frac{2}{3}\int_{-\infty}^{-1}\frac{1}{\sqrt{2\pi}\sigma}e^{-
 \end{split}
 \end{equation}
 $$
+
+이므로 답은 **2번** 이다.
 
 ## 20번
 
