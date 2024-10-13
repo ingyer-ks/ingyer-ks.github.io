@@ -1,0 +1,588 @@
+---
+title: 2024 7급 국가직 전기자기학
+year: 2024년
+organization: 국가직
+level: 7급
+subject: 전기자기학
+etc:
+description:
+---
+
+#
+
+## 1번
+1. 그렇다.
+2. 그렇다. 내부에 전계가 있는 순간이 생긴다면 그에 맞춰서 전하들이 자유롭게 이동해서 이를 상쇄시킬 것이다.
+3. 도체 표면에만 전하가 분포할 수 있다. 도체 내부에 전하가 있다면 즉시 다른 전하들에 의해 전기력을 받아 표면으로 밀려날 것이다.
+4. 그렇다.
+
+따라서 답은 **3번** 이다.
+
+## 2번
+주어진 전기 쌍극자 모멘트에 따르면 왼쪽 아레에 $-$전하가, 오른쪽 위에 $+$ 전하가 존재한다. 따라서 시계 방향으로 회전하게 될 것이다.
+그러므로 답은 **2번** 이다.
+
+## 3번
+편의를 위해 $d, w, S, \epsilon_0$를 다 1이라고 놓고 비율을 구해보자.
+
+먼저 $C_1$을 구해보면
+$$
+\begin{equation}
+\begin{split}
+C_1&=2\times\frac{1}{2}+6\times\frac{1}{2}\\
+&=1+3\\
+&=4
+\end{split}
+\end{equation}
+$$
+이다.
+
+다음으로 $C_2$를 구해보면
+$$
+\begin{equation}
+\begin{split}
+C_2&=6\times2||2\times 2\\
+&=12||4\\
+&=3
+\end{split}
+\end{equation}
+$$
+이다. 따라서
+$$
+C_1:C_2=4:3
+$$
+이므로 답은 **4번** 이다.
+
+## 4번
+전류밀도는
+$$
+\frac{I}{\pi a^2}
+$$
+이다. 따라서 거리가 $\rho$인 위치에서 단면을 통과하는 전류는
+$$
+\begin{equation}
+\begin{split}
+I_\rho&=\frac{I}{\pi a^2}\times\pi \rho^2\\
+&=\frac{I\rho^2}{a^2}
+\end{split}
+\end{equation}
+$$
+이다. 이 전류가 중심에서 흐르고 있는 것과 동일하므로, 원하는 자속밀도의 크기를 구하면
+$$
+\begin{equation}
+\begin{split}
+B&=\mu\times\frac{I\rho^2}{a^2}\times\frac{1}{2\pi\rho}\\
+&=\frac{\mu I\rho}{2\pi a^2}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 답은 **3번** 이다.
+
+## 5번
+1. 군속도는
+$$
+v_g=\frac{d\omega}{d\beta}
+$$
+이다.
+2. 위상속도는 어떤 한 위상 $\theta=\omega t-\beta(\omega)z$가 이동하는 속도이므로, 양변을 $t$로 미분하면
+$$
+\begin{equation}
+\begin{split}
+\frac{d\theta}{dt}&=0\\
+&=\frac{d}{dt}(\omega t-\beta{\omega}z)\\
+&=\omega-\beta{\omega}\frac{dz}{dt}\\
+\Rightarrow v_p&=\frac{dz}{dt}\\
+&=\frac{\omega}{\beta{\omega}}
+\end{split}
+\end{equation}
+$$
+이다.
+3. 선형 편파임을 알 수 있다.
+4. 비유전율 등이 주어지지 않는 이상 포인팅 벡터는 구할 수 없다.
+
+따라서 답은 **4번** 이다.
+
+## 6번
+주어진 위치에서의 무한 면전류에 의한 자계는
+$$
+\vec{H_1}=3\vec{a_y}
+$$
+이다.
+
+다음으로 무한 선전류에 의한 자계는
+$$
+\vec{H_2}=-\frac{I}{2\pi\cdot 2}\vec{a_y}
+$$
+이다. 두 자계가 상쇄되기 위해서는 크기가 같아야 하므로
+$$
+\begin{equation}
+\begin{split}
+3&=\frac{I}{4\pi}\\
+\Rightarrow I&=12\pi\text{ A}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **3번** 이다.
+
+## 7번
+유한한 도선이 만드는 자계를 구하는 방법은 [2021 7급 국가직 전기자기학](https://ingyerlog.kr/2021-7-national-em/)의 10번 문제에서 소개한 적이 있다.
+그 공식
+$$
+\vec{H}=\frac{I}{4\pi \rho}(cos(\alpha)+cos(\beta))\vec{a_\phi}
+$$
+을 이용하자.
+
+주어진 한 변의 도선의 양 끝에서 도선과 과 점 $O$까지의 선이 이루는 각도는 $\alpha=\beta=\frac{\pi}{3}$이다. 따라서 어느 한 변의 도선의 자계 크기를 $H_1$이라 하면
+$$
+\begin{equation}
+\begin{split}
+H_1&=\frac{I}{4\pi\times\frac{\sqrt{3}d}{2}}\times\frac{1}{2}\times2\\
+&=\frac{I}{2\pi\sqrt{3}d}
+\end{split}
+\end{equation}
+$$
+이다. 이러한 도선이 6개 있으므로
+$$
+\begin{equation}
+\begin{split}
+H&=6H_1\\
+&=6\times \frac{I}{2\pi\sqrt{3}d}\\
+&=\frac{\sqrt{3}I}{\pi d}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 답은 **4번** 이다.
+
+## 8번
+양전하가 등속 운동하기 위해서는 로렌츠 힘
+$$
+\vec{F}=q(\vec{v}\times\vec{B}+\vec{E})
+$$
+가 영벡터여야 한다.
+주어진 조건을 대입하면
+$$
+\begin{equation}
+\begin{split}
+\vec{0}&=q(5\vec{a_x}\times B_0\vec{a_z}+10\vec{a_y})\\
+\Rightarrow \vec{0}&=-5B_0\vec{a_y}+10\vec{a_y}\\
+\Rightarrow 5B_0&=10\\
+\Rightarrow B_0&=2
+\end{split}
+\end{equation}
+$$
+이므로 답은 **3번** 이다.
+
+## 9번
+주어진 도선들이 다른 도선들에 미치는 자계를 그러보면 A에서는 만나는 각도가 $120^\circ$인 자계가 가해지고, C에서도 마찬가지이다. 하지만 B에서는 $30^\circ$로 자계가 만나므로 A, C에서의 자계보다 더 강하다.
+따라서 답은 **2번** 이다.
+
+## 10번
+$$
+\begin{equation}
+\begin{split}
+\beta=\sqrt{(3\pi)^2+(4\pi)^2}\\
+&=5\pi
+\end{split}
+\end{equation}
+$$
+이다. 따라서 파장은
+$$
+\begin{equation}
+\begin{split}
+\lambda&=\frac{2\pi}{\beta}\\
+&=\frac{2}{5}\\
+&=0.4\text{ m}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **2번** 이다.
+
+## 11번
+무한 선전하에 의한 전기장의 크기는
+$$
+\vec{E(\rho)}=\frac{q_l}{2\pi\epsilon_0\rho}\vec{a_\rho}
+$$
+이다. 따라서 구하는 일은
+$$
+\begin{equation}
+\begin{split}
+W&=-Q\int_2^1\vec{E(\rho)}\cdot d\vec{\rho}\\
+&=-\frac{Q}{2\pi\epsilon_0}\int_2^1\frac{1}{\rho}d\rho\\
+&=\frac{Q}{2\pi\epsilon_0} ln\rho|_1 ^2\\
+&=\frac{Q}{2\pi\epsilon_0}(ln2-ln1)\\
+&=\frac{Q}{2\pi\epsilon_0}ln2
+\end{split}
+\end{equation}
+$$
+이므로 답은 **2번** 이다.
+
+## 12번
+경계조건에서 경계면에 평행한 전기장 성분은 동일하다.
+그리고 경계면에 전하가 없을 경우, 경계면에 수직한 전속밀도가 동일하다(그래야 들어온 전속밀도가 그대로 나간다).
+이로부터 $\vec{E_1}$의 경계면에 평행한 성분의 크기
+$$
+\sqrt{3^2+(-4)^2}=5
+$$
+가 매질 2에서도 유지되고, 전속밀도
+$$
+3\times2=6
+$$
+이 매질 2에서도 유지되므로 매질 2에서의 수직 방향 전기장의 크기는
+$$
+\frac{6}{3}=2
+$$
+이다. 따라서 $tan\theta_2$는
+$$
+tan\theta_2=\frac{5}{2}
+$$
+이므로 답은 **4번** 이다.
+
+## 13번
+원형 도선 중심에서의 자계를 구해보자. 전류가 시계 방향으로 돌고 반지름을 $\rho$라 하면
+$$
+\vec{dl}=-\rho d\phi\vec{a_\phi}
+$$
+이다. 이를 비오-사바르 법칙에 적용하면
+$$
+\begin{equation}
+\begin{split}
+d\vec{H}&=\frac{I}{4\pi}\frac{\vec{dl}\times\vec{\mathcal{R}}}{\mathcal{R}^3}\\
+&=\frac{I}{4\pi}\frac{-\rho d\phi\vec{a_\phi}\times(-\rho\vec{a_\rho})}{\rho^3}\\
+&=\frac{I}{4\pi}\frac{1}{\rho}d\phi(-\vec{a_z})\\
+\Rightarrow \vec{H}&=\int_0 ^{2\pi}\frac{I}{4\pi}\frac{1}{\rho}d\phi(-\vec{a_z})\\
+&=\frac{I}{2\rho}(-\vec{a_z})
+\end{split}
+\end{equation}
+$$
+주어진 조건에서 $I=5,\rho=0.1$이고 도선은 원형 도선의 절반이므로 자속밀도를 구하면
+$$
+\begin{equation}
+\begin{split}
+\vec{B}&=\frac{5\mu}{2\times0.1}(-\vec{a_z})\\
+&=25(-\vec{a_z})
+\end{split}
+\end{equation}
+$$
+이므로 답은 **3번** 이다.
+
+## 14번
+자속 $\Phi$를 구하면
+$$
+\begin{equation}
+\begin{split}
+\Phi&=2t\times 10t\\
+&=20t^2
+\end{split}
+\end{equation}
+$$
+이다. 이로부터 유도기전력을 구하면
+$$
+\begin{equation}
+\begin{split}
+|V_o|&=\left| -\frac{\partial \Phi}{\partial t}\right|\\
+&=40t
+\end{split}
+\end{equation}
+$$
+이므로 답은 **1번** 이다.
+
+## 15번
+오른손 법칙을 이용해보면 답이 **4번** 임을 쉽게 알 수 있다.
+
+## 16번
+전도전류밀도의 크기는
+$$
+J_c=\sigma E
+$$
+이고 변위전류밀도의 크기는
+$$
+J_d=\frac{\partial D}{\partial t}
+$$
+인데 주파수가 일정하므로
+$$
+\begin{equation}
+\begin{split}
+J_d&=|j\omega|\epsilon E\\
+&=\omega \epsilon E
+\end{split}
+\end{equation}
+$$
+이다. 전류의 비는 두 전류밀도의 비와 동일하므로
+$$
+\begin{equation}
+\begin{split}
+\frac{I_c}{I_d}&=\frac{J_c}{J_d}\\
+&=\frac{6\times 10^7 E}{2\pi\times 1\times 10^9\times\frac{10^{-9}}{36\pi}E}\\
+&=18\times6\times10^7\\
+&=1.08\times10^9
+\end{split}
+\end{equation}
+$$
+이다. 따라서 답은 **2번** 이다.
+
+## 17번
+자유공간의 임피던스는
+$$
+\eta_0=\sqrt{\frac{\mu_0}{\epsilon_0}}
+$$
+이다. 주어진 무손실 유전체에서의 임피던스는
+$$
+\begin{equation}
+\begin{split}
+\eta_L&=\sqrt{\frac{\mu_0}{9\epsilon_0}}\\
+&=\frac{\eta_0}{3}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 반사계수를 구하면
+$$
+\begin{equation}
+\begin{split}
+\Gamma&=\frac{\eta_0-\eta_L}{\eta_0+\eta_L}\\
+&=\frac{1-\frac{1}{3}}{1+\frac{1}{3}}\\
+&=\frac{2}{4}\\
+&=\frac{1}{2}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 투과계수는
+$$
+\begin{equation}
+\begin{split}
+\Tau&=1-\Gamma\\
+&=\frac{1}{2}
+\end{split}
+\end{equation}
+$$
+이므로 투과한 전자기파의 최대 전계의 크기는
+$$
+\Tau E_0=\frac{1}{2}E_0
+$$
+이다. 그러므로 답은 **2번** 이다.
+
+## 18번
+공기중에서의 전속밀도의 크기를 구하면
+$$
+\begin{equation}
+\begin{split}
+D&=\epsilon E\\
+&=1000\epsilon_0
+\end{split}
+\end{equation}
+$$
+이다. 공기-유전체 경계면에 자유전하는 없으므로 이 전속밀도가 그대로 완전도체에 가 닿는다. 따라서 유전체-도체 경계면에서 전하밀도의 크기는 그대로
+$$
+1000\epsilon_0
+$$
+이므로 답은 **4번** 이다.
+
+## 19번
+정재파비로부터 반사계수의 절댓값을 구하면
+$$
+\begin{equation}
+\begin{split}
+SWR&=2\\
+&=\frac{1+|\Gamma}{1-|\Gamma}\\
+\Rightarrow 2-2|\Gamma|&=1+|\Gamma|\\
+\Rightarrow 3|\Gamma|&=1\\
+\Rightarrow |\Gamma|&=\frac{1}{3}
+\end{split}
+\end{equation}
+$$
+이다. 여기서 무손실 유전체이므로 비유전율은 $1$보다 클 것이고, 이는 자유공간보다 임피던스가 작음을 의미한다. 따라서 $\Gamma$의 부호는 음수여야 한다. 그러므로
+$$
+\begin{equation}
+\begin{split}
+\Gamma&=-\frac{1}{3}\\
+&=\frac{\eta_L-\eta_0}{\eta_L+\eta_0}\\
+\Rightarrow -3\eta_L+3\eta_0&=\eta_L+\eta_0\\
+\Rightarrow 4\eta_L&=2\eta_0\\
+\Rightarrow \eta_L&=\frac{1}{2}\eta_0
+\end{split}
+\end{equation}
+$$
+이다. 따라서 이를 만족하기 위해서는
+$$
+\begin{equation}
+\begin{split}
+\eta_L&=\frac{1}{2}\eta_0\\
+\Rightarrow \sqrt{\frac{\mu_0}{\epsilon_r\epsilon_0}}&=\frac{1}{2}\sqrt{\frac{\mu_0}{\epsilon_0}}\\
+\Rightarrow \epsilon_r&=4
+\end{split}
+\end{equation}
+$$
+가 되어야 하므로 답은 **3번** 이다.
+
+## 20번
+웑점에 있는 $Q$인 양전하는 위쪽 4개 공간, 아래쪽 4개 공간해서 총 8개 공간에 균일하게 나눠져서 존재하고 있다. 여기에 위쪽 공간 하나는 밖으로 나가는 방향이 3가지가 있다. 따라서 전속밀도는
+$$
+\begin{equation}
+\begin{split}
+D&=\frac{Q}{8\times3}\\
+&=\frac{Q}{24}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 전계의 선속은
+$$
+\begin{equation}
+\begin{split}
+D&=\epsilon_0 E\\
+\Rightarrow E&=\frac{D}{\epsilon_0}\\
+&=\frac{Q}{24\epsilon_0}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **1번** 이다.
+
+## 21번
+$$
+\vec{B}=\nabla\times\vec{A}
+$$
+이다. 자속을 구하기 위해서는 위 $\vec{B}$를 면적에 대해 적분해야 한다.
+$$
+\begin{equation}
+\begin{split}
+\Phi&=\int \vec{B}\cdot \vec{dS}\\
+&=\int\nabla\times\vec{A}\cdot\vec{dS}
+\end{split}
+\end{equation}
+$$
+여기서, $\nabla\times\vec{A}$를 구하지 말고 스토크스의 정리를 이용하자.
+$$
+\begin{equation}
+\begin{split}
+\Phi&=\int\nabla\times\vec{A}\cdot\vec{dS}\\
+&=\oint \vec{A}\cdot\vec{dl}\\
+&=\int_0 ^{2\pi}a^2\times ad\theta\\
+&=2\pi a^3
+\end{split}
+\end{equation}
+$$
+이므로 답은 **3번** 이다.
+
+## 22번
+솔레노이드의 길이가 단면적 대비 많이 크므로 외부에는 자기장이 없다고 가정하자.
+솔레노이드의 길이 방향으로 $x$만큼의 길이를 갖고 권선을 감싸는 직사각형을 그려서 자계를 구해보자.
+$$
+\oint \vec{H}\cdot \vec{dl}=I_{total}
+$$
+이므로, 주어진 사각형을 통과하는 전류는
+$$
+\begin{equation}
+\begin{split}
+I\times\frac{N}{l}\times x&=1\times\frac{2000}{2}\\
+&=1000x
+\end{split}
+\end{equation}
+$$
+이다.
+
+한편 바깥쪽에는 자기장이 없다고 가정하였으므로
+$$
+\begin{equation}
+\begin{split}
+\oint \vec{H}\cdot \vec{dl}&=Hx\\
+&=1000x\\
+\Rightarrow H&=1000
+\end{split}
+\end{equation}
+$$
+이다. 다음으로 $B=\mu H$이므로
+$$
+\begin{equation}
+\begin{split}
+B&=4\pi\times10^{-7}\times1000\times1000\\
+&=4\pi\times10^{-1}
+\end{split}
+\end{equation}
+$$
+이다. 이로부터
+$$
+\begin{equation}
+\begin{split}
+\Phi&=BS\\
+&=4\pi\times10^{-1}\times 25\times 10^{-4}\\
+&=\pi\times10^{-3}
+\end{split}
+\end{equation}
+$$
+이다. 한편
+$$
+LI=N\Phi
+$$
+에서
+$$
+\begin{equation}
+\begin{split}
+L&=2000\times\pi\times10^{-3}\\
+&=2\pi
+\end{split}
+\end{equation}
+$$
+이다. 따라서 단위길이당 자기 인덕턴스는
+$$
+\begin{equation}
+\begin{split}
+\frac{L}{l}&=\frac{2\pi}{2}\\
+&=\pi
+\end{split}
+\end{equation}
+$$
+이므로 답은 **2번** 이다.
+
+## 23번
+이 문제는 잘못되었다고 생각된다(떨고있는 어피치님과 같이 생각해보았다). 이유는 다음과 같다.
+
+$dx$만큼 변위가 생겼다고 하자. 이 때 자기 에너지를 변위로 미분하면 힘이 나온다.
+$$
+\begin{equation}
+\begin{split}
+F&=\frac{dW_m}{dx}\\
+&=2\times\frac{1}{2}\frac{B^2}{\mu_0}S\\
+&=\frac{\Phi^2}{\mu_0S}
+\end{split}
+\end{equation}
+$$
+따라서 $x$에 상관없이 힘은 일정해야 한다.
+
+## 24번
+파장의 $\frac{1}{4}$ 길이인 무손실 전송선은 임피던스 변환기로 사용할 수 있다. 전송선의 왼쪽의 임피던스를 $Z_1$, 오른쪽의 임피던스를 $Z_2$이라 하자. 그리고 전송선의 특성 임피던스를 $Z_0$라 하자.
+그러면 왼쪽에서 오른쪽으로 들여다본 입력 임피던스는
+$$
+Z_{in}=Z_0\frac{Z_2+jZ_0tan(\beta l)}{Z_0+jZ_2tan(\beta l)}
+$$
+인데, $l=\frac{1}{4}\lambda$이고 $\beta=\frac{2\pi}{\lambda}$이므로
+$$
+\beta l=\frac{\pi}{2}
+$$
+이다. 따라서 이의 탄젠트는 무한대이므로 위 입력 임피던스는 다음과 같이 바뀐다.
+$$
+\begin{equation}
+\begin{split}
+Z_{in}&=Z_0\times\frac{Z_0}{Z_2}\\
+&=\frac{Z_0^2}{Z_2}
+\end{split}
+\end{equation}
+$$
+이 임피던스가 $Z_1$과 같으면 임피던스 매칭이 이루어진다.
+$$
+Z_1=\frac{Z_0^2}{Z_2}
+$$
+따라서
+$$
+Z_0=\sqrt{Z_1Z_2}
+$$
+이면 임피던스 매칭이 된다. 그러므로 전송선에 최대 전력이 전달되기 위한(=임피던스 매칭이 되기 위한) 전송선의 특성 임피던스는
+$$
+\begin{equation}
+\begin{split}
+Z_0&=\sqrt{40\times160}\\
+&=80\text{ }\Omega
+\end{split}
+\end{equation}
+$$
+이다. 따라서 답은 **2번** 이다.
+
+## 25번
+전계의 $x$방향 성분과 $y$방향 성분의 위상차가 $\pi$의 정수배 차이이므로 같은 방향으로 움직이거나 완전 반대로 움직인다. 따라서 선형 편파이므로 답은 **1번** 이다.
