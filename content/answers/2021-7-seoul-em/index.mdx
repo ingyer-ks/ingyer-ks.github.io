@@ -11,5 +11,175 @@ description:
 #
 
 ## 1번
+전기력선은 $yz$ 평면 위에서 모든 방향으로 직선으로 뻗어나갈 것이다. 따라서 $y=1,z=2$를 지나는 직선의 방정식을 찾으면
+$$
+y=\frac{1}{2}z
+$$
+이므로 답은 **3번** 이다.
 
-문제를 직접 풀진 말자. yz 평면에 평행한 면 위에, $y=z=0$을 중심으로 한 원형 형태가 그려질 것이다.
+## 2번
+$$
+\begin{equation}
+\begin{split}
+VSWR&=\frac{1+|\Gamma|}{1-|\Gamma|}\\
+&=\frac{1+\frac{1}{\sqrt{3}}}{1-\frac{1}{\sqrt{3}}}\\
+&=\frac{\sqrt{3}+1}{\sqrt{3}-1}\\
+&=\frac{3+1+2\sqrt{3}}{3-1}\\
+&=\frac{4+2\sqrt{3}}{2}\\
+&=\sqrt{3}+2
+\end{split}
+\end{equation}
+$$
+이므로 답은 **4번** 이다.
+
+## 3번
+$$
+\begin{equation}
+\begin{split}
+I&=\int_0 ^1 \int_0 ^2 -10\left[sin\left(\frac{\pi}{4}x\right)exp(-0)\hat{i}+cos\left(\frac{\pi}{4}x\right)exp(-3\times0)\hat{j} \right]\cdot dydx\hat{j}\\
+&=\int_0 ^1 \int_0 ^2 -10cos\left(\frac{\pi}{4}x\right)dydx\\
+&=-20\int_0^1 cos\left(\frac{\pi}{4}x\right)dx\\
+&=-20\times\left.\frac{4}{\pi}sin\left(\frac{\pi}{4}x\right)\right|_0 ^1\\
+&=-20\times\frac{4}{\pi}\times\frac{1}{\sqrt{2}}\\
+&=-\frac{40\sqrt{2}}{\pi}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **4번** 이다.
+
+## 4번
+표피두께는
+$$
+\delta=\frac{1}{\sqrt{\pi f \mu \sigma}}
+$$
+이다.
+1. 진동수가 2배로 증가하면 표피두께는 $\frac{1}{\sqrt{2}}$배로 줄어든다.
+2. 도전율이 9배 증가하면 표피두께는 $\frac{1}{3}$배로 줄어든다.
+3. 양도체에 흐르는 전류밀도는 양도체 안으로 들어갈수록 지수함수적으로 줄어든다.
+4. 투자율이 감소하면 표피두께는 증가한다.
+따라서 답은 **2번** 이다. 사실 도전율이 9배"로" 증가한다고 해야 옳을 것이다.
+
+## 5번
+두 콘덴서의 비율이 1:2이므로 병렬로 연결했을 때 저장되는 전하의 비율도 1:2이다. 쉽게 생각해서 다른 것들은 다 동일하고 면적이 1:2인 것과 마찬가지일 때 저장되는 전하는 면적에 비례할 것이므로 그렇다.
+따라서 5 $\mu$F 콘덴서에 저장되는 전하량은 10 $\mu$C이다. 그러므로 저장되는 전기 에너지는
+$$
+\begin{equation}
+\begin{split}
+W_e&=\frac{1}{2}\frac{Q^2}{C}\\
+&=\frac{1}{2}\times\frac{10^2\times10^{-12}}{5\times10^{-6}}\\
+&=10\text{ }\mu\text{J}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **1번** 이다.
+
+## 6번
+반경이 $\rho=2$ m인 지점에서의 자기장을 묻고 있으므로, 외부 도체의 영향은 없다. 맥스웰 방정식
+$$
+\begin{equation}
+\begin{split}
+\nabla\times\vec{H}&=\vec{J}\\
+\Rightarrow \int \nabla\times\vec{H}\cdot \vec{dS}&=I\\
+&=\oint \vec{H}\cdot \vec{dl}
+\end{split}
+\end{equation}
+$$
+인데, 대칭성에 의해서 자기장은 $\hat{a_\phi}$방향으로만 있고, $\vec{dl}=2d\phi\hat{a_\phi}$이다. 따라서
+$$
+\begin{equation}
+\begin{split}
+\oint \vec{H}\cdot \vec{dl}&=\int_0 ^{2\pi} H \times 2\phi\\
+&=4\pi H\\
+&=I\\
+&=1\\
+\Rightarrow H&=\frac{1}{4\pi}
+\end{split}
+\end{equation}
+$$
+이다. 방향을 고려해서 벡터로 표현하면
+$$
+\vec{H}=\frac{1}{4\pi}\hat{a_\phi}
+$$
+이므로 답은 **4번** 이다.
+
+## 7번
+원형 도선 중심축 위의 점에서의 자계를 구해보자. 원의 반지름이 $\rho$, 높이가 $h$이다. 이 때 원의 미소성분으로부터 원하는 점까지의 거리는
+$$
+R=\sqrt{\rho^2+h^2}
+$$
+이고, 방향벡터는
+$$
+\hat{a_R}=\frac{h\hat{a_z}-\rho\hat{a_\rho}}{\sqrt{\rho^2+h^2}}
+$$
+이다.
+비오-사바르 법칙에 의해서
+$$
+\begin{equation}
+\begin{split}
+\vec{dH}&=\frac{I}{4\pi}\frac{\vec{dl}\times\hat{a_R}}{R^2}\\
+&=\frac{I}{4\pi}\frac{\rho d\phi\hat{a_\phi}\times(h\hat{a_z}-\rho\hat{a_\rho})}{(\rho^2+h^2)^{\frac{3}{2}}}\\
+&=\frac{I}{4\pi}\frac{\rho h d\phi \hat{a_\rho}+\rho^2d\phi\hat{a_z}}{(\rho^2+h^2)^{\frac{3}{2}}}
+\end{split}
+\end{equation}
+$$
+이다. 그런데 원형으로 대칭성이 있으므로 $\hat{a_\rho}$성분은 한바퀴 적분 시 상쇄된다. 그러므로 자계를 구하면
+$$
+\begin{equation}
+\begin{split}
+\vec{H}&=\int \vec{dH}\\
+&=\int _0 ^{2\pi}\frac{I}{4\pi}\frac{\rho^2d\phi\hat{a_z}}{(\rho^2+h^2)^{\frac{3}{2}}}\\
+&=\frac{I}{2}\frac{\rho^2}{(\rho^2+h^2)^{\frac{3}{2}}}\hat{a_z}
+\end{split}
+\end{equation}
+$$
+이다. 주어진 조건들을 대입하면
+$$
+\begin{equation}
+\begin{split}
+\vec{H}&=\frac{5}{2}\times\frac{16}{(16+9)^{\frac{3}{2}}}\hat{a_z}\\
+&=\frac{5}{2}\times\frac{16}{125}\hat{a_z}\\
+&=\frac{8}{25}\hat{a_z}\\
+&=0.32\hat{a_z}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **3번** 이다.
+
+## 8번
+점전하가 만드는 전계의 크기는 는 전하에 비례하고 거리에 반비례한다.
+주어진 조건들로부터
+$$
+\begin{equation}
+\begin{split}
+\frac{3}{x^2}&=\frac{27}{(2-x)^2}\\
+\Rightarrow \frac{1}{x^2}=\frac{3^2}{(2-x)^2}\\
+\Rightarrow 2-x&=3x\\
+\Rightarrow 2&=4x\\
+\Rightarrow x=0.5\text{ m}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **1번** 이다.
+
+## 9번
+자유공간의 임피던스는
+$$
+\begin{equation}
+\begin{split}
+\eta_0&=\sqrt{\frac{\mu_0}{\epsilon_0}}\\
+&\approx 377\text{ }\Omega
+\end{split}
+\end{equation}
+$$
+이다. 그리고 평면파의 시간 평균 전력은
+$$
+\begin{equation}
+\begin{split}
+W&=\frac{1}{2}EH\\
+&=\frac{1}{2}\frac{E^2}{\eta_0}\\
+&\approx\frac{1}{2}\times\frac{1}{377}\\
+&=\frac{1}{754}\text{ W/m}^2
+\end{split}
+\end{equation}
+$$
+이므로 답은 **1번** 이다.
