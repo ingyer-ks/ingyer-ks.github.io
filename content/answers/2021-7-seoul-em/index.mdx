@@ -155,7 +155,7 @@ $$
 \Rightarrow \frac{1}{x^2}=\frac{3^2}{(2-x)^2}\\
 \Rightarrow 2-x&=3x\\
 \Rightarrow 2&=4x\\
-\Rightarrow x=0.5\text{ m}
+\Rightarrow x&=0.5\text{ m}
 \end{split}
 \end{equation}
 $$
@@ -167,6 +167,9 @@ $$
 \begin{equation}
 \begin{split}
 \eta_0&=\sqrt{\frac{\mu_0}{\epsilon_0}}\\
+&=\sqrt{\frac{4\pi\times10^{-7}}{\frac{1}{36\pi}\times10^{-9}}}\\
+&=\sqrt{2^2\times\pi^2\times6^2\times10^2}\\
+&=120\pi\\
 &\approx 377\text{ }\Omega
 \end{split}
 \end{equation}
@@ -183,3 +186,288 @@ W&=\frac{1}{2}EH\\
 \end{equation}
 $$
 이므로 답은 **1번** 이다.
+
+## 10번
+-2 $\mu$C가 있는 점에서 원하는 점까지의 거리는
+$$
+\sqrt{(2-1)^2+(\sqrt{2}-0)^2+(3-1)^2}=2
+$$
+이므로 전위는
+$$
+\begin{equation}
+\begin{split}
+V_{-2}&=\frac{-2}{4\pi\epsilon_0\cdot 2}\\
+&=\frac{-2\times10^{-6}}{8\pi\times\frac{1}{36\pi}\times10^{-9}}\\
+&=-9\text{ kV}
+\end{split}
+\end{equation}
+$$
+이다.
+다음으로 6 $\mu$C가 있는 점에서 원하는 점까지의 거리는
+$$
+\sqrt{(3-1)^2+(-2-0)^2+(1-2)^2}=3
+$$
+이므로 전위는
+$$
+\begin{equation}
+\begin{split}
+V_{6}&=\frac{6\times10^{-6}}{4\pi\times\frac{1}{36\pi}\times10^{-9}\cdot3}\\
+&=18\text{ kV}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 두 전위를 합하면
+$$
+\begin{equation}
+\begin{split}
+V&=-9+18\\
+&=9\text{ kV}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **2번** 이다.
+
+## 11번
+주어진 값을 대입하면
+$$
+\vec{A(P)}=2\hat{a_\rho}-8\hat{a_\phi}+5\hat{a_z}
+$$
+이다. 한편
+$$
+\begin{equation}
+\begin{split}
+\hat{a_\rho}&=cos\phi\hat{a_x}+sin\phi\hat{a_y}\\
+\hat{a_\phi}&=-sin\phi\hat{a_x}+cos\phi\hat{a_y}
+\end{split}
+\end{equation}
+$$
+이므로 대입하면
+$$
+\begin{equation}
+\begin{split}
+\vec{A(P)}&=(2cos\phi+8sin\phi)\hat{a_x}+(2sin\phi-8cos\phi)\hat{a_y}+5\hat{a_z}\\
+&=(1+4\sqrt{3})\hat{a_x}+(-4+\sqrt{3})\hat{a_y}+5\hat{a_z}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **2번** 이다.
+
+## 12번
+인덕터에 저장되는 자기에너지는
+$$
+W_m=\frac{1}{2}LI^2
+$$
+이므로 이로부터 전류를 구하면
+$$
+\begin{equation}
+\begin{split}
+I&=\sqrt{\frac{2W_m}{L}}\\
+&=\sqrt{\frac{4\times10^{-4}}{10\times10^{-3}}}\\
+&=0.2\text{ A}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **3번** 이다.
+
+## 13번
+1. 그렇다. 중간에 자하가 없기 때문에 자속밀도는 일정하다.
+2. 경계면에서 전류가 없을 때만 그렇다.
+3. 경계조건을 풀면 계산할 수 있다.
+3. 그렇다. 암페어 법칙은
+  $$
+  \nabla\times\vec{H}=\vec{J}
+  $$
+  이고 가우스법칙은
+  $$
+  \nabla\cdot\vec{B}=0
+  $$
+  이다.
+
+따라서 답은 **2번**이다.
+
+## 14번
+전류 방향에 수직인 변에 작용하는 힘은 없다. 따라서 선분 $AD$와 $BC$에 작용하는 힘을 구해서 더하면 된다.
+무한전류선로가 만들어내는 자기장은 $xy$평면 위에서
+$$
+\begin{equation}
+\begin{split}
+\vec{B}&=\frac{\mu_0I}{2\pi\rho}\vec{a_z}\\
+&=\frac{10^{-6}}{\rho}\vec{a_z}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 선분 $AD$에 가해지는 힘은
+$$
+\begin{equation}
+\begin{split}
+\vec{F_{AD}}&=-10^{-3}\vec{a_y}\times\frac{10^{-6}}{1}\vec{a_z}\times 2\\
+&=-2\times10^{-9}\vec{a_x}
+\end{split}
+\end{equation}
+$$
+이다. 그리고 선분 $BC$에 가해지는 힘은
+$$
+\begin{equation}
+\begin{split}
+\vec{F_{BC}}&=10^{-3}\vec{a_y}\times\frac{10^{-6}}{3}\vec{a_z}\times2\\
+&=2\times\frac{10^{-9}}{3}\vec{a_x}
+\end{split}
+\end{equation}
+$$
+이므로 둘을 더하면
+$$
+\begin{equation}
+\begin{split}
+\vec{F}&=\left(-1+\frac{1}{3}\right)\times10^{-9}\vec{a_x}\times2\\
+&=-\frac{4}{3}\vec{a_x}\text{ nN}
+\end{split}
+\end{equation}
+$$
+이다. 그러므로 답은 **2번**이다.
+
+## 15번
+$$
+\vec{\tau}=\vec{m}\times\vec{B}
+$$
+이다. 우선 $\vec{m}$을 구하면
+$$
+\begin{equation}
+\begin{split}
+\vec{m}&=IS\vec{a_S}\\
+&=12\times10^{-3}\times3\times4\vec{a_z}\\
+&=144\times10^{-3}\vec{a_z}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 회전력은
+$$
+\begin{equation}
+\begin{split}
+\vec{\tau}&=144\times10^{-3}\vec{a_z}\times(-0.7\vec{a_x}+0.9\vec{a_z})\\
+&=-100.8\vec{a_y}\text{ mN}\cdot\text{m}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **3번** 이다.
+
+## 16번
+1. 그렇다.
+2. 그렇다.
+3. 그렇다.
+4. 같은 매질 내에서는 같은 값을 가진다.
+
+따라서 답은 **4번** 이다.
+
+## 17번
+자유공간에서 점전하가 만드는 전위는
+$$
+V
+=\frac{Q}{4\pi\epsilon_0 r}
+$$
+이다. +1 C의 점전하가 만드는 $r=1$에서의 전위는
+$$
+V(1)=\frac{1}{4\pi\epsilon_0}
+$$
+이고, $r=2$에서의 전위는
+$$
+V(2)=\frac{1}{8\pi\epsilon_0}
+$$
+이다. 따라서 $V(1)-V(2)$를 구하면
+$$
+V(1)-V(2)=\frac{1}{8\pi\epsilon_0}
+$$
+이다. 여기에 대상 전하의 전하량인 +1 C를 곱해도 같은 값이므로 답은 **4번** 이다.
+
+## 18번
+다음과 같이 아래쪽 성분에 대해 생각하자.
+![](./prob18.svg)
+$x$를 $-\frac{L}{2}$에서 $\frac{L}{2}$로 변화시키며 적분해서 자계를 구할 것이다. 그러기 위해서 미소자계를 구하면
+$$
+\begin{equation}
+\begin{split}
+d\vec{H}&=\frac{I}{4\pi}\frac{dx\vec{a_x}\times\left(\frac{L}{2\sqrt{3}}\vec{a_y}-x\vec{a_x}\right)}{\left(\frac{L^2}{(2\sqrt{3})^2}+x^2\right)^\frac{3}{2}}\\
+&=\frac{I}{4\pi}\frac{\frac{L}{2\sqrt{3}}}{\left(\frac{L^2}{12}+x^2\right)^\frac{3}{2}}dx\\
+&=\frac{I}{4\pi}\frac{\frac{L}{2\sqrt{3}}}{\left(1+\frac{12}{L^2}x^2\right)^\frac{3}{2}}\times\frac{1}{\left(\frac{L}{2\sqrt{3}}\right)^3}\\
+&=\frac{I}{4\pi}\frac{1}{\left(1+\frac{12}{L^2}x^2\right)^\frac{3}{2}}\times\frac{1}{\frac{L^2}{12}}\\
+&=\frac{I}{4\pi}\frac{1}{\left(1+\frac{12}{L^2}x^2\right)^\frac{3}{2}}\times\frac{12}{L^2}\\
+\end{split}
+\end{equation}
+$$
+치환적분을 하기 위해서 $\frac{2\sqrt{3}}{L}x=tan\theta$로 놓자. 그러면 $\frac{2\sqrt{3}}{L}dx=sec^2\theta$이다. 이를 위에 대입하면
+$$
+\begin{equation}
+\begin{split}
+d\vec{H}&=\frac{I}{4\pi}\frac{1}{(1+tan^2\theta)^\frac{3}{2}}\frac{12}{L^2}\frac{L}{2\sqrt{3}}sec^2\theta d\theta\\
+&=\frac{I}{4\pi}\frac{1}{(sec^2\theta)^\frac{3}{2}}\frac{2\sqrt{3}}{L}sec^2\theta d\theta\\
+&=\frac{I}{4\pi}\frac{1}{sec^3\theta}\frac{2\sqrt{3}}{L}sec^2\theta d\theta\\
+&=\frac{I}{4\pi}\frac{1}{sec\theta}\frac{2\sqrt{3}}{L}d\theta\\
+&=\frac{I}{4\pi}\times\frac{2\sqrt{3}}{L}\times cos\theta d\theta\\
+&=\frac{\sqrt{3}I}{2\pi L}\times cos\theta d\theta\\
+\end{split}
+\end{equation}
+$$
+$\theta$에 대해 $-\frac{\pi}{3}$부터 $\frac{\pi}{3}$까지 적분하면
+$$
+\begin{equation}
+\begin{split}
+\vec{H}&=\int _{-\frac{\pi}{3}} ^\frac{\pi}{3} \frac{\sqrt{3}I}{2\pi L}\times cos\theta d\theta\\
+&=\left.\frac{\sqrt{3}I}{2\pi L}sin\theta\right|_{-\frac{\pi}{3}} ^\frac{\pi}{3}\\
+&=\frac{\sqrt{3}I}{2\pi L}\times\frac{\sqrt{3}}{2}\times 2\\
+&=\frac{3I}{2\pi L}
+\end{split}
+\end{equation}
+$$
+이다. 이러한 성분이 3개 있으므로 위에 3을 곱하면
+$$
+\frac{9I}{2\pi L}
+$$
+이므로 답은 **2번** 이다.
+
+## 19번
+로런츠 힘을 구하면
+$$
+\begin{equation}
+\begin{split}
+F&=q\vec{v}\times\vec{B}\\
+&=q(-20\vec{a_x})\times0.5\vec{a_z}\\
+&=-10q\vec{a_y}
+\end{split}
+\end{equation}
+$$
+이다. 그리고 도선이 $x$축과 $60^\circ$의 각도를 이루고 있기 때문에 도선의 $y$성분 길이는 $\frac{\sqrt{3}}{2}$이다. 유도 기전력을 구하기 위해 로런츠 힘과 도선의 $y$성분 길이를 곱하고 전하량으로 나눠주면
+$$
+\begin{equation}
+\begin{split}
+emf&=10\times\frac{\sqrt{3}}{2}\\
+&=5\sqrt{3}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 답은 **3번** 이다.
+
+## 20번
+입사하는 쪽의 전기장의 수평 성분의 크기는 $1$이고, 수직 성분의 크기는 $\sqrt{3}$이다. 전속밀도는 양쪽에서 같음을 이용하면 공기 쪽의 수직 성분의 전기장을 알 수 있다.
+$$
+\begin{equation}
+\begin{split}
+D_1&=D_2\\
+\Rightarrow 4\sqrt{3}&=1\times E_{2\perp}\\
+\end{split}
+\end{equation}
+$$
+이다. 다음으로 수평 성분은 같으므로
+$$
+E_{2||}=1
+$$
+이다. 이로부터 전기장의 크기를 구하면
+$$
+\begin{equation}
+\begin{split}
+E_2&=\sqrt{(4\sqrt{3})^2+(1)^2}\\
+&=\sqrt{48+1}\\
+&=\sqrt{49}\\
+&=7\text{ V/m}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **4번** 이다.
