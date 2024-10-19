@@ -101,6 +101,12 @@
   border-bottom-color: black !important;
 }
 
+.overline-line {
+  width: 100%;
+  border-top-width: 1px !important;
+  border-top-color: black !important;
+}
+
 #content {
   height: calc(100vh - 230px);
   width: inherit;
