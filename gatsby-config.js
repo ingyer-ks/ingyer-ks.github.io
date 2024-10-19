@@ -3,7 +3,7 @@ module.exports = {
     title: `Ingyerlog v2`,
     author: {
       name: `ingyer ks`,
-      summary: `전자정보방송통신에 대해 공부하는 ingyer ks입니다.`,
+      summary: `전자정보방송통신에 대해 공부하는 ingyer ks입니다. 문의는 ingyer.ks@gmail.com 으로 보내주세요.`,
     },
     description: `전기 전자 정보 방송 통신 공무원/군무원 기출문제 해설`,
     siteUrl: `https://ingyerlog.kr/`,
