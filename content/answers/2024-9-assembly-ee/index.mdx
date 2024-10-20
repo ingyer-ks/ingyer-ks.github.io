@@ -1,0 +1,321 @@
+---
+title: 2024 9급 국회직 전자공학개론
+year: 2024년
+organization: 국회
+level: 9급
+subject: 전자공학개론
+etc:
+description:
+---
+
+#
+
+## 1번
+OPAMP는 증폭률이 $-\frac{40}{20}=-2$인 반전 증폭기 회로를 이루고 있다. 따라서 OPAMP의 출력쪽은
+$$
+-2Asin100t
+$$
+전압을 만들어내는 독립 전압원이라고 볼 수 있다. 그렇다면 $R_L$의 입장은 이 독립 전압원과 4 $\Omega$의 저항으로 이루어진 테브닌 등가회로에 연결되어 있는 것이다.
+최대 전력 전달은 $R_L$이 테브닌 등가 저항 4 $\Omega$와 같을 때 일어난다. 이 때 $R_L$에는 $-Asin100t$의 전압이 걸리게 되는데, $R_L$이 소비하는 평균전력이 2 W라고 하였으므로
+$$
+\begin{equation}
+\begin{split}
+P_{R_L}&=2\\
+&=\frac{1}{2}\frac{A^2}{4}\\
+\Rightarrow A^2&=16\\
+\Rightarrow A&=4
+\end{split}
+\end{equation}
+$$
+이다. 따라서 답은 **2번** 이다.
+
+## 2번
+전압이득을 구해보면
+$$
+\begin{equation}
+\begin{split}
+A_v&=-\frac{R_2\left|\left|\frac{1}{j\omega C_1}\right.\right.}{R_1}\\
+&=-\frac{\frac{\frac{R_2}{j\omega C_1}}{R_2+\frac{1}{j\omega C_1}}}{R_1}\\
+&=-\frac{\frac{R_2}{j\omega C_1}}{R_1\left(R_2+\frac{1}{j\omega C_1}\right)}\\
+&=-\frac{R_2}{j\omega R_1R_2 C_1 +R_1}\\
+&=-\frac{\frac{R_2}{R_1}}{j\omega R_2C_1+1}
+\end{split}
+\end{equation}
+$$
+이므로 차단(각)주파수는 $\frac{1}{R_2C_1}$임을 알 수 있다. 이 값이 1 rad/s이고, $C_1$에 적혀있는 105로부터 $C_1=10\times 10^5\text{ pF}=10^{-6}$ F임을 알 수 있으므로 $R_2$를 계산하면
+$$
+\begin{equation}
+\begin{split}
+\frac{1}{R_2C_1}&=1\\
+\Rightarrow R_2&=\frac{1}{C_1}\\
+&=10^6\\
+&=10^3\text{ k}\Omega
+\end{split}
+\end{equation}
+$$
+이다. 한편 (직류)전압이득의 크기가 2라고 하였으므로
+$$
+\begin{equation}
+\begin{split}
+\left|-\frac{R_2}{R_1}\right|&=2\\
+\Rightarrow R_1&=\frac{R_2}{2}\\
+&=500\text{ k}\Omega
+\end{split}
+\end{equation}
+$$
+이다. 따라서 답은 **5번** 이다.
+
+사실 차단각주파수는 바로 $\frac{1}{R_2C_1}$임을 알 수 있는데, 그 이유는 $C_1$에 연결된 저항이 $R_2$밖에 없기 때문이다. $R_1$과는 중간에 그라운드가 되기 때문에 상관이 없다고 볼 수 있다.
+
+## 3번
+$V_i\gt0$이면 $D_1,D_4$가 켜진다. 그런데 $V_i$의 +가 $V_o$의 -쪽에 연결되고, $V_i$의 -가 $V_o$의 +쪽에 연결되므로 $V_o=-V_i$임을 알 수 있다. $V_i\lt0$이면 $D_2,D_3$가 켜지는데, 이 때에는 $V_i$의 +가 $V_o$의 +에, $V_i$의 -가 $V_o$의 -에 연결되므로 $V_o=V_i$이다.
+따라서 이에 해당하는 그래프는 **3번** 이다.
+
+## 4번
+전체 전압이득은 두 전압이득의 곱이므로
+$$
+\begin{equation}
+\begin{split}
+A_v&=20 log(2000\times500)\\
+&=20log(1000000)\\
+&=20\times6\\
+&=120\text{ dB}
+\end{split}
+\end{equation}
+$$
+이다. 대역폭은 더 큰 하한 임계주파수와 더 작은 상한 임계주파수 사이의 거리이므로
+$$
+500-50=450\text{ kHz}
+$$
+이다. 이에 해당하는 보기는 **4번** 이다.
+
+## 5번
+등가 저항을 구하기 위해 전압원을 쇼트시키면
+$$
+\begin{equation}
+\begin{split}
+R_{TH}&=6||12\\
+&=\frac{6\times12}{6+12}\\
+&=\frac{72}{18}\\
+&=4\text{ }\Omega
+\end{split}
+\end{equation}
+$$
+이다. 그리고 등가전압은 $R_L$을 개방했을 때 6 $\Omega$저항과 12 $\Omega$ 사이의 전압이므로 노드 방정식을 세우면
+$$
+\begin{equation}
+\begin{split}
+\frac{18-V_{TH}}{6}&=\frac{V_{TH}-9}{12}\\
+\Rightarrow 36-2V_{TH}&=V_{TH}-9\\
+\Rightarrow 3V_{TH}&=45\\
+\Rightarrow V_{TH}&=15\text{ V}
+\end{split}
+\end{equation}
+$$
+이다. 이에 해당하는 것은 **3번** 이다.
+
+## 6번
+다이오드의 음극쪽의 전압은
+$$
+12\times\frac{2}{10+2}=2\text{ V}
+$$
+이다. 따라서 입력이 $2+0.7=2.7$ V보다 커지는 순간 다이오드가 도통된다. 따라서 출력전압의 최댓값은 2.7 V이다. 반대로 이보다 내려가는 순간 다이오드가 꺼져서 입력전압이 그대로 출력되므로 최솟값은 -12 V이다.
+그러므로 출력전압의 최댓값과 최솟값의 합은
+$$
+2.7-12=-9.3\text{ V}
+$$
+이므로 답은 **2번** 이다.
+
+## 7번
+네거티브 피드백이 있으므로 연산증폭기의 -단자와 +단자의 전압은 같다. +단자의 전압을 구해보면
+$$
+\begin{equation}
+\begin{split}
+V_+&=V_3\times\frac{10}{5+10}\\
+&=1.5\times\frac{2}{3}\\
+&=1\text{ V}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 -단자 전압도 $V_-=1$ V이다.
+이로부터 노드방정식을 세우면
+$$
+\begin{equation}
+\begin{split}
+\frac{3-1}{10}+\frac{2-1}{10}&=\frac{1-V_{out}}{20}\\
+\Rightarrow \frac{2+1}{10}&=\frac{1-V_{out}}{20}\\
+\Rightarrow V_{out}&=1-6\\
+&=-5\text{ V}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **5번** 이다.
+
+## 8번
+이 문제는 2016년 국가직 7급 전자회로에 나온 문제와 매우 비슷하다.
+1. 전파 정류 회로이므로 정상적인 동작상태에서는 출력전압의 주파수는 입력전압 주파수의 2배인 120 Hz이다.
+2. 2:1의 변압기를 거치고, 중간탭이 있으므로 2차측에 전달되는 전압의 피크값은 $\frac{100}{2}=50$ V인데, 위쪽과 아래쪽에 절반씩 나눠서 다른 극성으로 걸린다. 따라서 다이오드에 입력되는 피크값은 25 V인데, 여기서 다이오드의 순방향 바이어스의 전압강하 0.7 V를 빼면 24.3 V가 출력전압의 피크값이다.
+3. 입력신호가 음의 반주기인 동안 출력전압의 피크값은 위에서 구한 24.3 V인데, $D_1$의 양극에는 -25 V가 걸리므로 $D_1$의 역방향 피크 전압은 $-25-24.3=-49.3 $V이다.
+4. $D_1$이 고장으로 개방되면 출력전압은 양의 반주기 파형이 나타난다.
+
+따라서 답은 **1번** 이다.
+
+## 9번
+1. 그렇다.
+2. 그렇다.
+3. Carry-out이 1이 되려면 세 입력 중 2개 이상이 1이어야 한다. 그러한 조건을 살펴보면 $C_{in}=0$이면 $A=B=1$이어야 하고, $C_{in}=1$이면 $A=1,B=0$ 또는 $A=0,B=1$ 또는 $A=B=1$이다. 주어진 식은 이를 만족한다.
+4. 그렇다. 우선 첫 번째 반가산기로 $A+B$를 계산하고, 두 번째 반가산기에 이 결과를 입력해서 $C_{in}$과 더한다. 이때 어느 반가산기에서든 캐리가 발생하면 최종 캐리는 1이므로 두 반가산기의 캐리 출력을 OR하면 된다.
+5. 전가산기는 자리올림수(캐리)를 처리할 수 있다.
+
+따라서 답은 **5번** 이다.
+
+## 10번
+QAM에 대한 설명이므로 답은 **2번** 이다.
+
+## 11번
+나이퀴스트 정리에 대한 설명이므로 답은 **3번** 이다.
+
+## 12번
+화이트 노이즈에 대한 설명이므로 답은 **5번** 이다.
+
+## 13번
+가장 오른쪽과 가장 왼쪽의 의 NAND 게이트들은 NOT 게이트의 역할을 하고 있다. 따라서
+$$
+\begin{equation}
+\begin{split}
+Y&=\overline{A}\cdot\overline{B}\\
+&=\overline{\overline{\overline{A}\cdot\overline{B}}}\\
+&=\overline{A+B}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **4번** 이다.
+
+## 14번
+1. 그렇다.
+2. 아스키 코드의 맨 앞 비트를 뭐라고 부르는지 잘 모르겠다. 명칭이 있으려나?
+3. 그렇다. 각 자리에 대해 가중치가 없고, 한 자리에 오류가 발생해도 그 영향이 1밖에 되지 않기 때문에 보다 강인하다.
+4. 그렇다.
+5. 그렇다.
+
+따라서 답이 될 수 있는 것은 **2번** 이다.
+
+## 15번
+p형 반도체는 최외각 전자가 3개인 원소를 도핑해서 만든다. 이에 해당하는 것은 알루미늄, 붕소, 갈륨, 인듐이다. 따라서 답은 **2번** 이다.
+
+## 16번
+총 저항은
+$$
+\begin{equation}
+\begin{split}
+50||25||50&=50||50||25\\
+&=25||25\\
+&=12.5\text{ }\Omega
+\end{split}
+\end{equation}
+$$
+이다. 총 전류는
+$$
+9+7-6=10\text{ A}
+$$
+인데, 방향은 아래에서 위쪽이다. 이 전류가 위의 총 저항을 위에서 아래로 타고 내려가므로
+$$
+\begin{equation}
+\begin{split}
+v&=12.5\times 10\\
+&=125\text{ V}
+\end{split}
+\end{equation}
+$$
+이다. 또한 25 $\Omega$ 저항을 위에서 아래로 흐르는 전류 $i$는 위에서 구한 전압을 이 저항으로 나눈 값이므로
+$$
+\begin{equation}
+\begin{split}
+i&=\frac{125}{25}\\
+&=5\text{ A}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 답은 **1번** 이다.
+
+## 17번
+플립플롭은 클럭 신호에 따라 작동한다. 클럭 신호와 상관없는 것은 래치이다. 따라서 답은 **5번** 이다.
+
+## 18번
+왼쪽 2칸의 제일 위와 아래를 묶으면 $\overline{B}\cdot\overline{C}$이고, 네 귀퉁이를 묶으면 $\overline{B}\cdot\overline{D}$이다.
+따라서 둘을 더하면
+$$
+\overline{B}\cdot\overline{D}+\overline{B}\cdot\overline{C}
+$$
+이므로 답은 **2번** 이다.
+
+## 19번
+스위치 전환 전에 커패시터에 충전되는 전압은 $R_3$에 걸리는 전압과 같으므로
+$$
+\begin{equation}
+\begin{split}
+V_c(0^-)&=8\times\frac{3}{1+3}\\
+&=6\text{ V}
+\end{split}
+\end{equation}
+$$
+이다. 스위치 전환 후의 $V_c(t)$에 대해 식을 세워보면
+$$
+\begin{equation}
+\begin{split}
+\frac{8-V_c(t)}{1}&=\frac{V_c(t)}{1}+2\times\frac{dV_c(t)}{dt}\\
+\Rightarrow 2V_c(t)&=8-2\times\frac{dV_c(t)}{dt}\\
+\Rightarrow V_c(t)&=4-\frac{dV_c(t)}{dt}
+\end{split}
+\end{equation}
+$$
+이다. $V_c(t)=Ae^{-st}+B$라고 가정해서 대입하면
+$$
+Ae^{-st}+B=4+Ase^{-st}
+$$
+이므로 $s=1, B=4$임을 알 수 있으니 $V_c(t)=Ae^{-t}+4$이다. 초기값을 이용하면
+$$
+\begin{equation}
+\begin{split}
+V_c(0^-)&=6\\
+&=A+4\\
+\Rightarrow A&=2
+\end{split}
+\end{equation}
+$$
+임을 알 수 있으므로
+$$
+V_c(t)=2e^{-t}+4
+$$
+이다. 따라서
+$$
+\begin{equation}
+\begin{split}
+V_c(ln 2)&=2e^{-ln 2}+4\\
+&=2e^{ln\frac{1}{2}}+4\\
+&=2\times\frac{1}{2}+4\\
+&=1+4\\
+&=5\text{ V}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **3번** 이다.
+
+## 20번
+$$
+v_o=v_{in}\times\frac{1}{1+j\frac{\omega}{\omega_c}}
+$$
+이다. $\omega=2\omega_c$이면
+$$
+\begin{equation}
+\begin{split}
+v_o&=v_{in}\times\frac{1}{1+j\frac{2\omega_c}{\omega_c}}\\
+&=v_{in}\times\frac{1}{1+j2}\\
+\end{split}
+\end{equation}
+$$
+이므로 출력전압의 크기는 $\frac{1}{\sqrt{1^2+2^2}}=\frac{1}{\sqrt{5}}$배가 된다. 따라서 입력전압의 실횻값이 5 V이면 출력전압의 실횻값은
+$$
+\frac{5}{\sqrt{5}}=\sqrt{5}\text{ V}
+$$
+이므로 답은 **4번** 이다.
