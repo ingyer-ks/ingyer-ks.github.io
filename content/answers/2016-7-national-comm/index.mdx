@@ -187,62 +187,65 @@ $$
 
 ## 10번
 
-1. $$
-   \begin{equation}
-   \begin{split}
-   E[X]&=\int_{-\infty}^{\infty}xf_X(x)dx\\
-   &=\int_0^{\infty}xe^{-x}dx\\
-   &=\left[-xe^{-x} \right]_0^\infty-\int_0^\infty\left(-e^{-x}\right)dx\\
-   &=\int_0^\infty e^{-x}dx\\
-   &=\left[-e^{-x} \right]_0^\infty\\
-   &=-(-1)\\
-   &=1
-   \end{split}
-   \end{equation}
-   $$
-   이다.
-2. $$
-   \begin{equation}
-   \begin{split}
-   \sigma_x^2&=E[X^2]-(E[X])^2\\
-   &=\int_0^\infty x^2e^{-x}dx-1\\
-   &=\left[x^2(-e^{-x}) \right]_0^\infty-\int_0^\infty 2x(-e^{-x})dx -1\\
-   &=2\int_0^\infty xe^{-x}dx-1\\
-   &=2-1\\
-   &=1\\
-   \Rightarrow \sigma_x&=1
-   \end{split}
-   \end{equation}
-   $$
+1. 
+  $$
+  \begin{equation}
+  \begin{split}
+  E[X]&=\int_{-\infty}^{\infty}xf_X(x)dx\\
+  &=\int_0^{\infty}xe^{-x}dx\\
+  &=\left[-xe^{-x} \right]_0^\infty-\int_0^\infty\left(-e^{-x}\right)dx\\
+  &=\int_0^\infty e^{-x}dx\\
+  &=\left[-e^{-x} \right]_0^\infty\\
+  &=-(-1)\\
+  &=1
+  \end{split}
+  \end{equation}
+  $$
+  이다.
+2. 
+  $$
+  \begin{equation}
+  \begin{split}
+  \sigma_x^2&=E[X^2]-(E[X])^2\\
+  &=\int_0^\infty x^2e^{-x}dx-1\\
+  &=\left[x^2(-e^{-x}) \right]_0^\infty-\int_0^\infty 2x(-e^{-x})dx -1\\
+  &=2\int_0^\infty xe^{-x}dx-1\\
+  &=2-1\\
+  &=1\\
+  \Rightarrow \sigma_x&=1
+  \end{split}
+  \end{equation}
+  $$
+  이다.
 
-   이다.
-
-3. $$
-   \begin{equation}
-   \begin{split}
-   P[X\gt 1]&=\infty_1^\infty e^{-x}dx\\
-   &=\left[-e^{-x} \right]_1^\infty\\
-   &=-(-e^{-1})\\
-   &=e^{-1}
-   \end{split}
-   \end{equation}
-   $$
-   이다.
-4. $$
-   \begin{equation}
-   \begin{split}
-   F_Y(y)&=P[Y\gt y]\\
-   &=P[\sqrt{X}\gt y]\\
-   &=P[X\gt y^2]\\
-   &=F_X(y^2)\\
-   \Rightarrow f_Y(y)&=\frac{dF_Y(y)}{dy}\\
-   &=\frac{dF_X(y^2)}{dy}\\
-   &=f_X(y^2)\times(2y)\\
-   &=2ye^{-y^2}
-   \end{split}
-   \end{equation}
-   $$
-   이다.
+3. 
+  $$
+  \begin{equation}
+  \begin{split}
+  P[X\gt 1]&=\infty_1^\infty e^{-x}dx\\
+  &=\left[-e^{-x} \right]_1^\infty\\
+  &=-(-e^{-1})\\
+  &=e^{-1}
+  \end{split}
+  \end{equation}
+  $$
+  이다.
+4. 
+  $$
+  \begin{equation}
+  \begin{split}
+  F_Y(y)&=P[Y\gt y]\\
+  &=P[\sqrt{X}\gt y]\\
+  &=P[X\gt y^2]\\
+  &=F_X(y^2)\\
+  \Rightarrow f_Y(y)&=\frac{dF_Y(y)}{dy}\\
+  &=\frac{dF_X(y^2)}{dy}\\
+  &=f_X(y^2)\times(2y)\\
+  &=2ye^{-y^2}
+  \end{split}
+  \end{equation}
+  $$
+  이다.
 
 따라서 답은 **4번** 이다.
 
@@ -338,22 +341,22 @@ $$
 
 이며 이는 신뢰할 수 있는(=원하는 만큼 오류율을 작게 할 수 있는) 최대 전송 속도이다.
 
-1. $$
-   \begin{equation}
-   \begin{split}
-   C&=Wlog_2\left(1+\frac{S}{N} \right)\\
-   &=Wlog_2\left(1+\frac{S}{N_0W} \right)\\
-   &=\frac{log_2\left(1+\frac{S}{N_0W} \right)}{\frac{1}{W}}\\
-   \Rightarrow \lim_{W\rightarrow \infty}\frac{log_2\left(1+\frac{S}{N_0W} \right)}{\frac{1}{W}}&=\lim_{T\rightarrow 0}\frac{log_2\left(1+\frac{ST}{N_0}\right)}{T}\\
-   &=\frac{1}{ln 2}\times\frac{\frac{S}{N_0}}{1+\frac{ST}{N_0}}\\
-   &\approx 1.44\frac{S}{N_0}
-   \end{split}
-   \end{equation}
-   $$
-   이므로 채널 용량은 유한한 최댓값을 갖는다.
+1. 
+  $$
+  \begin{equation}
+  \begin{split}
+  C&=Wlog_2\left(1+\frac{S}{N} \right)\\
+  &=Wlog_2\left(1+\frac{S}{N_0W} \right)\\
+  &=\frac{log_2\left(1+\frac{S}{N_0W} \right)}{\frac{1}{W}}\\
+  \Rightarrow \lim_{W\rightarrow \infty}\frac{log_2\left(1+\frac{S}{N_0W} \right)}{\frac{1}{W}}&=\lim_{T\rightarrow 0}\frac{log_2\left(1+\frac{ST}{N_0}\right)}{T}\\
+  &=\frac{1}{ln 2}\times\frac{\frac{S}{N_0}}{1+\frac{ST}{N_0}}\\
+  &\approx 1.44\frac{S}{N_0}
+  \end{split}
+  \end{equation}
+  $$
+  이므로 채널 용량은 유한한 최댓값을 갖는다.
 2. 그렇다.
 3. 정보 전송률을 $R$이라 하자. $R$이 채널 용량보다 크다면, 또 그 때에만 오류 없이 정보를 전송하는 것이 불가하다. 한편 비트당 에너지는 전력에 한 비트 전송 시간 $\frac{1}{R}$을 곱한 것이므로 $S=E_bR$임을 이용하자.
-
    $$
    \begin{equation}
    \begin{split}
@@ -364,9 +367,7 @@ $$
    \end{split}
    \end{equation}
    $$
-
    이다. $R,E_b,N_0$가 정해져 있을 때 건드릴 수 있는 것은 대역폭 $W$를 크게 하는 것뿐이므로
-
    $$
    \begin{equation}
    \begin{split}
@@ -376,9 +377,7 @@ $$
    \end{split}
    \end{equation}
    $$
-
    인 경우, 또 이 때에만 오류 없이 정보를 전송하는 것이 불가능하다.
-
 4. $SNR\gg 1\Rightarrow 1+SNR\approx SNR$이므로 그렇다.
 
 따라서 답은 **1번** 이다.

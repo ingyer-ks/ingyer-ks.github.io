@@ -8,16 +8,12 @@ etc:
 description:
 ---
 
-#
-
 ## 1번
-
-1. $$
-   F_X(-\infty)=0
-   $$
-
-   이다.
-
+1. 
+  $$
+  F_X(-\infty)=0
+  $$
+  이다.
 2. 그렇다. 모든 확률의 합이라고 생각하면 된다.
 3. 2번과 같다.
 4. 누적이기 때문에 $F_X(x)$는 단조증가함수이므로 옳다.
@@ -25,21 +21,15 @@ description:
 따라서 답은 **1번** 이다.
 
 ## 2번
-
 먼저 파스발의 정리를 이용해서 풀어보자. 주어진 신호를 복소 지수함수로 표현하면
-
 $$
 x(t)=\frac{1}{j}\left(e^{j2\pi t}-e^{-j2\pi t}\right)+2\left(e^{j3\pi t} + e^{-j3\pi t} \right)
 $$
-
 이므로 $x(t)$의 푸리에 변환은
-
 $$
 X(f)=\frac{1}{j}(\delta(f-1)-\delta(f+1))+2(\delta(f-3)+\delta(f+3))
 $$
-
 이다. 따라서
-
 $$
 \begin{equation}
 \begin{split}
@@ -48,17 +38,12 @@ S_X(f)&=\left\vert\frac{1}{j}\right\vert^2(\delta(f-1)+\delta(f+1))+2^2(\delta(f
 \end{split}
 \end{equation}
 $$
-
 이므로 전력은
-
 $$
 P=1+1+4+4=10
 $$
-
 이고 답은 **3번** 이다.
-
 그러나 굳이 이렇게 할 필요는 없다. 그냥 시간 영역에서 전력을 구하면 되는데, $2sin(2\pi t)$와 $4cos(3\pi t)$는 직교하므로(왜일까?) 각 성분의 전력들을 그냥 더하면 된다. 한편 $a cos(2\pi f t)$의 전력은
-
 $$
 \begin{equation}
 \begin{split}
@@ -68,9 +53,7 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이고, $a sin(2\pi f t)$도 마찬가지임에 따라
-
 $$
 \begin{equation}
 \begin{split}
@@ -79,11 +62,9 @@ P&=\frac{1}{2}(2^2+4^2)\\
 \end{split}
 \end{equation}
 $$
-
 이다.
 
 ## 3번
-
 1. FM이다. FM은 시간과 관계있는 주파수에 정보가 실리므로 시간 정보를 사용하지 않는 포락선 검파를 할 수 없고 미분해야 한다.
 2. SSB, 그 중에서도 SSB-SC이다. 포락선 검파를 위한 반송파 성분이 없으므로 포락선 검파가 불가하다.
 3. DSB-SC이다. 2번과 마찬가지이다.
@@ -92,73 +73,52 @@ $$
 따라서 답은 **4번** 이다.
 
 ## 4번
-
 해밍 부호는 선형 부호로 현재 값과 과거 값이 상관이 없다. 상관이 있는 것은 콘볼루션 코드(길쌈 부호)이다.
 따라서 답은 **3번** 이다.
 
 ## 5번
-
 $$
 Z=\sum a_iX_i
 $$
-
 일 때
-
 $$
 Var(Z)=\sum a_i^2 Var(X_i)
 $$
-
 이다.(직접 증명해보자) 주어진 조건에서 $a_i=1, Var(X_i)=1$이므로
-
 $$
 Var(Z)=1\times 50=50
 $$
-
 이므로 답은 **3번** 이다.
 
 ## 6번
-
 주어진 신호에 포함된 주파수 성분은 각각 2 Hz와 8 Hz이다. 샘플링 주파수가 10 Hz이므로 샘플링된 후의 주파수 성분들은 $10k \pm 2, 10k \pm 8$들이다. 즉 $2, 8, 12, 18, 22, 28, \cdots$ Hz인데, 복원을 위해 LPF를 사용하면 추출되는 것은 2 Hz 성분 뿐이다.
 따라서 답은 **1번** 이다.
 
 ## 7번
-
 세 각주파수 중 중간의 각주파수가 $3000\pi$ rad/s이므로
-
 $$
 A=4
 $$
-
 이다. 또한 이 각주파수를 중심으로 $\pm 300\pi$ rad/s의 각주파수 편차가 있으므로
-
 $$
 s(t)=2cos(300\pi t)
 $$
-
 임을 알 수 있다. 그래야
-
 $$
 2cos(300\pi t)cos(3000\pi t)=cos((3000+300)\pi t)+cos((3000-300)\pi t)
 $$
-
 일 것이기 때문이다. 따라서 기저대역 신호 주파수는
-
 $$
 f_m=150\text{ Hz}
 $$
-
 이고 변조지수는
-
 $$
 m=\frac{2}{4}=0.5
 $$
-
-이므로 답은 **@번** 이다.
+이므로 답은 **2번** 이다.
 
 ## 8번
-
 초록색 공이 꺼내질 확률은
-
 $$
 \begin{equation}
 \begin{split}
@@ -169,11 +129,9 @@ P(X)P(\text{초록색}|X)+P(Y)P(\text{초록색}|Y)&=0.6\times\frac{30}{120}+0.4
 \end{split}
 \end{equation}
 $$
-
 이다. 따라서 답은 **4번** 이다.
 
 ## 9번
-
 $$
 \begin{equation}
 \begin{split}
@@ -184,107 +142,95 @@ L(y)&=ln\left(\frac{\frac{1}{\sqrt{2\pi}}e^{-\frac{(y-1)^2}{2}}} {\frac{1}{\sqrt
 \end{split}
 \end{equation}
 $$
-
 이다. 따라서
-
 $$
 L(0.5)=2\times 0.5=1
 $$
-
 이므로 답은 **3번** 이다.
 
 ## 10번
-
 1. (7,4) 부호의 경우 $d_{min}=3$이므로 $3-1=2$개의 비트 오류를 검출할 수 있다.
 2. 그렇다.
-3. $$
-   \begin{equation}
-   \begin{split}
-   \begin{bmatrix}
-   1&1&1&1&0&0&0\\
-   1&1&0&0&1&1&0\\
-   1&0&1&0&1&0&1
-   \end{bmatrix} \times
-   \begin{bmatrix}
-   0\\0\\1\\0\\1\\0\\0
-   \end{bmatrix}&=
-   \begin{bmatrix}
-   1\\1\\0
-   \end{bmatrix}
-   \end{split}
-   \end{equation}
-   $$
-   이므로 패리티 검사 행렬의 두 번쨰 열과 같다. 따라서 두 번째 비트에서 오류가 발생하였을 것이므로 정정된 비트열은
-   $$
-   \begin{bmatrix}
-   0&1&1&0&1&0&0
-   \end{bmatrix}
-   $$
-   이다.
-4. $$
-   \begin{equation}
-   \begin{split}
-   \begin{bmatrix}
-   1&1&1&1&0&0&0\\
-   1&1&0&0&1&1&0\\
-   1&0&1&0&1&0&1
-   \end{bmatrix} \times
-   \begin{bmatrix}
-   1\\0\\1\\0\\0\\0\\0
-   \end{bmatrix}&=
-   \begin{bmatrix}
-   0\\1\\0
-   \end{bmatrix}
-   \end{split}
-   \end{equation}
-   $$
-   이므로 결과가 영행렬이 아니다. 따라서 주어진 비트열은 $G_{4\times7}$의 한 행이 될 수 없다.
+3. 
+  $$
+  \begin{equation}
+  \begin{split}
+  \begin{bmatrix}
+  1&1&1&1&0&0&0\\
+  1&1&0&0&1&1&0\\
+  1&0&1&0&1&0&1
+  \end{bmatrix} \times
+  \begin{bmatrix}
+  0\\0\\1\\0\\1\\0\\0
+  \end{bmatrix}&=
+  \begin{bmatrix}
+  1\\1\\0
+  \end{bmatrix}
+  \end{split}
+  \end{equation}
+  $$
+  이므로 패리티 검사 행렬의 두 번쨰 열과 같다. 따라서 두 번째 비트에서 오류가 발생하였을 것이므로 정정된 비트열은
+  $$
+  \begin{bmatrix}
+  0&1&1&0&1&0&0
+  \end{bmatrix}
+  $$
+  이다.
+4. 
+  $$
+  \begin{equation}
+  \begin{split}
+  \begin{bmatrix}
+  1&1&1&1&0&0&0\\
+  1&1&0&0&1&1&0\\
+  1&0&1&0&1&0&1
+  \end{bmatrix} \times
+  \begin{bmatrix}
+  1\\0\\1\\0\\0\\0\\0
+  \end{bmatrix}&=
+  \begin{bmatrix}
+  0\\1\\0
+  \end{bmatrix}
+  \end{split}
+  \end{equation}
+  $$
+  이므로 결과가 영행렬이 아니다. 따라서 주어진 비트열은 $G_{4\times7}$의 한 행이 될 수 없다.
 
 따라서 답은 **4번** 이다.
 
 ## 11번
-
 한 개의 부반송파 대역폭은
-
 $$
 \frac{5.12\times 10^6}{256}=2\times 10^4\text{ Hz}
 $$
-
 이다. 한편 QPSK를 이용함에 따라 한 부반송파당 2개의 비트가 실린다. 따라서 초당 비트 전송률은
-
 $$
 2\times 10^4\times 2\times 256\text{ bps}
 $$
-
 이다. 그러므로 스펙트럼 효율을 구하면
-
 $$
 2\times 10^4\times2\times 256\times \frac{1}{5.12\times 10^6}=2\text{ bps/Hz}
 $$
-
 이고 답은 **2번** 이다.
 
 ## 12번
-
-1. $$
-   \begin{equation}
-   \begin{split}
-   R_{XY}(\tau)&=E[(X(t))Y(t+\tau)]\\
-   &=E[X(t-\tau)Y(t)]\\
-   &=E[Y(t)X(t-\tau)]\\
-   &=R_{YX}(-\tau)
-   \end{split}
-   \end{equation}
-   $$
-   이므로 옳지 않다.
+1. 
+  $$
+  \begin{equation}
+  \begin{split}
+  R_{XY}(\tau)&=E[(X(t))Y(t+\tau)]\\
+  &=E[X(t-\tau)Y(t)]\\
+  &=E[Y(t)X(t-\tau)]\\
+  &=R_{YX}(-\tau)
+  \end{split}
+  \end{equation}
+  $$
+  이므로 옳지 않다.
 2. 산술-기하 평균 관계
-
    $$
    2\sqrt{ab}\leq a+b \Rightarrow 4ab\leq a^2+2ab+b^2 \Rightarrow ab \leq \frac{1}{2}(a^2+b^2)
    $$
-
    을 이용하자.
-
    $$
    \begin{equation}
    \begin{split}
@@ -295,30 +241,23 @@ $$
    \end{split}
    \end{equation}
    $$
-
    이므로 옳다.
-
 3. 2번의 관계식에서 $\tau=0$을 대입해보면 이 등식은 성립하지 않음을 알 수 있다.
 4. 성립할 이유가 없다.
 
 따라서 답은 **2번** 이다.
 
 ## 13번
-
 나이퀴스트율은 최고 주파수의 2배인 8,000 Hz이다. 따라서 이의 1.5배 주파수는 12,000 Hz이다. 한편 롤오프율이 $\alpha=0.4$이므로 대역폭은
-
 $$
 \frac{1+0.4}{2}\times 12000=8400 \text{ Hz}
 $$
-
 가 된다. 그러므로 답은 **3번** 이다.
 
 ## 14번
-
 허프만 코딩을 직접 해보자.
 ![](./14.svg)
 평균 길이를 구해보면
-
 $$
 \begin{equation}
 \begin{split}
@@ -327,11 +266,9 @@ H&=1\times \frac{6}{10}+2\times \frac{9}{40}+3\times \frac{1}{10}+4\times \frac{
 \end{split}
 \end{equation}
 $$
-
 이므로 답은 **2번** 이다.
 
 ## 15번
-
 1. 절반은 +1, 나머지 절반은 -1을 전송하므로 대역폭은 RZ와 같다.
 2. 그렇다.
 3. 그렇다.
@@ -340,9 +277,7 @@ $$
 따라서 답은 **1번** 이다.
 
 ## 16번
-
 채널 용량은
-
 $$
 \begin{equation}
 \begin{split}
@@ -352,13 +287,10 @@ C&=W log_2(1+SNR)\\
 \end{split}
 \end{equation}
 $$
-
 이므로 답은 **4번** 이다.
 
 ## 17번
-
 식을 세워서 정리한 다음 라플라스 변환하면
-
 $$
 \begin{equation}
 \begin{split}
@@ -369,23 +301,17 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이므로 답은 **1번** 이다.
 
 ## 18번
-
 정합 필터를 쓰면 수신 신호를 통과시킨 후 샘플링 시의 SNR이 최대가 된다. 따라서 답은 **4번** 이다.
 
 ## 19번
-
 VLF나 SHF의 대역폭을 일일이 외울 수도 있겠으나, $10^3$ 배 단위로 대역 이름이 달라짐을 생각한다면 10의 지수승이 3의 배수인 것을 고르면 된다. 주어진 보기 중에서는 **3번** 밖에 없다.
 
 ## 20번
-
 나이퀴스트율은 차단주파수의 2배인 8 kHz이다. 따라서 이의 1.5배는 12 kHz이다. 각 표본을 8비트로 변환하여 전송하면 전송속도는
-
 $$
 12\times 8=96\text{ kbps}
 $$
-
 가 되므로 답은 **4번** 이다.

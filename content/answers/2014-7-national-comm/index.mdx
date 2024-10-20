@@ -171,33 +171,34 @@ $$
 1. 메시지가 4비트이고 패리티가 3비트이므로 (7,4) 부호이다.
 2. 그렇다. 해밍 거리가 3이기 때문에 이의 절반인 1.5비트를 반지름으로 갖는 수신 심볼 구 내에 찍히는 점은 가장 가까운 심볼이 원래 심볼이라고 추정이 가능하기 때문이다.
 3. 그렇다. $p_1=m_1+m_2+m_4$이므로 행렬의 패리티 부분은 세로로 1,2,4번째 자리에 1이 온다. 마찬가지 방식으로 $p_2$, $p_3$에 대해 행렬의 패리티 부분을 완성할 수 있다.
-4. $$
-   \begin{equation}
-   \begin{split}
-   Gx^T&=\begin{bmatrix}
-   1&0&0&0&1&1&1\\
-   0&1&0&0&1&0&1\\
-   0&0&1&0&0&1&1\\
-   0&0&0&1&1&1&0
-   \end{bmatrix}
-   \begin{bmatrix}
-   1\\0\\1\\1\\0\\0\\0
-   \end{bmatrix}\\
-   &=\begin{bmatrix}
-   1\\
-   0\\
-   1\\
-   1
-   \end{bmatrix}\neq \begin{bmatrix}
-   0\\
-   0\\
-   0\\
-   0
-   \end{bmatrix}
-   \end{split}
-   \end{equation}
-   $$
-   이므로 유효한 부호어가 아니다.
+4. 
+  $$
+  \begin{equation}
+  \begin{split}
+  Gx^T&=\begin{bmatrix}
+  1&0&0&0&1&1&1\\
+  0&1&0&0&1&0&1\\
+  0&0&1&0&0&1&1\\
+  0&0&0&1&1&1&0
+  \end{bmatrix}
+  \begin{bmatrix}
+  1\\0\\1\\1\\0\\0\\0
+  \end{bmatrix}\\
+  &=\begin{bmatrix}
+  1\\
+  0\\
+  1\\
+  1
+  \end{bmatrix}\neq \begin{bmatrix}
+  0\\
+  0\\
+  0\\
+  0
+  \end{bmatrix}
+  \end{split}
+  \end{equation}
+  $$
+  이므로 유효한 부호어가 아니다.
 
 따라서 답은 **4번** 이다.
 
