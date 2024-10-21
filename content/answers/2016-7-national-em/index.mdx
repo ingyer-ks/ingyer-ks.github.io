@@ -1,0 +1,452 @@
+---
+title: 2016 7급 국가직 전기자기학
+year: 2016년
+organization: 국가직
+level: 7급
+subject: 전기자기학
+etc:
+description:
+---
+
+#
+
+## 1번
+1. 전하가 저장되는 면적이 넓어지므로 그렇다.
+2. 도체판 사이의 간격이 2배가 되면 같은 전압을 걸었을 때 전기장이 절반으로 약해지므로 끌어당겨서 저장할 수 있는 전하량도 절반이 된다. 따라서 정전용량은 절반이 된다.
+3. 비유전율이 2배가 되면 그만큼 전기장이 더 잘 전달되어 더 많은 전하를 끌어당겨서 저장할 수 있으므로 정전용량은 2배가 된다.
+4. 그렇다.
+  $$
+  Q=CV
+  $$
+  이기 때문이다.
+
+따라서 답은 **2번** 이다.
+
+## 2번
+두 인덕턴스의 결합 인덕턴스는
+$$
+\begin{equation}
+\begin{split}
+M&=(L_1L_2)^k\\
+&=(10\times10)^0.5\\
+&=10\text{ mH}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 합성인덕턴스의 최댓값은 두 인덕턴스에 이 결합 인덕턴스가 같은 방향으로 연결되어서 더해질 때의 값이므로
+$$
+\begin{equation}
+\begin{split}
+L_1+L_2+M&=10+10+10\\
+&=30\text{ mH}
+\end{split}
+\end{equation}
+$$
+이다. 다음으로 최솟값은 두 인덕턴스에 이 결합 인덕턴스가 반대로 연결되어서 뺄셈이 될 떄의 값이므로
+$$
+\begin{equation}
+\begin{split}
+L_1+L_2-M&=10+10-10\\
+&=10\text{ mH}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 답은 **1번** 이다.
+
+## 3번
+$$
+\nabla\times\vec{H}=\vec{J}
+$$
+인데 조건에 의해 $\vec{J}=\vec{0}$이다.
+따라서 입사각과 투과각이 각각 $\theta_1,\theta_2$라 하면 경계면에 평행한 자계의 사인 성분이 같아야 하므로
+$$
+\begin{equation}
+\begin{split}
+H_1sin\theta_1&=H_2sin\theta_2\\
+\Rightarrow \frac{B_1}{\mu_1}sin\theta_1&=\frac{B_2}{\mu_2}sin\theta_2
+\end{split}
+\end{equation}
+$$
+이다. 다음으로
+$$
+\nabla\cdot\vec{B}=0
+$$
+에서 경계면에 수직인 자기선속의 코사인 성분이 같아야 하므로
+$$
+B_1cos\theta_1=B_2cos\theta_2
+$$
+이다. 먼저 구한 식을 위 식으로 나누면
+$$
+\begin{equation}
+\begin{split}
+\frac{\frac{B_1}{\mu_1}sin\theta_1}{B_1cos\theta_1}&=\frac{\frac{B_2}{\mu_2}sin\theta_2}{B_2cos\theta_2}\\
+\Rightarrow \frac{tan\theta_1}{\mu_1}&=\frac{tan\theta_2}{\mu_2}\\
+\Rightarrow \mu_2 tan\theta_1&=\mu_1 tan\theta_2
+\end{split}
+\end{equation}
+$$
+이므로 답은 **1번** 이다.
+
+## 4번
+주어진 무한평면에서 원점 방향은 $-\vec{a_z}$ 방향이다. 그리고 무한평면의 전하들은 절반씩 위와 아래로 전기력선속 밀도를 만들고 있으므로 무한평면 아래에서의 전기력선속 밀도는
+$$
+\begin{equation}
+\begin{split}
+\vec{D}&=\frac{1}{2}\times20\times10^{-9}\times(-\vec{a_z})\\
+&=-10\times10^{-9}\vec{a_z}
+\end{split}
+\end{equation}
+$$
+그런데 $\vec{D}=\epsilon\vec{E}$이고 자유공간이므로
+$$
+\begin{equation}
+\begin{split}
+\vec{D}&=\epsilon_0\vec{E}\\
+&=\frac{10^{-9}}{36\pi}\vec{E}\\
+&=-10\times10^{-9}\vec{a_z}\\
+\Rightarrow \vec{E}&=-360\pi\vec{a_z}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 답은 **4번** 이다.
+
+## 5번
+커패시턴스는
+$$
+\begin{equation}
+\begin{split}
+C&=\epsilon\frac{S}{d}\\
+&=\epsilon_0\frac{S}{x}
+\end{split}
+\end{equation}
+$$
+이다. 이 커패시턴스에 저장된 에너지는
+$$
+\begin{equation}
+\begin{split}
+W_e&=\frac{1}{2}\frac{Q^2}{C}\\
+&=\frac{1}{2}\frac{Q^2}{\epsilon_0\frac{S}{x}}\\
+&=\frac{1}{2}\frac{Q^2x}{\epsilon_0 S}
+\end{split}
+\end{equation}
+$$
+한편
+$$
+\begin{equation}
+\begin{split}
+dW&=Fdx\\
+\Rightarrow F&=\frac{dW}{dx}
+\end{split}
+\end{equation}
+$$
+이므로 에너지를 $x$에 대해 미분하면 힘을 구할 수 있다.
+$$
+\begin{equation}
+\begin{split}
+F&=\frac{dW_e}{dx}\\
+&=\frac{Q^2}{2\epsilon_0 S}
+\end{split}
+\end{equation}
+$$
+따라서 답은 **1번** 이다.
+
+## 6번
+직선도선의 굵기가 지나치게 크지 않다면, 즉 면적 OABC를 넘어가지 않는다면, 면적 OABC를 통과하는 전류량과 면적 OPQR을 통과하는 전류량은 같다. 그리고
+$$
+\begin{equation}
+\begin{split}
+\oint \vec{H}\cdot\vec{dl}&=\iint \nabla\times\vec{H}\vec{dS}\\
+&=I
+\end{split}
+\end{equation}
+$$
+이고, 위에서 두 경로가 만드는 면적을 통과하는 전류량은 서로 같음을 보였으므로
+$$
+\oint _{L_2}\vec{H}\cdot\vec{dl}-\oint _{L_1}\vec{H}\cdot\vec{dl}=0
+$$
+이다. 따라서 답은 **2번** 이다.
+
+## 7번
+전도전류밀도의 크기는
+$$
+J_c=\sigma E
+$$
+이고 변위전류밀도의 크기는
+$$
+\begin{equation}
+\begin{split}
+J_d&=|j\omega \epsilon E|\\
+&=\omega \epsilon E
+\end{split}
+\end{equation}
+$$
+이다. $Jc=10J_d$이므로
+$$
+\begin{equation}
+\begin{split}
+\sigma E&=10\omega \epsilon E\\
+\Rightarrow 10&=10\omega\times 5\epsilon_0\\
+\Rightarrow \omega&=\frac{1}{5\epsilon_0}\\
+\Rightarrow f&=\frac{1}{2\pi\times5\epsilon_0}\\
+&=\frac{1}{10\pi\epsilon_0}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 답은 **4번** 이다.
+
+## 8번
+칸막이의 임피던스를 $Z_p$이라 하자. 칸막이 다음에 자유공간($Z_0$)이 붙어 있으므로 입사하는 쪽에서의 입력 임피던스는
+$$
+Z_{in}=Z_p\frac{Z_0+jZ_p tan(\beta l)}{Z_p+jZ_0 tan(\beta l)}
+$$
+이다. 이 값이 자유공간 임피던스 $Z_0$과 같으면 반사파가 없을 것이다. 그러기 위해서는
+$$
+tan(\beta l)=0
+$$
+이어야 한다. 한편
+$$
+\beta=\frac{2\pi}{\lambda}
+$$
+이므로
+$$
+\begin{equation}
+\begin{split}
+tan\left(\frac{2\pi}{\lambda} l\right)&=0\\
+\Rightarrow \frac{2\pi}{\lambda} l&=m\pi\text{ (}m\text{은 정수)}\\
+\Rightarrow l&=m\frac{\lambda}{2}
+\end{split}
+\end{equation}
+$$
+이다. 나무판 내에서의 전파 속도를 구해보면
+$$
+\begin{equation}
+\begin{split}
+c&=\sqrt{\epsilon_r}v\\
+&=2v\\
+\Rightarrow v&=\frac{c}{2}\\
+&=1.5\times10^8
+\end{split}
+\end{equation}
+$$
+이다. 이로부터 나무판 내에서의 파장을 구해보면
+$$
+\begin{equation}
+\begin{split}
+\lambda&=\frac{v}{f}\\
+&=\frac{1.5\times10^8}{2.5\times10^9}\\
+&=\frac{1.5}{25}\\
+&=6\text{ cm}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 최소 나무판 두께는 $m=1$일 때이므로
+$$
+\begin{equation}
+\begin{split}
+l&=\frac{\lambda}{2}\\
+&=\frac{6}{2}\\
+&=3\text{ cm}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **4번** 이다.
+
+## 9번
+부피의 변화율이 시간당 빠져나가는 공기의 양 $P$이다.즉
+$$
+\begin{equation}
+\begin{split}
+\frac{d}{dt}\left(\frac{4}{3}\pi R^3\right)&=-P\\
+\Rightarrow \frac{4}{3}\pi\times3R^2\frac{dR}{dt}&=-P\\
+\Rightarrow \frac{dR}{dt}&=-\frac{P}{4\pi R^2}
+\end{split}
+\end{equation}
+$$
+이다. 한편 자기장이 통과하는 면적은 $S=\pi R^2$이므로
+$$
+\begin{equation}
+\begin{split}
+\Phi&=BS\\
+&=B\pi R^2
+\end{split}
+\end{equation}
+$$
+이다. 따라서 유도기전력은
+$$
+\begin{equation}
+\begin{split}
+emf&=-\frac{\partial\Phi}{\partial t}\\
+&=-\frac{\partial}{\partial t}(B\pi R^2)\\
+&=-B\pi\times 2R\frac{dR}{dt}\\
+&=-B\pi\times 2R\times\left(-\frac{P}{4\pi R^2}\right)\\
+&=\frac{BP}{2R}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **3번** 이다.
+
+## 10번
+$$
+\begin{equation}
+\begin{split}
+\Phi&=\iint \vec{B}\cdot\vec{dS}\\
+&=\int _0^2\int_{y_1}^{y_1+0.5}0.2e^{-0.1y}\vec{a_z}\cdot dydx\vec{a_Z}\\
+&=2\times0.2\times\int_{y_1}^{y_1+0.5}e^{-0.1y}dy\\
+&=0.4\times\left.\frac{1}{-0.1}e^{-0.1y}\right|_{y_1}^{y_1+0.5}\\
+&=4\times\left(e^{-0.1y_1}-e^{-0.1(y_1+0.5)}\right)
+\end{split}
+\end{equation}
+$$
+이고, $y$방향 속도 $\frac{\partial y_1}{\partial t}=5$ 이므로 $y=2$일 때 유도기전력은
+$$
+\begin{equation}
+\begin{split}
+emf&=-\frac{\partial\Phi}{\partial t}\\
+&=-\frac{\partial}{\partial t}\left(4\times\left(e^{-0.1y_1}-e^{-0.1(y_1+0.5)}\right)\right)\\
+&=-\frac{\partial y_1}{\partial t}\frac{\partial}{\partial y_1}\left(4\times\left(e^{-0.1y_1}-e^{-0.1(y_1+0.5)}\right)\right)\\
+&=-5\times4\times\left(-0.1e^{-0.1y_1}+0.1e^{-0.1(y_1+0.5)}\right)\\
+&=20\times\left(0.1e^{-0.2}-0.1e^{-0.25}\right)\\
+&=2\left(e^{-0.2}-e^{-0.25}\right)
+\end{split}
+\end{equation}
+$$
+이다. 따라서 전류는
+$$
+\begin{equation}
+\begin{split}
+I&=\frac{emf}{R}\\
+&=\frac{2}{5}\left(e^{-0.2}-e^{0.25}\right)
+\end{split}
+\end{equation}
+$$
+이므로 답은 **1번** 이다.
+
+## 11번
+$$
+\nabla\cdot \vec{B}=0
+$$
+이므로 자하는 없다. 따라서 경계면의 법선성분 자기장은 들어온 만큼 그대로 나가야 한다. 그러므로
+$$
+B_{1n}-B_{2n}=0
+$$
+이 되어야 하므로 답은 **4번** 이다.
+
+## 12번
+$$
+Li=\Phi
+$$
+이고 이 자속으로 인해 생기는 유도 기전력은
+$$
+\begin{equation}
+\begin{split}
+emf&=-\frac{\partial \Phi}{\partial t}\\
+&=-\frac{\partial}{\partial t}(Li)\\
+&=-L\frac{\partial i}{\partial t}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 유도되는 전압 파형은 전류의 미분이므로 델타 함수 형태의 순간적인 펄스파가 나타난다. 그러므로 답은 **4번** 이다.
+
+## 13번
+어떤 고정된 지점으로부터 바퀴축까지의 거리 $x$와 철길로 생기는 면적을 $S$라고 하자. 그러면
+$$
+S=2x
+$$
+이다. 한편 주어진 속도로부터
+$$
+\begin{equation}
+\begin{split}
+\frac{dx}{dt}&=72\times\frac{10^3}{3600 s}\\
+&=20\text{ m/s}
+\end{split}
+\end{equation}
+$$
+이다. $S$를 통과하는 자속은
+$$
+\begin{equation}
+\begin{split}
+\Phi&=BS\\
+&=2\times10^{-3}\times S
+\end{split}
+\end{equation}
+$$
+이므로 유도기전력은
+$$
+\begin{equation}
+\begin{split}
+emf&=-\frac{\partial \Phi}{\partial t}\\
+&=-\frac{\partial 2\times10^{-3}\times S}{\partial t}\\
+&=-2\times10^{-3}\frac{dS}{dt}\\
+&=-2\times10^{-3}\frac{d(2x)}{dt}\\
+&=-4\times10^{-3}\frac{dx}{dt}\\
+&=-4\times10^{-3}\times20\\
+&=-8times10^{-2}\text{ V}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 그 크기만 고려하면 답은 **3번** 이다.
+
+## 14번
+1. 주어진 매질의 임피던스는
+  $$
+  \begin{equation}
+  \begin{split}
+  \eta&=\sqrt{\frac{\mu}{\epsilon}}\\
+  &=\sqrt{\frac{\mu_0}{epsilon_0\times 1000}}\\
+  &\approx \frac{377}{\sqrt{1000}}\\
+  &\approx \frac{377}{32}\gt 1
+  \end{split}
+  \end{equation}
+  $$
+  이다. 그리고
+  $$
+  H=\frac{E}{\eta}
+  $$
+  에서 1보다 큰 값으로 전계벡터의 크기를 나누므로 자계벡터의 크기가 더 작다.
+2. 그렇다.
+  $$
+  \vec{S}=\vec{E}\times\vec{H}
+  $$
+  이다.
+3. 위상속도는
+  $$
+  v=\frac{1}{\sqrt{\mu \epsilon}}
+  $$
+  이므로 비유전율이 커지면 줄어든다.
+4. 0.1 mW는
+  $$
+  10log\frac{0.1}{1}=-10\text{ dBm}
+  $$
+  이다.
+
+따라서 답은 **1번** 이다.
+
+## 15번
+$$
+Q=CV
+$$
+이므로
+$$
+\begin{equation}
+\begin{split}
+\frac{Q_A}{Q_B}&=\frac{10C}{20C}\\
+&=\frac{1}{2}
+\end{split}
+\end{equation}
+$$
+이다. 전기에너지는
+$$
+W=\frac{1}{2}CV^2
+$$
+이므로
+$$
+\begin{equation}
+\begin{split}
+\frac{W_A}{W_B}&=\frac{\frac{1}{2}C\times10^2}{\frac{1}{2}C\times20^2}\\
+&=\frac{1}{4}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 답은 **2번** 이다.
+
+## 16번
