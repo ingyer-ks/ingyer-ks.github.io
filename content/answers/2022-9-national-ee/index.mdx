@@ -8,6 +8,8 @@ etc:
 description:
 ---
 
+#
+
 ## 1번
 반송파의 진폭과 위상을 동시에 변화시켜 전송하는 것은 QAM이므로 답은 **4번** 이다.
 
@@ -86,13 +88,13 @@ $$
 그냥 직접 계산을 해 보자.
 $$
 \begin{equation}
-   \begin{split}
-      H(\omega)&=R||j\omega L||\frac{1}{j\omega C}\\
-      &=\frac{1}{\frac{1}{R}+\frac{1}{j\omega L}+j\omega C}\\
-      &=\frac{R}{1+\frac{R}{j\omega L}+jR\omega C}\\
-      &=\frac{R}{1+jR\left(\omega C - \frac{1}{\omega L} \right)}\\
-      &=\frac{R}{1+jR\sqrt{\frac{C}{L}}\left(\omega \sqrt{LC}-\frac{1}{\omega \sqrt{LC}}\right)}
-   \end{split}
+\begin{split}
+H(\omega)&=R||j\omega L||\frac{1}{j\omega C}\\
+&=\frac{1}{\frac{1}{R}+\frac{1}{j\omega L}+j\omega C}\\
+&=\frac{R}{1+\frac{R}{j\omega L}+jR\omega C}\\
+&=\frac{R}{1+jR\left(\omega C - \frac{1}{\omega L} \right)}\\
+&=\frac{R}{1+jR\sqrt{\frac{C}{L}}\left(\omega \sqrt{LC}-\frac{1}{\omega \sqrt{LC}}\right)}
+\end{split}
 \end{equation}
 $$
 이므로 답은 **3번** 이다.
@@ -122,21 +124,21 @@ $$
 이로부터 입력 전압 대비 출력 전압(=증폭률)을 구하면
 $$
 \begin{equation}
-   \begin{split}
-      \frac{V_{out}}{V_S}&=-\frac{R_f}{R_S+R+1}\\
-      &=-\frac{30}{2+4}\\
-      &=-5
-   \end{split}
+\begin{split}
+\frac{V_{out}}{V_S}&=-\frac{R_f}{R_S+R+1}\\
+&=-\frac{30}{2+4}\\
+&=-5
+\end{split}
 \end{equation}
 $$
 이고, $V_S=R_S I_S$임에 따라
 $$
 \begin{equation}
-   \begin{split}
-      \frac{V_{out}}{I_S}&=\frac{V_{out}}{V_S}\times R_S\\
-      &=-5 \times 2\times 10^3\\
-      &=-10000
-   \end{split}
+\begin{split}
+\frac{V_{out}}{I_S}&=\frac{V_{out}}{V_S}\times R_S\\
+&=-5 \times 2\times 10^3\\
+&=-10000
+\end{split}
 \end{equation}
 $$
 이므로 답은 **4번** 이다.
@@ -146,21 +148,21 @@ $$
 2. 전압이득은
    $$
    \begin{equation}
-      \begin{split}
-         H(\omega)&=\frac{\frac{1}{j\omega C}}{R+\frac{1}{j\omega C}}\\
-         &=\frac{1}{j\omega CR+1}
-      \end{split}
+   \begin{split}
+   H(\omega)&=\frac{\frac{1}{j\omega C}}{R+\frac{1}{j\omega C}}\\
+   &=\frac{1}{j\omega CR+1}
+   \end{split}
    \end{equation}
    $$
    이므로 옳지 않다. 보기의 식은 주파수가 낮을 때 $0$에 가까워지므로 저역통과 필터에 대한 식이 될 수 없다.
 3. 교류 입력전압과 출력전압의 위상차는 위에서 구한 $H(\omega)$의 위상을 보면 된다. 즉
    $$
    \begin{equation}
-      \begin{split}
-         \angle H(\omega)&=\angle\left(\frac{1}{j\omega CR+1}\right)\\
-         &=-\angle(j\omega CR+1)\\
-         &=-tan^{-1}(\omega CR)
-      \end{split}
+   \begin{split}
+   \angle H(\omega)&=\angle\left(\frac{1}{j\omega CR+1}\right)\\
+   &=-\angle(j\omega CR+1)\\
+   &=-tan^{-1}(\omega CR)
+   \end{split}
    \end{equation}
    $$
    이므로 옳지 않다.
@@ -172,8 +174,8 @@ $$
 반가산기에서 합과 캐리는 다음과 같다.
 $$
 \begin{gather}
-   S=X\oplus Y\\
-   C=X\cdot Y
+S=X\oplus Y\\
+C=X\cdot Y
 \end{gather}
 $$
 따라서 답은 **2번** 이다.
@@ -193,10 +195,10 @@ $$
 JK 플립플롭의 규칙은 다음과 같다.
 $$
 \begin{gather}
-   J=0, K=0 \Rightarrow Q_+=Q\\
-   J=1, K=0 \Rightarrow Q_+=1\\
-   J=0, K=1 \Rightarrow Q_+=0\\
-   J=1, K=1 \Rightarrow Q_+=\overline{Q}
+J=0, K=0 \Rightarrow Q_+=Q\\
+J=1, K=0 \Rightarrow Q_+=1\\
+J=0, K=1 \Rightarrow Q_+=0\\
+J=1, K=1 \Rightarrow Q_+=\overline{Q}
 \end{gather}
 $$
 SR 플립플롭의 문자를 J,K로 각각 바꾸고, 다만 SR 플립플롭에선 정의되지 않던 $J=K=1$일 때 반전시키는 것만 기억하면 된다.
@@ -228,19 +230,19 @@ $$
 이다. 에너지 보존 법칙에 의해 1차측에 흐르는 전류 $I_0$는 다음 식을 만족한다.
 $$
 \begin{equation}
-   \begin{split}
-      &V_0 I_0=nV_0 \frac{nV_0}{R_L}\\
-      & \Rightarrow I_0=n^2\frac{V_0}{R_L}
-   \end{split}
+\begin{split}
+&V_0 I_0=nV_0 \frac{nV_0}{R_L}\\
+&\Rightarrow I_0=n^2\frac{V_0}{R_L}
+\end{split}
 \end{equation}
 $$
 즉, 그냥 1차측에 $R_L$을 달았을 때에 비해 전류가 $n^2$배로 흐르는 것이다. 따라서 1차측에서 바라봤을 때 $R_L$의 등가저항은
 $$
 \begin{equation}
-   \begin{split}
-      &R_e=\frac{V_0}{I_0}=\frac{1}{n^2}R_L\\
-      &\Rightarrow R_L=n^2\times R_e=0.04 R_e
-   \end{split}
+\begin{split}
+&R_e=\frac{V_0}{I_0}=\frac{1}{n^2}R_L\\
+&\Rightarrow R_L=n^2\times R_e=0.04 R_e
+\end{split}
 \end{equation}
 $$
 이다. 한편 최대 전력 전달을 위해서는 증폭기 내부 저항 $R_S$와 등가 부하 $R_e$가 같아야 하므로
@@ -253,10 +255,10 @@ $$
 전달 컨덕턴스는
 $$
 \begin{equation}
-   \begin{split}
-      g_m&=\frac{\partial I_D}{\partial V_{GS}}\\
-      &=k_n(V_{GS}-V_{tn})
-   \end{split}
+\begin{split}
+g_m&=\frac{\partial I_D}{\partial V_{GS}}\\
+&=k_n(V_{GS}-V_{tn})
+\end{split}
 \end{equation}
 $$
 이므로 답은 **3번** 이다. 전달컨덕턴스는 $V_{GS}$가 작게 변할 때 $I_D$가 얼마나 변하냐는 비율을 나타내고, 따라서 여기에 드레인 쪽 저항 $R_D$가 곱해지면 $V_{GS}$가 변할 때 출력 전압은 $g_mR_DV_{GS}$만큼 변함을 알 수 있다. 그래서 전압이득이 $g_mR_D$ 형태로 나타난다.

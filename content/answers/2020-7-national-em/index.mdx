@@ -11,21 +11,15 @@ description:
 #
 
 ## 1번
-
 전속밀도벡터와 전기장의 관계는
-
 $$
 \vec{D}=\varepsilon\vec{E}
 $$
-
 이고
-
 $$
 \nabla \cdot \vec{D}=\rho_v
 $$
-
 이다. 주어진 조건을 대입해서 계산하면
-
 $$
 \begin{equation}
 \begin{split}
@@ -34,13 +28,10 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이므로 답은 **1번**이다.
 
 ## 2번
-
 파동의 속도는
-
 $$
 \begin{equation}
 \begin{split}
@@ -51,13 +42,10 @@ v&=\frac{c}{\sqrt{\mu_r\varepsilon_r}}\\
 \end{split}
 \end{equation}
 $$
-
 이므로 답은 **2번**이다.
 
 ## 3번
-
 두 매질의 경계를 중심으로 평면에 수직 방향의 $\vec{B}$는 같아야 하므로
-
 $$
 \begin{gather}
 6\mu_1=H_{2z}\mu_2\\
@@ -65,25 +53,18 @@ $$
 \Rightarrow H_{2z}=12
 \end{gather}
 $$
-
 이다. 다음으로 경계에 평행한 $x,y$방향의 $\vec{H}$ 성분이 같아야 하는 조건까지 적용하면
-
 $$
-    \vec{H_2}=3\vec{a_x}+4\vec{a_y}+12\vec{a_z}
+\vec{H_2}=3\vec{a_x}+4\vec{a_y}+12\vec{a_z}
 $$
-
 이니 답은 **2번**이다.
 
 ## 4번
-
 자기저항은
-
 $$
-    \Re=\frac{L}{\mu A}
+\Re=\frac{L}{\mu A}
 $$
-
 이다. 주어진 자성체의 자기저항은
-
 $$
 \begin{equation}
 \begin{split}
@@ -92,9 +73,7 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이다. 그리고 공극의 자기저항은
-
 $$
 \begin{equation}
 \begin{split}
@@ -103,9 +82,7 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이다. 따라서 총 자기저항은
-
 $$
 \begin{equation}
 \begin{split}
@@ -114,9 +91,7 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이므로 권선수 $100$을 고려한 자속은
-
 $$
 \begin{equation}
 \begin{split}
@@ -126,19 +101,14 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이고 답은 **3번**이다.
 
 ## 5번
-
 자기장과 벡터 자기 포텐셜의 관계는
-
 $$
-    \vec{B}=\nabla \times \vec{A}
+\vec{B}=\nabla \times \vec{A}
 $$
-
 이다. 원통 좌표계에서의 회전은
-
 $$
 \nabla \times \vec{A}=\frac{1}{\rho}
 \begin{vmatrix}
@@ -147,27 +117,23 @@ $$
 A_\rho & \rho A_\phi & A_z
 \end{vmatrix}
 $$
-
 이므로 대입하면
-
 $$
 \begin{equation}
 \begin{split}
 \vec{B}&=\nabla \times \vec{A}\\
 &=\frac{1}{\rho}
 \begin{vmatrix}
-    \vec{a_\rho} & \rho\vec{a_\phi} & \vec{a_z} \\
-    \frac{\partial }{\partial \rho} & \frac{\partial}{\partial \phi} & \frac{\partial}{\partial z} \\
-    0 & 0 & -\frac{\rho^2}{4}
+\vec{a_\rho} & \rho\vec{a_\phi} & \vec{a_z} \\
+\frac{\partial }{\partial \rho} & \frac{\partial}{\partial \phi} & \frac{\partial}{\partial z} \\
+0 & 0 & -\frac{\rho^2}{4}
 \end{vmatrix}\\
 &=\frac{1}{\rho}\left(-\rho \vec{a_\phi}\frac{\partial}{\partial \rho}\left(-\frac{\rho^2}{4}\right)\right)\\
 &=\vec{a_\phi}\frac{2\rho}{4}=\frac{\rho}{2}\vec{a_\phi}
 \end{split}
 \end{equation}
 $$
-
 이다. 자속의 크기는
-
 $$
 \begin{equation}
 \begin{split}
@@ -178,46 +144,35 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이므로 답은 **1번**이다.
 
 ## 6번
-
 1. 어떤 한 위상은
-
    $$
-       p=10^8t+3z
+   p=10^8t+3z
    $$
-
    이므로 양변을 $t$로 미분하면
-
    $$
    \begin{gather}
    0=10^8+3\frac{dz}{dt} \\
    \Rightarrow \frac{dz}{dt}=-\frac{10^8}{3}
    \end{gather}
    $$
-
    이다. 따라서 진행 방향은 $-\vec{a_z}$이다.
-
 2. 포인팅벡터의 방향은 파의 진행방향이므로 $-\vec{a_z}$이다.
 3. 평면파의 주파수는
-
    $$
    \begin{gather}
    2\pi f=10^8\\
    \Rightarrow f=\frac{100}{2\pi} \text{ MHz}
    \end{gather}
    $$
-
    이다.
-
 4. 1번 보기에서 에서 속도가 빛의 속도의 1/9배이므로 자유공간이 아닌 매질에서 진행하고 있음을 알 수 있다.
 
 따라서 답은 **4번**이다.
 
 ## 7번
-
 주어진 막대에 가해지는 자기장은 지면을 똟고 들어가는 방향이다.
 
 (A)의 경우 속도 방향을 고려하면 로렌츠 힘은 $y$방향으로 가해진다. 막대 두께가 $0$이라고 하면 전하들이 로렌츠 힘을 받아서 분리될 수 없으므로 기전력은 생길 수 없다.
@@ -226,11 +181,9 @@ $$
 위치 $x$에 대해 걸리는 자기력의 크기는 대칭성에 의해
 
 $$
-    H=\frac{v_0\mu_0I}{2\pi x}
+H=\frac{v_0\mu_0I}{2\pi x}
 $$
-
 이므로 $x$에 대해 적분하면
-
 $$
 \begin{equation}
 \begin{split}
@@ -240,35 +193,25 @@ V&=\int_a^{2a}\frac{v_0\mu_0I}{2\pi x} dx\\
 \end{split}
 \end{equation}
 $$
-
 이므로 답은 **2번**이다.
 
 ## 8번
-
 군속도는
-
 $$
-    v_g=\frac{d\omega}{d\beta}
+v_g=\frac{d\omega}{d\beta}
 $$
-
 이므로 먼저 주어진 식을 미분하면
-
 $$
-    \frac{d\beta}{d\omega}=\frac{1}{2}\sqrt{\frac{\mu\sigma}{2\omega}}
+\frac{d\beta}{d\omega}=\frac{1}{2}\sqrt{\frac{\mu\sigma}{2\omega}}
 $$
-
 이다. 이의 역수를 취하면
-
 $$
-    v_g=2\sqrt{\frac{2\omega}{\mu\sigma}}
+v_g=2\sqrt{\frac{2\omega}{\mu\sigma}}
 $$
-
 이므로 답은 **4번**이다.
 
 ## 9번
-
 첫 이동에서의 전위차는
-
 $$
 \begin{equation}
 \begin{split}
@@ -279,11 +222,8 @@ V_1&=\int_0^4\vec{E}\cdot d\vec{x}\\
 \end{split}
 \end{equation}
 $$
-
 이다.
-
 두 번째 이동에서의 전위차는
-
 $$
 \begin{equation}
 \begin{split}
@@ -294,19 +234,14 @@ V_2&=\int_0^2 \vec{E}\cdot d\vec{y}\\
 \end{split}
 \end{equation}
 $$
-
 이다.
-
 따라서 총 전위차는 $4+16=20$ V이고, 소모된 일의 양은 전하량을 곱해야 하므로 $20\cdot 20=400\text{ }\mu$J이고 답은 **3번**이다.
 
 ## 10번
-
 공기 중에서 전계를 유전체에 가하면 유전체 내부의 총 전계는 분극에 의해서 변한다. 변하지 않는 것은 전하 밀도에 의한 벡터인 $\vec{D}$이므로 답은 **3번**이다.
 
 ## 11번
-
 로렌츠 힘은
-
 $$
 \begin{equation}
 \begin{split}
@@ -316,9 +251,7 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이다. 따라서 가속도를 구하면
-
 $$
 \begin{equation}
 \begin{split}
@@ -328,13 +261,10 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이므로 답은 **3번**이다.
 
 ## 12번
-
 자계가 원형코일에 영향을 미치는 영역은 원형코일의 정사영이므로
-
 $$
 \begin{equation}
 \begin{split}
@@ -343,9 +273,7 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이다. 따라서 자속은
-
 $$
 \begin{equation}
 \begin{split}
@@ -354,19 +282,14 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이다. 그러므로 답은 **2번** 이다.
 
 ## 13번
-
 전위는
-
 $$
-    V=-\int \vec{E}\cdot d\vec{l}
+V=-\int \vec{E}\cdot d\vec{l}
 $$
-
 이다. $x$방향 전위차를 구하면
-
 $$
 \begin{equation}
 \begin{split}
@@ -375,9 +298,7 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이고, $y$방향 전위차를 구하면
-
 $$
 \begin{equation}
 \begin{split}
@@ -386,11 +307,8 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이다.
-
 마지막으로 $z$방향에 대해 구하면
-
 $$
 \begin{equation}
 \begin{split}
@@ -399,14 +317,11 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이므로 총 전위차는 $3-1+9=11$ V이다.
 
 ## 14번
-
 자기력은 전류 방향과 자속밀도 방향의 외적 방향이므로 이 둘에 수직이다.
 구체적으로는
-
 $$
 \begin{equation}
 \begin{split}
@@ -416,28 +331,20 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이므로
-
 $$
-    -\frac{\vec{a_x}}{\sqrt{2}},\frac{\vec{a_y}}{\sqrt{2}}
+-\frac{\vec{a_x}}{\sqrt{2}},\frac{\vec{a_y}}{\sqrt{2}}
 $$
-
 의 벡터 합으로 정해진다.
-
 한편 $\vec{F_m}$의 크기는 $\sqrt{2}\times 10^{-3}$ N이므로 **4번**이 옳지 않다.
 
 ## 15번
-
 동축 케이블의 양단에 전압 $V$가 걸리고 전하밀도 $\rho_l$이 생긴다고 하자.
 동축 케이블 내의 전기장은 대칭성에 의해
-
 $$
-    \vec{E}=\frac{\rho_l}{2\varepsilon \pi \rho}\vec{a_\rho}
+\vec{E}=\frac{\rho_l}{2\varepsilon \pi \rho}\vec{a_\rho}
 $$
-
 이다. 따라서
-
 $$
 \begin{equation}
 \begin{split}
@@ -448,16 +355,12 @@ V&=\int_a^b\vec{E}\cdot d{\rho}\\
 \end{split}
 \end{equation}
 $$
-
 이다.
 그러므로 커패시턴스는
-
 $$
-    C=L\frac{\rho_l}{V}=0.1\cdot \frac{2\varepsilon\pi}{ln2}
+C=L\frac{\rho_l}{V}=0.1\cdot \frac{2\varepsilon\pi}{ln2}
 $$
-
 이다. 한편
-
 $$
 \begin{equation}
 \begin{split}
@@ -466,9 +369,7 @@ R&=\frac{V}{I}\\
 \end{split}
 \end{equation}
 $$
-
 이고
-
 $$
 \begin{equation}
 \begin{split}
@@ -477,9 +378,7 @@ C&=\frac{Q}{V}\\
 \end{split}
 \end{equation}
 $$
-
 이므로
-
 $$
 \begin{equation}
 \begin{split}
@@ -488,9 +387,7 @@ RC&=\frac{\int\varepsilon\vec{E}\cdot d\vec{S}}{\int \sigma\vec{E}\cdot d\vec{S}
 \end{split}
 \end{equation}
 $$
-
 이다. 이를 이용하면
-
 $$
 \begin{equation}
 \begin{split}
@@ -500,13 +397,10 @@ R&=\frac{\varepsilon}{\sigma}\frac{ln2}{0.2\varepsilon\pi}\\
 \end{split}
 \end{equation}
 $$
-
 이고 답은 **4번**이다.
 
 ## 16번
-
 유도 기전력은
-
 $$
 \begin{equation}
 \begin{split}
@@ -517,18 +411,14 @@ emf&=-\frac{d\Phi}{dt}\\
 \end{split}
 \end{equation}
 $$
-
 이다.
 따라서 전류의 크기는 이를 저항으로 나눠주면 되므로 $0.4\pi cos 10^3t$이고 답은 **1번**이다.
 
 ## 17번
-
 $z=2d$에서는 두 전류에 의한 자계가 상쇄되므로 $0$이다. $z=\frac{d}{2}$에서는 자계 방향이 $-\vec{a_x}$방향이다. 따라서 답은 **4번**이다.
 
 ## 18번
-
 $\frac{1}{4}\lambda_g$의 길이를 갖는 전송선로의 입력 임피던스는
-
 $$
 \begin{equation}
 \begin{split}
@@ -537,10 +427,8 @@ Z_{\lambda_g}&=\left.Z_0 \frac{Z_L+jZ_0tan(\beta l)}{Z_0+jZ_Ltan(\beta l)}\right
 \end{split}
 \end{equation}
 $$
-
 이다.
 여기서 $Z_L=100$이고, 임피던스 정합이 이루어졌으니
-
 $$
 \begin{gather}
 Z_{\lambda_g}=\frac{Z_0^2}{100}=49\\
@@ -548,15 +436,11 @@ Z_{\lambda_g}=\frac{Z_0^2}{100}=49\\
 \Rightarrow Z_0=70
 \end{gather}
 $$
-
 이다.
-
 $$
 Z_0=\sqrt{\frac{L}{C}}
 $$
-
 이므로
-
 $$
 \begin{equation}
 \begin{split}
@@ -565,9 +449,7 @@ C&=\frac{L}{Z_0^2}\\
 \end{split}
 \end{equation}
 $$
-
 이다. 이로부터 전파 속도를 계산하면
-
 $$
 \begin{equation}
 \begin{split}
@@ -577,9 +459,7 @@ v&=\frac{1}{\sqrt{LC}}\\
 \end{split}
 \end{equation}
 $$
-
 이므로
-
 $$
 \begin{equation}
 \begin{split}
@@ -589,10 +469,8 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이다.
 따라서
-
 $$
 \begin{equation}
 \begin{split}
@@ -602,43 +480,38 @@ l&=\frac{\lambda_g}{4}\\
 \end{split}
 \end{equation}
 $$
-
 이므로 답은 **1번**이다.
 
 ## 19번
-
-1.  $$
-    \begin{gather}
-    \vec{T}=\vec{m}\times \vec{B} \\
-    \begin{equation}
-    \begin{split}
-    \Rightarrow T&=mBsin\theta\\
-    &=NIABsin\theta
-    \end{split}
-    \end{equation}
-    \end{gather}
-    $$
-    에서 $\theta=0$이면 토크는 생기지 않는다.
-2.  위 식에서
-    $$
-        B=\frac{T}{NIAsin\theta}
-    $$
-    이다.
+1.  
+  $$
+  \begin{gather}
+  \vec{T}=\vec{m}\times \vec{B} \\
+  \begin{equation}
+  \begin{split}
+  \Rightarrow T&=mBsin\theta\\
+  &=NIABsin\theta
+  \end{split}
+  \end{equation}
+  \end{gather}
+  $$
+  에서 $\theta=0$이면 토크는 생기지 않는다.
+2. 위 식에서
+  $$
+  B=\frac{T}{NIAsin\theta}
+  $$
+  이다.
 
 그리고 토크의 방향은 $\vec{m}$과 $\vec{B}$에 수직이다.
 따라서 **2번**이 옳다.
 
 ## 20번
-
 1. 전반사가 발생하기 위해서는 1에서의 굴절률이 2에서보다 커야 한다. 그래야 2로 들어가려는 빛이 더 느린 쪽인 1 쪽으로 휘어서 전반사가 일어날 수 있다.
    그리고 굴절률 $n$은 $\sqrt{\varepsilon}$에 비례하므로
-
    $$
    \varepsilon_1 \gt \varepsilon_2
    $$
-
    여야 한다.
-
 2. 그렇다.
 3. 그렇다. 입사하는 방향을 +로 생각하면 반사하는 값은 -가 곱해진 것으로 생각할 수 있으므로, 반사하는 값의 절댓값을 구하려면 -를 곱해야 한다. 그러면 1=(입사)=(투과)+|(반사)|가 된다.
 4. 브루스터 각도는 특정 편파에는 없을 수 있다.

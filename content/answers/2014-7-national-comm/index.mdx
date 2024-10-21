@@ -11,7 +11,6 @@ description:
 #
 
 ## 1번
-
 $$
 \begin{equation}
 \begin{split}
@@ -23,26 +22,20 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이므로 답은 **4번** 이다.
 
 ## 2번
-
 $t=1$ 지점에서 $f(t)$가 옮겨져서 시작되지만 한 주기 다음인 $t=3$에서 $-f(t)$가 옮겨져서 시작되므로 여기서부터는 상쇄된다.
 이와 같이 $t=5$에서 $f(t)$가 옮겨져서 시작되지만 $t=7$에서 $-f(t)$가 옮겨져서 시작되므로 여기서부터 다시 상쇄된다. 마지막으로 $t=9$에서 $f(t)$가 옮겨져서 시작된다.
 따라서 답은 **2번** 이다.
 
 ## 3번
-
 ![](./3-1.svg)
 위 신호를 푸리에 변환해보자. 시간 축에서 이동하더라도 위상 변화만 있을 뿐이니 편의성을 위해서 위와 같이 놓았다. 우선 신호를 푸리에 급수로 표현한다.
-
 $$
 x(t)=\sum_{k=-\infty}^{\infty}C_ke^{j\frac{2\pi}{T}kt}
 $$
-
 이 식에서 $C_k$를 구해보자.
-
 $$
 \begin{equation}
 \begin{split}
@@ -54,17 +47,12 @@ C_k&=\frac{1}{T}\int_{-\frac{T}{2}} ^\frac{T}{2} x(t)e^{-j\frac{2\pi}{T}kT}dt\\
 \end{split}
 \end{equation}
 $$
-
 따라서
-
 $$
 x(t)=\sum_{k=-\infty}^{\infty}\frac{1}{\pi k}sin\left(\frac{\pi}{T}k\tau \right)e^{j\frac{2\pi}{T}kt}
 $$
-
 이다.
-
 이를 푸리에 변환하면
-
 $$
 \begin{equation}
 \begin{split}
@@ -75,7 +63,6 @@ X(f)&=\int_{-\infty}^\infty \sum_{k=-\infty}^{\infty}\frac{1}{\pi k}sin\left(\fr
 \end{split}
 \end{equation}
 $$
-
 1. $\tau=\frac{T}{2}$인 경우를 그려보면 다음과 같다.
    ![](./3-2.svg)
    따라서 주엽에 포함된 크기가 0이 아닌 선 스펙트럼의 수는 3개이다.
@@ -88,20 +75,15 @@ $$
 따라서 답은 **3번** 이다.
 
 ## 4번
-
 계산할 필요도 없이 답은 **1번** 이다. 평균 정보량이 가장 크다는 것은 불확실한 정도가 가장 크다는 것이다. 그러려면 확률이 어때야 하는가? 치우침 없이 고르게 퍼져 있어야 한다. 한 쪽으로 치우치면 다른 쪽보다 발생할 확률이 높아지니 불확실한 정도가 낮아진다.
 
 ## 5번
-
 채널 용량은
-
 $$
 C=Wlog_2(1+SNR)
 $$
-
 이다. SNR이 크다면 위 식은 $C\approx Wlog_2(SNR)$로 근사된다.
 따라서 신호 전력이 두 배로 증가하면 채널 용량은
-
 $$
 \begin{equation}
 \begin{split}
@@ -114,11 +96,9 @@ C_2&=Wlog_2(2SNR)\\
 \end{split}
 \end{equation}
 $$
-
 이다. 그러므로 0.1, 즉 10% 증가하므로 답은 **2번** 이다.
 
 ## 6번
-
 1. ㄱ: 에르고딕 프로세스는 시간 평균과 앙상블 평균이 같다.
 2. ㄴ: 그렇다. WSS의 정의이다.
 3. ㄷ: 그렇지 않다. 정상 프로세스라는 조건에서 시평균과 앙상블 평균이 같아야만 할 이유가 없다.
@@ -127,47 +107,45 @@ $$
 따라서 답은 **1번** 이다.
 
 ## 7번
-
 음성신호는 실함수이다. 따라서 변환한 결과를 $X(f)$라고 하면
-
-1.  $$
-    \begin{equation}
-    \begin{split}
-    X(f)&=\int_{-\infty}^{\infty}x(t)e^{-j2\pi ft}dt\\
-    &=\int_{-\infty}^{\infty}x(t)(cos(2\pi ft)-jsin(2\pi ft))dt\\
-    &=\int_{-\infty}^{\infty}x(t)cos(2\pi ft)dt-j\int_{-\infty}^{\infty}x(t)sin(2\pi ft)dt\\
-    \Rightarrow |X(f)|^2&=\left(\int_{-\infty}^{\infty}x(t)cos(2\pi ft)dt \right)^2+\left( -j\int_{-\infty}^{\infty}x(t)sin(2\pi ft)dt \right)^2\\
-    &=\left(\int_{-\infty}^{\infty}x(t)cos(2\pi ft)dt \right)^2+\left(\int_{-\infty}^{\infty}x(t)sin(2\pi ft)dt \right)^2\\
-    X(-f)&=\int_{-\infty}^{\infty}x(t)e^{j2\pi ft}dt\\
-    &=\int_{-\infty}^{\infty}x(t)(cos(2\pi ft)+jsin(2\pi ft))dt\\
-    &=\int_{-\infty}^{\infty}x(t)cos(2\pi ft)dt+j\int_{-\infty}^{\infty}x(t)sin(2\pi ft)dt\\
-    \Rightarrow |X(-f)|^2&=\left(\int_{-\infty}^{\infty}x(t)cos(2\pi ft)dt \right)^2+\left( j\int_{-\infty}^{\infty}x(t)sin(2\pi ft)dt \right)^2\\
-    &=\left(\int_{-\infty}^{\infty}x(t)cos(2\pi ft)dt \right)^2+\left(\int_{-\infty}^{\infty}x(t)sin(2\pi ft)dt \right)^2\\
-    &=|X(f)|^2\\
-    \therefore |X(f)|&=|X(-f)|
-    \end{split}
-    \end{equation}
-    $$
-    이므로 크기는 주파수에 대해 우함수이다.
-2.  위상에 대해 계산해보면
-    $$
-    \begin{equation}
-    \begin{split}
-    \angle{X(f)}&=arctan\left( \frac{-\int_{-\infty}^{\infty}x(t)sin(2\pi ft)dt}{\int_{-\infty}^{\infty}x(t)cos(2\pi ft)dt} \right)\\
-    &=-arctan\left( \frac{\int_{-\infty}^{\infty}x(t)sin(2\pi ft)dt}{\int_{-\infty}^{\infty}x(t)cos(2\pi ft)dt} \right)\\
-    \angle{X(-f)}&=arctan\left( \frac{\int_{-\infty}^{\infty}x(t)sin(2\pi ft)dt}{\int_{-\infty}^{\infty}x(t)cos(2\pi ft)dt} \right)\\
-    &=-\angle{X(f)}
-    \end{split}
-    \end{equation}
-    $$
-    이므로 주파수에 대해 기함수이다.
-3.  그렇다.
-4.  그렇다. 제곱해서 적분하면 된다.
+1.  
+  $$
+  \begin{equation}
+  \begin{split}
+  X(f)&=\int_{-\infty}^{\infty}x(t)e^{-j2\pi ft}dt\\
+  &=\int_{-\infty}^{\infty}x(t)(cos(2\pi ft)-jsin(2\pi ft))dt\\
+  &=\int_{-\infty}^{\infty}x(t)cos(2\pi ft)dt-j\int_{-\infty}^{\infty}x(t)sin(2\pi ft)dt\\
+  \Rightarrow |X(f)|^2&=\left(\int_{-\infty}^{\infty}x(t)cos(2\pi ft)dt \right)^2+\left( -j\int_{-\infty}^{\infty}x(t)sin(2\pi ft)dt \right)^2\\
+  &=\left(\int_{-\infty}^{\infty}x(t)cos(2\pi ft)dt \right)^2+\left(\int_{-\infty}^{\infty}x(t)sin(2\pi ft)dt \right)^2\\
+  X(-f)&=\int_{-\infty}^{\infty}x(t)e^{j2\pi ft}dt\\
+  &=\int_{-\infty}^{\infty}x(t)(cos(2\pi ft)+jsin(2\pi ft))dt\\
+  &=\int_{-\infty}^{\infty}x(t)cos(2\pi ft)dt+j\int_{-\infty}^{\infty}x(t)sin(2\pi ft)dt\\
+  \Rightarrow |X(-f)|^2&=\left(\int_{-\infty}^{\infty}x(t)cos(2\pi ft)dt \right)^2+\left( j\int_{-\infty}^{\infty}x(t)sin(2\pi ft)dt \right)^2\\
+  &=\left(\int_{-\infty}^{\infty}x(t)cos(2\pi ft)dt \right)^2+\left(\int_{-\infty}^{\infty}x(t)sin(2\pi ft)dt \right)^2\\
+  &=|X(f)|^2\\
+  \therefore |X(f)|&=|X(-f)|
+  \end{split}
+  \end{equation}
+  $$
+  이므로 크기는 주파수에 대해 우함수이다.
+2. 위상에 대해 계산해보면
+   $$
+   \begin{equation}
+   \begin{split}
+   \angle{X(f)}&=arctan\left( \frac{-\int_{-\infty}^{\infty}x(t)sin(2\pi ft)dt}{\int_{-\infty}^{\infty}x(t)cos(2\pi ft)dt} \right)\\
+   &=-arctan\left( \frac{\int_{-\infty}^{\infty}x(t)sin(2\pi ft)dt}{\int_{-\infty}^{\infty}x(t)cos(2\pi ft)dt} \right)\\
+   \angle{X(-f)}&=arctan\left( \frac{\int_{-\infty}^{\infty}x(t)sin(2\pi ft)dt}{\int_{-\infty}^{\infty}x(t)cos(2\pi ft)dt} \right)\\
+   &=-\angle{X(f)}
+   \end{split}
+   \end{equation}
+   $$
+   이므로 주파수에 대해 기함수이다.
+3. 그렇다.
+4. 그렇다. 제곱해서 적분하면 된다.
 
 따라서 답은 **1번** 이다.
 
 ## 8번
-
 1. 메시지가 4비트이고 패리티가 3비트이므로 (7,4) 부호이다.
 2. 그렇다. 해밍 거리가 3이기 때문에 이의 절반인 1.5비트를 반지름으로 갖는 수신 심볼 구 내에 찍히는 점은 가장 가까운 심볼이 원래 심볼이라고 추정이 가능하기 때문이다.
 3. 그렇다. $p_1=m_1+m_2+m_4$이므로 행렬의 패리티 부분은 세로로 1,2,4번째 자리에 1이 온다. 마찬가지 방식으로 $p_2$, $p_3$에 대해 행렬의 패리티 부분을 완성할 수 있다.
@@ -203,19 +181,15 @@ $$
 따라서 답은 **4번** 이다.
 
 ## 9번
-
 먼저 NBFM에 100 kHz의 신호를 믹싱했으므로 반송파 주파수는 $200 pm 100=100 or 300$ kHz가 1000배 된 것이다. 그런데 보기에서 300 MHz는 없으므로 $y(t)$의 반송파 주파수는 100 MHz이다.
 한편 주파수 편이비는 신호의 주파수 대비 주파수 편이인데, 주파수 편이가 1000배 되었으므로 주파수 편이비는
-
 $$
 \frac{20\times 1000}{10k}=2
 $$
-
 이다.
 따라서 답은 **2번** 이다.
 
 ## 10번
-
 1. 명확하게 조건이 주어지지는 않았으나 반송파 주파수는 메시지 주파수의 대역폭보다 훨씬 크다. 따라서 DSB 변조를 하게 되면 기저대역의 메시지 주파수의 음의 영역에 있던 성분도 양의 영역인 반송파 주파수의 왼쪽으로 옮겨지므로 대역폭은 2배가 된다.
    그러므로 메시지 주파수의 대역폭이 4 kHz이면 DSB 신호의 대역폭은 8 kHz이다.
 2. 그렇다. 반송파가 더해지지 않기 때문이다.
@@ -225,13 +199,11 @@ $$
 따라서 답은 **3번** 이다.
 
 ## 11번
-
 채널코딩이 성능이 무조건 좋은 것은 아니다. 채널코딩을 하면 잉여 비트에도 에너지가 할당되므로 비트당 에너지는 낮아지게 되는데, 그렇게 되면 에러 확률이 올라간다. 채널코딩으로 감당할 수 있는 것보다 에러가 많이 발생하게 되면 채널코딩을 하느니만 못하게 되어버린다.
 이럴 때는 그냥 원래 비트를 더 큰 에너지로 전송하는 게 낫다. 이러한 상황은 코딩 이득이 1보다 작은 상황이다.
 한편 길쌈부호는 길쌈 연산처럼 과거 정보도 필요하다. 따라서 답은 **3번** 이다.
 
 ## 12번
-
 1. 그렇다.
 2. 복잡한 실내 공간에서는 반사되어서 돌아오거나 회절하는 등 경로가 더 많기 때문에 ISI가 더 심각하다.
 3. 저속 전송을 하는 편이 좋다. 그렇게 되면 한 심볼 구간 내에 동일한 심볼이 위상만 변화해서 들어와서 겹쳐지므로, 위상차를 안다면 오히려 신호가 보강된다. 이를 이용하는 것이 OFDM이다.
@@ -240,7 +212,6 @@ $$
 따라서 답은 **3번** 이다.
 
 ## 13번
-
 1. 그렇다. AM은 선형 시스템이므로 비선형 증폭을 하게 되면 진폭에 실린 정보가 일그러진다. 하지만 FM은 리미터를 사용해서 일그러짐을 잘라내고 주파수 성분만 꺼내면 된다.
 2. 그렇다.
 3. 그렇다. 일부 대역이 혼신되더라도 훨씬 더 넓은 영역에 정보를 싣기 때문에 손상되는 비율이 적다. 하지만 AM은 사용하는 대역에 혼신이 들어오게 되면 손상되는 비율이 크다.
@@ -249,24 +220,18 @@ $$
 따라서 답은 **4번** 이다.
 
 ## 14번
-
 위상편이는 반송파 신호 대비 위상 차이이므로
-
 $$
 2\pi(400)t+10t^2-2\pi(1000)t=10t^2-2\pi(600)t\text{ rad}
 $$
-
 이다.
 주파수 편이는 위상 편이를 미분한 것을 $2\pi$로 나눈 값이므로
-
 $$
 \frac{10}{\pi}t-600\text{ Hz}
 $$
-
 이다. 그러므로 답은 **1번** 이다.
 
 ## 15번
-
 1. BER이 $10^{-2}$일 때 8-PSK의 $E_b/N_0$는 8 dB에 조금 못 미친다. 약 7 dB 쯤 될 것 같다. BPSK는 같은 BER에 대해 4 dB 조금 넘게 필요하다.
    따라서 8-PSK의 경우 7-4=3 dB, 즉 약 2배 정도의 비트당 에너지가 필요하다.
 2. BER이 $10^{-4}$일 때 16-PSK는 약 16 d의 $E_b/N_0$가 필요하다. QPSK는 같은 BER에 대해 8 dB 조금 넘게 필요하다. 즉 16-PSK가 거의 16 dB 더 커야 하는데 이는 비율로는 2배를 훨씬 넘는다.
@@ -276,7 +241,6 @@ $$
 따라서 답은 **1번** 이다.
 
 ## 16번
-
 1. 옳다.
 2. 그렇다. 동기가 깨지면 양쪽 모두 동시에 송신을 해버리는 등의 일이 발생할 수 있다.
 3. 상호상관 계수가 커버리면 다른 사용자의 부호화된 데이터의 전력이 커져서 나의 데이터를 효과적으로 취할 수 없을 것이다.
@@ -285,27 +249,20 @@ $$
 따라서 답은 **3번** 이다.
 
 ## 17번
-
 심벌주기가 $4\text{ }\mu$s인데 CP 구간 크기가 $0.8\text{ }\mu$s이다. 따라서 데이터가 있는 구간의 길이는 $3.2\text{ }\mu$s이다.
 그러므로 부반송파들이 직교성을 유지하기 위한 간격은 이의 역수이므로
-
 $$
 \frac{1}{3.2}=312.5\text{ kHz}
 $$
-
 가 된다. (그래야 데이터 구간의 길이동안 곱해서 적분했을 때 0이 되니까.)
 한편 이러한 구간이 총 52개 있으므로 시스템 대역폭은
-
 $$
 312.5\times 52=16.25\text{ MHz}
 $$
-
 이므로 답은 **1번** 이다.
 
 ## 18번
-
 이진, 즉 BPSK, BFSK 등만으 고려한다.
-
 1. 동기식 FSK의 경우 각 심볼은 성상도에서 원점으로부터 $\sqrt{E_b}$ 거리에서 $90^\circ$ 각도를 서로 이루며 찍히므로 둘 사이의 거리는 $d_{FSK}=\sqrt{2E_b}$이다.
    한편 PSK의 경우 각 심볼은 성상도에서 원점으로부터 $\sqrt{E_b}$ 거리에서 서로 맞은편에 찍히므로 둘 사이의 거리는 $d_{PSK}=2\sqrt{E_b}$이다.
    한편 비트 오율은
@@ -315,14 +272,12 @@ $$
    이므로 동기식 FSK는 PSK와 같은 비트 오율을 갖기 위해서는 거리가 $\sqrt{2}$배인 만큼 전력은 2배 필요하다.
 2. 동기식 ASK의 심볼은 하나는 0에 찍히므로 다른 하나는 $\sqrt{2E_b}$자리에 찍힌다. 그래야 비트당 에너지가 $E_b$로 동일하니까.
    따라서 동기식 ASK의 심볼 간 거리는 $d_{ASK}=\sqrt{2E_b}=d_{FSK}$이므로 같은 오류 확률을 위해 필요한 평균 신호전력은 같다.
-
 3. 그렇다. 서로 다른 주파수를 쓰는 ASK 2개를 이용하면 된다.
 4. FSK는 위상(시간)에 정보가 실리지 않으므로 비동기 복조가 가능하다.
 
 따라서 답은 **2번** 이다.
 
 ## 19번
-
 1. 심볼간 위치가 16-QAM이 16-PSK보다 멀리 있으므로 한 비트 차이의 간격도 16-QAM이 더 멀다. 따라서 비트 오류율 성능이 더 좋다.
 2. 그렇다. PSK는 진폭에 정보를 싣지 않지만 QAM은 진폭에도 정보를 싣기 때문이다.
 3. 그렇다. 위의 이유 때문이다.
@@ -331,7 +286,6 @@ $$
 따라서 답은 **4번** 이다.
 
 ## 20번
-
 1. AWGN이다.
 2. 그렇다. 산탄 잡음은 캐리어의 불규칙한 변화로 인해 발생한다.
 3. 플리커 잡음이다.

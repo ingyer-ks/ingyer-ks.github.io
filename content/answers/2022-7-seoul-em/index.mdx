@@ -11,15 +11,11 @@ description:
 #
 
 ## 1번
-
 점 P에서 점 Q로 가는 경로를 다음과 같이 생각해보자.
-
 $$
 P(1,1,1) \rightarrow (1,1,2) \rightarrow (1,2,2) \rightarrow Q(2,2,2)
 $$
-
 이를 따라 주어진 정전기장을 선적분하면 점 P를 기준으로 한 점 Q의 전위가 나온다.
-
 $$
 \begin{equation}
 \begin{split}
@@ -32,9 +28,7 @@ V_{QP}&=-\int_{P(1,1,1)}^{Q(2,2,2)} \vec{E} \cdot d\vec{l}\\
 \end{split}
 \end{equation}
 $$
-
 그런데 점 P에서의 전위가 $\frac{5}{2}$이므로 점 P에서의 전위는 이 값과 위에서 구한 값의 합이다. 따라서
-
 $$
 \begin{equation}
 \begin{split}
@@ -44,16 +38,13 @@ V_Q&=\frac{5}{2}-6-\frac{3}{2}\\
 \end{split}
 \end{equation}
 $$
-
 이므로 답은 **4번** 이다.
 
 ## 2번
-
 커패시턴스 $C=\frac{Q}{V}$ 의 정의이므로 답은 **1번** 이다.
 
 ## 3번
 총 커패시턴스는
-
 $$
 \begin{equation}
 \begin{split}
@@ -65,13 +56,10 @@ C&=\frac{Q_1+Q_2+Q_3}{V}\\
 \end{split}
 \end{equation}
 $$
-
 이고 답은 **4번** 이다.
 
 ## 4번
-
 주어진 조건에서 전기장은
-
 $$
 \begin{equation}
 \begin{split}
@@ -81,9 +69,7 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이다. 따라서 주어진 점에서의 전기장의 크기는
-
 $$
 \begin{equation}
 \begin{split}
@@ -92,19 +78,14 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이므로 답은 **4번** 이다.
 
 ## 5번
-
 연속방정식
-
 $$
 \nabla \cdot \vec{J}=0
 $$
-
 이 성립해야 한다. 주어진 전류밀도와 점을 대입하면
-
 $$
 \begin{equation}
 \begin{split}
@@ -114,14 +95,11 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이므로 $a=-2$이고 답은 **1번** 이다.
 
 ## 6번
-
 영상전하를 이용하기 좋게 생겼다. $-2$ C 전하의 반대편 같은 거리 위치에 $+2$인 전하가 있는 것과 마찬가지이다.
 따라서 점 P까지의 전위차는
-
 $$
 \begin{equation}
 \begin{split}
@@ -131,83 +109,74 @@ V_{\Delta P}&=\frac{-2}{4\pi\epsilon_0\cdot 1}+\frac{2}{4\pi\epsilon_0\cdot5}\\
 \end{split}
 \end{equation}
 $$
-
 따라서 답은 **1번** 이다.
 
 ## 7번
-
 이종전하 간에는 인력이 작용하므로 답은 **4번** 이다.
 
 ## 8번
-
 보존장은 회전 성분을 갖지 않는다.
-
-1.  $$
-    \begin{equation}
-    \begin{split}
-    \begin{vmatrix}
-    \vec{x} & \vec{y} & \vec{z}\\
-    \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\
-    y & x+z^2 & y-2z
-    \end{vmatrix}=(1-2z)\vec{x}
-    \end{split}
-    \end{equation}
-    $$
-
-2.  $$
-    \begin{equation}
-    \begin{split}
-    \begin{vmatrix}
-    \vec{x} & \vec{y} & \vec{z}\\
-    \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\
-    z^2 & -y^2 & 3xz
-    \end{vmatrix}=-z\vec{y}
-    \end{split}
-    \end{equation}
-    $$
-
-3.  $$
-    \begin{equation}
-    \begin{split}
-    \begin{vmatrix}
-    \vec{x} & \vec{y} & \vec{z}\\
-    \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\
-    4xy-yz & 2x^2-zx & -3z^2-xy
-    \end{vmatrix}=\vec{0}
-    \end{split}
-    \end{equation}
-    $$
-
-4.  $$
-    \begin{equation}
-    \begin{split}
-    \begin{vmatrix}
-    \vec{x} & \vec{y} & \vec{z}\\
-    \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\
-    -3x^2 & 2z & y
-    \end{vmatrix}=-\vec{x}
-    \end{split}
-    \end{equation}
-    $$
+1.
+  $$
+  \begin{equation}
+  \begin{split}
+  \begin{vmatrix}
+  \vec{x} & \vec{y} & \vec{z}\\
+  \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\
+  y & x+z^2 & y-2z
+  \end{vmatrix}=(1-2z)\vec{x}
+  \end{split}
+  \end{equation}
+  $$
+2.
+  $$
+  \begin{equation}
+  \begin{split}
+  \begin{vmatrix}
+  \vec{x} & \vec{y} & \vec{z}\\
+  \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\
+  z^2 & -y^2 & 3xz
+  \end{vmatrix}=-z\vec{y}
+  \end{split}
+  \end{equation}
+  $$
+3.
+  $$
+  \begin{equation}
+  \begin{split}
+  \begin{vmatrix}
+  \vec{x} & \vec{y} & \vec{z}\\
+  \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\
+  4xy-yz & 2x^2-zx & -3z^2-xy
+  \end{vmatrix}=\vec{0}
+  \end{split}
+  \end{equation}
+  $$
+4.
+  $$
+  \begin{equation}
+  \begin{split}
+  \begin{vmatrix}
+  \vec{x} & \vec{y} & \vec{z}\\
+  \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\
+  -3x^2 & 2z & y
+  \end{vmatrix}=-\vec{x}
+  \end{split}
+  \end{equation}
+  $$
 
 이므로 답은 **3번** 이다.
 
 ## 9번
-
 자속은
-
 $$
 \Phi=\iint \vec{B}\cdot d\vec{S}
 $$
-
 이고 기전력은
-
 $$
 emf=-\frac{d\Phi}{dt}
 $$
-
 이다. 따라서
-
 $$
 \begin{equation}
 \begin{split}
@@ -218,11 +187,9 @@ emf(t=0.3)&=-\left.\iint \frac{d\vec{B}}{dt}\cdot d\vec{S}\right|_{t=0.3} - \lef
 \end{split}
 \end{equation}
 $$
-
 이므로 답은 **4번** 이다.
 
 ## 10번
-
 1. 전압이 증가하면 전압 증가의 효과와 $Q=CV$에 따른 전하 증가의 효과가 겹쳐서 나타난다. 그래서 $W=\frac{1}{2}CV^2$이다.
 2. 위 설명에 의해 옳다.
 3. 정전용량은 전압과 전하의 비율이므로 전압이 변하여도 일정하다.(버랙터와 같이 아닌 경우도 있지만, 이 경우에는 그렇다.)
@@ -231,9 +198,7 @@ $$
 따라서 답은 **2번** 이다.
 
 ## 11번
-
 먼저 회전을 계산하자.
-
 $$
 \begin{equation}
 \begin{split}
@@ -247,10 +212,8 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이를 주어진 영역에 대해 적분해야 한다. $x$가 $0\rightarrow 2$로 움직일 때 $y$는 각 $x$에 대해 $0\rightarrow -x+2$로 움직이면서 적분해야한다.
 따라서
-
 $$
 \begin{equation}
 \begin{split}
@@ -261,19 +224,14 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이므로 답은 **2번** 이다.
 
 ## 12번
-
 평균전력밀도는 포인팅 벡터의 크기를 2로 나눈 것이다. 그래서 입사되는 전력을 구할 때 이를 수직 단면적에 대해 적분한다.
-
 $$
 \vec{S}=\vec{E}\times\vec{H}
 $$
-
 이고 자유공간에서
-
 $$
 \begin{equation}
 \begin{split}
@@ -282,9 +240,7 @@ H&=\frac{E}{\eta_0}\\
 \end{split}
 \end{equation}
 $$
-
 이므로
-
 $$
 \begin{equation}
 \begin{split}
@@ -293,11 +249,9 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이다. 따라서 답은 **3번** 이다. 계산기가 없는 이상 대충 $2500\approx 2400, 377\approx 400$으로 풀 수밖에 없지 않을까 싶다.
 
 ## 13번
-
 1. 그렇다. 그래야 들어온 전속들이 변화 그대로 나가므로 $\vec{D}$의 발산이 0이고, 이는 자유 전하가 없으면 필연적이다.
 2. 그렇다. 그래야 전계가 회전하지 않는다.
 3. 전위는 전계를 적분하므로 연속적이어야 한다. 따라서 두 경계면에서 같아야 한다.
@@ -306,16 +260,12 @@ $$
 따라서 답은 **3번**이다.
 
 ## 14번
-
 주어진 공간에서 거리 $d$가 변수라고 했을 때의 에너지는 다음과 같다.
-
 $$
 W=\frac{1}{2}\times \frac{1}{\mu_0 }\times \frac{\Phi^2}{S}\times d
 $$
-
 $W=\int \vec{F}\cdot d\vec{l}$임에 착안하고, 여기서 $l=d$라고 하면 힘은 위 식을 $d$로 미분함에 따라 얻어진다.
 따라서
-
 $$
 \begin{equation}
 \begin{split}
@@ -325,15 +275,12 @@ F&=\frac{\Phi^2}{2\mu_0 S}\\
 \end{split}
 \end{equation}
 $$
-
 이므로 답은 **2번**이다.
 
 ## 15번
-
 먼저 단위길이당 커패시턴스를 구해보자.
 케이블에 전하량이 Q만큼 충전되어 있다고 하자. 이 때 전계는 중심에서 바깥쪽으로 뻗어나간다. 길이 방향으로 충분히 케이블이 길기 때문에 길이 방향 위치에 상관없이 똑같다.
 그러므로 안쪽과 바깥쪽의 전위차는
-
 $$
 \begin{equation}
 \begin{split}
@@ -342,9 +289,7 @@ V&=\int _1 ^5 \frac{Q}{2\pi \epsilon r} dr\\
 \end{split}
 \end{equation}
 $$
-
 이다. 따라서 단위길이당 커패시턴스는
-
 $$
 \begin{equation}
 \begin{split}
@@ -353,23 +298,16 @@ C&=\frac{Q}{V}\\
 \end{split}
 \end{equation}
 $$
-
 이다.
-
 다음으로 단위길이당 인덕턴스를 구해보자. 그러기 위해서 먼저 $\vec{H}$를 생각해보자.
-
 $$
 \oint \vec{H}\cdot d\vec{l}=i
 $$
-
 이고 대칭성에 의해
-
 $$
 H=\frac{I}{2\pi r}
 $$
-
 이다. 그리고 단위길이당 단면적을 통과하는 자속은 중심에서 뻗어나가는 선을 통과하는 자기력선의 개수와 같으므로
-
 $$
 \begin{equation}
 \begin{split}
@@ -378,17 +316,12 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이다. 따라서 단위길이당 인덕턴스는
-
 $$
 L=\frac{\mu }{2\pi }ln (5)
 $$
-
 이다.
-
 따라서 특성 임피던스는
-
 $$
 \begin{equation}
 \begin{split}
@@ -399,11 +332,9 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이므로 답은 **4번** 이다.
 
 ## 16번
-
 $$
 \begin{equation}
 \begin{split}
@@ -413,9 +344,7 @@ $$
 \end{split}
 \end{equation}
 $$
-
 인데, 비유전율이 3이므로 $\epsilon=\epsilon_0\epsilon_r=3\epsilon_0$이다. 따라서
-
 $$
 \begin{equation}
 \begin{split}
@@ -424,10 +353,8 @@ $$
 \end{split}
 \end{equation}
 $$
-
 이다.
 따라서 유전체에 저장된 정전에너지는
-
 $$
 \begin{equation}
 \begin{split}
@@ -437,11 +364,9 @@ E&=\frac{1}{2}\int \epsilon_0\epsilon_rE^2 dv\\
 \end{split}
 \end{equation}
 $$
-
 이므로 답은 **3번** 이다.
 
 ## 17번
-
 1. 정의에 따라 그렇다.
 2. 그렇다.
 3. 전기력선의 수는 전하에 비례한다.
@@ -450,24 +375,18 @@ $$
 따라서 답은 **3번**이다.
 
 ## 18번
-
 $\vec{\beta}=3\vec{x}+4\vec{y}$ 이므로 그 크기는 5이다.
 한편
-
 $$
 \beta=\frac{2\pi}{\lambda}
 $$
-
 이므로
-
 $$
 \lambda=0.4 \pi
 $$
-
 이다. 따라서 답은 **2번** 이다.
 
 ## 19번
-
 1. 도체 사이에서 자속 방향이 서로 반대이므로 상쇄되어 감소한다.
 2. 사이에는 자속이 증가하고 바깥쪽에서는 자속이 적어지므로 이러한 밀도차를 해소하기 위해서 서로 멀어지려 한다고 생각할 수 있다.
 3. 그렇다.
@@ -476,16 +395,12 @@ $$
 따라서 답은 **1번** 이다.
 
 ## 20번
-
 컷오프 주파수는 다음과 같이 구해진다.
 (참고: https://resources.system-analysis.cadence.com/blog/msa2021-propagation-in-the-parallel-plate-waveguide-tem-mode)
-
 $$
 f_c=\frac{1}{2d\sqrt{\epsilon\mu}}
 $$
-
 따라서 판 간격의 값 $d$는
-
 $$
 \begin{equation}
 \begin{split}
@@ -495,7 +410,6 @@ d&=\frac{1}{2f_c\sqrt{\epsilon\mu}}\\
 \end{split}
 \end{equation}
 $$
-
 이므로 답은 **2번** 이다.
 
 이것까지 알아야 하나 싶다...

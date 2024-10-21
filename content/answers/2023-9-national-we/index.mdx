@@ -13,15 +13,11 @@ description:
 [유튜브에서 해설 영상 보기](https://youtu.be/_GSmOvpfC8U)
 
 ## 1번
-
 잡음이 있을 때의 채널 용량은
-
 $$
 C=B log_2(1+SNR)
 $$
-
 이다. 주어진 보기들에 대해 채널 용량을 구해보자.
-
 1. $C=500\times log_2(1+63)=500\times 6=2000$
 2. $C=600\times log_2(1+31)=600\times 5=3000$
 3. $C=400\times log_2(1+127)=400\times 7=2800$
@@ -30,7 +26,6 @@ $$
 따라서 답은 **4번** 이다.
 
 ## 2번
-
 1. 그렇다
 2. 그렇다. 경계면에서 새로운 파동이 퍼져 나가므로 장애물 뒤로도 파동이 닿을 수 있다.
 3. 그렇다.
@@ -39,7 +34,6 @@ $$
 따라서 답은 **4번** 이다.
 
 ## 3번
-
 1. 그렇다.
 2. 그렇다. 그 구간을 $0$으로 채울 수 있지만(Zero-Padding), 이렇게 하면 갑자기 새로운 $0$이 나타나서 다른 주파수가 나타날 수 있으므로 이보다는 해당 심볼의 끝부분을 복사한 CP(Cyclic Prefix)로 채워서 위상 차이만 발생하게 만든다.
 3. 모든 심볼의 위상이 겹쳐지는 순간이 최대전력이 발생하는 순간인데 이 때는 평균전력보다 훨씬 큰 전력이 나타나므로 OFDM의 PAPR은 크다.
@@ -48,7 +42,6 @@ $$
 따라서 답은 **3번** 이다.
 
 ## 4번
-
 1. 앙각이 증가하면 더 수직에 가까이 위치한다는 것이므로 거리가 짧아질 것이다.
 2. 정지궤도 위성은 $36,000 \text{ km}$ 정도에 위치하므로 지연시간이 꽤 된다. 이는 저궤도 위성보다 더 멀다는 뜻이므로 신호 감쇄도 더 심할 것이다.
 3. 그렇다.
@@ -57,27 +50,19 @@ $$
 따라서 답은 **4번**이다.
 
 ## 5번
-
 비트 에너지는 한 비트 시간과 전력을 곱한 값이다. 그리고 한 비트 시간은 비트 전송률의 역수이므로
-
 $$
 E_b=S\times \frac{1}{R}
 $$
-
 이다. 그리고 잡음전력은 $N$이므로 잡음전력밀도는
-
 $$
 N_0=\frac{N}{W}
 $$
-
 이다. 따라서 비트에너지 대 잡음전력밀도는
-
 $$
 \frac{\frac{S}{R}}{\frac{N}{W}}=\frac{SW}{NR}
 $$
-
 이다. 각 보기별로 구해보면
-
 1. $\frac{1\times 4}{2\times 1}=2$
 2. $\frac{1\times 2}{2\times 4}=\frac{1}{4}$
 3. $\frac{2\times 2}{1\times 1}=4$
@@ -86,68 +71,55 @@ $$
 따라서 답은 **3번** 이다.
 
 ## 6번
-
 파장을 구해보면
-
 $$
 \begin{equation}
-    \begin{split}
-        \lambda&=\frac{c}{f}\\
-        &=\frac{3\times 10^8}{300\times 10^6}\\
-        &=\frac{3\times 10^8}{3\times 10^8}\\
-        &=1 \text{ m}
-    \end{split}
+\begin{split}
+\lambda&=\frac{c}{f}\\
+&=\frac{3\times 10^8}{300\times 10^6}\\
+&=\frac{3\times 10^8}{3\times 10^8}\\
+&=1 \text{ m}
+\end{split}
 \end{equation}
 $$
-
 이다. 이로부터 원 신호전력 $16 \text{ W}$ 대비 $1 \text{ km}$ 떨어진 곳에서 수신되는 전력의 비율은
-
 $$
 \begin{equation}
-    \begin{split}
-        16\times\left(\frac{\lambda}{4\pi d}\right)^2&=16\times \frac{1}{16\pi^2 10^6}\\
-        &=\frac{1}{\pi^2 10^6}
-    \end{split}
+\begin{split}
+16\times\left(\frac{\lambda}{4\pi d}\right)^2&=16\times \frac{1}{16\pi^2 10^6}\\
+&=\frac{1}{\pi^2 10^6}
+\end{split}
 \end{equation}
 $$
-
 이다. 한편 이득이 $30\times {dB}$라는 것은 $10^3$배의 이득이 있다는 뜻이므로 위에 곱하면 수신 전력은
-
 $$
 \frac{1}{\pi^2 10^6} \times 10^6=\frac{1}{\pi ^2}
 $$
-
 이므로 답은 **1번** 이다.
 
 ## 7번
-
 카슨 법칙으로부터 대역폭을 구하면
-
 $$
 \begin{equation}
-    \begin{split}
-        B&=2(f_m+m_f)=2(20+500)\\
-        &=1040 \text{ kHz}
-    \end{split}
+\begin{split}
+B&=2(f_m+m_f)=2(20+500)\\
+&=1040 \text{ kHz}
+\end{split}
 \end{equation}
 $$
-
 이다. 변조지수는
-
 $$
 \begin{equation}
-    \begin{split}
-        \beta&=\frac{m_f}{f_m}\\
-        &=\frac{500}{20}\\
-        &=25
-    \end{split}
+\begin{split}
+\beta&=\frac{m_f}{f_m}\\
+&=\frac{500}{20}\\
+&=25
+\end{split}
 \end{equation}
 $$
-
 이다. 따라서 답은 **1번** 이다.
 
 ## 8번
-
 1. PSK는 심볼 간의 각도가 $180^\circ$지만 FSK는 $90^\circ$이므로 FSK는 같은 간격을 얻기 위해서는 더 강한 에너지를 써야 한다.
 2. 그렇다. 위상에 정보가 없으므로 비동기 복조를 할 수 있다.
 3. QPSK는 동일한 대역폭에 $2$비트, BPSK는 $1$비트를 담으므로 QPSK의 대역폭 대비 전송 비트량, 즉 대역폭 효율이 더 좋다.
@@ -156,63 +128,50 @@ $$
 따라서 답은 **3번** 이다.
 
 ## 9번
-
 반사계수를 구해보면
-
 $$
 \begin{equation}
-    \begin{split}
-        \Gamma&=\frac{Z_L-Z_0}{Z_L+Z_0}\\
-        &=\frac{30-50}{30+50}\\
-        &=-\frac{1}{4}
-    \end{split}
+\begin{split}
+\Gamma&=\frac{Z_L-Z_0}{Z_L+Z_0}\\
+&=\frac{30-50}{30+50}\\
+&=-\frac{1}{4}
+\end{split}
 \end{equation}
 $$
-
 이다. 그런데 반사계수는 전압 또는 전류에 대한 것이므로 전력에 대한 반사계수는 이를 제곱한
-
 $$
 \frac{1}{16}
 $$
-
 이다. 따라서 반사되는 전력은
-
 $$
 64\times{1}{16}=4 \text{ W}
 $$
-
 이므로 답은 **2번** 이다.
 
 ## 10번
-
 주어진 함수의 푸리에 변환(또는 급수)는 sinc 함수가 되는데, 이 함수는 $200 \mu\text{s}$의 절반의 역수인 $10 \text{kHz}$와 이의 정수배 지점에서 $0$이다.
 따라서 이를 $1 \text{ MHz}$로 변조하였을 때, $1000\pm10 m\text{m은 정수}$에 해당하는 주파수 성분은 존재하지 않는다.
 주어진 보기에서 이에 해당하는 것은 **3번** 이다.
 
 ## 11번
-
 전파의 속도는
-
 $$
 v=\frac{1}{\sqrt{\mu\epsilon}}
 $$
-
 이다. 주어진 비유전율과 비투자율에 의해
 
 $$
 \begin{equation}
-    \begin{split}
-        v&=\frac{1}{\sqrt{\mu_0\epsilon_0}}\times \frac{1}{\sqrt{mu_r\epsilon_r}}\\
-        &=\frac{c}{\sqrt{4\times 64}}\\
-        &=\frac{c}{16}
-    \end{split}
+\begin{split}
+v&=\frac{1}{\sqrt{\mu_0\epsilon_0}}\times \frac{1}{\sqrt{mu_r\epsilon_r}}\\
+&=\frac{c}{\sqrt{4\times 64}}\\
+&=\frac{c}{16}
+\end{split}
 \end{equation}
 $$
-
 이므로 답은 **4번** 이다.
 
 ## 12번
-
 1. 그렇다.
 2. 백색가우시안 잡음의 근원은 열에 의한 전하의 무작위적인 움직임이다. 무작위적인 움직임들이 다 더해지면 중심 극한 정리에 따라 그 확률분포가 정규분포가 된다.
 3. 그렇다.
@@ -221,107 +180,77 @@ $$
 따라서 답은 **2번** 이다.
 
 ## 13번
-
 밀리미터파나 레이더는 매우 짧은 파장을 쓸 것 같으므로 답은 **1번**이다.
 
 ## 14번
-
 파장을 구하면
-
 $$
 \begin{equation}
-    \begin{split}
-        \lambda&=\frac{c}{f}\\
-        &=\frac{3\times 10^8}{12\times 10^9}\\
-        &=0.025 \text{ m}
-    \end{split}
+\begin{split}
+\lambda&=\frac{c}{f}\\
+&=\frac{3\times 10^8}{12\times 10^9}\\
+&=0.025 \text{ m}
+\end{split}
 \end{equation}
 $$
-
 이다. 최대 주파수 편이는
-
 $$
 \Delta f=\frac{v}{\lambda}
 $$
-
 이므로, 주어진 조건들로부터 최대 이동속도를 구하면
-
 $$
 \begin{equation}
-    \begin{split}
-        v&=\Delta f\times \lambda\\
-        &=10\times 10^3\times 0.025\\
-        &=250 \text{ m/s}
-    \end{split}
+\begin{split}
+v&=\Delta f\times \lambda\\
+&=10\times 10^3\times 0.025\\
+&=250 \text{ m/s}
+\end{split}
 \end{equation}
 $$
-
 이다. 따라서 답은 **4번** 이다.
 
 ## 15번
-
 거리 분해능은 최소 구분 가능한 거리를 말한다. 펄스 A가 한 지점에서 반사되어 돌아오고, 펄스 B가 그 지점으로부터 분해능만큼 떨어진 곳에서 반사되어 돌아온다고 하자. 이때 두 펄스가 동시에 수신되면 안될 것이다. 한 펄스가 온전히 수신된 다음에 다른 펄스가 들어와야만 한다.
 이렇게 될 때, 펄스 B는 펄스 A 대비 분해능의 두 배 만큼의 거리를 이동한다(갔다가 반사되어 돌아오니까). 그 시간이 바로 펄스폭 $1 \mu \text{S}$이므로 거리 분해능은
-
 $$
 \frac{1}{2}\times 3\times 10^8 \times 1\times 10^{-6}=150 \text{ m}
 $$
-
 이다. 따라서 답은 **2번** 이다.
 
 ## 16번
-
 한 셀의 중심으로부터 가장 가까운 같은 번호의 셀의 중심까지의 거리는 육각형의 변이 $3$개 있는 것이다. 한 변의 길이는 반경과 같으므로 셀 중심 간 최소거리는
-
 $$
 3\times 2=6 \text{ km}
 $$
-
 이므로 답은 **1번** 이다.
 
 ## 17번
-
 메시지 안에 DC신호가 있는데, 이 DC신호는 정보로서의 가치가 없다. 뭐가 변해야 정보를 담지, 그냥 일정한 신호만 보내는 게 무슨 정보를 전달하는 것이겠는가?
 그러므로 메시지의 교류 성분의 진폭인 $5$만큼의 DC 신호를 만드는 데 이 직류 성분을 쓰자. 그러면
-
 $$
 A_c+2\geq5 \Rightarrow A_c\geq 3
 $$
-
 이므로 답은 **3번** 이다.
 
 ## 18번
-
 $s_m(t)$의 스펙트럼은
-
 $$
 \frac{1}{2}M(f-f_c)+\frac{1}{2}M(f+f_c)
 $$
-
 이다. 여기에 코사인을 곱하면 그 스펙트럼은
-
 $$
-\frac{1}{4}M(f-2f_c)+\frac{1}{4}M(f)+\frac{1}{4}M(f)+\frac{1}{4}M(f+2f_c)
+\frac{1}{4}M(f-2f_c)+\frac{1}{4}M(f)+\frac{1}{4}M(f)+\frac{1}{4}M(f+2f_c)=\frac{1}{4}M(f-2f_c)+\frac{1}{2}M(f)+\frac{1}{4}M(f+2f_c)
 $$
-
-$$
-=\frac{1}{4}M(f-2f_c)+\frac{1}{2}M(f)+\frac{1}{4}M(f+2f_c)
-$$
-
 이다. 따라서 답은 **4번** 이다.
 
 ## 19번
-
 $1 \text{ km}$ 거리에서의 구의 면적은 $4\pi \times 10^6 \text{m}^2$이다. 따라서 이 거리에서의 전력밀도는
-
 $$
 \frac{40}{4\pi \times 10^6}=\frac{10}{\pi} \text{ }\mu\text{W/m}^2
 $$
-
 이므로 답은 **3번** 이다.
 
 ## 20번
-
 1. 각 심볼 내에서 $0$이 되는 부분이 없으므로 NRZ이고, 신호의 부호가 $\pm$이므로 양극성이다.
 2. 차동 부호화에서는 앞 비트에 오류가 발생하면 뒤 비트들은 다 반전되어버린다.
 3. 그렇다. 같은 값이먼 $1$, 다른 값이면 $0$이기 때문이다. 이는 XOR의 출력을 NOT한 것과 같으므로 XNOR 연산이다.
