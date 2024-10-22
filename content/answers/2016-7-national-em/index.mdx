@@ -450,3 +450,154 @@ $$
 이다. 따라서 답은 **2번** 이다.
 
 ## 16번
+전파정수는 외워두자. 그러나, 외우지 않더라도 풀 수 있다. $\alpha$는 $e^{-\alpha z}$형태로 거리와 곱해져서 무차원 숫자가 되어 지수함수의 인자로 입력된다.
+따라서 주어진 보기들 중 거리의 역수 단위를 갖는 것을 찾자. $\sqrt{\frac{L}{C}}$는 저항 단위를 포함하고 있으므로 $R$과 곱해지면 저항의 제곱 단위가 된다. 따라서 2,4번을 제외한다.
+그러면
+$$
+\alpha=\sqrt{\frac{C}{L}}
+$$
+밖에 남지 않는다.
+다음으로
+$$
+\beta=\omega \sqrt{LC}
+$$
+이다. 이 또한 외우지 않고도 $\omega$가 시간의 역수이므로 시간 단위를 갖는 $\sqrt{LC}$가 되어야 함을 알 수 있다. 그러면 남는 것은 **3번** 이다.
+검증을 위해 위상속도를 살펴보면
+$$
+v_p=\frac{1}{\sqrt{LC}}
+$$
+이므로 3번이 옳음을 알 수 있다.
+
+## 17번
+공극이 없을 때 자기저항은
+$$
+\mathcal{R}=\frac{l}{\mu_0mu_rS}
+$$
+이다. 공극의 자기저항은
+$$
+\mathcal{R_g}=\frac{l_g}{\mu_0S}
+$$
+이므로 공극을 만들었을 때의 총 자기저항은
+$$
+\mathcal{R}+\mathcal{R_g}=\frac{l}{\mu_0\mu_rS}+\frac{l_g}{\mu_0S}
+$$
+이므로 공극이 없을 때의 자기저항으로 나누면
+$$
+\begin{equation}
+\begin{split}
+\frac{\mathcal{R}+\mathcal{R_g}}{\mathcal{R}}&=1+\frac{\frac{l_g}{\mu_0S}}{\frac{l}{\mu_0\mu_rS}}\\
+&=1+\frac{\mu_r l_g}{l}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **1번** 이다.
+
+사실 이 또한 직접 계산하지 않고도 풀 수 있는데, 일단 자기저항은 더 클 것이므로 답은 1, 3번 중 하나이다. 다음으로 무차원 숫자 1과 더해질 수 있는 것은 마찬가지로 무차원 숫자이다.
+$\mu_r$은 무차원 숫자이므로, 길이를 길이로 나눈 $\frac{l_g}{l}$과 곱해진 1번이 답이어야 한다. 3번은 면적의 역수의 단위를 가질 것이다.
+
+## 18번
+구 표면의 넓이는
+$$
+\begin{equation}
+\begin{split}
+S&=4\pi r^2\\
+&=4\pi\times2^2\\
+&=16\pi\text{ m}^2
+\end{split}
+\end{equation}
+$$
+이다. 이 넓이와 전속밀도의 곱이 총 전하이므로
+$$
+\begin{equation}
+\begin{split}
+Q&=16\pi\times 20\\
+&=320\pi\text{ C}
+\end{split}
+\end{equation}
+$$
+이다. 그리고 구의 부피는
+$$
+\begin{equation}
+\begin{split}
+V&=\frac{4}{3}\pi r^3\\
+&=\frac{4}{3}\pi\times 2^3\\
+&=\frac{32\pi}{3}\text{ m}^3
+\end{split}
+\end{equation}
+$$
+이다.
+체적전하밀도를 구하기 위해서 위의 총 전하를 부피로 나누면
+$$
+\begin{equation}
+\begin{split}
+\frac{Q}{V}&=\frac{320\pi}{\frac{32\pi}{3}}\\
+&=30\text{ C/m}^3
+\end{split}
+\end{equation}
+$$
+이므로 답은 **3번** 이다.
+
+## 19번
+동축선의 내경과 외경을 각각 $a,b$라 하자.
+단위길이당 정전용량은
+$$
+\begin{equation}
+\begin{split}
+C&=\frac{2\pi \epsilon}{ln\frac{b}{a}}\\
+&=\frac{2\pi\times 3\epsilon_0}{ln\frac{b}{a}}\\
+&=\frac{2}{3}\times10^{-9}\\
+\Rightarrow ln\frac{b}{a}&=\frac{6\pi\epsilon_0}{\frac{2}{3}}\\
+&=9\pi\epsilon_0\times10^9
+\end{split}
+\end{equation}
+$$
+이다. 그리고 단위길이당 인덕턴스는
+$$
+\begin{equation}
+\begin{split}
+L&=\frac{\mu}{2\pi}ln\frac{b}{a}\\
+&=\frac{3\mu_0}{2\pi}ln\frac{b}{a}\\
+&=\frac{3\mu_0}{2\pi}\times9\pi\epsilon_0\times10^9
+\end{split}
+\end{equation}
+$$
+이다. 따라서 특성 임피던스는
+$$
+\begin{equation}
+\begin{split}
+Z&=\sqrt{\frac{L}{C}}\\
+&=\sqrt{\frac{\frac{3\mu_0}{2\pi}\times9\pi\epsilon_0\times10^9\times10^9}{\frac{2}{3}}}\\
+&=\sqrt{\left(\frac{3}{2}\right)^2\times3^2\times \mu_0\epsilon_0}\\
+&=\frac{3}{2}\times 3\times10^9\times\frac{1}{3\times 10^8}\\
+&=\frac{3}{2}\times10\text{ }\Omega
+\end{split}
+\end{equation}
+$$
+이므로 답은 **3번** 이다.
+
+## 20번
+전송선 쪽에서 본 입력 임피던스는
+$$
+Z_{in,l}=Z_0\frac{Z_L+jZ_0tan\beta L}{Z_0+jZ_Ltan\beta L}
+$$
+인데 $Z_L=\infty$이므로
+$$
+\begin{equation}
+\begin{split}
+Z_{in,l}&=Z_0\frac{1}{jtan\beta L}\\
+&=-jZ_0cot\beta L
+\end{split}
+\end{equation}
+$$
+이다.
+따라서 입력임피던스의 허수 부분이 0이 되기 위해서는
+$$
+\begin{equation}
+\begin{split}
+\frac{1}{j\omega C}+Z_{in,l}&=0\\
+&=-j\frac{1}{\omega C}+(-jZ_0cot\beta L)\\
+\Rightarrow C&=-\frac{1}{\omega Z_0cot\beta L}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **2번** 이다.
