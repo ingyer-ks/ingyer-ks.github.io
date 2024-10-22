@@ -1,0 +1,52 @@
+---
+title: 나이퀴스트 ISI 기준
+etc: 전자공학
+description: 나이퀴스트 ISI 기준
+year:
+organization:
+level:
+subject:
+---
+$h(t)$가 채널의 임펄스 응답이라고 하자. 그리고 $x[n]$이 $T_s$마다 전송되는 심볼들이고, $y(t)$가 수신되는 신호라고 하자. 그러면
+$$
+y(t)=\sum_{n=-\infty}^\infty x[n]h(t-nT_s)
+$$
+로 표현된다. 이 수신 신호를 $T_s$마다 샘플링한다고 하면, 다음과 같이 이산 신호로 나타낼 수 있다.
+$$
+\begin{equation}
+\begin{split}
+y[k]&=y(kT_s)=\sum_{n=-\infty}^\infty x[n]h[k-n]\\
+&=x[k]h[0]+\sum_{n\neq k}x[n]h[k-n]
+\end{split}
+\end{equation}
+$$
+위 식에서 현재 시점 $k$의 입력에 대한 응답인 $x[k]h[0]$을 제외한 $\sum_{n\neq k}x[n]h[k-n]$가 바로 심벌 간 간섭, ISI이다. 따라서 만약
+$$
+h[n]=h(nT_s)=\begin{cases}
+1 & \text{if }n=0\\
+0 & \text{otherwise}
+\end{cases}
+$$
+이라면, ISI를 제거할 수 있다. 이 $h(t)$에 임펄스 열 $\sum_{k=-\infty}^\infty\delta(t-kT_s)$를 곱하면, $n=0$, 즉 $t=nT_s=0$에서만 델타 함수 하나가 남는다. 식으로 쓰면
+$$
+h(t)\sum_{k=-\infty}^\infty\delta(t-kT_s)=\delta(t)
+$$
+이다. 양변을 푸리에 변환하자.
+$$
+H(f)*\frac{1}{T_s}\sum_{k=-\infty}^\infty\delta\left(f-\frac{k}{T_s}\right)=1
+$$
+즉
+$$
+\frac{1}{T_s}\sum_{k=-\infty}^\infty H\left(f-\frac{k}{T_s}\right)=1
+$$
+이다. 이 식의 의미는 $H(f)$가 $\frac{1}{T_s}$를 주기로 반복되어 나타나는 것을 다 더하면 상수가 된다는 것이다. 그림으로 표현하면 다음과 같다.
+![](fig1.svg)
+이런 그림이 그려지려면 어떻게 해야 할까? 우선 $H(f)$의 대역폭은 $\frac{1}{2T_s}\geq0$이어야 한다. 만약 그렇지 않다고 해 보자. 가령 다음 그림과 같이 말이다.
+![](fig2.svg)
+이러면 반복되는 스펙트럼을 아무리 더해도 만나지 않는 부분이 생기므로, 위 식을 만족시킬 수가 없다. 따라서, 심벌률이 $\frac{1}{T_s}$인 경우 ISI를 없애려면 최소한 $\frac{1}{2T_s}$의 대역폭이 필요함을 증명하였다.
+여기서 만족해도 좋지만, 조금 더 나아가보면, $H(f)$는 좌우 대칭이어야 한다. 안 그러면 $\frac{n}{T_s}$를 중심으로 양쪽이 똑같이 항상 1이 되지 못하니까.
+또한, $\left(\pm\frac{1}{2T_s},0.5\right)$를 중심으로 기함수여야 한다. 가령 다음 그림과 같이 말이다.
+![](fig3.svg)
+그러면, 이들을 다 더하면 다음과 같이 스펙트럼이 겹치는 부분이 더해져서 1이 된다.
+![](fig4.svg)
+이상으로 나이퀴스트 ISI 기준에 대해 알아보았다.
