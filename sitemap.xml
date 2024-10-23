@@ -1,527 +1,744 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-  <loc>https://ingyerlog.kr/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>1.00</priority>
+	<loc>https://ingyerlog.kr/</loc>
+	<lastmod>2024-10-23T06:05:13+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/year/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ingyerlog.kr/year/</loc>
+	<lastmod>2024-10-23T06:05:13+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/subject/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ingyerlog.kr/subject/</loc>
+	<lastmod>2024-10-23T06:05:13+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/org/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ingyerlog.kr/org/</loc>
+	<lastmod>2024-10-23T06:05:13+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/level/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ingyerlog.kr/level/</loc>
+	<lastmod>2024-10-23T06:05:13+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/etc/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://ingyerlog.kr/etc/</loc>
+	<lastmod>2024-10-23T06:05:13+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/year/2024년/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/year/2024%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/year/2023년/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/year/2024%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/year/2022년/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2024-7-national-em/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/year/2021년/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2024-7-national-ec/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/year/2020년/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2024-7-national-comm/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/year/2019년/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2024-9-national-we/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/year/2018년/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2024-9-national-ee/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/year/2017년/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2024-9-assembly-ee/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/year/2016년/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2024-9-assembly-comm/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/year/2015년/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2024-9-local-ee/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/year/2014년/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2024-9-local-comm/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/year/2013년/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/year/2023%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/subject/통신이론/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/year/2023%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/subject/전기자기학/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2023-7-national-em/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/subject/전자회로/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2023-7-national-ec/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/subject/디지털공학/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2023-7-national-comm/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/subject/전자공학개론/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2023-7-seoul-digital/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/subject/무선공학개론/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2023-7-seoul-em/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/subject/방송통신공학/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2023-7-seoul-comm/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/org/국가직/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2023-9-national-we/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/org/경찰/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2023-9-national-ee/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/org/지방직/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2023-9-assembly-ee/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/org/국회/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2023-9-assembly-comm/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/org/서울시/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2023-9-local-ee/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/org/군무원/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2023-9-local-comm/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/level/9급/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2023-police-comm/</loc>
+	<lastmod>2024-10-23T06:05:16+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/level/간부/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/year/2022%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/level/7급/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/year/2022%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/etc/안내/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2022-7-national-em/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/etc/전자공학/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2022-7-national-ec/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/etc/정보/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://ingyerlog.kr/2022-7-national-comm/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2024-9-national-ee/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2022-7-mil-ec/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2023-7-national-em/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2022-7-seoul-digital/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2023-7-national-ec/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2022-7-seoul-em/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2023-7-national-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2022-7-seoul-comm/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2023-7-seoul-em/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2022-9-national-we/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2023-7-seoul-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2022-9-national-ee/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2023-9-national-we/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2022-9-assembly-be/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2023-9-national-ee/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2022-9-local-ee/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2023-9-assembly-ee/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2022-9-local-comm/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2023-9-assembly-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/year/2021%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2023-9-local-ee/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/year/2021%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2023-9-local-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2021-7-national-em/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2023-police-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2021-7-national-ec/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2022-7-national-em/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2021-7-national-comm/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2022-7-national-ec/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2021-7-seoul-digital/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2022-7-national-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2021-7-seoul-em/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2022-7-mil-ec/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2021-7-seoul-comm/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2022-7-seoul-digital/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2021-9-national-we/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2022-7-seoul-em/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2021-9-seoul-ee/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2022-7-seoul-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2021-9-seoul-comm/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2022-9-national-we/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/year/2019%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2022-9-national-ee/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/year/2019%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2022-9-assembly-be/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2019-7-national-em/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2022-9-local-ee/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2019-7-national-ec/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2022-9-local-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2019-7-national-comm/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2021-7-national-em/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2019-7-seoul-digital/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2021-7-national-ec/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2019-7-seoul-em/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2021-7-national-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2019-7-seoul-comm/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2021-7-seoul-digital/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2019-9-national-we/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2021-7-seoul-em/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2019-9-assembly-ee/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2021-7-seoul-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/year/2018%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:17+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2021-9-national-we/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/year/2018%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2021-9-seoul-ee/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2018-7-national-em/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2021-9-seoul-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2018-7-national-ec/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2020-7-national-em/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2018-7-national-comm/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2020-7-national-ec/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2018-7-seoul-em/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2020-7-national-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2018-9-national-we/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2020-7-seoul-digital/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/year/2017%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2020-7-seoul-em/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/year/2017%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2020-7-seoul-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2017-7-national-em/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2019-7-national-em/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2017-7-national-ec/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2019-7-national-ec/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2017-7-national-comm/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2019-7-national-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2017-7-seoul-em/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2019-7-seoul-digital/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/year/2016%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2019-7-seoul-em/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/year/2016%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2019-7-seoul-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2016-7-national-em/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2019-9-assembly-ee/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2016-7-national-comm/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2018-7-national-em/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/year/2015%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2018-7-national-ec/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/year/2015%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2018-7-national-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2015-7-national-comm/</loc>
+	<lastmod>2024-10-23T06:05:18+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2018-7-seoul-em/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/year/2014%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2017-7-national-em/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/year/2020%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2017-7-national-ec/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/year/2014%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2017-7-national-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2014-7-national-comm/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2017-7-seoul-em/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/year/2013%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2016-7-national-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/year/2020%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2015-7-national-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2020-7-national-em/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2014-7-national-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2020-7-national-ec/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/2013-7-national-comm/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2020-7-national-comm/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/License/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2020-7-seoul-digital/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/Notice/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2020-7-seoul-em/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/pdf/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2020-7-seoul-comm/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/introducing_myself/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2020-9-national-we/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/phase_shift_oscillator/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/year/2013%EB%85%84/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/timelimit_and_bandlimit/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/2013-7-national-comm/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://ingyerlog.kr/opencv_build/</loc>
-  <lastmod>2024-03-24T14:53:05+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://ingyerlog.kr/subject/%EC%A0%84%EA%B8%B0%EC%9E%90%EA%B8%B0%ED%95%99/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
-
-
+<url>
+	<loc>https://ingyerlog.kr/subject/%ED%86%B5%EC%8B%A0%EC%9D%B4%EB%A1%A0/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/subject/%EC%A0%84%EA%B8%B0%EC%9E%90%EA%B8%B0%ED%95%99/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/subject/%EC%A0%84%EC%9E%90%ED%9A%8C%EB%A1%9C/</loc>
+	<lastmod>2024-10-23T06:05:19+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/subject/%EC%A0%84%EC%9E%90%ED%9A%8C%EB%A1%9C/</loc>
+	<lastmod>2024-10-23T06:05:20+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/subject/%ED%86%B5%EC%8B%A0%EC%9D%B4%EB%A1%A0/</loc>
+	<lastmod>2024-10-23T06:05:20+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/subject/%EB%AC%B4%EC%84%A0%EA%B3%B5%ED%95%99%EA%B0%9C%EB%A1%A0/</loc>
+	<lastmod>2024-10-23T06:05:20+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/subject/%EB%AC%B4%EC%84%A0%EA%B3%B5%ED%95%99%EA%B0%9C%EB%A1%A0/</loc>
+	<lastmod>2024-10-23T06:05:20+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/subject/%EB%94%94%EC%A7%80%ED%84%B8%EA%B3%B5%ED%95%99/</loc>
+	<lastmod>2024-10-23T06:05:20+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/subject/%EC%A0%84%EC%9E%90%EA%B3%B5%ED%95%99%EA%B0%9C%EB%A1%A0/</loc>
+	<lastmod>2024-10-23T06:05:20+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/subject/%EC%A0%84%EC%9E%90%EA%B3%B5%ED%95%99%EA%B0%9C%EB%A1%A0/</loc>
+	<lastmod>2024-10-23T06:05:20+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/subject/%EB%94%94%EC%A7%80%ED%84%B8%EA%B3%B5%ED%95%99/</loc>
+	<lastmod>2024-10-23T06:05:20+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/org/%EC%A7%80%EB%B0%A9%EC%A7%81/</loc>
+	<lastmod>2024-10-23T06:05:20+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/org/%EC%A7%80%EB%B0%A9%EC%A7%81/</loc>
+	<lastmod>2024-10-23T06:05:21+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/org/%EA%B5%AD%EA%B0%80%EC%A7%81/</loc>
+	<lastmod>2024-10-23T06:05:21+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/org/%EA%B5%AD%ED%9A%8C/</loc>
+	<lastmod>2024-10-23T06:05:21+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/org/%EA%B5%AD%EA%B0%80%EC%A7%81/</loc>
+	<lastmod>2024-10-23T06:05:21+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/org/%EA%B2%BD%EC%B0%B0/</loc>
+	<lastmod>2024-10-23T06:05:21+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/org/%EA%B5%AD%ED%9A%8C/</loc>
+	<lastmod>2024-10-23T06:05:21+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/subject/%EB%B0%A9%EC%86%A1%ED%86%B5%EC%8B%A0%EA%B3%B5%ED%95%99/</loc>
+	<lastmod>2024-10-23T06:05:21+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/org/%EA%B2%BD%EC%B0%B0/</loc>
+	<lastmod>2024-10-23T06:05:21+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/subject/%EB%B0%A9%EC%86%A1%ED%86%B5%EC%8B%A0%EA%B3%B5%ED%95%99/</loc>
+	<lastmod>2024-10-23T06:05:21+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/org/%EA%B5%B0%EB%AC%B4%EC%9B%90/</loc>
+	<lastmod>2024-10-23T06:05:21+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/org/%EC%84%9C%EC%9A%B8%EC%8B%9C/</loc>
+	<lastmod>2024-10-23T06:05:21+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/org/%EA%B5%B0%EB%AC%B4%EC%9B%90/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/level/9%EA%B8%89/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/level/7%EA%B8%89/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/org/%EC%84%9C%EC%9A%B8%EC%8B%9C/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/level/9%EA%B8%89/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/level/7%EA%B8%89/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/etc/%EC%95%88%EB%82%B4/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/etc/%EC%A0%84%EC%9E%90%EA%B3%B5%ED%95%99/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/level/%EA%B0%84%EB%B6%80/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/etc/%EC%95%88%EB%82%B4/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/License/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/Notice/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/pdf/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/introducing_myself/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/etc/%EC%A0%84%EC%9E%90%EA%B3%B5%ED%95%99/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/phase_shift_oscillator/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/timelimit_and_bandlimit/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/nyquist_isi_criterion/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/etc/%EC%A0%95%EB%B3%B4/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/level/%EA%B0%84%EB%B6%80/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/etc/%EC%A0%95%EB%B3%B4/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://ingyerlog.kr/opencv_build/</loc>
+	<lastmod>2024-10-23T06:05:22+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
 </urlset>
