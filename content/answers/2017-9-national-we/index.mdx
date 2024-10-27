@@ -74,7 +74,7 @@ $$
 \begin{equation}
 \begin{split}
 L&=\left(\frac{4\pi d}{\lambda}\right)^2\\
-=\left(\frac{4\pi df}{c}\right)^2\\
+&=\left(\frac{4\pi df}{c}\right)^2\\
 \end{split}
 \end{equation}
 $$
@@ -91,30 +91,21 @@ $$
 $$
 
 이므로, 이와 $M(f)$를 콘볼루션하면 $M(f)$가 $\pm f_c$ 주변으로 옮겨가고, 계수에 $\frac{1}{2}$가 곱해진다.
-그리고 전력 스펙트럼 밀도는 각 항들을 제곱해서 더하므로
 
+다음으로 전력을 구해 보자. 메시지 신호를 $m(t)$라 하고, 그 전력을 $P_m$이라 하면
 $$
 \begin{equation}
 \begin{split}
-S(f)&=\left(\frac{1}{2}\right)^2(M^2(f-f_c)+M^2(f+f_c))\\
-&=\frac{1}{4}(M^2(f-f_c)+M^2(f+f_c))
+P&=\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)cos^2(2\pi f_c t)dt\\
+&=\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)\times\frac{1}{2}(1+cos(4\pi f_c t))dt\\
+&=\frac{1}{2}\left(\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)dt+\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)cos(4\pi f_c t)dt\right)\\
+&=\frac{1}{2}\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)dt\\
+&=\frac{1}{2}P_m
 \end{split}
 \end{equation}
 $$
-
-이다. 한편 $M^2(f)$를 전체 $f$에 대해 적분한 $\int_{-\infty}^\infty M^2(f)df$는 전력이므로(Parseval의 정리), 위 식을 전체 $f$에 대해 적분하면
-
-$$
-\begin{equation}
-\begin{split}
-P&=\frac{1}{4}\left(\int_{-\infty}^\infty M^2(f-f_c)df+\int_{-\infty}^\infty M^2(f+f_c)df\right)\\
-&=\frac{1}{4}\left(\int_{-\infty}^\infty M^2(f)df+\int_{-\infty}^\infty M^2(f)df\right)\\
-&=\frac{1}{2}\int_{-\infty}^\infty M^2(f)df
-\end{split}
-\end{equation}
-$$
-
-이다. 따라서 전력은 절반으로 줄어든다. 그러므로 답은 **4번** 이다.
+이다. 위 식에서 $\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)cos(4\pi f_c t)dt$는 0인데, 그 이유는 $m(t)$는 상대적으로 느린 데 비해 $cos(4\pi f_c t)$는 빠르므로 적분하면 양의 부분과 음의 부분이 상쇄되기 때문이다.
+따라서 전력은 절반으로 줄어든다. 그러므로 답은 **4번** 이다.
 
 ## 8번
 
