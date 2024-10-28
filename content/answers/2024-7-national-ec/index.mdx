@@ -271,8 +271,82 @@ $$
 저주파에서는 입력 전압이 두 $R$에 고르게 분배되므로 출력 전압은 입력 전압의 절반이다. 고주파에서는 $C$에 의해 중간의 $R$이 우회되므로 입력 전압이 그대로 출력으로 나타난다. 따라서 고주파에서 전압이득은 2배 향상되므로 답은 **4번** 이다.
 
 ## 18번
-$L_2$가 주어져 있지 않은데 풀 수 있는지 잘 모르겠다. (풀이를 아시는 분은 ingyer.ks@gmail.com 으로 알려주세요)
-
+발진 주파수에서 $C_G, C_D, C_S, C_C$는 도통되고 RFC는 개방된다고 가정하자. 그리고 MOSFET의 게이트 전압을 $V_{GS}$라 하자. 전압 분배에 MOSFET의 드레인에 걸리는 전압을 $V_{DS}$라 하면
+$$
+\begin{equation}
+\begin{split}
+V_{GS}&=V_{DS}\times\frac{sL_1}{sL_1+\frac{1}{sC}}\\
+\Rightarrow V_{DS}&=V_{GS}\left(1+\frac{1}{s^2L_1C}\right)
+\end{split}
+\end{equation}
+$$
+이다. 드레인에서의 전류 방정식을 세우면
+$$
+\begin{equation}
+\begin{split}
+g_mV_{GS}+\frac{V_{GS}}{sL_1}+\frac{V_{DS}}{R_L}+\frac{V_{DS}}{sL_2}&=0\\
+\Rightarrow g_m+\frac{1}{sL_1}+\left(1+\frac{1}{s^2L_1C}\right)\left(\frac{1}{R_L}+\frac{1}{sL_2}\right)&=0\\
+\Rightarrow g_m+\frac{1}{sL_1}+\frac{1}{R_L}+\frac{1}{s^2L_1CR_L}+\frac{1}{sL_2}+\frac{1}{s^3L_1L_2C}&=0\\
+\Rightarrow \left(g_m+\frac{1}{R_L}\right)s^3L_1L_2CR_L+s^2(L_1+L_2)CR_L+sL_2+R_L&=0
+\end{split}
+\end{equation}
+$$
+$s=j\omega_0$을 대입하면
+$$
+\begin{equation}
+\begin{split}
+\left(g_m+\frac{1}{R_L}\right)(-j\omega_0^3)L_1L_2CR_L-\omega_0^2(L_1+L_2)CR_L+j\omega_0L_2+R_L&=0\\
+\Rightarrow (R_L-\omega_0^2(L_1+L_2)CR_L)+j\omega_0\left(L_2-\omega_0^2L_1L_2CR_Lg_m-\omega_0^2L_1L_2C\right)&=0
+\end{split}
+\end{equation}
+$$
+복소수의 상등에 의해 실수부가 0이어야 하므로
+$$
+\begin{equation}
+\begin{split}
+R_L&=\omega_0^2(L_1+L_2)CR_L\\
+\Rightarrow \omega_0&=\frac{1}{\sqrt{(L_1+L_2)C}}
+\end{split}
+\end{equation}
+$$
+이고 허수부도 0이어야 하므로
+$$
+\begin{equation}
+\begin{split}
+L_2-\omega_0^2L_1L_2CR_Lg_m-\omega_0^2L_1L_2C&=0\\
+\Rightarrow 1-\omega_0^2L_1CR_Lg_m-\omega_0^2L_1C&=0\\
+\Rightarrow 1-\left(\frac{1}{(L_1+L_2)C}\right)(L_1CR_Lg_m+L_1C)&=0\\
+\Rightarrow L_1CR_Lg_m+L_1C&=L_1C+L_2C\\
+\Rightarrow L_1CR_Lg_m&=L_2C\\
+\Rightarrow g_mR_L&=\frac{L_2}{L_1}
+\end{split}
+\end{equation}
+$$
+이다. 주어진 조건에 의해
+$$
+g_mR_L=9\times10^{-3}\times1\times10^3=9
+$$
+이므로
+$$
+L_2=9L_1
+$$
+이다. 이를 발진 주파수 식에 대입하면
+$$
+\omega_0=\frac{1}{\sqrt{10L_1C}}=\frac{1}{\sqrt{10\times L_1\times1\times10^{-6}}}=\frac{1}{\sqrt{L_1\times 10^{-5}}}
+$$
+이다. 주어진 조건에서 $f=\frac{1}{2\pi}\times10^6=\frac{\omega_0}{2\pi}$이므로
+$$
+\begin{equation}
+\begin{split}
+\frac{1}{\sqrt{L_1\times 10^{-5}}}&=10^6\\
+\Rightarrow \frac{1}{L_1\times10^{-5}}&=10^{12}\\
+\Rightarrow L_1&=\frac{1}{10^{-5}\times10^{12}}\\
+\Rightarrow L_1&=10^{-7}\\
+&=0.1\text{ }\mu\text{H}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 답은 **2번** 이다.
 ## 19번
 $f_p$에서 -20 dB/dec의 기울기가 더해지고, $f_t$에서 0 dB를 지나고, $f_z$에서 +20 dB/dec의 기울기가 더해지는 것은 **4번** 이다.
 
