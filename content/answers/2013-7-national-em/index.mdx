@@ -11,3 +11,288 @@ description:
 #
 
 ## 1번
+주어진 점에 대한 점전하에 의한 전계의 크기는
+$$
+E_1=\frac{Q}{4\pi\epsilon_0\times1^2}=\frac{Q}{4\pi\epsilon_0}
+$$
+이고, 무한 선전하에 의한 전계의 크기는
+$$
+E_2=\frac{\rho_l}{2\pi\epsilon_0\times1}=\frac{\rho_l}{2\pi\epsilon_0}
+$$
+이다. 따라서 $E_1=E_2$이기 위해서는
+$$
+\begin{gather}
+\frac{Q}{4\pi\epsilon_0}=\frac{\rho_l}{2\pi\epsilon_0\times1}\\
+\Rightarrow \rho_l=0.5Q
+\end{gather}
+$$
+이므로 답은 **1번** 이다.
+
+## 2번
+ㄱ. 위쪽으로 증가하는 $B$를 줄여아 하므로 전류는 주어진 화살표대로 흘러야 한다.
+
+ㄴ, 위쪽으로 감소하는 $B$를 늘려야 하므로 전류는 주어진 화살표의 반대로 흘러야 한다.
+
+ㄷ. 위쪽으로 감소하는 $B$를 늘려야 하므로 전류는 주어진 화살표대로 흘러야 한다.
+
+ㄹ. 위쪽으로 증가하는 $B$를 줄여아 하므로 전류는 주어진 화살표의 반대로 흘러야 한다.
+
+따라서 답은 **3번** 이다.
+
+## 3번
+자유공간이므로 고유임피던스는
+$$
+\eta_0=\sqrt{\frac{\mu_0}{\epsilon_0}}
+$$
+이다. 그리고 $H=\frac{E}{\eta_0}$이고 전파가 $+\vec{a_z}$ 방향으로 진행하므로 $\vec{H}$의 방향은 $\vec{a_y}$여야 한다. 따라서
+$$
+\vec{H}=\sqrt{\frac{\epsilon_0}{\mu_0}}E_0e^{-j(kz-\omega t)}\vec{a_y}
+$$
+이므로 답은 **1번** 이다.
+
+## 4번
+$$
+Q=CV
+$$
+이다. 처음 상태의 커패시턴스를 $C_1$이라 하면 충전되는 전하량은
+$$
+Q=C_1\times1=C_0
+$$
+이다. 그러고 나서 전원을 끊었으므로 충전된 전하량의 변화는 없을 것이다. 비유전율이 10이 되었으므로 커패시턴스는 10배가 커진 $10C_0$이다. 따라서
+$$
+V=\frac{Q}{C}=\frac{C_0}{10C_0}=0.1\text{ V}
+$$
+이므로 답은 **2번** 이다.
+
+## 5번
+$$
+\begin{equation}
+\begin{split}
+\Phi&=\int \vec{B}\cdot\vec{ds}\\
+&=4cos(10t)
+\end{split}
+\end{equation}
+$$
+이다. 따라서 유도기전력은
+$$
+\begin{equation}
+\begin{split}
+emf&=-\frac{\partial \Phi}{\partial t}\\
+&=-(-4\times10sin(10t))\\
+&=40sin(10t)
+\end{split}
+\end{equation}
+$$
+이다. 따라서 유도기전력의 최댓값이 40 V이고, 단위길이 당 저항이 1 $\Omega$/m이므로 총 저항은 4 $\Omega$이다. 그러므로 전류의 최댓값은
+$$
+I_{max}=\frac{40}{4}=10\text{ A}
+$$
+이고 답은 **3번** 이다.
+
+## 6번
+전도전류밀도는
+$$
+\begin{equation}
+\begin{split}
+J_c&=\sigma E\\
+&=500sin(\omega t)
+\end{split}
+\end{equation}
+$$
+이다. 그리고 변위전류밀도의 크기는
+$$
+\begin{equation}
+\begin{split}
+J_d&=\left|\frac{\partial D}{\partial t}\right|\\
+&=\left|\frac{\partial}{\partial t}\left(2\times\frac{10^{-9}}{36\pi}\times 50sin(\omega t)\right)\right|\\
+&=\omega\times2\times\frac{10^{-9}}{36\pi}\times 50cos(\omega t)\\
+&=2\pi f\times\frac{10^{-7}}{36\pi}\times cos(\omega t)\\
+&=f\times\frac{10^{-7}}{18}\times cos(\omega t)
+\end{split}
+\end{equation}
+$$
+이다. 따라서 둘의 최댓값이 같기 위해서는
+$$
+\begin{equation}
+\begin{split}
+500&=f\times\frac{10^{-7}}{18}\\
+\Rightarrow f&=90\times100\times10^{7}\\
+&=90\text{ GHz}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **3번** 이다. 사실 문제가 엄밀하게 되어 있진 않다.
+
+## 7번
+$$
+\begin{equation}
+\begin{split}
+Q&=\iiint \rho_v dv\\
+&=\int_0 ^a \int_0 ^{\pi} \int _0 ^{2\pi} \frac{e^{-\frac{r}{a}}}{r^2} rsin\theta d\phi rd\theta dr\\
+&=\int_0 ^a \int_0 ^{\pi} \int _0 ^{2\pi}e^{-\frac{r}{a}}sin\theta d\phi d\theta dr\\
+&=2\pi\int_0 ^a e^{-\frac{r}{a}} dr \int_0 ^{\pi}sin\theta d\theta\\
+&=2\pi \times(-a)\left[e^{-\frac{r}{a}}\right]_0 ^a \times [-cos\theta]_0 ^\pi\\
+&=-2\pi a (e^{-1}-1)\times(1+1)\\
+&=\frac{4\pi a(e-1)}{e}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **4번** 이다.
+
+## 8번
+1. 공극에서의 자기저항은
+  $$
+  \begin{equation}
+  \begin{split}
+  \mathcal{R_{air}}&=\frac{l}{\mu_0 S}\\
+  &=\frac{1}{4\pi\times10^{-7\times2}}\\
+  &=\frac{1}{24}\times10^{7}\text{ H}^{-1}
+  \end{split}
+  \end{equation}
+  $$
+  이다.
+2. 자속과 총 자기저항과의 곱은 기자력이다. 따라서
+  $$
+  \begin{equation}
+  \begin{split}
+  \mathcal{R}\Phi=NI\\
+  &=200\times 3\\
+  &=600\text{ Wb/H}
+  \end{split}
+  \end{equation}
+  $$
+  이다.
+3. 자속밀도는 자속을 단면적으로 나눈 것이므로 자속밀도와 총 자기저항과의 곱은 위 값을 단면적으로 나눈
+  $$
+  \frac{600}{2}=300\text{ T/H}
+  $$
+  이다.
+4. $a$의 코어 자기저항은
+  $$
+  \begin{equation}
+  \begin{split}
+  \mathcal{R_a}&=\frac{5+5+5}{5000\times4\pi\times10^{-7}\times2}\\
+  &=\frac{15}{15000\times8\times10^{-7}}\\
+  &=\frac{1}{8\times10^{-4}}\\
+  &=1250\text{ H}^{-1}
+  \end{split}
+  \end{equation}
+  $$
+  이다.
+
+따라서 답은 **4번** 이다.
+
+## 9번
+금속판의 중심에서 $r$만큼 떨어진 지점에 있는 단위전하가 받는 힘(전기장)은
+$$
+\begin{equation}
+\begin{split}
+\vec{E}&=\vec{v}\times \vec{B}\\
+&=r\omega\vec{a_\phi}\times(2\vec{a_z})\\
+&=2r\omega{\vec{a_\rho}}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 기전력을 구하면
+$$
+\begin{equation}
+\begin{split}
+V_{emf}&=\int \vec{E}\cdot\vec{dl}\\
+&=\int_0^a 2r\omega{\vec{a_\rho}}\cdot d\rho\vec{a_\rho}\\
+&=\omega r^2|_0 ^a\\
+&=\omega a^2
+\end{split}
+\end{equation}
+$$
+이므로 답은 **4번** 이다.
+
+## 10번
+1. $\overline{BC}$에서 전류와 자속밀도가 평행하므로 받는 힘은 0이다.
+2. $\overline{CD}$는 $\vec{a_y}$ 방향으로,$\overline{AB}$는 $-\vec{a_y}$ 방향으로 같은 크기의 힘을 받을 것이므로 합력은 0이다.
+3. 토크는
+  $$
+  \begin{equation}
+  \begin{split}
+  \vec{\tau}&=\vec{m}\times\vec{B}\\
+  &=-6\times6\times10^{-3}\vec{a_y}\times1\vec{a_z}\\
+  &=-3.6\times10^{-2}\vec{a_x}\text{ N}\cdot\text{m}
+  \end{split}
+  \end{equation}
+  $$
+  이다.
+4. 루프가 $xy$ 평면과 평행이면 $\vec{m}||\vec{B}$이므로 토크는 $\vec{0}$이다.
+
+따라서 답은 **4번** 이다.
+
+## 11번
+한 변을 $x$축상에 놓고, 그 중점이 원점에 위치하도록 하자. 그러면 루프의 중심은 $(0,1)$에 위치한다. 이 변으로 인한 이 점에서의 자속밀도의 크기를 구하고 4를 곱하면 총 자속밀도가 나올 것이다.
+
+변 위의 어느 위치 $x$에서 루프의 중심까지의 거리는
+$$
+\mathcal{R}=\sqrt{x^2+1}
+$$
+이다. 그리고 이 위치에서 루프의 중심까지의 방향벡터를 $\vec{a_\mathcal{R}}$이라 하자.
+
+이제 비오-사바르 법칙을 이용하자.
+$$
+\begin{equation}
+\begin{split}
+\vec{dB}&=\frac{\mu_0I}{4\pi}\frac{\vec{dl}\times\vec{a_\mathcal{R}}}{\mathcal{R}^2}\\
+&=\frac{2\mu_0}{4\pi}\frac{dx\vec{a_x}\times(1\vec{a_y}-x\vec{a_x})}{(x^2+1)^{\frac{3}{2}}}\\
+&=\frac{\mu_0}{2\pi}\frac{dx\vec{a_z}}{(x^2+1)^{\frac{3}{2}}}
+\end{split}
+\end{equation}
+$$
+다음과 같이 치환하자.
+$$
+x=tan\theta \Rightarrow dx=sec^2\theta d\theta
+$$
+대입하면
+$$
+\begin{equation}
+\begin{split}
+\vec{dB}&=\frac{\mu_0}{2\pi}\frac{sec^2\theta d\theta}{(sec^2\theta)^{\frac{3}{2}}}\\
+&=\frac{\mu_0}{2\pi} cos\theta d\theta
+\end{split}
+\end{equation}
+$$
+이다. 이를 $(-2,2)$ 구간에 대해 적분하면 $\theta$의 범위는 $(-\frac{\pi}{4},\frac{\pi}{4})$가 되므로
+$$
+\begin{equation}
+\begin{split}
+\vec{H_1}&=\frac{\mu_0}{2\pi}\int_{-\frac{\pi}{4}} ^{\frac{\pi}{4}}cos\theta d\theta\\
+&=\frac{\mu_0}{2\pi} \left(sin\left(\frac{\pi}{4}\right)-sin\left(-\frac{\pi}{4}\right)\right)\\
+&=\frac{\mu_0}{2\pi} \frac{1}{\sqrt{2}}\times 2\\
+&=\frac{\sqrt{2}\mu_0}{2\pi}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 이를 4배하면
+$$
+H=\frac{2\sqrt{2}\mu_0}{\pi}
+$$
+이므로 답은 **3번** 이다.
+
+## 12번
+1. Stokes 정리는
+  $$
+  \oint \vec{H}\cdot\vec{dl}=\iint \nabla\times\vec{H}\cdot\vec{ds}
+  $$
+  이므로 옳다.
+2. 암페어의 주회법칙의 미분형은
+  $$
+  \nabla\times\vec{H}=\vec{J}
+  $$
+  이다. 이를 적분형에서 유도할 수 있다.
+3. 적분 결과의 부호는 음이 될 수도 있다.
+4. 당연히 그렇다.
+
+그러므로 답은 **3번** 이다.
+
+## 14번
+1. 그렇다.
+2. 그렇다. 외부 전속밀도를 상쇄하는 방향으로 전하들이 분포하기 때문에 합치면 전속밀도느 없다.
+3. 그렇다. 있다면 전계에 의해 전하들이 더이상 전계가 없을 때까지 이동할 것이다.
+4. 완전도체 표면에서 전류가 흐른다면 접선방향의 자계는 있을 수 있다.
+
+따라서 답은 **4번** 이다.

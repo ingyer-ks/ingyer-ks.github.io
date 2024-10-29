@@ -466,11 +466,15 @@ $$
 \begin{equation}
 \begin{split}
 emf&=-\frac{\partial \Phi}{\partial t}\\
-&=-\frac{a B_0 \omega \left(sin(\omega t - \frac{\beta b}{2})-sin(\omega t + \frac{\beta b}{2}) \right)}{\beta}\\
-&=-B_0 a \omega \frac{-2cos(\omega t)sin\left(\frac{\beta b}{2}\right)}{\beta}\\
-& = \frac{2B_0 a \omega}{\beta} sin\left(\frac{\beta b}{2}\right)
+&=-\frac{\partial}{\partial t}\left(aB_0\frac{1}{-\beta}\left(sin\left(\omega t-\frac{\beta b}{2}\right)-sin\left(\omega t+\frac{\beta b}{2}\right) \right)\right)\\
+&=\frac{a B_0 \omega \left(cos(\omega t - \frac{\beta b}{2})-cos(\omega t + \frac{\beta b}{2}) \right)}{\beta}\\
+&=B_0a\omega \frac{2sin(\omega t)sin\left(\frac{\beta b}{2}\right)}{\beta}\\
 \end{split}
 \end{equation}
+$$
+이므로 최댓값은
+$$
+emf_{max}=\frac{2B_0a\omega}{\beta}sin\left(\frac{\beta b}{2}\right)
 $$
 이므로 답은 **3번**이다.
 
