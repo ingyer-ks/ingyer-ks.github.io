@@ -18,7 +18,23 @@ description:
    n(t)=n_c(t)cos(2\pi f_c t)+n_s(t)sin(2\pi f_c t)
    $$
    여기서 $n_c(t),n_s(t)$는 기저대역 노이즈이다.
-   $n_c(t)cos(2\pi f_c t), n_s(t)sin(2\pi f_c t)$ 각각의 전력은 $n_c(t),n_s(t)$에 사인함수가 곱해진 것이므로 각각의 전력의 절반이고(자세한 증명은 다음 해설의 7번 문제를 참고하시라: [2017 9급 무선공학개론](https://ingyerlog.kr/2017-9-national-we/))
+   $n_c(t)cos(2\pi f_c t), n_s(t)sin(2\pi f_c t)$ 각각의 전력은 $n_c(t),n_s(t)$에 사인함수가 곱해진 것이므로 각각의 전력의 절반이다. 그 이유는 다음과 같다.
+
+   어떤 신호를 $m(t)$라 하고, 그 전력을 $P_m$이라 하면
+   $$
+   \begin{equation}
+   \begin{split}
+   P&=\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)cos^2(2\pi f_c t)dt\\
+   &=\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)\times\frac{1}{2}(1+cos(4\pi f_c t))dt\\
+   &=\frac{1}{2}\left(\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)dt+\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)cos(4\pi f_c t)dt\right)\\
+   &=\frac{1}{2}\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)dt\\
+   &=\frac{1}{2}P_m
+   \end{split}
+   \end{equation}
+   $$
+   이다. 위 식에서 $\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)cos(4\pi f_c t)dt$는 0인데, 그 이유는 $m(t)$는 상대적으로 느린 데 비해 $cos(4\pi f_c t)$는 빠르므로 적분하면 양의 부분과 음의 부분이 상쇄되기 때문이다.
+   따라서 전력은 절반으로 줄어든다.
+
    이 절반의 전력 스펙트럼 밀도 2개 각각이 더해져서 높이가 $\frac{N_0}{2}$인 $n(t)$의 전력 스펙트럼 밀도를 만든다. 따라서 $n_c(t),n_s(t)$ 각각의 전력 스펙트럼 밀도의 높이는 $\frac{N_0}{2}$이다.
 
    메시지를 $m(t)$, 그 전력을 $P_m$, 반송파를 $cos(2\pi f_c t)$라 하면 DSB-SC 신호는 다음과 같다.
@@ -102,8 +118,11 @@ description:
    $$
    SNR_{SSB}=\frac{P_{T,SSB}}{N_0W}=SNR_{DSB-SC}
    $$
-   로 DSB-SC와 서로 같다. 3. 그렇다. 대역폭을 중심주파수를 지나는 영역까지 일부 넓힘으로써 저대역 신호 성분을 보호한다. 이는 저대역 신호가 많은 영상을 송출하는 TV 방송에서 사용되었다. 4. 포락선검파기를 사용하는 이유는 저렴해서이다. 다수의 청취자들이 저렴한 수신기를 이용할 수 있도록 AM 라디오 방송은 DSB-LC를 이용한다. 동기검파기가 SNR은 더 좋다.
-   그러므로 답은 **4번** 이다.
+   로 DSB-SC와 서로 같다.
+3. 그렇다. 대역폭을 중심주파수를 지나는 영역까지 일부 넓힘으로써 저대역 신호 성분을 보호한다. 이는 저대역 신호가 많은 영상을 송출하는 TV 방송에서 사용되었다. 
+4. 포락선검파기를 사용하는 이유는 저렴해서이다. 다수의 청취자들이 저렴한 수신기를 이용할 수 있도록 AM 라디오 방송은 DSB-LC를 이용한다. 동기검파기가 SNR은 더 좋다.
+
+그러므로 답은 **4번** 이다.
 
 ## 2번
 수신신호의 크기가 불규칙적으로 변하는 것은 페이딩이라고 한다. 이를 피하기 위한 방법이 다이버시티이다. 따라서 답은 **1번** 이다.
