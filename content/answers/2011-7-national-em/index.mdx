@@ -131,3 +131,170 @@ $$
 이므로 답은 **3번** 이다.
 
 ## 7번
+$$
+\begin{equation}
+\begin{split}
+Re\left\{(E_1e^{-j\alpha}\vec{a_x}+E_2e^{-j\beta}\vec{a_y})e^{j(\omega t-kz)}\right\}&=E_1\left(cos(\omega t-kz-\alpha)\vec{a_x}+cos\left(\omega t-kz -\alpha-\frac{\pi}{2}\right)\vec{a_y}\right)\\
+&=E_1(cos(\omega t-kz-\alpha)\vec{a_x}+sin(\omega t-kz-\alpha)\vec{a_y})
+\end{split}
+\end{equation}
+$$
+이므로 전계 벡터 끝점은 $xy$평면에서 반시계 방향으로 원을 그린다. 따라서 답은 **2번** 이다.
+
+## 8번
+$$
+\begin{equation}
+\begin{split}
+V_{nm}&=-\int_d^c\vec{E}\cdot\vec{dl}\\
+&=-\left(\int_d ^b \frac{q}{4\pi \epsilon_0 r^2}dr+\int_b ^a 0dr+\int_a ^c\frac{q}{4\pi\epsilon_0 r^2}dr\right)\\
+&=-\left(-\left.\frac{q}{4\pi\epsilon_0 r}\right|_d ^b -\left.\frac{q}{4\pi\epsilon_0 r}\right|_a ^c\right)\\
+&=\frac{q}{4\pi\epsilon_0}\left(\frac{1}{b}-\frac{1}{d}+\frac{1}{c}-\frac{1}{a}\right)
+\end{split}
+\end{equation}
+$$
+이므로 답은 **4번** 이다.
+
+## 9번
+-4 $\mu$C로 인한 주어진 위치에서의 전위는
+$$
+\begin{equation}
+\begin{split}
+V_{-4}&=\frac{-4}{4\pi\epsilon_0\times1}\\
+&=-36\times10^9\times10^{-6}\\
+&=-36\text{ kV}
+\end{split}
+\end{equation}
+$$
+이다. 다음으로 5 $\mu$C로 인한 주어진 위치에서의 전계는
+$$
+\begin{equation}
+\begin{split}
+V_{5}&=\frac{5}{4\pi\epsilon_0\times\sqrt{4^2+(-2-1)^2}}\\
+&=\frac{5}{4\pi\epsilon_0\times5}\\
+&=9\times10^{9}\times10^{-6}\\
+&=9\text{ kV}\\
+&=-36\text{ kV}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 둘을 더하면
+$$
+V=-36+9=-27\text{ kV}
+$$
+이므로 답은 **4번** 이다.
+
+## 10번
+$\vec{D}$와 면적벡터를 내적해서 구해도 되지만, 적분을 6번 해야 하니 불편하다. 대신 $\nabla\cdot\vec{D}$를 부피적분하자. $xyz$좌표계이니 이게 더 쉬울 것 같다.
+$$
+\nabla\cdot\vec{D}=3x^2
+$$
+이다. 따라서
+$$
+\begin{equation}
+\begin{split}
+Q&=\iiint \nabla\cdot\vec{D} dv\\
+&=\int_0 ^1\int_0 ^2 \int_0 ^3 3x^2dzdydx\\
+&=2\times3\times[x^3]|_0^1\\
+&=6\text{ C}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **3번** 이다.
+
+## 11번
+스미스 도표를 통해서는 공진주파수를 알아낼 수 없다. 따라서 답은 **4번** 이다.
+
+## 12번
+변화한 커패시터는 공기 쪽 커패시터와 에보나이트 쪽 커패시터가 병렬로 연결된 것이다. 따라서 합성 커패시턴스는
+$$
+\begin{equation}
+\begin{split}
+C&=\frac{1}{3}C_0+\frac{2}{3}\epsilon_s\\
+&=\frac{(1+2\epsilon_s)}{3}C_0
+\end{split}
+\end{equation}
+$$
+이므로 답은 **2번** 이다.
+
+## 13번
+$$
+\vec{D}=\epsilon_0\vec{E}+\vec{P}
+$$
+이다. 전기장에 의해 분극이 일어나면 반대 방향으로 전기장이 생겨서 표면전하밀도로 인한 전속밀도가 작아지는 것처럼 보일 것이다. 따라서 분극 벡터 $\vec{P}$만큼 보상해 주어야 물질에 관계없이 표면전하밀도에 의한 전속밀도를 구할 수 있다.
+
+한편
+$$
+\vec{D}=\epsilon_0\epsilon_r\vec{E}
+$$
+이고
+$$
+D=\sigma_f
+$$
+이다. 이들을 종합하면
+$$
+\begin{equation}
+\begin{split}
+P&=\sigma_f-\epsilon_0E\\
+&=\sigma_f-\epsilon_0\times\frac{\sigma_f}{\epsilon_0\epsilon_r}\\
+&=\frac{\epsilon_r-1}{\epsilon_r}\sigma_f
+\end{split}
+\end{equation}
+$$
+이므로 답은 **1번** 이다.
+
+## 14번
+$$
+\eta_0=120\pi
+$$
+이므로 주어진 평면파의 평균 전력은
+$$
+P=\frac{1}{2}\frac{E^2}{\eta_0}\times\pi\times2^2=\frac{1}{2}\times\frac{144}{120\pi}=2.4\text{ W}
+$$
+이다. 따라서 답은 **3번** 이다.
+
+## 15번
+코일면 중심에서의 자계의 크기는
+$$
+H_c=\frac{NI}{2a}
+$$
+이다. 자침이 코일면과 이루는 각은 가로가 $H_n$, 세로가 $H_c$인 직각삼각형의 아래쪽 각도이므로
+$$
+\theta=tan^{-1}\frac{NI}{2aH_n}
+$$
+이므로 답은 **1번** 이다.
+
+## 16번
+자성체 1, 2의 경계면에 평행한 자계 성분은 같다. 수직 성분은 자기장이 같다는 조건에 의해 달라질 것이다.
+$$
+\begin{equation}
+\begin{split}
+\mu_1H_{1\perp}&=\mu_2H_{2\perp}
+\Rightarrow \frac{1}{3}H_{1\perp}&=H_{2\perp}
+\end{split}
+\end{equation}
+$$
+이다. 한편
+$$
+\begin{equation}
+\begin{split}
+H_{1||}&=H_1sin30^\circ=\frac{1}{2}H_1\\
+H_{1\perp}&=H_1cos30^\circ=\frac{\sqrt{3}}{2}H_1
+\end{split}
+\end{equation}
+$$
+이므로
+$$
+\begin{equation}
+\begin{split}
+H_{2||}&=\frac{1}{2}H_1\\
+H_{2\perp}&=\frac{1}{2\sqrt{3}}H_1\\
+\end{split}
+\end{equation}
+$$
+이다. 따라서 $\vec{H_2}$가 경계면에서 법선과 이루는 각은
+$$
+\theta=tan^{-1}\frac{\frac{1}{2}H_1}{\frac{1}{2\sqrt{3}}H_1}=tan^{-1}\frac{1}{\sqrt{3}}=30^\circ
+$$
+이므로 답은 **1번** 이다.
+
+## 17번
