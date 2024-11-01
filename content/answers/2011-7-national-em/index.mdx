@@ -1,0 +1,133 @@
+---
+title: 2011 7급 국가직 전기자기학
+year: 2011년
+organization: 국가직
+level: 7급
+subject: 전기자기학
+etc:
+description:
+---
+
+#
+
+## 1번
+초당 $f$번 회전하므로 각속도는 $\omega=2\pi f$이다. 코일을 수직으로 통과하는 자속을 생각해보면, $t$일 때의 회전각도 $\omega t+\theta$($\theta$는 초기 위상)에 대해서
+$$
+\Phi=BSN sin(\omega t+\theta)
+$$
+이다. 그러므로 코일에 유도되는 기전력의 크기는
+$$
+\begin{equation}
+\begin{split}
+|emf|&=\left|-\frac{\partial \Phi}{\partial t}\right|\\
+&=\omega BSNcos(\omega t+\theta)\\
+&=2\pi f BSN cos(\omega t+\theta)
+\end{split}
+\end{equation}
+$$
+이다. 사인 함수의 실횻값은 진폭을 $\sqrt{2}$로 나눈 것이므로
+$$
+V_{rms}=\sqrt{2}\pi f BSN \text{ V}
+$$
+이다. 따라서 답은 **3번** 이다.
+
+## 2번
+솔레노이드의 길이 방향으로 길쭉하며, 다른 변의 길이는 매우 짧은 솔레노이드의 한쪽을 자르는 직사각형을 생각하자. 길쭉한 변의 길이를 $l$이라고 하면, 솔레노이드 바깥으로 새나가는 자속을 무시한다면(솔레노이드가 원통 지름에 비해 매우 길기 때문에)
+$$
+\begin{equation}
+\begin{split}
+\oint \vec{H}\cdot\vec{dl}&=NI\\
+\Rightarrow Hl&=\frac{1000}{400\times10^{{-3}}}lI\\
+\Rightarrow H&=2500I
+\end{split}
+\end{equation}
+$$
+이다. 여기서 솔레노이드 안쪽에서만 직사각형을 그려보면, 어떻게 그리든간에 직사각형을 관통하는 전류는 없으므로 자계가 어디서나 같은 크기로 일정하게 길이 방향으로 있다는 것을 알 수 있다. 따라서 한바퀴 감싼 면에서의 자속을 구하면
+$$
+\Phi=BS=\mu_0HS=4\pi\times10^{-7}\times2500I\times400\times(10^{-3})^2=4\pi\times10^{-7}I
+$$
+이다. 여기에 1000회의 권선수를 곱해주면 전체 자속 $N\Phi=4\pi\times10^{-4}$이 된다. 따라서 인덕턴스를 구하기 위해 전체 자속을 전류로 나누면
+$$
+L=4\pi\times10^{-4}\approx1.256\text{ mH}
+$$
+이므로 답은 **2번** 이다.
+
+## 3번
+1. $I_1$과 $I_2$가 그들의 사이에 만들어내는 자기장은 모두 종이를 뚫고 들어가는 방향이다. 즉 자속밀도가 높아지는데 이는 자기 에너지가 많이 저장됨을 뜻한다. 따라서 자기 에너지가 낮은 쪽으로 힘을 받을 것이기 때문에 정사각형 도선은 직선 반대쪽으로 힘을 받는다.
+2. 그렇다. 무한 직선 도선이 만드는 자기장의 크기는 $B=\frac{\mu_0I_1}{2\pi\rho}$로 $I_1$에 비례하고, 자기장에 의해 도선이 받는 힘은 주어진 조건에서 $BI_2bsin\theta$로 자기장에 비례하기 때문이다.
+3. 그렇다.
+4. 정사각형 도선의 왼쪽 부분이 받는 힘의 크기는 $\frac{\mu_0I_1}{2\pi a}I_2b$이고 방향은 멀어지는 쪽이다. 오른쪽 부분이 받는 힘의 크기는 $\frac{\mu_0I_1}{2\pi(a+b)}I_2b$이고 그 방향은 가까워지는 쪽이다. 따라서 총 힘은
+  $$
+  \begin{equation}
+  \begin{split}
+  F&=\frac{\mu_0I_1}{2\pi a}I_2b-\frac{\mu_0I_1}{2\pi(a+b)}I_2b\\
+  &=\frac{\mu_0I_1I_2b}{2\pi}\left(\frac{1}{a}-\frac{1}{a+b}\right)\\
+  &=\frac{\mu_0I_1I_2b}{2\pi}\frac{a+b-a}{a(a+b)}\\
+  &=\frac{\mu_0I_1I_2b}{2\pi}\frac{b}{a(a+b)}\\
+  &\approx\frac{\mu_0I_1I_2}{2\pi}\frac{b^2}{a^2}
+  \end{split}
+  \end{equation}
+  $$
+  이다.
+
+따라서 답은 **1번** 이다.
+
+## 4번
+$$
+\begin{equation}
+\begin{split}
+\vec{E}&=Re\left\{5e^{j2x}e^{j\omega t}\vec{a_z}\right\}\\
+&=Re\left\{5e^{j(\omega t+2x)}\vec{a_z}\right\}\\
+&=5cos(\omega t+2x)\vec{a_z}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **4번** 이다.
+
+## 5번
+$$
+\begin{equation}
+\begin{split}
+V&=\int\vec{E}\cdot\vec{dl}\\
+&=Ed
+\end{split}
+\end{equation}
+$$
+이므로
+$$
+E=\frac{V}{d}=\frac{V_0}{d}sin\omega t
+$$
+이다. 한편 변위 전류 밀도(의 크기)는
+$$
+J_d=\left|\frac{\partial D}{\partial t}\right|
+$$
+이고, $D=\epsilon E$이므로
+$$
+\begin{equation}
+\begin{split}
+J_d&=\left|\frac{\partial}{\partial t}\left(\epsilon\frac{V_0}{d}sin\omega t \right)\right|\\
+&=\epsilon\frac{V_0}{d}\omega cos\omega t
+\end{split}
+\end{equation}
+$$
+이다. 따라서 답은 **4번** 이다.
+
+## 6번
+영역 1에서의 자계가 없다고 가정해보자. 이 때 도체의 표면전류로 인하여 영역 2에 생기는 자계는
+$$
+\frac{1}{2}6.5\vec{a_y}=3.25\vec{a_y}
+$$
+이고, 영역 1에 생기는 자계는
+$$
+-\frac{1}{2}6.5\vec{a_y}=-3.25\vec{a_y}
+$$
+이는 경계면과 전류 방향에 수직인 직사각형을 그리고 $\nabla\times\vec{H}=\vec{J}$를 적용하면 알 수 있다.
+
+그런데 영역 1에서 자계가 $\vec{H_1}=10\vec{a_y}$로 주어져 있으므로 양쪽에 $13.25\vec{a_y}$를 더해야 한다. 그래야 양쪽 자계의 차이인 $6.5\vec{a_y}$가 유지된다.
+따라서
+$$
+\vec{H_2}=3.25\vec{a_y}+13.25\vec{a_y}=16.5\vec{a_y}
+$$
+이므로 답은 **3번** 이다.
+
+## 7번
