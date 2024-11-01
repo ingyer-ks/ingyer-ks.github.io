@@ -268,7 +268,7 @@ $$
 $$
 \begin{equation}
 \begin{split}
-\mu_1H_{1\perp}&=\mu_2H_{2\perp}
+\mu_1H_{1\perp}&=\mu_2H_{2\perp}\\
 \Rightarrow \frac{1}{3}H_{1\perp}&=H_{2\perp}
 \end{split}
 \end{equation}
@@ -298,3 +298,92 @@ $$
 이므로 답은 **1번** 이다.
 
 ## 17번
+전류가 종이에서 우리 몸 쪽으로 뚫고 나온다고 가정하자.
+
+먼저 b로 인한 자계를 생각하자. 지면에 평행한 방향으로
+$$
+H_b=\frac{2\pi}{2\pi \times 10}=\frac{1}{10}
+$$
+만큼 생긴다. a와 c로 인한 자계도 마찬가지 방향일 것이므로 여기서 $\frac{1}{10}$보다 큰 값인 1번 보기를 골라낼 수도 있다. 하지만 정확히 풀어보자.
+
+a로 인한 자계의 크기는 지면에서 오른쪽 위로 $45^\circ$ 방향으로
+$$
+H_a=\frac{2\pi}{2\pi\times10\sqrt{2}}=\frac{1}{10\sqrt{2}}
+$$
+이고, c로 인한 자계의 크기는 오른쪽 아래 $45^\circ$ 방향으로
+$$
+H_c=\frac{2\pi}{2\pi\times10\sqrt{2}}=\frac{1}{10\sqrt{2}}
+$$
+이다. 따라서 둘을 합성하면 $\sqrt{2}$배가 되어 $\frac{1}{10}$이다. 그러므로 b로 인한 자계의 크기와 더하면
+$$
+H_a+H_b+H_c=\frac{1}{5}\texet{ A/m}
+$$
+이다. 따라서 답은 **1번** 이다.
+
+## 18번
+자계가 $z$ 방향이고, 전자가 수직 입사하는 방향을 $\phi$방향이라 하자. 그러면 전자가 받는 로런츠 힘은
+$$
+\begin{equation}
+\begin{split}
+F&=q\vec{v}\times\vec{B}\\
+&=-1.6\times10^{-19}\times20\times10^3\vec{a_\phi}\times0.25\times\vec{a_z}\\
+&=-8\times10^{-16}\vec{a_\rho}
+\end{split}
+\end{equation}
+$$
+이다. 그리고 원운동을 하는 물체에 작용하는 구심력은
+$$
+\frac{mv^2}{\rho}
+$$
+이므로 둘의 크기가 같다고 놓으면
+$$
+\begin{equation}
+\begin{split}
+\frac{mv^2}{\rho}&=8\times10^{-16}\\
+\Rightarrow \rho&=\frac{9.1\times10^{-31}\times(20\times10^3)^2}{8\times10^{-16}}\\
+&=455\text{ nm}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **4번** 이다.
+
+## 19번
+손실탄젠트는
+$$
+tan\delta=\frac{\sigma}{\omega \epsilon}
+$$
+이므로
+$$
+\sigma=0.002\times2\pi\times1\times10^9\times4\epsilon_0=1.6\pi\times10^{7}\epsilon_0
+$$
+이다. 따라서 **4번** 이 옳지 않다. 다른 보기에 대해서도 알아보자.
+1. 전파속도는
+  $$
+  \begin{equation}
+  \begin{split}
+  v&=\sqrt{1}{\mu\epsilon}\\
+  &=\sqrt{1}{\mu_0\epsilon_0}\frac{1}{\sqrt{\epsilon_r}}\\
+  &=3\times10^8\times\frac{1}{\sqrt{4}}\\
+  &=1.5\times10^8\text{ m/s}
+  \end{split}
+  \end{equation}
+  $$
+  이다.
+2. 고유 임피던스는
+  $$
+  \eta=\sqrt{\frac{j\omega\mu}{\sigma+j\omega \epsilon}}
+  $$
+  에서 $\sigma=0$이어야 고유 임피던수가 실수가 되어 전계와 자계의 위상차가 없다. 주어진 조건에서 $\sigma\neq0$이므로 전계와 자계는 위상차가 있다.
+3. 파장은
+  $$
+  \lambda=\frac{v}{f}=\frac{1.5\times10^8}{1\times10^9}=15\text{ cm}
+  $$
+  이다.
+
+## 20번
+1. 그렇다. 그래야 외부 자기장이 없어도 자속이 유지되고, 보자력이 커야 외부 자기장에 저항할 수 있을 것이다.
+2. 자기차폐를 위해서는 강자성체로 둘러싸야한다.
+3. 그렇다. 퀴리온도에서는 열로 인해서 자기 모멘트의 정렬된 상태를 흐트러뜨리기 시작한다. 따라서 강자성을 잃고 상자성이 되기 시작한다.
+4. 그렇다.
+
+따라서 답은 **2번** 이다.
