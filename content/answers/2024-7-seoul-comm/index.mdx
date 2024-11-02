@@ -1,0 +1,309 @@
+---
+title: 2024 7급 서울시 통신이론
+year: 2024년
+organization: 서울시
+level: 7급
+subject: 통신이론
+etc:
+description:
+---
+
+#
+
+## 1번
+IPv4 주소의 총 비트수는 32이다. 한편 주소가 $2,048=2^11^개인 서브네트워크를 만든다고 하였으므로, 접두어의 길이는
+$$
+32-11=21 \text{ bits}
+$$
+이다. 따라서 답은 **3번** 이다.
+
+## 2번
+1. 독립인 확률변수들의 평균의 분포가 정규분포에 수렴한다는 정리이다.
+2. 섀넌의 용량 정리는
+  $$
+  C=Blog_2(1+SNR)
+  $$
+  이다.
+3. 나이퀴스트 샘플링 이론은 샘플링 주파수가 최소한 원래 신호의 최대 주파수의 2배가 되어야 샘플링 된 신호를 원래대로 복구할 수 있다는 이론이다.
+4. 시간 영역에서의 에너지는 주파수 영역에서의 에너지와 같다는 것으로, 주어진 식에 해당한다.
+
+따라서 답은 **4번** 이다.
+
+## 3번
+1. $X$의 기댓값은
+  $$
+  \begin{equation}
+  \begin{split}
+  E[X]&=\int_{-\infty}^{\infty}xf_X(x)dx\\
+  &=\int_0^\infty x\times\frac{x}{\sigma^2}e^{-\frac{x^2}{2\sigma^2}}dx\\
+  &=-\left[x\times e^{-\frac{x^2}{2\sigma^2}}\right]_0^\infty-\int_0 ^\infty\left(-e^{-\frac{x^2}{2\sigma^2}}\right)dx\\
+  &=\int_0^\infty e^{-\frac{x^2}{2\sigma^2}}dx\\
+  \end{split}
+  \end{equation}
+  $$
+  이다. 이는 평균이 0이고 분산이 $\sigma^2$인 정규분포에 $\sigma\sqrt{2\pi}$를 곱한 것을 적분한 것의 절반이다. 따라서
+  $$
+  E[X]=\frac{1}{2}\sigma\sqrt{2\pi}=\sqrt{\frac{\pi}{\sqrt{2}}}\sigma
+  $$
+  이므로, $\sigma$가 커지면 평균은 선형적으로 커진다.
+2. $X$의 분산은
+  $$
+  \begin{equation}
+  \begin{split}
+  V[X]&=E[X^2]-(E[X])^2\\
+  &=\int_{-\infty}^\infty x^2f_X(x)dx-\frac{\pi}{2}\sigma^2\\
+  &=\int_0^\infty x^2\times\frac{x}{\sigma^2}e^{-\frac{x^2}{2\sigma^2}}dx-\frac{\pi}{2}\sigma^2\\
+  &=-\left[x^2\times e^{-\frac{x^2}{2\sigma^2}}\right]_0^\infty-\int_0 ^\infty\left(-2xe^{-\frac{x^2}{2\sigma^2}}\right)dx-\frac{\pi}{2}\sigma^2\\
+  &=2\int_0^\infty xe^{-\frac{x^2}{2\sigma^2}}dx-\frac{\pi}{2}\sigma^2\\
+  \end{split}
+  \end{equation}
+  $$
+  이다. 치환적분을 위해 $\frac{x^2}{2\sigma^2}=t, \frac{x}{\sigma^2}dx=dt$로 놓으면
+  $$
+  \begin{equation}
+  \begin{split}
+  V[X]&=2\int _0^\infty \sigma^2 e^{-t}dt-\frac{\pi}{2}\sigma^2\\
+  &=2\sigma^2\int_0^\infty e^{-t}dt-\frac{\pi}{2}\sigma^2\\
+  &=2\sigma^2[-e^{-t}]_0^\infty-\frac{\pi}{2}\sigma^2\\
+  &=2\sigma^2-\frac{\pi}{2}\sigma^2\\
+  &=\left(2-\frac{\pi}{2}\right)\sigma^2
+  \end{split}
+  \end{equation}
+  $$
+  그런데 $2\gt\frac{\pi}{2}$이므로 $\sigma^2$의 계수는 양수이다. 따라서 $\sigma$가 증가할수록 분산은 제곱에 비레해서 커진다.
+3. 누적분포함수는 $x\geq0$일 때
+  $$
+  \begin{equation}
+  \begin{split}
+  F_X(x)&=\int_{-\infty}^xf_X(\tilde{x})d\tilde{x}d\tilde{x}\\
+  &=\int_0^x \frac{\tilde{x}}{\sigma^2}e^{-\frac{\tilde{x}^2}{2\sigma^2}}d\tilde{x}\\
+  &=[-e^{-\frac{\tilde{x}^2}{2\sigma^2}}]_0^x\\
+  &=1-e^{-\frac{x^2}{2\sigma^2}}
+  \end{split}
+  \end{equation}
+  $$
+  이고, $x\lt0$일 때는 0이다.
+4. $Y=X^2$이라 하자. 그러면 $Y$의 누적분포함수는
+  $$
+  \begin{equation}
+  \begin{split}
+  F_Y(y)&=P[Y\lt y]\\
+  &=P[X^2\lt y]\\
+  &=P[-\sqrt{y}\lt X \lt \sqrt{y}]\\
+  &=P[0\lt X \lt \sqrt{y}]\\
+  &=F_X(\sqrt{y})\\
+  &=1-e^{-\frac{y}{2\sigma^2}}
+  \end{split}
+  \end{equation}
+  $$
+  이다. 따라서 이를 $y$로 미분하면
+  $$
+  \begin{equation}
+  \begin{split}
+  f_Y(y)&=\frac{dF_Y(y)}{dy}\\
+  &=\frac{d}{dy}\left(1-e^{-\frac{y}{2\sigma^2}}\right)\\
+  &=\frac{1}{2\sigma^2}e^{-\frac{y}{2\sigma^2}}
+  \end{split}
+  \end{equation}
+  $$
+  이다. 이는 지수분포의 확률밀도함수인 $\lambda e^{-\lambda x}$형태이므로 $X^2$은 지수분포를 따른다.
+
+따라서 답은 **2번** 이다.
+
+그런데, 꼭 이렇게 직접 적분을 해야 할까? $\sigma$가 증가한다면 $f_X(x)$는 처음에는 왼쪽에 모여있다가 점점 오른쪽을 낮고 넓게 퍼질 것이다. 따라서 기댓값도 따라서 오른쪽으로 갈 것 같다. 즉 증가할 것이다.
+다음으로 분산을 따져보자. $\sigma$가 증가할수록 높이가 낮아지는 것은 확실하니, 오른쪽으로 점점 더 넓게 퍼질 것이다. 이는 확률변수가 더 넓은 범위의 값을 가질 수 있게 됨을 의미하므로 분산도 커질 것이다. 그러므로 답 2번을 쉽게 골라낼 수 있다.
+
+## 4번
+주어진 신호를 푸리에 변환하면
+$$
+S(f)=2rect(f)
+$$
+가 되므로 스펙트럼이 0이 아닌 최대 주파수는 $f=\frac{1}{2}$이다. 따라서 나이퀴스트율은 이의 2배인 1 samples/s이므로 답은 **1번** 이다.
+
+## 5번
+분산을 쉽게 구하기 위해서 범위를 그대로 $-2\leq x lez 2$로 옮기자. 분산은 기댓값을 중심으로 퍼진 정도이지, 기댓값이 얼마인지에는 의존하지 않는다. 그러면 평균이 0이므로 분산은
+$$
+\begin{equation}
+\begin{split}
+V(X)&=\int_{-\infty}^{\infty}x^2 f_X(x)dx\\
+&=\int_{-2}^{2}\frac{1}{4}x^2dx\\
+&=\frac{1}{4}\left[\frac{x^3}{3}\right]_{-2}^2\\
+&=\frac{4}{3}
+\end{split}
+\end{equation}
+$$
+이다.
+
+## 6번
+1. $\frac{X_i}{n}$의 분산은 $\frac{\sigma^2}{n^2}$인데, 이게 $n$개 있으므로 $M_n$의 분산은 $\frac{\sigma^2}{n}$이다.
+2. 중심 극한 정리에 의해 표준 정규 누적분포함수로 수렴하는 것은 
+  $$
+  \frac{\sum_{i=1}^n X_i-n\mu}{\sqrt{n}\sigma}=\frac{\frac{1}{n}\sum_{i=1}^n X_i-\mu}{\frac{\sigma}{\sqrt{n}}}=\frac{M_n-\mu}{\frac{\sigma}{\sqrt{n}}}
+  $$
+  이다.
+3. 1번에 의해 그렇다는 것을 알 수 있다.
+4. 그렇다.
+
+따라서 답은 **2번** 이다.
+
+## 7번
+동기 검출 방식을 사용할 때 한 심볼 주기 $T$ 내에서 두 BFSK 신호가 직교하기 위해서는 다음을 만족해야 한다.
+$$
+\int_0 ^T cos(2\pi f_1 t)cos(2\pi f_2 t)dt=0
+$$
+왼쪽의 적분을 풀어보면
+$$
+\begin{equation}
+\begin{split}
+\int_0 ^T cos(2\pi f_1 t)cos(2\pi f_2 t)dt&=\frac{1}{2}\int_0 ^T (cos(2\pi(f_1+f_2)t)+cos(2\pi(f_1-f_2)t))dt\\
+&=\frac{1}{4\pi(f_1+f_2)} sin(2\pi (f_1+f_2) t)|_0 ^T+\frac{1}{4\pi(f_1-f_2)}sin(2\pi (f_1-f_2) t)|_0 ^T\\
+&=\frac{1}{4\pi(f_1+f_2)} sin(2\pi (f_1+f_2)T) + \frac{1}{4\pi(f_1-f_2)}sin(2\pi (f_1-f_2) T)
+\end{split}
+\end{equation}
+$$
+위 값이 항상 $0$이기 위해서는 $sin(2\pi (f_1-f_2) T)=0$이어야 한다. 즉 
+$$
+\begin{equation}
+\begin{split}
+2\pi(f_1-f_2)T&=m\pi \text{ (}m\text{은 정수)}\\
+\Rightarrow f_1-f_2&=\frac{m}{2T}
+\end{split}
+\end{equation}
+$$
+이다. 하나의 정보 심볼의 길이가 $0.00125=\frac{1}{800}$초이므로 $\frac{1}{2T}=400$ Hz이다. 따라서 $f_2$는 $f_1$과 400 Hz의 정수배 차이가 나야 하는데, 그렇지 못한 것은 **1번** 이다.
+
+## 8번
+$$
+\boldsymbol{s}^T=H\boldsymbol e^T
+$$
+이다. $\boldsymbol{s}^T=[110]^T$이므로, 이를 만들 수 있는 오류 벡터를 찾아보자.
+1. $[100]^T$가 나온다.
+2. $[110]^T$가 나온다.
+3. $[001]^T$가 나온다.
+4. $[011]^T$가 나온다.
+
+따라서 답은 **2번** 이다.
+
+## 9번
+적절한 포락선 검파를 위해서는 포락선 검파기가 방전되는 시간이 반송파의 주기보다는 충분히 커야 한다. 안 그러면 포락선보다 너무 빨리 출력값이 내려가버린다.
+그리고 메시지 신호의 주기보다는 충분히 작아야 하는데, 그렇지 않으면 충분히 빨리 포락선을 따라가지 못하기 때문이다.(포락선은 내려가는데 방전이 충분히 빠르지 않으면 그보다 높은 값을 계속 출력해버릴 것이다.)
+따라서
+$$
+f_c=10^6\lt \tau \lt f_m=2\times10^3
+$$
+이므로 답은 2,3번 보기 중 하나인데, 3번의 경우 너무 $f_m$에 가깝다. 따라서 답은 **2번** 이다.
+
+## 10번
+생성 행렬이
+$$
+G=[P|I_k]
+$$
+형태이므로 패리티 검사 행렬은
+$$
+H^T=\left[\frac{I_{n-k}}{P}\right]=
+\begin{bmatrix}
+1&0&0\\
+0&1&0\\
+0&0&1\\
+1&1&0\\
+0&1&1\\
+1&0&1
+\end{bmatrix}
+$$
+이다. 따라서 왼쪽에서 네 번째 비트에 오류가 발생했으므로, 패리티 검사 행렬의 네 번째 행이 신드롬이 된다. 그러므로 답은 **3번** 이다.
+
+## 11번
+$$
+\begin{equation}
+\begin{split}
+x(t)&=(sin(200\pi t)+2sin(400\pi t))sin^2(400\pi t)\\
+&=(sin(200\pi t)+2sin(400\pi t))\times\frac{1}{2}(1-cos(800\pi t))\\
+&=\frac{1}{2}sin(200\pi t)+sin(400\pi t)-\frac{1}{2}sin(200\pi t)cos(800\pi t)-sin(400\pi t)cos(800\pi t)\\
+&=\frac{1}{2}sin(200\pi t)+sin(400\pi t)-\frac{1}{4}(sin(1000\pi t)-sin(600\pi t))-\frac{1}{2}(sin(1200\pi t)-sin(400\pi t))\\
+&=\frac{1}{2}sin(200\pi t)+\frac{3}{2}sin(400\pi t)-\frac{1}{4}sin(1000\pi t)+\frac{1}{4}sin(600\pi t)-\frac{1}{2}sin(1200\pi t)
+\end{split}
+\end{equation}
+$$
+이다. 한편 필터의 차단각주파수가 $2\pi\times150=300\pi$ rad/s이므로 위의 항 중에서 살아남는 것은 $\frac{1}{2}sin(200\pi t)$ 뿐인데, 이득이 2이므로 2를 곱해주면 남는 것은 $sin(200\pi t)$이다. 따라서 답은 **1번** 이다.
+복잡하게 다 전개해봤지만, 굳이 그럴 필요가 있을까?
+
+## 12번
+각 동심원에 있는 심볼의 숫자가 같으므로, 두 동심원들의 반지름이 가장 작은 것을 고르면 된다. 이러한 것은 (다)이므로 답은 **3번** 이다.
+
+## 13번
+1. 그렇다.
+2. 그렇다. 정확한 칩과 동기화되지 못하거나 주파수 대역을 모르면 신호를 감지할 수 없다.
+3. 그렇다.
+4. 레이크 수신기를 이용해서 다중 경로왜곡을 줄일 수 있다.
+
+따라서 가장 옳지 않은 것은 **4번** 이다.
+
+## 14번
+첫 번째 생성 다항식이 $1+X+X^2$이므로 이의 출력은 현재 입력과 현재 상태 2개 모두에 대한 XOR이다. 따라서
+$$
+0\oplus1\oplus1=0
+$$
+이다. 두 번째 생성 다항식은 $1+X^24이므로 이는 상태의 두 번째 비트와 입력을 XOR한 것이다. 따라서
+$$
+0\oplus1=1
+$$
+이므로 답은 1,2 중에 있다. 다음으로 이 0이 시프트되어 들어가므로 다음 상태는 0 1이 될 것이다. 따라서 답은 **1번** 이다.
+
+## 15번
+1. $\rho=0$이면 $f_{X,Y}(x,y)=f_X(x)f_Y(y)$로 각각의 곱으로 표현되기 때문에 $X$와 $Y$는 독립이다.
+2. 그렇다.
+3. $y$가 있기 때문에 그렇다고 할 수 없을 것 같다.
+4. 그렇다.
+
+따라서 답은 **3번** 이다.
+
+## 16번
+어느 두 비트에서 오류가 발생하면 오류 발생을 발견할 수 없다. 따라서 오류 발생을 발견할 수 없을 확률은
+$$
+3C1\times0.9\times0.1\times0.1=0.027
+$$
+이므로 답은 **3번** 이다.
+
+## 17번
+해당 랜덤변수의 확률밀도함수는
+$$
+f_T(t)=\frac{1}{\sqrt{2\pi\times36}}e^{-\frac{(t-20)^2}{2\times36}}
+$$
+이므로
+$$
+\begin{equation}
+\begin{split}
+P[T\lt0]&=\int_{-\infty}^{0}\frac{1}{\sqrt{2\pi\times36}}e^{-\frac{(t-20)^2}{2\times36}}dt\\
+&=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{-\frac{10}{3}}e^{-\frac{u^2}{2}}du\\
+&=\frac{1}{\sqrt{2\pi}}\int_{\frac{10}{3}}^{\infty}e^{-\frac{u^2}{2}}du\\
+&=Q\left(\frac{10}{3}\right)
+\end{split}
+\end{equation}
+$$
+이다. 따라서 답은 **1번** 이다..
+
+## 18번
+샘플당 7비트를 실으므로 출력 비트율은
+$$
+7\times2500=17,500\text{ bps}
+$$
+이다. 따라서 답은 **2번** 이다.
+
+## 19번
+1. 평균 길이는
+  $$
+  0.5\times1+0.25\times2+0.125\times3+0.0625\times4+0.0625\times4=0.5+0.5+0.375+0.5=1.875\text{ bits}
+ $$
+ 이다.
+2. 그렇다.
+3. 그렇다.
+4. 평균 길이가 더 짧으므로 전송량은 줄어든다.
+
+따라서 답은 **4번** 이다.
+
+## 20번
+CP 20%를 포함한 전체 심볼 길이가 0.000125초이므로 주기적 전치 부호를 제외한 심볼 길이는 0.0001초이다. 따라서 부반송파 하나당 대역폭은 이의 역수인
+$$
+\frac{1}{0.0001}=10\text{ kHz}
+$$
+이므로 답은 **4번** 이다.
