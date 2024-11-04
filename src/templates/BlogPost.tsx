@@ -59,7 +59,6 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
 
   function PDFViewer() {
     React.useEffect(() => {
-      console.log(clientID)
       if (clientID) {
         console.log(document)
         // let script = document.querySelector(
