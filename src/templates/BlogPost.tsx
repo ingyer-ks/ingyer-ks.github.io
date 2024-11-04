@@ -118,16 +118,16 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
   }
 
   type Props = {
-    siteUrl: string
+    url: string
     path: string
     title: string
   }
 
-  const Comment = ({ siteUrl, path, title }: Props) => {
+  const Comment = ({ url, path, title }: Props) => {
     const config = {
-      url: `${siteUrl}${path}`, // 페이지 주소
-      identifier: path, // 페이지의 유니크한 값
-      title, // 페이지 제목
+      url: `${url}`,
+      identifier: path,
+      title,
     }
     return <Disqus config={config} />
   }
@@ -195,7 +195,6 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
         }
       }
     })
-
     return (
       <Layout location={location} title={siteTitle}>
         <Seo
@@ -255,9 +254,9 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
           </section>
         </article>
         <Comment
-          siteUrl={"https://ingyerlog.kr/" + location.pathname}
+          url={"https://ingyerlog.kr" + location.pathname}
           path={location.pathname}
-          title={encodeURI(title)}
+          title={location.pathname}
         />
       </Layout>
     )
@@ -290,7 +289,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
           </section>
         </article>
         <Comment
-          siteUrl={"https://ingyerlog.kr/" + location.pathname}
+          Url={"https://ingyerlog.kr" + location.pathname}
           path={location.pathname}
           title={encodeURI(title)}
         />
