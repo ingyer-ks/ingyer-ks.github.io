@@ -3,6 +3,8 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
+import { Disqus } from "gatsby-plugin-disqus"
+
 import Layout from "../components/Layout"
 import { Seo } from "../components/common"
 import { PageProps } from "@/definitions"
@@ -118,6 +120,21 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
       )
   }
 
+  type Props = {
+    siteUrl: string
+    path: string
+    title: string
+  }
+
+  const Comment = ({ siteUrl, path, title }: Props) => {
+    const config = {
+      url: `${siteUrl}${path}`, // 페이지 주소
+      identifier: path, // 페이지의 유니크한 값
+      title, // 페이지 제목
+    }
+    return <Disqus config={config} />
+  }
+
   if (post.fields.haspdf === "y") {
     React.useEffect(() => {
       if (
@@ -223,7 +240,6 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
 
               <div id="content">
                 <div id="ProblemDiv">{PDFViewer()}</div>
-
                 <div
                   id="ExplanationDiv"
                   style={{
@@ -241,6 +257,11 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             </div>
           </section>
         </article>
+        <Comment
+          siteUrl={document.location.href}
+          path={encodeURI(title)}
+          title={title}
+        />
       </Layout>
     )
   } else {
@@ -271,6 +292,11 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             </div>
           </section>
         </article>
+        <Comment
+          siteUrl={document.location.href}
+          path={encodeURI(title)}
+          title={title}
+        />
       </Layout>
     )
   }
