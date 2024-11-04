@@ -60,10 +60,6 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
   function PDFViewer() {
     React.useEffect(() => {
       if (clientID) {
-        console.log(document)
-        // let script = document.querySelector(
-        //   `script[src="https://documentservices.adobe.com/view-sdk/viewer.js"]`
-        // )
         let script = document.createElement("script")
         script.src = "https://documentservices.adobe.com/view-sdk/viewer.js"
         script.async = true
@@ -74,11 +70,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
           document.addEventListener("adobe_dc_view_sdk.ready", function () {
             window.adobe_dc_sdk["dc-core-loaded"] = false
             const adobeDCView = new AdobeDC.View({
-              clientId:
-                // document.location.hostname === `localhost`
-                //   ? "fc828db7b0e54b139ef252cef009b8d7"
-                //   : "106805b155844ee0be6a8540f507ee25",
-                clientID,
+              clientId: clientID,
               divId: "ProblemDiv",
             })
 
