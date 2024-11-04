@@ -256,7 +256,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
         <Comment
           url={"https://ingyerlog.kr" + location.pathname}
           path={location.pathname}
-          title={location.pathname}
+          title={post.frontmatter.title}
         />
       </Layout>
     )
@@ -291,7 +291,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
         <Comment
           Url={"https://ingyerlog.kr" + location.pathname}
           path={location.pathname}
-          title={encodeURI(title)}
+          title={post.frontmatter.title}
         />
       </Layout>
     )
