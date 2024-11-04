@@ -257,11 +257,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             </div>
           </section>
         </article>
-        <Comment
-          siteUrl={document.location.href}
-          path={encodeURI(title)}
-          title={title}
-        />
+        <Comment siteUrl={location} path={encodeURI(title)} title={title} />
       </Layout>
     )
   } else {
@@ -292,11 +288,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             </div>
           </section>
         </article>
-        <Comment
-          siteUrl={document.location.href}
-          path={encodeURI(title)}
-          title={title}
-        />
+        <Comment siteUrl={location} path={encodeURI(title)} title={title} />
       </Layout>
     )
   }
