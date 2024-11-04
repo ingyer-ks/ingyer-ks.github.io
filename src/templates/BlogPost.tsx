@@ -257,7 +257,11 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             </div>
           </section>
         </article>
-        <Comment siteUrl={location} path={encodeURI(title)} title={title} />
+        <Comment
+          siteUrl={"https://ingyerlog.kr/" + encodeURI(title)}
+          path={encodeURI(title)}
+          title={encodeURI(title)}
+        />
       </Layout>
     )
   } else {
@@ -288,7 +292,11 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             </div>
           </section>
         </article>
-        <Comment siteUrl={location} path={encodeURI(title)} title={title} />
+        <Comment
+          siteUrl={"https://ingyerlog.kr/" + encodeURI(title)}
+          path={encodeURI(title)}
+          title={encodeURI(title)}
+        />
       </Layout>
     )
   }
