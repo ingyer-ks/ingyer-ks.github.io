@@ -16,13 +16,15 @@ import * as key from "./key"
 const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
   const [clientID, setClientID] = React.useState(null)
   React.useEffect(() => {
-    if (typeof document !== `undefined`) {
-      setClientID(
-        document.location.hostname === `localhost`
-          ? key.localhost_key
-          : key.ingyerlog_key
-      )
-    }
+    setTimeout(() => {
+      if (typeof document !== `undefined`) {
+        setClientID(
+          document.location.hostname === `localhost`
+            ? key.localhost_key
+            : key.ingyerlog_key
+        )
+      }
+    }, 500)
   })
 
   const isSmallScreen = useMediaQuery({
@@ -57,60 +59,64 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
 
   function PDFViewer() {
     React.useEffect(() => {
-      let script = document.querySelector(
-        `script[src="https://documentservices.adobe.com/view-sdk/viewer.js"]`
-      )
-      if (typeof document !== `undefined` && !clientID) {
-        document.addEventListener("adobe_dc_view_sdk.ready", function () {
-          const adobeDCView = new AdobeDC.View({
-            clientId:
-              document.location.hostname === `localhost`
-                ? "fc828db7b0e54b139ef252cef009b8d7"
-                : "106805b155844ee0be6a8540f507ee25",
-            divId: "ProblemDiv",
-          })
-
-          const previewConfig = {
-            embedMode: "FULL_WINDOW",
-            showPrintPDF: true,
-            showDownloadPDF: true,
-            showZoomControl: true,
-            showAnnotationTools: true,
-            enableAnnotationAPIs: true,
-          }
-
-          adobeDCView.previewFile({
-            content: {
-              location: { url: "../problems/" + encodeURI(title) + ".pdf" },
-            },
-            metaData: {
-              fileName: title + ".pdf",
-              id: (() => {
-                return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
-                  /[xy]/g,
-                  function (c) {
-                    const r = (Math.random() * 16) | 0,
-                      v = c == "x" ? r : (r & 0x3) | 0x8
-                    return v.toString(16)
-                  }
-                )
-              })(),
-            },
-            previewConfig,
-          })
-        })
-      }
-      if (!script) {
-        script = document.createElement("script")
+      console.log(clientID)
+      if (clientID) {
+        console.log(document)
+        // let script = document.querySelector(
+        //   `script[src="https://documentservices.adobe.com/view-sdk/viewer.js"]`
+        // )
+        let script = document.createElement("script")
         script.src = "https://documentservices.adobe.com/view-sdk/viewer.js"
         script.async = true
         document.head.appendChild(script)
-      }
+        const viewerjsLoaded = () => setViewerjsLoadingState(false)
+        script.addEventListener("load", viewerjsLoaded)
+        if (typeof document !== `undefined`) {
+          document.addEventListener("adobe_dc_view_sdk.ready", function () {
+            window.adobe_dc_sdk["dc-core-loaded"] = false
+            const adobeDCView = new AdobeDC.View({
+              clientId:
+                // document.location.hostname === `localhost`
+                //   ? "fc828db7b0e54b139ef252cef009b8d7"
+                //   : "106805b155844ee0be6a8540f507ee25",
+                clientID,
+              divId: "ProblemDiv",
+            })
 
-      const viewerjsLoaded = () => setViewerjsLoadingState(false)
-      script.addEventListener("load", viewerjsLoaded)
-      return () => script.removeEventListener("load", viewerjsLoaded)
-    }, [])
+            const previewConfig = {
+              embedMode: "FULL_WINDOW",
+              showPrintPDF: true,
+              showDownloadPDF: true,
+              showZoomControl: true,
+              showAnnotationTools: true,
+              enableAnnotationAPIs: true,
+            }
+
+            adobeDCView.previewFile({
+              content: {
+                location: { url: "../problems/" + encodeURI(title) + ".pdf" },
+              },
+              metaData: {
+                fileName: title + ".pdf",
+                id: (() => {
+                  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
+                    /[xy]/g,
+                    function (c) {
+                      const r = (Math.random() * 16) | 0,
+                        v = c == "x" ? r : (r & 0x3) | 0x8
+                      return v.toString(16)
+                    }
+                  )
+                })(),
+              },
+              previewConfig,
+            })
+          })
+        }
+
+        return () => script.removeEventListener("load", viewerjsLoaded)
+      }
+    }, [clientID])
     if (viewerjsLoading)
       return (
         <p>
@@ -258,8 +264,8 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
           </section>
         </article>
         <Comment
-          siteUrl={"https://ingyerlog.kr/" + encodeURI(title)}
-          path={encodeURI(title)}
+          siteUrl={"https://ingyerlog.kr/" + location.pathname}
+          path={location.pathname}
           title={encodeURI(title)}
         />
       </Layout>
@@ -293,8 +299,8 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
           </section>
         </article>
         <Comment
-          siteUrl={"https://ingyerlog.kr/" + encodeURI(title)}
-          path={encodeURI(title)}
+          siteUrl={"https://ingyerlog.kr/" + location.pathname}
+          path={location.pathname}
           title={encodeURI(title)}
         />
       </Layout>
