@@ -187,12 +187,28 @@ $$
     $$
     이다. 따라서 옳다.
 2. 무변조 반송파 주파수 성분 $f_c$도 존재한다.
-3. 반송파가 $cos(2\pi f_c t)$이므로 그 전력은 진폭의 제곱을 반으로 나눈 $\frac{1}{2}$이다. 메시지의 전력은 마찬가지로 구하면 $\frac{\left(\frac{1}{2}\right)^2}{2}=\frac{1}{8}$이다. 변조된 부분은 메시지에 반송파 코사인 신호가 곱해지는 것이므로 그 전력은 메시지 전력이 코사인에 의해 $\frac{1}{2}$배 된 $\frac{1}{16}$이다.
-    따라서 전체 전력 대비 반송파 전력은
-    $$
-    \frac{\frac{1}{2}}{\frac{1}{2}+\frac{1}{16}}=\frac{8}{9}\geq\frac{1}{2}
-    $$
-    이므로 $s_c(t)$의 전력의 반 이상은 반송파 성분의 전력이다.
+3. 반송파가 $cos(2\pi f_c t)$이므로 그 전력은 진폭의 제곱을 반으로 나눈 $\frac{1}{2}$이다. 메시지의 전력은 마찬가지로 구하면 $\frac{\left(\frac{1}{2}\right)^2}{2}=\frac{1}{8}$이다.
+   변조된 부분은 메시지에 반송파 코사인 신호가 곱해지는 것이므로 그 전력은 메시지 전력이 코사인에 의해 $\frac{1}{2}$배 된 $\frac{1}{16}$이다. 이는 다음과 같이 설명할 수 있다.
+   어떤 신호를 $m(t)$라 하고, 그 전력을 $P_m$이라 하면
+   $$
+   \begin{equation}
+   \begin{split}
+   P&=\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)cos^2(2\pi f_c t)dt\\
+   &=\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)\times\frac{1}{2}(1+cos(4\pi f_c t))dt\\
+   &=\frac{1}{2}\left(\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)dt+\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)cos(4\pi f_c t)dt\right)\\
+   &=\frac{1}{2}\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)dt\\
+   &=\frac{1}{2}P_m
+   \end{split}
+   \end{equation}
+   $$
+   이다. 위 식에서 $\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)cos(4\pi f_c t)dt$는 0인데, 그 이유는 $m(t)$는 상대적으로 느린 데 비해 $cos(4\pi f_c t)$는 빠르므로 적분하면 양의 부분과 음의 부분이 상쇄되기 때문이다.
+   그러므로 전력은 절반으로 줄어든다.
+   
+   따라서 전체 전력 대비 반송파 전력은
+   $$
+   \frac{\frac{1}{2}}{\frac{1}{2}+\frac{1}{16}}=\frac{8}{9}\geq\frac{1}{2}
+   $$
+   이므로 $s_c(t)$의 전력의 반 이상은 반송파 성분의 전력이다.
 4. 그렇다. 변조지수가 1보다 작으므로 포락선이 0보다 작아지지 않기 때문에 가능하다.
 
 따라서 답은 **2번** 이다.

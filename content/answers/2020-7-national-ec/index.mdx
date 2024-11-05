@@ -275,7 +275,20 @@ $a$를 변조 상수라고 하고, 메시지 전력을 $P_m$이라 하면 피변
 $$
 P_{AM}=\frac{A_c^2}{2}\left(1+a^2P_m\right)
 $$
-이다.
+이다. 여기서 메시지 부분이 이렇게 되는 이유는 다음과 같다. 어떤 신호를 $m(t)$라 하고, 그 전력을 $P_m$이라 하면
+$$
+\begin{equation}
+\begin{split}
+P&=\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)cos^2(2\pi f_c t)dt\\
+&=\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)\times\frac{1}{2}(1+cos(4\pi f_c t))dt\\
+&=\frac{1}{2}\left(\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)dt+\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)cos(4\pi f_c t)dt\right)\\
+&=\frac{1}{2}\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)dt\\
+&=\frac{1}{2}P_m
+\end{split}
+\end{equation}
+$$
+이다. 위 식에서 $\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)cos(4\pi f_c t)dt$는 0인데, 그 이유는 $m(t)$는 상대적으로 느린 데 비해 $cos(4\pi f_c t)$는 빠르므로 적분하면 양의 부분과 음의 부분이 상쇄되기 때문이다.
+따라서 전력은 절반으로 줄어든다.
 주어진 조건에서
 $$
 1.32=1+a^2P_m
