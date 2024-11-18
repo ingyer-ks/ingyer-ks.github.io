@@ -254,7 +254,10 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
           </section>
         </article>
         <Comment
-          url={"https://ingyerlog.kr"}
+          url={
+            "https://ingyerlog.kr/" +
+            location.pathname.substring(0, location.pathname.length - 1)
+          }
           path={location.pathname.substring(0, location.pathname.length - 1)}
           title={post.frontmatter.title}
         />
@@ -289,7 +292,10 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
           </section>
         </article>
         <Comment
-          url={"https://ingyerlog.kr"}
+          url={
+            "https://ingyerlog.kr/" +
+            location.pathname.substring(0, location.pathname.length - 1)
+          }
           path={location.pathname.substring(0, location.pathname.length - 1)}
           title={post.frontmatter.title}
         />
