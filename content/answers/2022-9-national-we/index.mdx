@@ -45,11 +45,11 @@ $$
 \begin{split}
 B&=2(1+\beta)f_m\\
 &=2(1+5)15\\
-&=90 \text{ kHz}
+&=180 \text{ kHz}
 \end{split}
 \end{equation}
 $$
-따라서 답은 **1번** 이다.
+따라서 답은 **4번** 이다.
 
 ## 4번
 1. 그렇다.
@@ -190,28 +190,26 @@ P_c&=\frac{1}{T_c}\int_0^{T_c} A_c^2cos^2(2\pi f_c t)dt\\
 \end{equation}
 $$
 이다. 여기서 뒤의 코사인 부분은 주기가 $\frac{1}{2}T_c$인데 $T_c$동안 적분하므로 두 주기동안의 적분이 되어 0이 된다. 마찬가지 방법으로 정보신호의 전력을 구하면 $P_m=\frac{1}{2}$이다.
-한편 메시지 전력을 $P_m$이라 하면
+한편 $\frac{1}{2}m(t)cos(2\pi f_c t)$의 전력을 $P$이라 하면
 $$
 \begin{equation}
 \begin{split}
-P&=\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)cos^2(2\pi f_c t)dt\\
-&=\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)\times\frac{1}{2}(1+cos(4\pi f_c t))dt\\
-&=\frac{1}{2}\left(\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)dt+\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)cos(4\pi f_c t)dt\right)\\
-&=\frac{1}{2}\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)dt\\
-&=\frac{1}{2}P_m
+P&=\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}\left(\frac{1}{2}\right)^2m^2(t)cos^2(2\pi f_c t)dt\\
+&=\frac{1}{4}\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)\times\frac{1}{2}(1+cos(4\pi f_c t))dt\\
+&=\frac{1}{4}\times\frac{1}{2}\left(\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)dt+\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)cos(4\pi f_c t)dt\right)\\
+&=\frac{1}{8}\lim_{T\rightarrow \infty}\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)dt\\
+&=\frac{1}{8}P_m\\
+&=\frac{1}{16}
 \end{split}
 \end{equation}
 $$
 이다. 위 식에서 $\int_{-\frac{T}{2}}^{\frac{T}{2}}m^2(t)cos(4\pi f_c t)dt$는 0인데, 그 이유는 $m(t)$는 상대적으로 느린 데 비해 $cos(4\pi f_c t)$는 빠르므로 적분하면 양의 부분과 음의 부분이 상쇄되기 때문이다.
-따라서 코사인이 곱해지면 메시지 전력은 절반으로 줄어든다. 그런데 앞에 $A_c$가 곱해지므로 이의 제곱이 전력에 또 곱해지므로 메시지 부분의 결과적인 전력은
-$$
-\frac{1}{2}A_c^2P_m=\frac{1}{4}A_c^2
-$$
+그런데 앞에 $A_c$가 곱해져 있으므로 이의 제곱이 곱해져서 결과적인 전력은 $\frac{A_c^2}{16}$
 이다. 그러므로 전력 효율은
 $$
-\eta=\frac{\frac{1}{4}A_c^2}{\frac{1}{2}A_c^2+\frac{1}{4}A_c^2}=\frac{1}{2+1}=\frac{1}{3}\approx 33.33\text{\%}
+\eta=\frac{\frac{1}{16}A_c^2}{\frac{1}{2}A_c^2+\frac{1}{16}A_c^2}=\frac{1}{8+1}=\frac{1}{9}\approx 11.11\text{\%}
 $$
-이다. 따라서 답은 **3번** 이다.
+이다. 따라서 답은 **1번** 이다.
 
 ## 18번
 초당 $200\times10^{6}$개의 비트를 전송하므로 매 초당 에러 비트수의 평균은 여기에 BER을 곱한
