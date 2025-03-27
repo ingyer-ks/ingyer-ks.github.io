@@ -203,6 +203,16 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
                 margin: "auto",
               }}
             >
+              {!isSmallScreen && (
+                <div style={{ position: "fixed" }}>
+                  문의: ingyer.ks@gmail.com /{" "}
+                  <a href="https://open.kakao.com/o/gVtHzPsc">
+                    카카오톡 채팅방
+                  </a>
+                  &nbsp; https://open.kakao.com/o/gVtHzPsc
+                </div>
+              )}
+
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <button
                   className="both"
@@ -211,7 +221,6 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
                 >
                   문제&해설
                 </button>
-
                 <button
                   className="problemonly"
                   id="ProbOnlyButton"
@@ -219,7 +228,6 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
                 >
                   문제
                 </button>
-
                 <button
                   id="ExplanationOnlyButton"
                   onClick={showOnlyExplanations}
@@ -227,6 +235,14 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
                   해설
                 </button>
               </div>
+              {isSmallScreen && (
+                <div style={{ display: "flex" }}>
+                  <div style={{ margin: "5px" }}> ingyer.ks@gmail.com</div>
+                  <div style={{ margin: "5px" }}>
+                    <a href="https://open.kakao.com/o/gVtHzPsc">카톡 채팅방</a>
+                  </div>
+                </div>
+              )}
 
               <div id="content">
                 <div id="ProblemDiv">{PDFViewer()}</div>
@@ -286,8 +302,16 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
                 </div>
               </div>
             </div>
+            {isSmallScreen && (
+              <div style={{ position: "fixed" }}>
+                문의: ingyer.ks@gmail.com /{" "}
+                <a href="https://open.kakao.com/o/gVtHzPsc">카카오톡 채팅방</a>
+                &nbsp; https://open.kakao.com/o/gVtHzPsc
+              </div>
+            )}
           </section>
         </article>
+
         {/* <Comment
           url={
             "https://ingyerlog.kr" +
