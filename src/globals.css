@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  body {
+    height: 100vh;
+    width: 100%;
+    font-family: "Noto Sans KR" !important;
+    overflow: hidden;
+  }
+
   ol {
     list-style-type: decimal;
     list-style-position: inside;

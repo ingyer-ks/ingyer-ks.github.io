@@ -3,7 +3,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import { Disqus } from "gatsby-plugin-disqus"
+// import { Disqus } from "gatsby-plugin-disqus"
 
 import Layout from "../components/Layout"
 import { Seo } from "../components/common"
@@ -117,20 +117,14 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
       )
   }
 
-  type Props = {
-    url: string
-    path: string
-    title: string
-  }
-
-  const Comment = ({ url, path, title }: Props) => {
-    const config = {
-      url: `${url}`,
-      identifier: path,
-      title,
-    }
-    return <Disqus config={config} />
-  }
+  // const Comment = ({ url, path, title }: Props) => {
+  //   const config = {
+  //     url: `${url}`,
+  //     identifier: path,
+  //     title,
+  //   }
+  //   return <Disqus config={config} />
+  // }
 
   if (post.fields.haspdf === "y") {
     React.useEffect(() => {
@@ -253,7 +247,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             </div>
           </section>
         </article>
-        <Comment
+        {/* <Comment
           url={
             "https://ingyerlog.kr/" +
             location.pathname.substring(0, location.pathname.length - 1)
@@ -263,7 +257,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             location.pathname.substring(0, location.pathname.length - 1)
           }
           title={post.frontmatter.title}
-        />
+        /> */}
       </Layout>
     )
   } else {
@@ -294,7 +288,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             </div>
           </section>
         </article>
-        <Comment
+        {/* <Comment
           url={
             "https://ingyerlog.kr" +
             location.pathname.substring(0, location.pathname.length - 1)
@@ -304,7 +298,7 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             location.pathname.substring(0, location.pathname.length - 1)
           }
           title={post.frontmatter.title}
-        />
+        /> */}
       </Layout>
     )
   }
