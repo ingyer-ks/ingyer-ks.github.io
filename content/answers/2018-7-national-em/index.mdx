@@ -173,25 +173,35 @@ $$
 \begin{equation}
 \begin{split}
 \vec{D}&=\epsilon_0\epsilon_r\vec{E}\\
-&=\epsilon_0\vec{E}-\vec{P}
+&=\epsilon_0\vec{E}+\vec{P}
 \end{split}
 \end{equation}
 $$
 이다. 이 식의 의미는 분극에 의해 자유전하들이 만들어내는 전기력선이 감소하므로 이를 보상해야 자유전하들이 만들어내는 전기력선의 밀도가 된다는 것이다.
 따라서
 $$
-\vec{P}=(\epsilon_0-\epsilon_0\epsilon_r)\vec{E}
+\vec{P}=(\epsilon_0\epsilon_r-\epsilon_0)\vec{E}
 $$
 이다. 한편 $\epsilon_r=3$이므로 대입하면
 $$
 \begin{equation}
 \begin{split}
-\vec{P}&=-2\epsilon_0\vec{E}\\
-&=200z\epsilon_0\vec{a_z}
+\vec{P}&=2\epsilon_0\vec{E}\\
+&=-200z\epsilon_0\vec{a_z}
 \end{split}
 \end{equation}
 $$
-인데, 이의 발산은 $z$로 미분한 $200\epsilon_0$이므로 답은 **2번**이다.
+이다. 따라서
+$$
+\begin{equation}
+\begin{split}
+\rho_{pv}=-\nabla\cdot\vec{P}\\
+&=-\frac{d(-200z\epsilon_0)}{dz}\\
+&=200\epsilon_0
+\end{split}
+\end{equation}
+$$
+이므로 답은 **2번**이다.(부호 오류 알려주신 치맥하는 제이지 님 감사합니다.)
 
 ## 10번
 1. 자기저항을 이용한 풀이
