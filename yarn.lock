@@ -5708,11 +5708,6 @@ gatsby-plugin-clarity@^1.0.1:
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-gatsby-plugin-disqus@^1.2.6:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-disqus/-/gatsby-plugin-disqus-1.2.6.tgz#cefc7b1cc5921fa36099256f8ca0fe634b72cb6e"
-  integrity sha512-lGa6q7oldF3cxbwcS1dvndaxDevEBfYOIweUYOARheU0AhbDzYp4lyIvUkUwBYEWsAzIsuJNiugI6yIcQXy09g==
-
 gatsby-plugin-feed@^3.13.0:
   version "3.15.0"
   resolved "https://registry.npmjs.org/gatsby-plugin-feed/-/gatsby-plugin-feed-3.15.0.tgz"

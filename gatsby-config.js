@@ -14,12 +14,6 @@ module.exports = {
     PARALLEL_SOURCING: true,
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-        shortname: `ingyerlog`,
-      },
-    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
