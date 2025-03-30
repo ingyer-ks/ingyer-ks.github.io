@@ -1,9 +1,6 @@
-/* eslint-disable no-inner-declarations */
 import * as React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-
-// import { Disqus } from "gatsby-plugin-disqus"
 
 import Layout from "../components/Layout"
 import { Seo } from "../components/common"
@@ -117,15 +114,6 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
       )
   }
 
-  // const Comment = ({ url, path, title }: Props) => {
-  //   const config = {
-  //     url: `${url}`,
-  //     identifier: path,
-  //     title,
-  //   }
-  //   return <Disqus config={config} />
-  // }
-
   if (post.fields.haspdf === "y") {
     React.useEffect(() => {
       if (
@@ -203,16 +191,6 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
                 margin: "auto",
               }}
             >
-              {!isSmallScreen && (
-                <div style={{ position: "fixed" }}>
-                  문의: ingyer.ks@gmail.com /{" "}
-                  <a href="https://open.kakao.com/o/gVtHzPsc">
-                    카카오톡 채팅방
-                  </a>
-                  &nbsp; https://open.kakao.com/o/gVtHzPsc
-                </div>
-              )}
-
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <button
                   className="both"
@@ -235,15 +213,6 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
                   해설
                 </button>
               </div>
-              {isSmallScreen && (
-                <div style={{ display: "flex" }}>
-                  <div style={{ margin: "5px" }}> ingyer.ks@gmail.com</div>
-                  <div style={{ margin: "5px" }}>
-                    <a href="https://open.kakao.com/o/gVtHzPsc">카톡 채팅방</a>
-                  </div>
-                </div>
-              )}
-
               <div id="content">
                 <div id="ProblemDiv">{PDFViewer()}</div>
                 <div
@@ -263,17 +232,6 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             </div>
           </section>
         </article>
-        {/* <Comment
-          url={
-            "https://ingyerlog.kr/" +
-            location.pathname.substring(0, location.pathname.length - 1)
-          }
-          path={
-            "https://ingyerlog.kr" +
-            location.pathname.substring(0, location.pathname.length - 1)
-          }
-          title={post.frontmatter.title}
-        /> */}
       </Layout>
     )
   } else {
@@ -311,18 +269,6 @@ const BlogPostTemplate: React.FC<PageProps> = ({ data, location }) => {
             )}
           </section>
         </article>
-
-        {/* <Comment
-          url={
-            "https://ingyerlog.kr" +
-            location.pathname.substring(0, location.pathname.length - 1)
-          }
-          path={
-            "https://ingyerlog.kr" +
-            location.pathname.substring(0, location.pathname.length - 1)
-          }
-          title={post.frontmatter.title}
-        /> */}
       </Layout>
     )
   }
