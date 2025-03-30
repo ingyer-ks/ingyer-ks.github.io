@@ -45,7 +45,9 @@ const Layout: React.FC<LayoutProps> = ({ location, children }) => {
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
           문의: ingyer.ks@gmail.com /{" "}
-          <a href="https://open.kakao.com/o/gVtHzPsc">카카오톡 채팅방</a>
+          <a href="https://open.kakao.com/o/gVtHzPsc">
+            카카오톡 채팅방{isSmallScreen && "(클릭)"}
+          </a>
           {!isSmallScreen && "https://open.kakao.com/o/gVtHzPsc"}
         </div>
       </div>
