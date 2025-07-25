@@ -22,7 +22,7 @@ const BlogIndex: React.FC<PageProps> = ({ data, location }) => {
           className="grid"
           style={{
             overflow: "auto",
-            height: "calc(100vh - 200px)",
+            height: "calc(100vh - 250px)",
             marginTop: "3vh",
           }}
         >
