@@ -17,7 +17,16 @@ const BlogIndex: React.FC<PageProps> = ({ data, location }) => {
       <Seo title="급수별" />
       <article itemScope itemType="http://schema.org/Article">
         총 {resources.length - 1}개의 항목이 있습니다. 아래로 스크롤해보세요.
-        <div id="TableDiv" className="grid" style={{ marginTop: "3vh" }}>
+        <div
+          id="TableDiv"
+          className="grid"
+          style={{
+            gridAutoFlow: "column",
+            overflow: "auto",
+            height: "calc(100vh - 200px)",
+            marginTop: "3vh",
+          }}
+        >
           {resources.map(item => (
             <div className="Item">
               <Link
