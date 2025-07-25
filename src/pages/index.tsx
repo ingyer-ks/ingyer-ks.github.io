@@ -60,6 +60,7 @@ const BlogIndex: React.FC<PageProps> = ({ data, location }) => {
                 <span itemProp="headline">기타 글</span>
               </Link>
             </h2>
+            <div className="gcse-searchbox-only"></div>
           </div>
         </div>
       </article>

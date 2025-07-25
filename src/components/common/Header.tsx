@@ -21,7 +21,7 @@ const Header: React.FC<EmptyProps> = () => {
               <HomeIcon className="h-8 w-auto" />
             </Link>
           </div>
-
+          <div className="gcse-searchbox-only"></div>
           <div className="md:flex items-center justify-end md:flex-1 lg:w-0 space-x-8">
             <Link
               to={`/year/`}
