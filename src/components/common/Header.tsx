@@ -3,6 +3,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import { Popover, Transition } from "@headlessui/react"
 import { HomeIcon, MenuIcon, XIcon } from "@heroicons/react/outline"
 import { EmptyProps } from "@/definitions"
+import GoogleSearch from "./GoogleSearch"
 
 const Header: React.FC<EmptyProps> = () => {
   return (
@@ -21,7 +22,7 @@ const Header: React.FC<EmptyProps> = () => {
               <HomeIcon className="h-8 w-auto" />
             </Link>
           </div>
-          <div className="gcse-searchbox-only"></div>
+          <GoogleSearch />
           <div className="md:flex items-center justify-end md:flex-1 lg:w-0 space-x-8">
             <Link
               to={`/year/`}
@@ -58,13 +59,6 @@ const Header: React.FC<EmptyProps> = () => {
             >
               기타 글
             </Link>
-            {/* <a
-              href="https://toss.me/ingyerks"
-              className="whitespace-nowrap text-lg font-medium text-skin-header-fg rounded-md focus:outline-none focus:ring-2 focus:ring-skin-focus"
-              itemProp="url"
-            >
-              후원하기
-            </a> */}
           </div>
         </div>
       </div>

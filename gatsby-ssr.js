@@ -16,11 +16,6 @@ const HeadComponents = [
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9535714360512834"
       crossOrigin="anonymous"
     ></script>
-    <script
-      async
-      src="https://cse.google.com/cse.js?cx=b4ea278afb57b4ea1"
-      defer={true}
-    ></script>
   </>,
 ]
 

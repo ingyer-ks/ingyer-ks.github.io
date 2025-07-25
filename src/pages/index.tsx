@@ -6,6 +6,7 @@ import Layout from "@/components/Layout"
 import { PageProps } from "@/definitions"
 
 import "@fontsource/noto-sans-kr"
+import GoogleSearch from "@/components/common/GoogleSearch"
 
 const BlogIndex: React.FC<PageProps> = ({ data, location }) => {
   const siteTitle = "Ingyerog v2"
@@ -60,7 +61,7 @@ const BlogIndex: React.FC<PageProps> = ({ data, location }) => {
                 <span itemProp="headline">기타 글</span>
               </Link>
             </h2>
-            <div className="gcse-searchbox-only"></div>
+            <GoogleSearch />
           </div>
         </div>
       </article>
