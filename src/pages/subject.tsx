@@ -21,7 +21,6 @@ const BlogIndex: React.FC<PageProps> = ({ data, location }) => {
           id="TableDiv"
           className="grid"
           style={{
-            gridAutoFlow: "column",
             overflow: "auto",
             height: "calc(100vh - 200px)",
             marginTop: "3vh",

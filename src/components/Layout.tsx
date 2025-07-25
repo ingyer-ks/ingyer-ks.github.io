@@ -14,17 +14,6 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ location, children }) => {
-  React.useEffect(() => {
-    const scriptId = "google-cse-script"
-    if (!document.getElementById(scriptId)) {
-      const cx = "b4ea278afb57b4ea1"
-      const script = document.createElement("script")
-      script.id = scriptId
-      script.type = "text/javascript"
-      script.async = true
-      script.src = `https://cse.google.com/cse.js?cx=${cx}`
-    }
-  }, [])
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   let header
