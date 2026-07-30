@@ -2,6 +2,7 @@
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import AnswerView from "../components/AnswerView.astro";
+import Comments from "../components/Comments.astro";
 import { problemPdfUrl } from "../lib/content";
 
 type PageProps =
@@ -23,6 +24,7 @@ export async function getStaticPaths() {
 const props = Astro.props as PageProps;
 const { Content } = await render(props.entry);
 const { title, description } = props.entry.data;
+const pageKey = `${props.kind}:${props.entry.id}`;
 ---
 
 <BaseLayout
@@ -33,11 +35,15 @@ const { title, description } = props.entry.data;
   {props.kind === "answer" ? (
     <AnswerView title={title} pdfUrl={problemPdfUrl(title)}>
       <Content />
+      <Comments pageKey={pageKey} />
     </AnswerView>
   ) : (
     <article class="text-page" data-pagefind-body>
       <h1>{title}</h1>
-      <div class="article-body"><Content /></div>
+      <div class="article-body">
+        <Content />
+        <Comments pageKey={pageKey} />
+      </div>
     </article>
   )}
 </BaseLayout>

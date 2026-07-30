@@ -1,0 +1,476 @@
+---
+import "../styles/comments.css";
+
+interface Props {
+  pageKey: string;
+}
+
+const { pageKey } = Astro.props;
+---
+
+<section class="comments" data-comments-root data-page-key={pageKey} data-pagefind-ignore>
+  <header class="comments__header">
+    <h2>댓글</h2>
+    <span class="comments__count" data-comment-count>불러오는 중…</span>
+  </header>
+
+  <div class="comments__setup" data-comments-setup hidden>
+    Supabase 환경변수를 설정하면 댓글을 사용할 수 있습니다.
+  </div>
+
+  <div class="comments__auth" data-comments-auth hidden>
+    <div class="comments__signed-out" data-comments-signed-out>
+      <p>댓글을 작성하려면 로그인해 주세요.</p>
+      <div class="comments__login-buttons">
+        <button class="comments__login comments__login--google" type="button" data-comments-provider="google">
+          <span aria-hidden="true">G</span>
+          Google로 로그인
+        </button>
+        <button class="comments__login comments__login--kakao" type="button" data-comments-provider="kakao">
+          <span aria-hidden="true">K</span>
+          카카오로 로그인
+        </button>
+      </div>
+    </div>
+
+    <div class="comments__signed-in" data-comments-signed-in hidden>
+      <div class="comments__user">
+        <img class="comments__user-avatar" data-comments-user-avatar alt="" hidden />
+        <span class="comments__user-name" data-comments-user-name></span>
+      </div>
+      <button class="comments__logout" type="button" data-comments-logout>로그아웃</button>
+    </div>
+  </div>
+
+  <form class="comments__form" data-comments-form hidden>
+    <label class="visually-hidden" for={`comment-${pageKey}`}>댓글 내용</label>
+    <textarea
+      id={`comment-${pageKey}`}
+      data-comments-input
+      rows="4"
+      maxlength="2000"
+      placeholder="댓글을 입력해 주세요."
+      required
+    ></textarea>
+    <div class="comments__form-footer">
+      <span class="comments__length" data-comments-length>0 / 2000</span>
+      <button class="comments__submit" type="submit" data-comments-submit>댓글 등록</button>
+    </div>
+  </form>
+
+  <p class="comments__status" data-comments-status aria-live="polite"></p>
+  <p class="comments__empty" data-comments-empty hidden>아직 댓글이 없습니다.</p>
+  <ol class="comments__list" data-comments-list></ol>
+</section>
+
+<script>
+  import { createClient, type User } from "@supabase/supabase-js";
+
+  const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+  const supabaseKey = import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+  const supabase = supabaseUrl && supabaseKey
+    ? createClient(supabaseUrl, supabaseKey, {
+        auth: {
+          persistSession: true,
+          autoRefreshToken: true,
+          detectSessionInUrl: true,
+        },
+      })
+    : null;
+
+  type CommentAuthor = {
+    display_name?: string | null;
+    avatar_url?: string | null;
+  };
+
+  type CommentRow = {
+    id: string;
+    user_id: string;
+    content: string;
+    created_at: string;
+    updated_at: string;
+    author?: CommentAuthor | CommentAuthor[] | null;
+  };
+
+  const getAuthor = (comment: CommentRow): CommentAuthor => {
+    if (Array.isArray(comment.author)) return comment.author[0] ?? {};
+    return comment.author ?? {};
+  };
+
+  const getUserName = (user: User) => {
+    const metadata = user.user_metadata ?? {};
+    return (
+      metadata.full_name ||
+      metadata.name ||
+      metadata.nickname ||
+      metadata.user_name ||
+      metadata.preferred_username ||
+      "사용자"
+    );
+  };
+
+  const getUserAvatar = (user: User) => {
+    const metadata = user.user_metadata ?? {};
+    return metadata.avatar_url || metadata.picture || null;
+  };
+
+  const formatDate = (value: string) =>
+    new Intl.DateTimeFormat("ko-KR", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+    }).format(new Date(value));
+
+  for (const root of document.querySelectorAll<HTMLElement>("[data-comments-root]")) {
+    const pageKey = root.dataset.pageKey;
+    const setup = root.querySelector<HTMLElement>("[data-comments-setup]");
+    const auth = root.querySelector<HTMLElement>("[data-comments-auth]");
+    const signedOut = root.querySelector<HTMLElement>("[data-comments-signed-out]");
+    const signedIn = root.querySelector<HTMLElement>("[data-comments-signed-in]");
+    const userName = root.querySelector<HTMLElement>("[data-comments-user-name]");
+    const userAvatar = root.querySelector<HTMLImageElement>("[data-comments-user-avatar]");
+    const logoutButton = root.querySelector<HTMLButtonElement>("[data-comments-logout]");
+    const form = root.querySelector<HTMLFormElement>("[data-comments-form]");
+    const input = root.querySelector<HTMLTextAreaElement>("[data-comments-input]");
+    const length = root.querySelector<HTMLElement>("[data-comments-length]");
+    const submitButton = root.querySelector<HTMLButtonElement>("[data-comments-submit]");
+    const status = root.querySelector<HTMLElement>("[data-comments-status]");
+    const count = root.querySelector<HTMLElement>("[data-comment-count]");
+    const empty = root.querySelector<HTMLElement>("[data-comments-empty]");
+    const list = root.querySelector<HTMLOListElement>("[data-comments-list]");
+
+    if (
+      !pageKey || !setup || !auth || !signedOut || !signedIn || !userName ||
+      !userAvatar || !logoutButton || !form || !input || !length ||
+      !submitButton || !status || !count || !empty || !list
+    ) continue;
+
+    if (!supabase) {
+      setup.hidden = false;
+      count.textContent = "사용 안 함";
+      continue;
+    }
+
+    let currentUser: User | null = null;
+    let isAdmin = false;
+    let comments: CommentRow[] = [];
+    let submitting = false;
+
+    const setStatus = (message = "", kind: "normal" | "error" | "success" = "normal") => {
+      status.textContent = message;
+      status.dataset.kind = kind;
+    };
+
+    const renderAuth = (user: User | null) => {
+      currentUser = user;
+      auth.hidden = false;
+      signedOut.hidden = Boolean(user);
+      signedIn.hidden = !user;
+      form.hidden = !user;
+
+      if (!user) return;
+
+      userName.textContent = `${getUserName(user)}님`;
+      const avatar = getUserAvatar(user);
+      if (avatar) {
+        userAvatar.src = avatar;
+        userAvatar.hidden = false;
+        userAvatar.referrerPolicy = "no-referrer";
+      } else {
+        userAvatar.hidden = true;
+        userAvatar.removeAttribute("src");
+      }
+    };
+
+    const refreshAdminState = async () => {
+      if (!currentUser) {
+        isAdmin = false;
+        renderComments();
+        return;
+      }
+
+      const { data, error } = await supabase.rpc("is_comment_admin");
+      isAdmin = !error && data === true;
+      renderComments();
+    };
+
+    const makeButton = (text: string, className: string) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = className;
+      button.textContent = text;
+      return button;
+    };
+
+    const updateComment = async (comment: CommentRow, content: string) => {
+      const trimmed = content.trim();
+      if (!trimmed || trimmed.length > 2000) return;
+
+      setStatus("댓글을 수정하는 중…");
+      const { error } = await supabase
+        .from("comments")
+        .update({ content: trimmed })
+        .eq("id", comment.id);
+
+      if (error) {
+        setStatus(`수정하지 못했습니다: ${error.message}`, "error");
+        return;
+      }
+
+      setStatus("댓글을 수정했습니다.", "success");
+      await loadComments();
+    };
+
+    const startEditing = (item: HTMLElement, comment: CommentRow) => {
+      if (item.querySelector(".comments__edit-form")) return;
+
+      const content = item.querySelector<HTMLElement>(".comments__content");
+      const controls = item.querySelector<HTMLElement>(".comments__controls");
+      if (!content || !controls) return;
+
+      content.hidden = true;
+      controls.hidden = true;
+
+      const editForm = document.createElement("form");
+      editForm.className = "comments__edit-form";
+
+      const textarea = document.createElement("textarea");
+      textarea.rows = 4;
+      textarea.maxLength = 2000;
+      textarea.value = comment.content;
+      textarea.setAttribute("aria-label", "댓글 수정 내용");
+
+      const actions = document.createElement("div");
+      actions.className = "comments__edit-actions";
+      const cancel = makeButton("취소", "comments__small-button");
+      const save = document.createElement("button");
+      save.type = "submit";
+      save.className = "comments__small-button comments__small-button--primary";
+      save.textContent = "저장";
+      actions.append(cancel, save);
+      editForm.append(textarea, actions);
+      content.after(editForm);
+      textarea.focus();
+      textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+
+      const closeEditor = () => {
+        editForm.remove();
+        content.hidden = false;
+        controls.hidden = false;
+      };
+
+      cancel.addEventListener("click", closeEditor);
+      editForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        save.disabled = true;
+        await updateComment(comment, textarea.value);
+        save.disabled = false;
+      });
+    };
+
+    const deleteComment = async (comment: CommentRow) => {
+      if (!confirm("이 댓글을 삭제하시겠습니까?")) return;
+
+      setStatus("댓글을 삭제하는 중…");
+      const { error } = await supabase
+        .from("comments")
+        .delete()
+        .eq("id", comment.id);
+
+      if (error) {
+        setStatus(`삭제하지 못했습니다: ${error.message}`, "error");
+        return;
+      }
+
+      setStatus("댓글을 삭제했습니다.", "success");
+      await loadComments();
+    };
+
+    const renderComments = () => {
+      list.replaceChildren();
+      count.textContent = `${comments.length.toLocaleString("ko-KR")}개`;
+      empty.hidden = comments.length > 0;
+
+      for (const comment of comments) {
+        const author = getAuthor(comment);
+        const item = document.createElement("li");
+        item.className = "comments__item";
+
+        const card = document.createElement("article");
+        card.className = "comments__card";
+
+        const meta = document.createElement("header");
+        meta.className = "comments__meta";
+
+        const identity = document.createElement("div");
+        identity.className = "comments__identity";
+
+        if (author.avatar_url) {
+          const avatar = document.createElement("img");
+          avatar.className = "comments__avatar";
+          avatar.src = author.avatar_url;
+          avatar.alt = "";
+          avatar.loading = "lazy";
+          avatar.referrerPolicy = "no-referrer";
+          avatar.addEventListener("error", () => avatar.remove());
+          identity.append(avatar);
+        } else {
+          const fallback = document.createElement("span");
+          fallback.className = "comments__avatar-fallback";
+          fallback.textContent = (author.display_name || "사").slice(0, 1);
+          fallback.setAttribute("aria-hidden", "true");
+          identity.append(fallback);
+        }
+
+        const name = document.createElement("strong");
+        name.textContent = author.display_name || "사용자";
+        identity.append(name);
+
+        const time = document.createElement("time");
+        time.dateTime = comment.created_at;
+        time.textContent = formatDate(comment.created_at);
+        time.title = formatDate(comment.created_at);
+
+        if (comment.updated_at !== comment.created_at) {
+          const edited = document.createElement("span");
+          edited.className = "comments__edited";
+          edited.textContent = "수정됨";
+          time.append(" · ", edited);
+        }
+
+        meta.append(identity, time);
+
+        const content = document.createElement("p");
+        content.className = "comments__content";
+        content.textContent = comment.content;
+
+        card.append(meta, content);
+
+        const isOwner = currentUser?.id === comment.user_id;
+        if (isOwner || isAdmin) {
+          const controls = document.createElement("div");
+          controls.className = "comments__controls";
+
+          if (isOwner) {
+            const edit = makeButton("수정", "comments__small-button");
+            edit.addEventListener("click", () => startEditing(item, comment));
+            controls.append(edit);
+          }
+
+          const remove = makeButton("삭제", "comments__small-button comments__small-button--danger");
+          remove.addEventListener("click", () => void deleteComment(comment));
+          controls.append(remove);
+          card.append(controls);
+        }
+
+        item.append(card);
+        list.append(item);
+      }
+    };
+
+    async function loadComments() {
+      count.textContent = "불러오는 중…";
+      const { data, error } = await supabase
+        .from("comments")
+        .select("id,user_id,content,created_at,updated_at,author:profiles(display_name,avatar_url)")
+        .eq("page_key", pageKey)
+        .order("created_at", { ascending: true });
+
+      if (error) {
+        comments = [];
+        count.textContent = "오류";
+        empty.hidden = true;
+        setStatus(`댓글을 불러오지 못했습니다: ${error.message}`, "error");
+        return;
+      }
+
+      comments = (data ?? []) as CommentRow[];
+      renderComments();
+    }
+
+    for (const button of root.querySelectorAll<HTMLButtonElement>("[data-comments-provider]")) {
+      button.addEventListener("click", async () => {
+        const provider = button.dataset.commentsProvider as "google" | "kakao" | undefined;
+        if (!provider) return;
+
+        setStatus("로그인 화면으로 이동합니다…");
+        const redirectUrl = `${window.location.origin}${window.location.pathname}`;
+        const { error } = await supabase.auth.signInWithOAuth({
+          provider,
+          options: { redirectTo: redirectUrl },
+        });
+
+        if (error) setStatus(`로그인하지 못했습니다: ${error.message}`, "error");
+      });
+    }
+
+    logoutButton.addEventListener("click", async () => {
+      const { error } = await supabase.auth.signOut();
+      if (error) setStatus(`로그아웃하지 못했습니다: ${error.message}`, "error");
+      else setStatus("로그아웃했습니다.", "success");
+    });
+
+    input.addEventListener("input", () => {
+      length.textContent = `${input.value.length.toLocaleString("ko-KR")} / 2000`;
+    });
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!currentUser || submitting) return;
+
+      const content = input.value.trim();
+      if (!content) {
+        setStatus("댓글 내용을 입력해 주세요.", "error");
+        input.focus();
+        return;
+      }
+
+      submitting = true;
+      submitButton.disabled = true;
+      setStatus("댓글을 등록하는 중…");
+
+      const { error } = await supabase
+        .from("comments")
+        .insert({ page_key: pageKey, content });
+
+      submitting = false;
+      submitButton.disabled = false;
+
+      if (error) {
+        setStatus(`등록하지 못했습니다: ${error.message}`, "error");
+        return;
+      }
+
+      input.value = "";
+      length.textContent = "0 / 2000";
+      setStatus("댓글을 등록했습니다.", "success");
+      await loadComments();
+    });
+
+    userAvatar.addEventListener("error", () => {
+      userAvatar.hidden = true;
+    });
+
+    const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
+    if (sessionError) setStatus(`로그인 상태를 확인하지 못했습니다: ${sessionError.message}`, "error");
+    renderAuth(sessionData.session?.user ?? null);
+    await refreshAdminState();
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      renderAuth(session?.user ?? null);
+      isAdmin = false;
+      renderComments();
+      setTimeout(() => void refreshAdminState(), 0);
+    });
+
+    const currentUrl = new URL(window.location.href);
+    if (currentUrl.searchParams.has("code")) {
+      currentUrl.searchParams.delete("code");
+      history.replaceState({}, "", `${currentUrl.pathname}${currentUrl.search}${currentUrl.hash}`);
+    }
+
+    await loadComments();
+  }
+</script>
