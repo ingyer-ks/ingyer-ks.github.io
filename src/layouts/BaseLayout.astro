@@ -1,0 +1,51 @@
+---
+import "@fontsource/noto-sans-kr/400.css";
+import "@fontsource/noto-sans-kr/500.css";
+import "@fontsource/noto-sans-kr/700.css";
+import "katex/dist/katex.min.css";
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import { site } from "../lib/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+  home?: boolean;
+  workspace?: boolean;
+}
+
+const {
+  title = site.title,
+  description = site.description,
+  home = false,
+  workspace = false,
+} = Astro.props;
+const fullTitle = title === site.title ? title : `${title} | ${site.title}`;
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>{fullTitle}</title>
+  </head>
+  <body class:list={{ "home-page": home, "workspace-page": workspace }}>
+    {!home && <Header />}
+    <main class:list={{ "main-content": !home, "home-content": home }}>
+      <slot />
+    </main>
+    {!home && (
+      <footer>
+        문의: {site.email} / <a href={site.kakao}>카카오톡 채팅방</a>
+      </footer>
+    )}
+  </body>
+</html>

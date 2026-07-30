@@ -1,0 +1,100 @@
+---
+interface Props {
+  title: string;
+  pdfUrl: string;
+}
+
+const { title, pdfUrl } = Astro.props;
+const viewerId = `pdf-${crypto.randomUUID()}`;
+const localClientId = import.meta.env.PUBLIC_ADOBE_CLIENT_ID_LOCAL ?? "";
+const prodClientId = import.meta.env.PUBLIC_ADOBE_CLIENT_ID_PROD ?? "";
+---
+
+<div
+  id={viewerId}
+  class="pdf-viewer"
+  data-pdf-url={pdfUrl}
+  data-title={title}
+  data-local-client-id={localClientId}
+  data-prod-client-id={prodClientId}
+>
+  <p class="pdf-status">문제지 PDF 파일을 불러오는 중입니다.</p>
+</div>
+
+<script>
+  const containers = document.querySelectorAll<HTMLElement>(".pdf-viewer:not([data-initialized])");
+
+  function loadAdobeSdk(): Promise<void> {
+    return new Promise((resolve, reject) => {
+      if ((window as any).AdobeDC?.View) {
+        resolve();
+        return;
+      }
+
+      document.addEventListener("adobe_dc_view_sdk.ready", () => resolve(), { once: true });
+
+      const existing = document.querySelector<HTMLScriptElement>(
+        'script[src="https://documentservices.adobe.com/view-sdk/viewer.js"]',
+      );
+      if (existing) return;
+
+      const script = document.createElement("script");
+      script.src = "https://documentservices.adobe.com/view-sdk/viewer.js";
+      script.async = true;
+      script.addEventListener("error", () => reject(new Error("Adobe PDF SDK load failed")), {
+        once: true,
+      });
+      document.head.appendChild(script);
+    });
+  }
+
+  function showNativeViewer(container: HTMLElement, pdfUrl: string, title: string) {
+    container.replaceChildren();
+    const iframe = document.createElement("iframe");
+    iframe.src = pdfUrl;
+    iframe.title = `${title} 문제지`;
+    iframe.loading = "eager";
+    container.appendChild(iframe);
+  }
+
+  for (const container of containers) {
+    container.dataset.initialized = "true";
+    const pdfUrl = container.dataset.pdfUrl ?? "";
+    const title = container.dataset.title ?? "문제지";
+    const isLocal = ["localhost", "127.0.0.1"].includes(location.hostname);
+    const clientId = isLocal
+      ? container.dataset.localClientId
+      : container.dataset.prodClientId;
+
+    if (!clientId) {
+      showNativeViewer(container, pdfUrl, title);
+      continue;
+    }
+
+    loadAdobeSdk()
+      .then(() => {
+        container.replaceChildren();
+        const AdobeDC = (window as any).AdobeDC;
+        const adobeDCView = new AdobeDC.View({
+          clientId,
+          divId: container.id,
+        });
+
+        adobeDCView.previewFile(
+          {
+            content: { location: { url: pdfUrl } },
+            metaData: { fileName: `${title}.pdf`, id: crypto.randomUUID() },
+          },
+          {
+            embedMode: "FULL_WINDOW",
+            showPrintPDF: true,
+            showDownloadPDF: true,
+            showZoomControl: true,
+            showAnnotationTools: true,
+            enableAnnotationAPIs: true,
+          },
+        );
+      })
+      .catch(() => showNativeViewer(container, pdfUrl, title));
+  }
+</script>

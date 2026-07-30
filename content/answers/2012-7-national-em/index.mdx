@@ -1,0 +1,409 @@
+---
+title: 2012 7급 국가직 전기자기학
+year: 2012년
+organization: 국가직
+level: 7급
+subject: 전기자기학
+etc:
+description:
+---
+
+#
+
+## 1번
+$$
+\begin{equation}
+\begin{split}
+\vec{E}&=-\nabla V\\
+&=-3y\vec{a_x}-3x\vec{a_y}-\vec{a_z}
+\end{split}
+\end{equation}
+$$
+이다. 주어진 점을 대입하면
+$$
+\vec{E}=6\vec{a_x}-6\vec{a_y}-\vec{a_z}
+$$
+이므로 답은 **4번** 이다.
+
+## 2번
+무한 직선 도선에 의한 자계의 크기는
+$$
+H_1=\frac{I}{2\pi a}
+$$
+이다. 그리고 원형 도선에 의한 자계의 크기는
+$$
+H_c=\frac{I}{2a}
+$$
+이다. 두 자계의 방향이 같으므로 총 자계의 크기는
+$$
+H=H_l+H_c=\frac{I}{2a}\left(\frac{\pi+1}{\pi}\right)
+$$
+이므로 답은 **2번** 이다.
+
+## 3번
+$$
+\vec{\tau}=\vec{m}\times\vec{B}
+$$
+이다.
+$$
+\vec{m}=2\times2\times1\times\vec{a_x}=4\vec{a_x}
+$$
+이므로
+$$
+\begin{equation}
+\begin{split}
+\vec{\tau}&=4\vec{a_x}\times(\vec{a_x}-2\vec{a_y}+3\vec{a_z})\\
+&=-12\vec{a_y}-8\vec{a_z}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **4번** 이다.
+
+## 4번
+전도전류는
+$$
+J_c=\sigma E=10E
+$$
+이고, 변위전류 크기는
+$$
+\begin{equation}
+\begin{split}
+J_d&=\left|\frac{\partial \vec{D}}{\partial t}\right|\\
+&=\left|\frac{\partial (\epsilon_0\epsilon_r\vec{E})}{\partial t}\right|\\
+&=2\pi f\times\frac{10^{-9}}{36\pi}\times 5E\\
+&=f\frac{5\times 10^{-9}}{18}E
+\end{split}
+\end{equation}
+$$
+이다. 따라서
+$$
+\begin{equation}
+\begin{split}
+10E&=10f\times\frac{5\times 10^{-9}}{18}\\
+\Rightarrow f&=\frac{18}{5}\times10^{9}\\
+&=3.6\text{ GHz}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **3번** 이다.
+
+## 5번
+$$
+Z_0=\sqrt{\frac{L}{C}}=300\text{ }\Omega
+$$
+이다. 그리고 파장과 주파수로부터 전파속도가
+$$
+v=80\times 2.5=200\times10^{6}\text{ m/s}
+$$
+이다. 한편
+$$
+v=\frac{1}{\sqrt{LC}}
+$$
+이므로 $L$을 구하기 위해서 $Z_0$을 $v$로 나누자.
+$$
+\begin{equation}
+\begin{split}
+\frac{Z_0}{v}&=\sqrt{\frac{L}{C}}\times{\sqrt{LC}}\\
+&=L\\
+&=1.5\times10^{-6}\\
+&=1.5\text{ }\mu\text{H/m}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **4번** 이다.
+
+## 6번
+자계가 없다고 가정할 때 표면전류로 인한 자계는 $x\lt0$ 영역에서 $-5\vec{a_y}$, $x\gt0$ 영역에서 $5\vec{a_y}$이다.
+그런데 실제로는 $\vec{H_1}=12\vec{a_y}$로 그 차이가 $+17\vec{a_y}$이니 방금 구한 $x\gt0$ 영역의 자계에 이 값을 더해줘야 한다. 그래야 차이가 $10\vec{a_y}$로 유지되니까.
+따라서
+$$
+\vec{H_2}=(5+17)\vec{a_y}=22\vec{a_y}
+$$
+이다. 따라서 답은 **3번** 이다.
+
+## 7번
+$$
+\frac{dr}{dt}=1
+$$
+이다. 도선이 만드는 면적은
+$$
+S=\pi r^2
+$$
+이므로
+$$
+\frac{dS}{dt}=2\pi r\frac{dr}{dt}=2\pi r
+$$
+이다. 따라서
+$$
+|emf|=\left|-\frac{d\Phi}{dt}\right|=\left|-B\frac{dS}{dt}\right|=4\pi r
+$$
+이므로 전류는
+$$
+\frac{4\pi r}{2\pi r}=2\text{ A}
+$$
+이다. 그러므로 답은 **3번** 이다.
+
+## 8번
+단위 길이당 전하량 $Q$가 충전되었다고 하자. 이때 가장 안쪽 도체에 $Q_1$, 가장 바깥쪽 도체에 $Q_2=Q-Q_1$, 가운데 도체에 $-Q$가 충전되었다고 하자. 그러면 $a\lt\rho\lt b$ 영역에서의 전계는
+$$
+\vec{E_1}=\frac{Q_1}{2\pi \rho}\vec{a_\rho}
+$$
+이다. 따라서 $a,b$ 사이의 전위차는
+$$
+\begin{equation}
+\begin{split}
+V_{ba}&=\int_a ^b \frac{Q_1}{2\pi \epsilon\rho}\vec{a_\rho}\cdot\vec{a_\rho}\\
+&=\frac{Q_1}{2\pi\epsilon}ln\frac{b}{a}
+\end{split}
+\end{equation}
+$$
+이다. 그리고 $b\lt\rho\lt c$ 영역에서의 전계는
+$$
+\vec{E_2}=\frac{Q_1-Q}{2\pi \rho}\vec{a_\rho}=-\frac{Q_2}{2\pi \rho}\vec{a_\rho}
+$$
+이므로 $b,c$ 사이의 전위차를 마찬가지 방법으로 구하면
+$$
+V_{bc}=\frac{Q_2}{2\pi \epsilon}ln\frac{c}{b}
+$$
+이다. 그런데 $V_a=V_c$이므로 $V_{ba}=V_{bc}$여야 한다. 따라서
+$$
+\begin{equation}
+\begin{split}
+\frac{Q_1}{2\pi\epsilon}ln\frac{b}{a}&=\frac{Q_2}{2\pi \epsilon}ln\frac{c}{b}\\
+\Rightarrow Q_1&=Q_2\frac{ln\frac{c}{b}}{ln\frac{b}{a}}\\
+\Rightarrow Q_1&=(Q-Q_1)\frac{ln\frac{c}{b}}{ln\frac{b}{a}}\\
+\Rightarrow Q_1\left(1+\frac{ln\frac{c}{b}}{ln\frac{b}{a}} \right)&=Q\frac{ln\frac{c}{b}}{ln\frac{b}{a}}\\
+\Rightarrow Q_1&=Q\frac{ln\frac{c}{b}}{ln\frac{b}{a}+ln\frac{c}{b}}
+\end{split}
+\end{equation}
+$$
+이다. 이를 $V_{ba}$식에 대입하고 $Q=CV\Rightarrow C=\frac{Q}{V}$임을 이용하자.
+$$
+\begin{equation}
+\begin{split}
+V_{ba}&=Q\frac{ln\frac{c}{b}}{ln\frac{b}{a}+ln\frac{c}{b}}\frac{ln\frac{b}{a}}{2\pi \epsilon}\\
+\Rightarrow C&=\frac{Q}{V_{ba}}\\
+&=2\pi\epsilon\left(ln\frac{b}{a}+ln\frac{c}{b}\right)\frac{1}{ln\frac{b}{a}ln\frac{c}{b}}\\
+&=2\pi\epsilon\left(\frac{1}{ln\frac{b}{a}}+\frac{1}{ln\frac{c}{b}}\right)
+\end{split}
+\end{equation}
+$$
+이므로 답은 **1번** 이다.
+
+## 9번
+$$
+\eta=\sqrt{\frac{\mu}{\epsilon}}=120\pi\text{ }\Omega
+$$
+이다. 주어진 고유 임피던스는 자유공간의 임피던스 $120\pi$의 $\frac{1}{4}$이므로
+$$
+\begin{equation}
+\begin{split}
+\frac{1}{4}&=\sqrt{\frac{2}{\epsilon_r}}\\
+\Rightarrow\epsilon_r&=32
+\end{split}
+\end{equation}
+$$
+이다. 그리고
+$$
+\beta=\omega\sqrt{\mu\epsilon}
+$$
+이므로 주어진 조건을 이용하면
+$$
+\begin{equation}
+\begin{split}
+0.8&=\omega\times{\sqrt{\mu_0\epsilon_0}}\times{\sqrt{2\times32}}\\
+&=\omega\times\frac{1}{3\times10^8}\times{8}\\
+\Rightarrow \omega&=3\times10^7\text{ rad/s}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 답은 **4번** 이다.
+
+## 10번
+$z$축에 수직인 평면의 모든 전하의 합이 0이면 된다. 따라서
+$$
+\begin{equation}
+\begin{split}
+200\times \pi \times (10^{-2})^2+(-2)\times 2\pi\times 2\times10^{-2}+\rho_s\times 2\pi\times 3\times10^{-2}&=0\\
+\Rightarrow 2-8+6\rho_s&=0\\
+\Rightarrow \rho_s&=1\text{ nC/m}^2
+\end{split}
+\end{equation}
+$$
+이므로 답은 **1번** 이다.
+
+## 11번
+원래의 커패시턴스를 $C_0$이라 하자. 유전체를 삽입한 후의 커패시턴스는 높이 절반인 커패시터와 높이 절반이고 비유전율이 3인 커패시턴스의 직렬이므로 둘을 합치면
+$$
+C=2C_0||6C_0=\frac{12C_0^2}{8C_0}=\frac{3}{2}C_0
+$$
+이므로 답은 **3번** 이다.
+
+## 12번
+공극에 저장되는 자기 에너지는
+$$
+W_m=\int\int\int\frac{1}{2}\frac{B^2}{\mu_0}dv=\frac{1}{2}\frac{AgB^2}{\mu_0}
+$$
+이다. $W=\int \vec{F}\cdot{dl}$임을 고려하면 위 식을 $g$로 미분하면 공극에 작용하는 힘이 나올 것이다. 따라서
+$$
+F=\frac{dW_m}{dg}=\frac{B^2A}{2\mu_0}
+$$
+이므로 답은 **4번** 이다.
+
+## 13번
+1. 공극의 길이가 짧다면 밖으로 나가는 자속은 무시할 수도 있을 것이다. 일단 넘어가자.
+2. 실리콘 강의 비투자율이 3,500이므로 공극 대비 길이가 100배라도 자기저항은 공극의 $\frac{1}{35}$배일 것이다. 따라서 기자력은 공극에서 더 크다.
+3. 위 설명에 의해 릴럭턴스(자기저항)은 공극 부분이 실리콘 강에 비해 크다.
+4. 실리콘 강은 비투자율이 매우 큰 재료로서 외부 자계를 점점 증가시키다 보면 자속밀도가 어느 시점부터 포화되어 더 커지지 않는 비선형 특성을 보인다.
+
+따라서 답은 **2번** 이다.
+
+## 14번
+$$
+\oint \vec{H}\cdot\vec{dl}=NI
+$$
+이고, 자계는 원형 대칭성이 있으므로
+$$
+\begin{equation}
+\begin{split}
+20\times10^{-2}\times H&=500\times 2\\
+\Rightarrow H&=5000\text{ A/m}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 자속을 구하면
+$$
+5000\times3\times10^{-3}\times10\times(10^{-2})^2=1.5\times 10^{-2}
+$$
+이므로 답은 **1번** 이다.
+
+## 15번
+커패시터에 저장되는 전기 에너지는
+$$
+W_e=\iiint\frac{1}{2}\frac{Q^2}{C}dv
+$$
+이다. 전하량을 2배, 유전율을 2배로 하면 전기 에너지는 총 2배가 되는데, 에너지와 힘은 비례하므로 힘도 2배가 되어 $2F$가 된다. 따라서 답은 **3번** 이다.
+
+## 16번
+$$
+\begin{equation}
+\begin{split}
+\vec{B}&=\nabla\times \vec{A}\\
+&=
+\begin{vmatrix}
+\vec{a_x} & \vec{a_y} & \vec{a_z}\\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\
+A_x & A_y & A_z
+\end{vmatrix}\\
+&=
+\begin{vmatrix}
+\vec{a_x} & \vec{a_y} & \vec{a_z}\\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\
+-j2\mu_0e^{j5z} & 0 & 0
+\end{vmatrix}\\
+&=-\vec{a_y}\left(-\frac{\partial (-j2\mu_0e^{j5z})}{\partial z}\right)\\
+&=10\mu_0e^{j5z}\vec{a_y}
+\end{split}
+\end{equation}
+$$
+이므로
+$$
+\vec{H}=10e^{j5z}\vec{a_y}
+$$
+이다. 그리고 원천 없는 자유공간이므로
+$$
+\begin{equation}
+\begin{split}
+\vec{E}&=-\nabla V-\frac{\partial \vec{A}}{\partial t}\\
+&=-\frac{\partial \vec{A}}{\partial t}\\
+&=-j\omega(-j2\mu_0e^{j5z}\vec{a_x})\\
+&=-\omega \mu_0e^{j5z}\vec{a_x}
+\end{split}
+\end{equation}
+$$
+인데,
+$$
+\begin{equation}
+\begin{split}
+\beta&=\omega\sqrt{\mu_0\epsilon_0}\\
+&=5\\
+\Rightarrow \omega&=\frac{5}{\sqrt{\mu_0\epsilon_0}}
+\end{split}
+\end{equation}
+$$
+이므로
+$$
+\vec{E}=-\sqrt{\frac{\mu_0}{\epsilon_0}}5e^{j5z}\vec{a_x}
+$$
+이다. 따라서 다븐 **4번** 이다.
+
+## 17번
+1. $\beta=\omega \sqrt{\mu_0\mu_r\epsilon_0\epsilon_r}$이므로 물 속에서 9배로 커진다.
+2. $\eta=\sqrt{\frac{\mu_0\mu_r}{\epsilon_0\epsilon_r}}$이므로 물 속에서 $\frac{1}{9}$배가 된다.
+3. $v=\frac{1}{\sqrt{\mu_0\mu_r\epsilon_0\epsilon_r}}$이므로 물 속에서 $\frac{1}{9}$배가 된다.
+4. $\lambda=\frac{2\pi}{\beta}$인데 $\beta$가 9배가 되었으므로 물 속에서 $\frac{1}{9}$배가 된다.
+
+따라서 답은 **1번** 이다.
+
+## 18번
+$\eta_0=120\pi$
+이다. 따라서 주어진 원을 통과하는 평균전력은
+$$
+\begin{equation}
+\begin{split}
+W&=\frac{1}{2}\frac{E^2}{\eta_0}\pi r^2\\
+&=\frac{1}{2}\frac{1600}{120\pi}\times 9pi\\
+&=60\text{ W}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **4번** 이다.
+
+## 19번
+해당하는 위치의 자속밀도는
+$$
+B=\frac{\mu_0I_mcos(\omega t)}{2\pi\times 1}=\frac{\mu_0I_mcos(\omega t)}{2\pi}
+$$
+이므로 검출기에서의 자속은 대략
+$$
+\Phi\approx B\times(1\times10^{-2})^2=\frac{\mu_0I_mcos(\omega t)}{2\pi}\times10^{-4}
+$$
+이다. 따라서
+$$
+\begin{equation}
+\begin{split}
+|V_o|&=|emf|\\
+&\approx\frac{\partial}{\partial t}\left(\frac{\mu_0I_mcos(\omega t)}{2\pi}\times10^{-4}\right)\\
+&=\frac{mu_0I_m}{2\pi}2\pi f cos(\omega t)\times10^{-4}\\
+&=\mu_0I_m f cos(\omega t)\times10^{-4}\\
+\Rightarrow I_m&\approx\frac{|V_o|}{\mu_0 f}10^4
+\end{split}
+\end{equation}
+$$
+이므로 답은 **3번** 이다.
+
+## 20번
+정재파비가 3이므로
+$$
+\begin{equation}
+\begin{split}
+VSWR&=\frac{1+|\Gamma|}{1-|\Gamma|}\\\
+&=3\\
+\Rightarrow 3-3|\Gamma|&=1+|\Gamma|\\
+\Rightarrow |\Gamma|&=\frac{1}{2}
+\end{split}
+\end{equation}
+$$
+이다. 전압의 최소점이 0.25 m마다 나타나므로, 부하 지점에서도 최소 전압이 나왔을 것이다. 그러려면 반사 계수가 음수가 되어서 진행파에서 반사파가 뺄셈되어야 하므로
+$$
+\begin{equation}
+\begin{split}
+\Gamma&=-\frac{1}{2}\\
+&=\frac{Z_L-Z_0}{Z_L+Z_0}\\
+\Rightarrow -2Z_L+2Z_0&=Z_L+Z_0\\
+\Rightarrow Z_L&=\frac{1}{3}Z_0\\
+&=25\text{ }\Omega
+\end{split}
+\end{equation}
+$$
+이다. 따라서 답은 **2번** 이다.

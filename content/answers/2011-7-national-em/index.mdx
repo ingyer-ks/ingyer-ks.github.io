@@ -1,0 +1,389 @@
+---
+title: 2011 7급 국가직 전기자기학
+year: 2011년
+organization: 국가직
+level: 7급
+subject: 전기자기학
+etc:
+description:
+---
+
+#
+
+## 1번
+초당 $f$번 회전하므로 각속도는 $\omega=2\pi f$이다. 코일을 수직으로 통과하는 자속을 생각해보면, $t$일 때의 회전각도 $\omega t+\theta$($\theta$는 초기 위상)에 대해서
+$$
+\Phi=BSN sin(\omega t+\theta)
+$$
+이다. 그러므로 코일에 유도되는 기전력의 크기는
+$$
+\begin{equation}
+\begin{split}
+|emf|&=\left|-\frac{\partial \Phi}{\partial t}\right|\\
+&=\omega BSNcos(\omega t+\theta)\\
+&=2\pi f BSN cos(\omega t+\theta)
+\end{split}
+\end{equation}
+$$
+이다. 사인 함수의 실횻값은 진폭을 $\sqrt{2}$로 나눈 것이므로
+$$
+V_{rms}=\sqrt{2}\pi f BSN \text{ V}
+$$
+이다. 따라서 답은 **3번** 이다.
+
+## 2번
+솔레노이드의 길이 방향으로 길쭉하며, 다른 변의 길이는 매우 짧은 솔레노이드의 한쪽을 자르는 직사각형을 생각하자. 길쭉한 변의 길이를 $l$이라고 하면, 솔레노이드 바깥으로 새나가는 자속을 무시한다면(솔레노이드가 원통 지름에 비해 매우 길기 때문에)
+$$
+\begin{equation}
+\begin{split}
+\oint \vec{H}\cdot\vec{dl}&=NI\\
+\Rightarrow Hl&=\frac{1000}{400\times10^{{-3}}}lI\\
+\Rightarrow H&=2500I
+\end{split}
+\end{equation}
+$$
+이다. 여기서 솔레노이드 안쪽에서만 직사각형을 그려보면, 어떻게 그리든간에 직사각형을 관통하는 전류는 없으므로 자계가 어디서나 같은 크기로 일정하게 길이 방향으로 있다는 것을 알 수 있다. 따라서 한바퀴 감싼 면에서의 자속을 구하면
+$$
+\Phi=BS=\mu_0HS=4\pi\times10^{-7}\times2500I\times400\times(10^{-3})^2=4\pi\times10^{-7}I
+$$
+이다. 여기에 1000회의 권선수를 곱해주면 전체 자속 $N\Phi=4\pi\times10^{-4}$이 된다. 따라서 인덕턴스를 구하기 위해 전체 자속을 전류로 나누면
+$$
+L=4\pi\times10^{-4}\approx1.256\text{ mH}
+$$
+이므로 답은 **2번** 이다.
+
+## 3번
+1. $I_1$과 $I_2$가 그들의 사이에 만들어내는 자기장은 모두 종이를 뚫고 들어가는 방향이다. 즉 자속밀도가 높아지는데 이는 자기 에너지가 많이 저장됨을 뜻한다. 따라서 자기 에너지가 낮은 쪽으로 힘을 받을 것이기 때문에 정사각형 도선은 직선 반대쪽으로 힘을 받는다.
+2. 그렇다. 무한 직선 도선이 만드는 자기장의 크기는 $B=\frac{\mu_0I_1}{2\pi\rho}$로 $I_1$에 비례하고, 자기장에 의해 도선이 받는 힘은 주어진 조건에서 $BI_2bsin\theta$로 자기장에 비례하기 때문이다.
+3. 그렇다.
+4. 정사각형 도선의 왼쪽 부분이 받는 힘의 크기는 $\frac{\mu_0I_1}{2\pi a}I_2b$이고 방향은 멀어지는 쪽이다. 오른쪽 부분이 받는 힘의 크기는 $\frac{\mu_0I_1}{2\pi(a+b)}I_2b$이고 그 방향은 가까워지는 쪽이다. 따라서 총 힘은
+  $$
+  \begin{equation}
+  \begin{split}
+  F&=\frac{\mu_0I_1}{2\pi a}I_2b-\frac{\mu_0I_1}{2\pi(a+b)}I_2b\\
+  &=\frac{\mu_0I_1I_2b}{2\pi}\left(\frac{1}{a}-\frac{1}{a+b}\right)\\
+  &=\frac{\mu_0I_1I_2b}{2\pi}\frac{a+b-a}{a(a+b)}\\
+  &=\frac{\mu_0I_1I_2b}{2\pi}\frac{b}{a(a+b)}\\
+  &\approx\frac{\mu_0I_1I_2}{2\pi}\frac{b^2}{a^2}
+  \end{split}
+  \end{equation}
+  $$
+  이다.
+
+따라서 답은 **1번** 이다.
+
+## 4번
+$$
+\begin{equation}
+\begin{split}
+\vec{E}&=Re\left\{5e^{j2x}e^{j\omega t}\vec{a_z}\right\}\\
+&=Re\left\{5e^{j(\omega t+2x)}\vec{a_z}\right\}\\
+&=5cos(\omega t+2x)\vec{a_z}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **4번** 이다.
+
+## 5번
+$$
+\begin{equation}
+\begin{split}
+V&=\int\vec{E}\cdot\vec{dl}\\
+&=Ed
+\end{split}
+\end{equation}
+$$
+이므로
+$$
+E=\frac{V}{d}=\frac{V_0}{d}sin\omega t
+$$
+이다. 한편 변위 전류 밀도(의 크기)는
+$$
+J_d=\left|\frac{\partial D}{\partial t}\right|
+$$
+이고, $D=\epsilon E$이므로
+$$
+\begin{equation}
+\begin{split}
+J_d&=\left|\frac{\partial}{\partial t}\left(\epsilon\frac{V_0}{d}sin\omega t \right)\right|\\
+&=\epsilon\frac{V_0}{d}\omega cos\omega t
+\end{split}
+\end{equation}
+$$
+이다. 따라서 답은 **4번** 이다.
+
+## 6번
+영역 1에서의 자계가 없다고 가정해보자. 이 때 도체의 표면전류로 인하여 영역 2에 생기는 자계는
+$$
+\frac{1}{2}6.5\vec{a_y}=3.25\vec{a_y}
+$$
+이고, 영역 1에 생기는 자계는
+$$
+-\frac{1}{2}6.5\vec{a_y}=-3.25\vec{a_y}
+$$
+이는 경계면과 전류 방향에 수직인 직사각형을 그리고 $\nabla\times\vec{H}=\vec{J}$를 적용하면 알 수 있다.
+
+그런데 영역 1에서 자계가 $\vec{H_1}=10\vec{a_y}$로 주어져 있으므로 양쪽에 $13.25\vec{a_y}$를 더해야 한다. 그래야 양쪽 자계의 차이인 $6.5\vec{a_y}$가 유지된다.
+따라서
+$$
+\vec{H_2}=3.25\vec{a_y}+13.25\vec{a_y}=16.5\vec{a_y}
+$$
+이므로 답은 **3번** 이다.
+
+## 7번
+$$
+\begin{equation}
+\begin{split}
+Re\left\{(E_1e^{-j\alpha}\vec{a_x}+E_2e^{-j\beta}\vec{a_y})e^{j(\omega t-kz)}\right\}&=E_1\left(cos(\omega t-kz-\alpha)\vec{a_x}+cos\left(\omega t-kz -\alpha-\frac{\pi}{2}\right)\vec{a_y}\right)\\
+&=E_1(cos(\omega t-kz-\alpha)\vec{a_x}+sin(\omega t-kz-\alpha)\vec{a_y})
+\end{split}
+\end{equation}
+$$
+이므로 전계 벡터 끝점은 $xy$평면에서 반시계 방향으로 원을 그린다. 따라서 답은 **2번** 이다.
+
+## 8번
+$$
+\begin{equation}
+\begin{split}
+V_{nm}&=-\int_d^c\vec{E}\cdot\vec{dl}\\
+&=-\left(\int_d ^b \frac{q}{4\pi \epsilon_0 r^2}dr+\int_b ^a 0dr+\int_a ^c\frac{q}{4\pi\epsilon_0 r^2}dr\right)\\
+&=-\left(-\left.\frac{q}{4\pi\epsilon_0 r}\right|_d ^b -\left.\frac{q}{4\pi\epsilon_0 r}\right|_a ^c\right)\\
+&=\frac{q}{4\pi\epsilon_0}\left(\frac{1}{b}-\frac{1}{d}+\frac{1}{c}-\frac{1}{a}\right)
+\end{split}
+\end{equation}
+$$
+이므로 답은 **4번** 이다.
+
+## 9번
+-4 $\mu$C로 인한 주어진 위치에서의 전위는
+$$
+\begin{equation}
+\begin{split}
+V_{-4}&=\frac{-4}{4\pi\epsilon_0\times1}\\
+&=-36\times10^9\times10^{-6}\\
+&=-36\text{ kV}
+\end{split}
+\end{equation}
+$$
+이다. 다음으로 5 $\mu$C로 인한 주어진 위치에서의 전계는
+$$
+\begin{equation}
+\begin{split}
+V_{5}&=\frac{5}{4\pi\epsilon_0\times\sqrt{4^2+(-2-1)^2}}\\
+&=\frac{5}{4\pi\epsilon_0\times5}\\
+&=9\times10^{9}\times10^{-6}\\
+&=9\text{ kV}\\
+&=-36\text{ kV}
+\end{split}
+\end{equation}
+$$
+이다. 따라서 둘을 더하면
+$$
+V=-36+9=-27\text{ kV}
+$$
+이므로 답은 **4번** 이다.
+
+## 10번
+$\vec{D}$와 면적벡터를 내적해서 구해도 되지만, 적분을 6번 해야 하니 불편하다. 대신 $\nabla\cdot\vec{D}$를 부피적분하자. $xyz$좌표계이니 이게 더 쉬울 것 같다.
+$$
+\nabla\cdot\vec{D}=3x^2
+$$
+이다. 따라서
+$$
+\begin{equation}
+\begin{split}
+Q&=\iiint \nabla\cdot\vec{D} dv\\
+&=\int_0 ^1\int_0 ^2 \int_0 ^3 3x^2dzdydx\\
+&=2\times3\times[x^3]|_0^1\\
+&=6\text{ C}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **3번** 이다.
+
+## 11번
+스미스 도표를 통해서는 공진주파수를 알아낼 수 없다. 따라서 답은 **4번** 이다.
+
+## 12번
+변화한 커패시터는 공기 쪽 커패시터와 에보나이트 쪽 커패시터가 병렬로 연결된 것이다. 따라서 합성 커패시턴스는
+$$
+\begin{equation}
+\begin{split}
+C&=\frac{1}{3}C_0+\frac{2}{3}\epsilon_s\\
+&=\frac{(1+2\epsilon_s)}{3}C_0
+\end{split}
+\end{equation}
+$$
+이므로 답은 **2번** 이다.
+
+## 13번
+$$
+\vec{D}=\epsilon_0\vec{E}+\vec{P}
+$$
+이다. 전기장에 의해 분극이 일어나면 반대 방향으로 전기장이 생겨서 표면전하밀도로 인한 전속밀도가 작아지는 것처럼 보일 것이다. 따라서 분극 벡터 $\vec{P}$만큼 보상해 주어야 물질에 관계없이 표면전하밀도에 의한 전속밀도를 구할 수 있다.
+
+한편
+$$
+\vec{D}=\epsilon_0\epsilon_r\vec{E}
+$$
+이고
+$$
+D=\sigma_f
+$$
+이다. 이들을 종합하면
+$$
+\begin{equation}
+\begin{split}
+P&=\sigma_f-\epsilon_0E\\
+&=\sigma_f-\epsilon_0\times\frac{\sigma_f}{\epsilon_0\epsilon_r}\\
+&=\frac{\epsilon_r-1}{\epsilon_r}\sigma_f
+\end{split}
+\end{equation}
+$$
+이므로 답은 **1번** 이다.
+
+## 14번
+$$
+\eta_0=120\pi
+$$
+이므로 주어진 평면파의 평균 전력은
+$$
+P=\frac{1}{2}\frac{E^2}{\eta_0}\times\pi\times2^2=\frac{1}{2}\times\frac{144}{120\pi}=2.4\text{ W}
+$$
+이다. 따라서 답은 **3번** 이다.
+
+## 15번
+코일면 중심에서의 자계의 크기는
+$$
+H_c=\frac{NI}{2a}
+$$
+이다. 자침이 코일면과 이루는 각은 가로가 $H_n$, 세로가 $H_c$인 직각삼각형의 아래쪽 각도이므로
+$$
+\theta=tan^{-1}\frac{NI}{2aH_n}
+$$
+이므로 답은 **1번** 이다.
+
+## 16번
+자성체 1, 2의 경계면에 평행한 자계 성분은 같다. 수직 성분은 자기장이 같다는 조건에 의해 달라질 것이다.
+$$
+\begin{equation}
+\begin{split}
+\mu_1H_{1\perp}&=\mu_2H_{2\perp}\\
+\Rightarrow \frac{1}{3}H_{1\perp}&=H_{2\perp}
+\end{split}
+\end{equation}
+$$
+이다. 한편
+$$
+\begin{equation}
+\begin{split}
+H_{1||}&=H_1sin30^\circ=\frac{1}{2}H_1\\
+H_{1\perp}&=H_1cos30^\circ=\frac{\sqrt{3}}{2}H_1
+\end{split}
+\end{equation}
+$$
+이므로
+$$
+\begin{equation}
+\begin{split}
+H_{2||}&=\frac{1}{2}H_1\\
+H_{2\perp}&=\frac{1}{2\sqrt{3}}H_1\\
+\end{split}
+\end{equation}
+$$
+이다. 따라서 $\vec{H_2}$가 경계면에서 법선과 이루는 각은
+$$
+\theta=tan^{-1}\frac{\frac{1}{2}H_1}{\frac{1}{2\sqrt{3}}H_1}=tan^{-1}\frac{1}{\sqrt{3}}=30^\circ
+$$
+이므로 답은 **1번** 이다.
+
+## 17번
+전류가 종이에서 우리 몸 쪽으로 뚫고 나온다고 가정하자.
+
+먼저 b로 인한 자계를 생각하자. 지면에 평행한 방향으로
+$$
+H_b=\frac{2\pi}{2\pi \times 10}=\frac{1}{10}
+$$
+만큼 생긴다. a와 c로 인한 자계도 마찬가지 방향일 것이므로 여기서 $\frac{1}{10}$보다 큰 값인 1번 보기를 골라낼 수도 있다. 하지만 정확히 풀어보자.
+
+a로 인한 자계의 크기는 지면에서 오른쪽 위로 $45^\circ$ 방향으로
+$$
+H_a=\frac{2\pi}{2\pi\times10\sqrt{2}}=\frac{1}{10\sqrt{2}}
+$$
+이고, c로 인한 자계의 크기는 오른쪽 아래 $45^\circ$ 방향으로
+$$
+H_c=\frac{2\pi}{2\pi\times10\sqrt{2}}=\frac{1}{10\sqrt{2}}
+$$
+이다. 따라서 둘을 합성하면 $\sqrt{2}$배가 되어 $\frac{1}{10}$이다. 그러므로 b로 인한 자계의 크기와 더하면
+$$
+H_a+H_b+H_c=\frac{1}{5}\texet{ A/m}
+$$
+이다. 따라서 답은 **1번** 이다.
+
+## 18번
+자계가 $z$ 방향이고, 전자가 수직 입사하는 방향을 $\phi$방향이라 하자. 그러면 전자가 받는 로런츠 힘은
+$$
+\begin{equation}
+\begin{split}
+F&=q\vec{v}\times\vec{B}\\
+&=-1.6\times10^{-19}\times20\times10^3\vec{a_\phi}\times0.25\times\vec{a_z}\\
+&=-8\times10^{-16}\vec{a_\rho}
+\end{split}
+\end{equation}
+$$
+이다. 그리고 원운동을 하는 물체에 작용하는 구심력은
+$$
+\frac{mv^2}{\rho}
+$$
+이므로 둘의 크기가 같다고 놓으면
+$$
+\begin{equation}
+\begin{split}
+\frac{mv^2}{\rho}&=8\times10^{-16}\\
+\Rightarrow \rho&=\frac{9.1\times10^{-31}\times(20\times10^3)^2}{8\times10^{-16}}\\
+&=455\text{ nm}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **4번** 이다.
+
+## 19번
+손실탄젠트는
+$$
+tan\delta=\frac{\sigma}{\omega \epsilon}
+$$
+이므로
+$$
+\sigma=0.002\times2\pi\times1\times10^9\times4\epsilon_0=1.6\pi\times10^{7}\epsilon_0
+$$
+이다. 따라서 **4번** 이 옳지 않다. 다른 보기에 대해서도 알아보자.
+1. 전파속도는
+  $$
+  \begin{equation}
+  \begin{split}
+  v&=\sqrt{1}{\mu\epsilon}\\
+  &=\sqrt{1}{\mu_0\epsilon_0}\frac{1}{\sqrt{\epsilon_r}}\\
+  &=3\times10^8\times\frac{1}{\sqrt{4}}\\
+  &=1.5\times10^8\text{ m/s}
+  \end{split}
+  \end{equation}
+  $$
+  이다.
+2. 고유 임피던스는
+  $$
+  \eta=\sqrt{\frac{j\omega\mu}{\sigma+j\omega \epsilon}}
+  $$
+  에서 $\sigma=0$이어야 고유 임피던수가 실수가 되어 전계와 자계의 위상차가 없다. 주어진 조건에서 $\sigma\neq0$이므로 전계와 자계는 위상차가 있다.
+3. 파장은
+  $$
+  \lambda=\frac{v}{f}=\frac{1.5\times10^8}{1\times10^9}=15\text{ cm}
+  $$
+  이다.
+
+## 20번
+1. 그렇다. 그래야 외부 자기장이 없어도 자속이 유지되고, 보자력이 커야 외부 자기장에 저항할 수 있을 것이다.
+2. 자기차폐를 위해서는 강자성체로 둘러싸야한다.
+3. 그렇다. 퀴리온도에서는 열로 인해서 자기 모멘트의 정렬된 상태를 흐트러뜨리기 시작한다. 따라서 강자성을 잃고 상자성이 되기 시작한다.
+4. 그렇다.
+
+따라서 답은 **2번** 이다.

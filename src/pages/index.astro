@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteSearch from "../components/SiteSearch.astro";
+import { site } from "../lib/site";
+---
+
+<BaseLayout title={site.title} home>
+  <section class="home-intro">
+    <div class="profile-row">
+      <img src="/profile-pic.png" width="40" height="40" alt="Profile picture" />
+      <strong>{site.author}</strong>
+    </div>
+    <p>{site.summary}</p>
+  </section>
+
+  <nav class="home-menu" aria-label="콘텐츠 분류">
+    <a href="/year/">연도별</a>
+    <a href="/subject/">과목별</a>
+    <a href="/org/">기관별</a>
+    <a href="/level/">급수별</a>
+    <a href="/etc/">기타 글</a>
+  </nav>
+  <SiteSearch />
+</BaseLayout>

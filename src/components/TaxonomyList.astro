@@ -1,0 +1,24 @@
+---
+import type { IngyerEntry, Taxonomy } from "../lib/content";
+import { entryPath, getTaxonomyValue, taxonomyLabels } from "../lib/content";
+
+interface Props {
+  entries: IngyerEntry[];
+  taxonomy: Taxonomy;
+  value: string;
+}
+
+const { entries, taxonomy, value } = Astro.props;
+const filtered = entries.filter((entry) => getTaxonomyValue(entry, taxonomy) === value);
+---
+
+<section class="list-page">
+  <h1 class="visually-hidden">{value}</h1>
+  <p>총 {filtered.length}개의 글이 있습니다.</p>
+  <ul class="entry-list">
+    {filtered.map((entry) => (
+      <li><a href={entryPath(entry)}>{entry.data.title}</a></li>
+    ))}
+  </ul>
+  <p class="back-link"><a href={`/${taxonomy === "organization" ? "org" : taxonomy}/`}>← {taxonomyLabels[taxonomy]}</a></p>
+</section>

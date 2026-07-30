@@ -1,0 +1,20 @@
+---
+import SiteSearch from "./SiteSearch.astro";
+---
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="home-link" href="/" aria-label="Ingyerlog 홈">
+      <span class="home-link__mark" aria-hidden="true">I</span>
+      <span class="home-link__text">Ingyerlog</span>
+    </a>
+    <SiteSearch />
+    <nav aria-label="주요 메뉴">
+      <a href="/year/">연도</a>
+      <a href="/subject/">과목</a>
+      <a href="/org/">기관</a>
+      <a href="/level/">급수</a>
+      <a href="/etc/">기타</a>
+    </nav>
+  </div>
+</header>

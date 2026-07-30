@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TaxonomyList from "../../components/TaxonomyList.astro";
+import {
+  getAllEntries,
+  getTaxonomyValues,
+  taxonomyRoutes,
+  type Taxonomy,
+} from "../../lib/content";
+
+export async function getStaticPaths() {
+  const entries = await getAllEntries();
+  return (Object.entries(taxonomyRoutes) as [Taxonomy, string][]).flatMap(([taxonomy, route]) =>
+    getTaxonomyValues(entries, taxonomy).map((value) => ({
+      params: { taxonomy: route, value },
+      props: { taxonomy, value },
+    })),
+  );
+}
+
+const { taxonomy, value } = Astro.props as { taxonomy: Taxonomy; value: string };
+const entries = await getAllEntries();
+---
+
+<BaseLayout title={value}>
+  <TaxonomyList entries={entries} taxonomy={taxonomy} value={value} />
+</BaseLayout>

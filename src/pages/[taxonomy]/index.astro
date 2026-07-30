@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import {
+  getAllEntries,
+  getTaxonomyValues,
+  taxonomyLabels,
+  taxonomyRoutes,
+  type Taxonomy,
+} from "../../lib/content";
+
+export async function getStaticPaths() {
+  return (Object.entries(taxonomyRoutes) as [Taxonomy, string][]).map(([taxonomy, route]) => ({
+    params: { taxonomy: route },
+    props: { taxonomy },
+  }));
+}
+
+const { taxonomy } = Astro.props as { taxonomy: Taxonomy };
+const entries = await getAllEntries();
+const values = getTaxonomyValues(entries, taxonomy);
+const route = taxonomyRoutes[taxonomy];
+const label = taxonomyLabels[taxonomy];
+---
+
+<BaseLayout title={label}>
+  <section class="list-page">
+    <h1>{label}</h1>
+    <p>총 {values.length}개의 항목이 있습니다.</p>
+    <ul class="taxonomy-list">
+      {values.map((value) => (
+        <li><a href={`/${route}/${encodeURIComponent(value)}/`}>{value}</a></li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>

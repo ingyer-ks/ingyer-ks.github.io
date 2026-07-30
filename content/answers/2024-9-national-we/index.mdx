@@ -1,0 +1,263 @@
+---
+title: 2024 9급 국가직 무선공학개론
+year: 2024년
+organization: 국가직
+level: 9급
+subject: 무선공학개론
+etc:
+description:
+---
+
+#
+
+## 1번
+코사인이 곱해지면 전력은 $\frac{1}{2}$배가 된다. 그리고 앞에 계수 $A_c$가 곱해져 있으므로 $s(t)$의 평균전력은
+$$
+P_s=\frac{1}{2}A_c^2P_m
+$$
+이므로 답은 **1번** 이다.
+
+## 2번
+상측파대 SSB의 점유주파수는 반송파의 위쪽으로 대역폭만큼 차지하므로 1,500 ~ 1,510 kHz를 점유한다. 따라서 답은 **4번** 이다.
+
+## 3번
+모두 W 단위로 환산하자.
+1. 10 W
+2. 1 W
+3. 전력을 $P$라 하면
+  $$
+  \begin{equation}
+  \begin{split}
+  10\text{ dBm}&=10log\frac{P}{1\text{ mW}}\\
+  \Rightarrow 10&=\frac{P}{1\text{ mW}}\\
+  \Rightarrow P&=10\text{ mW}\\
+  &=0.01\text{ W}
+  \end{split}
+  \end{equation}
+  $$
+  이다.
+4. 전력을 $P$라 하면
+  $$
+  \begin{equation}
+  \begin{split}
+  0\text{ dBW}&=10log\frac{P}{1\text{ W}}\\
+  \Rightarrow 1&=\frac{P}{1\text{ W}}\\
+  \Rightarrow P&=1\text{ W}
+  \end{split}
+  \end{equation}
+  $$
+  이다.
+
+따라서 가장 큰 전력은 **1번** 이다.
+
+## 4번
+1. 주파수는 30~300 MHz, 파장 1~10 m이다.
+2. 주파수 3~30 GHz, 파장 1~10 cm이다.
+3. 주파수 300~3,000 MHz, 파장 0.1~1 m이다.
+4. 주파수 300~3,000 kHz, 파장 100~1,000 m이다.
+
+따라서 답은 **2번** 이다.
+
+## 5번
+1. 그렇다. 반송파의 진폭의 제곱의 절반이다.
+2. 그렇다.
+3. 진폭은 일정하다. 메시지 신호의 적분은 위상에 영향을 준다.
+4. 그렇다. 카슨의 법칙은
+  $$
+  B=2(\beta+1)\Delta f
+  $$
+  이다.
+
+따라서 답은 **3번** 이다.
+
+## 6번
+변조 신호의 전력은
+$$
+P_s=\frac{1}{2}A_c^2+\frac{1}{2}A_c^2a^2P_m
+$$
+인데, 주어진 조건에서 $=\frac{1}{2}A_c^2=100$이고 메시지 전력 $P_m=1$이다. 따라서
+$$
+\begin{equation}
+\begin{split}
+125&=100+100a^2\\
+\Rightarrow 25&=100a^2\\
+\Rightarrow a&=0.5
+\end{split}
+\end{equation}
+$$
+이므로 답은 **4번** 이다.
+
+## 7번
+1. 스펙트럼 보상을 위해 사용한다.
+2. FM에서 주파수 성분을 꺼내는 데 사용한다.
+3. 디지털 통신에서 수신 신호를 판정하는 데 사용한다.
+4. 양자화에 사용한다.
+
+따라서 답은 **1번** 이다.
+
+## 8번
+$s(t)$의 위상은
+$$
+\theta(t)=2\pi f_c t+\beta sin(2\pi f_m t)
+$$
+이고, 이를 미분하면 각주파수가 나온다.
+$$
+\begin{equation}
+\begin{split}
+\omega(t)&=\frac{d\theta(t)}{dt}\\
+&=2\pi f_c+2\pi \beta f_m  cos(2\pi f_m t)
+\end{split}
+\end{equation}
+$$
+각주파수의 편이는 $2\pi \beta f_m  cos(2\pi f_m t)$에 해당하므로, 주파수 편이를 이를 $2\pi$로 나눈 $\beta f_m cos(2\pi f_m t)$이다.
+이의 최댓값은 코사인이 1일 때이므로
+$$
+\beta f_m
+$$
+이 최대 주파수 편이이다. 따라서 답은 **4번** 이다.
+
+## 9번
+1. 그렇다.
+2. 그렇다.
+3. 수신 신호의 시간 지연 확산은 다중경로 채널에 의해 나타난다.
+4. 그렇다.
+
+따라서 답은 **3번** 이다.
+
+## 10번
+도플러 천이 식은
+$$
+\begin{equation}
+\begin{split}
+f_D&=\frac{v}{\lambda}cos\theta\\
+&=\frac{fv}{c}cos\theta
+\end{split}
+\end{equation}
+$$
+이다. 주어진 값을 대입하면
+$$
+\begin{equation}
+\begin{split}
+f_D&=\frac{600\times10^6\times30}{3\times10^8}cos 30^\circ\\
+&=30\sqrt{3}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **2번** 이다.
+
+## 11번
+파세발의 정리를 이용하자. 주어진 신호의 주파수 스펙트럼은폭이 2이고 높이가 $\frac{1}{2}$인 rect 함수이다.(sinc의 계수가 rect 함수의 넓이가 되므로)
+따라서 에너지를 구하면
+$$
+\begin{equation}
+\begin{split}
+E&=2\times\left(\frac{1}{2}\right)^2\\
+&=0.5
+\end{split}
+\end{equation}
+$$
+이므로 답은 **1번** 이다.
+
+## 12번
+비동기 FSK 시스템에서 직교성을 갖기 위한 조건을 살펴보자. 두 신호의 주파수를 각각 $f_1,f_2$라 하면
+$$
+\begin{equation}
+\begin{split}
+\int_T cos(2\pi f_1 t+\theta)cos(2\pi f_2 t+\phi)dt&=\frac{1}{2}\int_T (cos(2\pi(f_1+f_2)t+\theta+\phi)+cos(2\pi(f_1-f_2)t+\theta-\phi))dt\\
+&=\left.\frac{1}{4\pi(f_1+f_2)}sin(2\pi(f_1+f_2)t+\theta+\phi)\right|_0^T+\left.\frac{1}{4\pi(f_1-f_2)}sin(2\pi(f_1-f_2)t+\theta-\phi)\right|_0^T
+\end{split}
+\end{equation}
+$$
+위 식의 값이 0이 되기 위해서는 오른쪽 적분이 0이 되어야 하므로
+$$
+f_1-f_2=\frac{n}{T}\text{(}n\text{은 정수)}
+$$
+여야 한다. 따라서 최소 주파수 간격은 $\frac{1}{T}$인데, 여기서 $T$는 한 심벌 주기이므로 $\frac{1}{T}$는 심벌률이다. 따라서 주어진 조건에서 최소 주파수 간격은
+$$
+f_1-f_2=800\text{ Hz}
+$$
+이므로 답은 **2번** 이다.
+
+## 13번
+1초당 2,000개의 펄스가 있고, 각 펄스의 폭이 $10^{-7}$초이다. 따라서 1초 안에 있는 총 펄스 폭은
+$$
+2000\times10^{-7}=2\times10^{-4}
+$$
+초이다. 1초당 2,000개의 펄스가 있는데 각 펄스의 첨두전력을 $P_p$라고 하면 1초당 에너지인 평균 송신전력 $P_m$으로부터 첨두전력을 구할 수 있다.
+$$
+\begin{equation}
+\begin{split}
+P_m&=200\\
+&=P_p\times10^{-7}\times2\times10^3\\
+\Rightarrow P_p&=\frac{1}{2}\times200\times10^4\\
+&=1000\text{ kW}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **3번** 이다.
+
+## 14번
+편도 전파시간 측정오차 2 $\mu$s동안 전파는
+$$
+3\times10^8\times2\times10^{-6}=600\text{ m}
+$$
+을 진행할 수 있다. 따라서 답은 **2번** 이다,
+
+## 15번
+경로손실은
+$$
+L=\left(\frac{4\pi d}{\lambda}\right)^2
+$$
+이다.
+1. 그렇다.
+2. 그렇다. 거리의 제곱에 반비례하기 때문이다.
+3. 그렇다 파장의 제곱에 반비례하므로 주파수의 제곱에 비례한다.
+4. 그렇지 않다.
+그러므로 답은 **4번** 이다.
+
+## 16번
+정지궤도위성은 약 36,000 km 상의 높은 고도에 위치한다. 따라서 가장 지연시간이 크고, 그 다음은 중궤도와 저궤도 순이다.
+따라서 답은 **1번** 이다.
+
+## 17번
+1. 같을 수 있다. 심벌에 비트 하나만 실을 수 있기 때문이다.
+2. 그렇다.
+3. 압축을 위해서는 소스 코딩을 사용한다.
+4. SNR이 커지면 비트오류율은 작아진다.
+
+따라서 답은 **2번** 이다.
+
+## 18번
+총 5개의 지연 신호가 있을 때, 2개는 1 $\mu$s만큼 지연되어 들어오고, 2개는 2 $\mu$s만큼 지연되어 들어오고, 1개는 4 $\mu$s만큼 지연되어 들어옴을 알 수 있다. 따라서 평균초과지연은
+$$
+\begin{equation}
+\begin{split}
+\tau_m&=\frac{2}{5}\times1+\frac{2}{5}\times2+\frac{1}{5}\times4\\
+\tau_m&=\frac{2+4+4}{5}\\
+&=2\text{ }\mu\text{s}
+\end{split}
+\end{equation}
+$$
+이므로 답은 **3번** 이다.
+
+## 19번
+30 MHz 안에 채널당 25 kHz 대역 두 개를 사용하므로 채널당 50 kHz를 사용한다. 따라서 총 채널 수는
+$$
+\frac{30\times10^6}{50\text10^3}=600\text{ 개}
+$$
+이다. 이 600개의 채널이 한 클러스터 내에서 사용되고, 한 클러스터는 4개의 셀로 구성되므로 셀당 가용 채널 수는
+$$
+\frac{600}{4}=150\text{ 개}
+$$
+이므로 답은 **2번** 이다.
+
+## 20번
+1. 고도가 높아질수록 굴절률은 작아진다. 관련 표준인 ITU-R P.453에 따르면 굴절률 $n$과 고도 $h$는 다음과 같은 관계가 있다고 한다.
+  $$
+  n(h)=1+N_0\times10^{-6}\times e^{-\frac{h}{h_0}}
+  $$
+2. 그렇다.
+3. 그렇다.
+4. 그렇다.
+
+따라서 답은 **1번** 이다.

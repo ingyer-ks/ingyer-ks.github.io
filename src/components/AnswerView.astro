@@ -1,0 +1,65 @@
+---
+import PdfViewer from "./PdfViewer.astro";
+
+interface Props {
+  title: string;
+  pdfUrl: string;
+}
+
+const { title, pdfUrl } = Astro.props;
+---
+
+<article class="answer-page" data-view-mode="both">
+  <div class="view-controls" aria-label="표시 영역 선택">
+    <button type="button" data-mode="both">문제·해설</button>
+    <button type="button" data-mode="problem">문제</button>
+    <button type="button" data-mode="explanation">해설</button>
+  </div>
+
+  <div class="split-view">
+    <section class="problem-pane" aria-label="문제지">
+      <PdfViewer title={title} pdfUrl={pdfUrl} />
+    </section>
+    <section class="explanation-pane" aria-label="해설" data-pagefind-body>
+      <h1>{title}</h1>
+      <div class="article-body">
+        <slot />
+      </div>
+    </section>
+  </div>
+</article>
+
+<script>
+  for (const page of document.querySelectorAll<HTMLElement>(".answer-page")) {
+    const setMode = (mode: string) => {
+      page.dataset.viewMode = mode;
+      for (const button of page.querySelectorAll<HTMLButtonElement>("[data-mode]")) {
+        button.setAttribute("aria-pressed", String(button.dataset.mode === mode));
+      }
+    };
+
+    for (const button of page.querySelectorAll<HTMLButtonElement>("[data-mode]")) {
+      button.addEventListener("click", () => setMode(button.dataset.mode ?? "both"));
+    }
+
+    const mathBlocks = Array.from(page.querySelectorAll<HTMLElement>(".katex-display"));
+
+    const updateMathOverflow = () => {
+      for (const block of mathBlocks) {
+        block.classList.remove("is-wide");
+        const overflow = block.scrollWidth - block.clientWidth;
+        block.classList.toggle("is-wide", overflow > 4);
+      }
+    };
+
+    const explanation = page.querySelector<HTMLElement>(".explanation-pane");
+    if (explanation && mathBlocks.length > 0) {
+      const observer = new ResizeObserver(() => requestAnimationFrame(updateMathOverflow));
+      observer.observe(explanation);
+      document.fonts?.ready.then(updateMathOverflow);
+      requestAnimationFrame(updateMathOverflow);
+    }
+
+    setMode(matchMedia("(max-width: 768px)").matches ? "explanation" : "both");
+  }
+</script>

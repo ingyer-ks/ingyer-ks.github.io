@@ -1,0 +1,43 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AnswerView from "../components/AnswerView.astro";
+import { problemPdfUrl } from "../lib/content";
+
+type PageProps =
+  | { kind: "answer"; entry: CollectionEntry<"answers"> }
+  | { kind: "post"; entry: CollectionEntry<"posts"> };
+
+export async function getStaticPaths() {
+  const [answers, posts] = await Promise.all([
+    getCollection("answers"),
+    getCollection("posts"),
+  ]);
+
+  return [
+    ...answers.map((entry) => ({ params: { slug: entry.id }, props: { kind: "answer", entry } })),
+    ...posts.map((entry) => ({ params: { slug: entry.id }, props: { kind: "post", entry } })),
+  ];
+}
+
+const props = Astro.props as PageProps;
+const { Content } = await render(props.entry);
+const { title, description } = props.entry.data;
+---
+
+<BaseLayout
+  title={title}
+  description={description || title}
+  workspace={props.kind === "answer"}
+>
+  {props.kind === "answer" ? (
+    <AnswerView title={title} pdfUrl={problemPdfUrl(title)}>
+      <Content />
+    </AnswerView>
+  ) : (
+    <article class="text-page" data-pagefind-body>
+      <h1>{title}</h1>
+      <div class="article-body"><Content /></div>
+    </article>
+  )}
+</BaseLayout>

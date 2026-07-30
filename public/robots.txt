@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ingyerlog.kr/sitemap-index.xml
